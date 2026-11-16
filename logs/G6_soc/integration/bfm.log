@@ -1,0 +1,407 @@
+xrun(64): 22.09-s003: (c) Copyright 1995-2022 Cadence Design Systems, Inc.
+TOOL:	xrun(64)	22.09-s003: Started on Nov 16, 2026 at 12:20:39 IST
+xrun
+	-64bit
+	-xmlibdirpath signoff/build/tb_bfm
+	-sv
+	-access +rwc
+	-f rtl_soc.f
+		rtl/core/adder.v
+		rtl/core/alu.v
+		rtl/core/alu_decoder.v
+		rtl/core/controller.v
+		rtl/core/data_parser.v
+		rtl/core/decode.v
+		rtl/core/execute.v
+		rtl/core/fetch.v
+		rtl/core/hazard_unit.v
+		rtl/core/imm_extend.v
+		rtl/core/main_decoder.v
+		rtl/core/mdu_wrapper.v
+		rtl/core/memory.v
+		rtl/core/mux2.v
+		rtl/core/mux3.v
+		rtl/core/mux4.v
+		rtl/core/reg_file.v
+		rtl/core/reset_ff.v
+		rtl/core/t1c_riscv_cpu.v
+		rtl/core/writeback.v
+		rtl/core/csr_unit.v
+		rtl/soc/soc_sram.v
+		rtl/soc/boot_rom.v
+		rtl/peripherals/boot_flash/boot_flash_ctrl.v
+		rtl/soc/soc_interconnect.v
+		rtl/soc/ahb_apb_bridge.v
+		rtl/soc/apb_decoder.v
+		rtl/soc/clint.v
+		rtl/soc/plic_new.v
+		rtl/soc/reset_sync.v
+		rtl/soc/t1c_riscv_soc.v
+		rtl/peripherals/ascon_updated/config.sv
+		rtl/peripherals/ascon_updated/functions.sv
+		rtl/peripherals/ascon_updated/ascon_regs_pkg.sv
+		rtl/peripherals/ascon_updated/chaos_core.sv
+		rtl/peripherals/ascon_updated/ascon_core.sv
+		rtl/peripherals/ascon_updated/ascon_peripheral.sv
+		rtl/peripherals/ascon_updated/ascon_ahb_wrapper.sv
+		rtl/peripherals/gpio/apb_gpio.v
+		rtl/peripherals/i2c/apb_i2c.v
+		rtl/peripherals/i2c/i2c_master_bit_ctrl.v
+		rtl/peripherals/i2c/i2c_master_byte_ctrl.v
+		rtl/peripherals/i2c/i2c_master_defines.v
+		rtl/peripherals/spi/apb_spi.v
+		rtl/peripherals/spi/spi_fifo.v
+		rtl/peripherals/spi/spi_protocol_engine.v
+		rtl/peripherals/timer/apb_timer.v
+		rtl/peripherals/uart/apb_uart.v
+	-f signoff/tb_models.f
+		-notimingchecks
+		+define+nobanner
+		rtl/peripherals/spi/spi_flash_model.v
+		/home/install/scl180/memory/dpram/4M1L/DP_SRAM_rd3_4096x32/rd3_4096x32.v
+	-incdir rtl/soc
+	-incdir rtl/peripherals/i2c
+	-incdir rtl/peripherals/ascon_updated
+	tb/soc/tb_soc_bfm.v
+	-top tb_soc_bfm
+	-nowarn NONPRT
+	+define+BOOTROM_LEGACY_PRELOAD
+	-l signoff/logs/tb/bfm.log
+Recompiling... reason: unable to find module worklib.ahb_apb_bridge:v (SIG) <0x2d9bee9c>.
+file: rtl/core/adder.v
+	module worklib.adder:v
+		errors: 0, warnings: 0
+file: rtl/core/alu.v
+	module worklib.alu_unit:v
+		errors: 0, warnings: 0
+file: rtl/core/alu_decoder.v
+	module worklib.alu_decoder:v
+		errors: 0, warnings: 0
+file: rtl/core/controller.v
+	module worklib.controller:v
+		errors: 0, warnings: 0
+file: rtl/core/data_parser.v
+	module worklib.data_parser:v
+		errors: 0, warnings: 0
+file: rtl/core/decode.v
+	module worklib.decode:v
+		errors: 0, warnings: 0
+file: rtl/core/execute.v
+	module worklib.execute:v
+		errors: 0, warnings: 0
+file: rtl/core/fetch.v
+	module worklib.fetch:v
+		errors: 0, warnings: 0
+file: rtl/core/hazard_unit.v
+	module worklib.hazard_unit:v
+		errors: 0, warnings: 0
+file: rtl/core/imm_extend.v
+	module worklib.ImmExt:v
+		errors: 0, warnings: 0
+file: rtl/core/main_decoder.v
+	module worklib.main_decoder:v
+		errors: 0, warnings: 0
+file: rtl/core/mdu_wrapper.v
+	module worklib.mdu_wrapper:v
+		errors: 0, warnings: 0
+file: rtl/core/memory.v
+	module worklib.memory:v
+		errors: 0, warnings: 0
+file: rtl/core/mux2.v
+	module worklib.mux2:v
+		errors: 0, warnings: 0
+file: rtl/core/mux3.v
+	module worklib.mux3:v
+		errors: 0, warnings: 0
+file: rtl/core/mux4.v
+	module worklib.mux4:v
+		errors: 0, warnings: 0
+file: rtl/core/reg_file.v
+	module worklib.reg_file:v
+		errors: 0, warnings: 0
+file: rtl/core/reset_ff.v
+	module worklib.reset_ff:v
+		errors: 0, warnings: 0
+file: rtl/core/t1c_riscv_cpu.v
+	module worklib.t1c_riscv_cpu:v
+		errors: 0, warnings: 0
+file: rtl/core/writeback.v
+	module worklib.writeback:v
+		errors: 0, warnings: 0
+file: rtl/core/csr_unit.v
+	module worklib.csr_unit:v
+		errors: 0, warnings: 0
+file: rtl/soc/soc_sram.v
+	module worklib.soc_sram:v
+		errors: 0, warnings: 0
+file: rtl/soc/boot_rom.v
+	module worklib.boot_rom:v
+		errors: 0, warnings: 0
+file: rtl/peripherals/boot_flash/boot_flash_ctrl.v
+	module worklib.boot_flash_ctrl:v
+		errors: 0, warnings: 0
+file: rtl/soc/soc_interconnect.v
+	module worklib.soc_interconnect:v
+		errors: 0, warnings: 0
+file: rtl/soc/ahb_apb_bridge.v
+	module worklib.ahb_apb_bridge:v
+		errors: 0, warnings: 0
+file: rtl/soc/apb_decoder.v
+	module worklib.apb_decoder:v
+		errors: 0, warnings: 0
+file: rtl/soc/clint.v
+	module worklib.clint:v
+		errors: 0, warnings: 0
+file: rtl/soc/plic_new.v
+	module worklib.plic_new:v
+		errors: 0, warnings: 0
+file: rtl/soc/reset_sync.v
+	module worklib.reset_sync:v
+		errors: 0, warnings: 0
+file: rtl/soc/t1c_riscv_soc.v
+	module worklib.t1c_riscv_soc:v
+		errors: 0, warnings: 0
+file: rtl/peripherals/ascon_updated/chaos_core.sv
+	module worklib.chaos_core:sv
+		errors: 0, warnings: 0
+file: rtl/peripherals/ascon_updated/ascon_core.sv
+	module worklib.ascon_core:sv
+		errors: 0, warnings: 0
+file: rtl/peripherals/ascon_updated/ascon_peripheral.sv
+	module worklib.ascon_peripheral:sv
+		errors: 0, warnings: 0
+file: rtl/peripherals/ascon_updated/ascon_ahb_wrapper.sv
+	module worklib.ascon_ahb_wrapper:sv
+		errors: 0, warnings: 0
+file: rtl/peripherals/gpio/apb_gpio.v
+	module worklib.apb_gpio:v
+		errors: 0, warnings: 0
+file: rtl/peripherals/i2c/apb_i2c.v
+	module worklib.apb_i2c:v
+		errors: 0, warnings: 0
+file: rtl/peripherals/i2c/i2c_master_bit_ctrl.v
+	module worklib.i2c_master_bit_ctrl:v
+		errors: 0, warnings: 0
+file: rtl/peripherals/i2c/i2c_master_byte_ctrl.v
+	module worklib.i2c_master_byte_ctrl:v
+		errors: 0, warnings: 0
+file: rtl/peripherals/spi/apb_spi.v
+	module worklib.apb_spi:v
+		errors: 0, warnings: 0
+file: rtl/peripherals/spi/spi_fifo.v
+	module worklib.spi_fifo:v
+		errors: 0, warnings: 0
+file: rtl/peripherals/spi/spi_protocol_engine.v
+	module worklib.spi_protocol_engine:v
+		errors: 0, warnings: 0
+file: rtl/peripherals/timer/apb_timer.v
+	module worklib.apb_timer:v
+		errors: 0, warnings: 0
+file: rtl/peripherals/uart/apb_uart.v
+	module worklib.apb_uart:v
+		errors: 0, warnings: 0
+file: rtl/peripherals/spi/spi_flash_model.v
+	module worklib.spi_flash_model:v
+		errors: 0, warnings: 0
+file: /home/install/scl180/memory/dpram/4M1L/DP_SRAM_rd3_4096x32/rd3_4096x32.v
+	module worklib.rd3_4096x32:v
+		errors: 0, warnings: 0
+	module worklib.rd3_4096x32_behave:v
+		errors: 0, warnings: 0
+	module worklib.rd3_4096x32_Port:v
+		errors: 0, warnings: 0
+file: tb/soc/tb_soc_bfm.v
+xmvlog: *W,SPDUSD: Include directory rtl/soc given but not used.
+	Total errors/warnings found outside modules and primitives:
+		errors: 0, warnings: 1
+	Elaborating the design hierarchy:
+		Caching library 'worklib' ....... Done
+	Top level design units:
+		ascon_regs_pkg
+		ascon_config
+		ascon_functions
+		tb_soc_bfm
+xmelab: *W,DSEMEL: This SystemVerilog design will be simulated as per IEEE 1800-2009 SystemVerilog simulation semantics. Use -disable_sem2009 option for turning off SV 2009 simulation semantics.
+	Building instance overlay tables: .................... Done
+	Generating native compiled code:
+		worklib.chaos_core:sv <0x7d99f93e>
+			streams:  26, words: 15445
+		worklib.ascon_core:sv <0x48ac28ad>
+			streams:  63, words: 50595
+		worklib.ascon_peripheral:sv <0x011d4e2a>
+			streams:  49, words: 25914
+		worklib.ascon_ahb_wrapper:sv <0x1a67202f>
+			streams:  20, words:  6460
+		worklib.boot_flash_ctrl:v <0x0c78f4a1>
+			streams:  36, words: 17115
+		worklib.i2c_master_bit_ctrl:v <0x0089b216>
+			streams:  36, words: 22904
+		worklib.i2c_master_byte_ctrl:v <0x63536dee>
+			streams:  18, words: 11239
+		worklib.apb_i2c:v <0x37d42d75>
+			streams:  27, words: 10813
+		worklib.spi_protocol_engine:v <0x481690e7>
+			streams:  28, words: 17390
+		worklib.spi_fifo:v <0x1c2c6b4d>
+			streams:   8, words:  3770
+		worklib.apb_spi:v <0x3224f4d7>
+			streams:  27, words: 12145
+		worklib.apb_uart:v <0x000a1b4c>
+			streams:  65, words: 26437
+		worklib.apb_gpio:v <0x03554156>
+			streams:  27, words:  8977
+		worklib.apb_timer:v <0x26ceb0f0>
+			streams:  23, words:  7416
+		worklib.apb_decoder:v <0x462884ff>
+			streams:   7, words:  4363
+		worklib.plic_new:v <0x7bed9eeb>
+			streams:  15, words:  8840
+		worklib.rd3_4096x32:v <0x4369b28d>
+			streams:  40, words: 18967
+		worklib.rd3_4096x32_Port:v <0x21f3f316>
+			streams:  15, words: 18870
+		worklib.rd3_4096x32:v <0x0971884a>
+			streams:  40, words: 18967
+		worklib.hazard_unit:v <0x558941bf>
+			streams:   3, words:  1795
+		worklib.mux4:v <0x6fef6af2>
+			streams:   2, words:   862
+		worklib.writeback:v <0x06e5fdd7>
+			streams:   1, words:   194
+		worklib.data_parser:v <0x101c4781>
+			streams:   3, words:  1454
+		worklib.memory:v <0x5e03c699>
+			streams:   6, words:  4671
+		worklib.csr_unit:v <0x0923ac68>
+			streams:  20, words:  9025
+		worklib.mdu_wrapper:v <0x3031b4e0>
+			streams:  29, words: 12612
+		worklib.alu_unit:v <0x7891c3b4>
+			streams:   1, words:  4594
+		worklib.mux2:v <0x1c0d254f>
+			streams:   1, words:   234
+		worklib.mux3:v <0x09c7c4fc>
+			streams:   2, words:   698
+		worklib.execute:v <0x0f8f4794>
+			streams:  10, words:  8352
+		worklib.ImmExt:v <0x7252124a>
+			streams:   1, words:  1274
+		worklib.reg_file:v <0x2685b595>
+			streams:   5, words:  2987
+		worklib.alu_decoder:v <0x3a213f94>
+			streams:   1, words:  3207
+		worklib.main_decoder:v <0x17a4d89e>
+			streams:   2, words:  3716
+		worklib.controller:v <0x14712ef1>
+			streams:   3, words:  1061
+		worklib.decode:v <0x5c64187d>
+			streams:   4, words: 10586
+		worklib.adder:v <0x664419f9>
+			streams:   1, words:   176
+		worklib.reset_ff:v <0x1ca424c4>
+			streams:   3, words:   897
+		worklib.mux3:v <0x77bf8c5a>
+			streams:   2, words:   656
+		worklib.fetch:v <0x11f23bfb>
+			streams:  11, words:  4513
+		worklib.t1c_riscv_cpu:v <0x255b51ba>
+			streams:   6, words:  2346
+		worklib.reset_sync:v <0x623a33b8>
+			streams:   3, words:   645
+		worklib.t1c_riscv_soc:v <0x19c843ab>
+			streams:   4, words:  1626
+		worklib.tb_soc_bfm:v <0x7a09c58f>
+			streams:  41, words: 117499
+		worklib.soc_sram:v <0x11a625d2>
+			streams:  37, words: 17451
+		worklib.soc_interconnect:v <0x3babb49b>
+			streams:  26, words: 11226
+		worklib.boot_rom:v <0x232405a7>
+			streams:   3, words:  1438
+		worklib.clint:v <0x0e882502>
+			streams:  11, words:  4353
+		worklib.ahb_apb_bridge:v <0x2d9bee9c>
+			streams:   9, words:  4205
+		worklib.rd3_4096x32_behave:v <0x60ae7528>
+			streams:   7, words:  7974
+	Building instance specific data structures.
+	Loading native compiled code:     .................... Done
+	Design hierarchy summary:
+		                   Instances  Unique
+		Modules:                  83      48
+		Verilog packages:          3       3
+		Primitives:             1304       4
+		Timing outputs:          512       1
+		Registers:               956     586
+		Scalar wires:           1670       -
+		Expanded wires:         1156      44
+		Vectored wires:          247       -
+		Named events:             16       1
+		Always blocks:           465     137
+		Initial blocks:           31       9
+		Cont. assignments:       254     368
+		Pseudo assignments:      148      85
+		Timing checks:           380       -
+		Simulation timescale:  100fs
+	Writing initial simulation snapshot: worklib.tb_soc_bfm:v
+Loading snapshot worklib.tb_soc_bfm:v .................... Done
+xmsim: *W,DSEM2009: This SystemVerilog design is simulated as per IEEE 1800-2009 SystemVerilog simulation semantics. Use -disable_sem2009 option for turning off SV 2009 simulation semantics.
+xcelium> source /home/install8/install/XCELIUM2209/tools/inca/files/xmsimrc
+xcelium> run
+=== SoC BFM Verification Phase 2 (FIXED v5) ===
+--- T01: SRAM Word Read/Write ---
+  PASS [T1] SRAM_word_RW addr=10000100 got=deadbeef
+  PASS [T1] SRAM_pattern_A addr=10000200 got=12345678
+  PASS [T1] SRAM_top_addr addr=1000fffc got=cafe1234
+--- T02: SRAM Byte Enables ---
+  PASS [T02] byte0=AA got=000000aa
+  PASS [T02] halfword=CAFE got=0000cafe
+--- T03: CLINT Register Access ---
+  PASS [T03] mtime incrementing 45->57
+  PASS [T3] CLINT_mtimecmp_l addr=02004000 got=ffffffff
+  PASS [T3] CLINT_mtimecmp_h addr=02004004 got=ffffffff
+  PASS [T03] msip set
+  PASS [T03] irq_software=1
+--- T04: PLIC Register Access ---
+  PASS [T4] PLIC_prio1=3 addr=0c000004 got=00000003
+  PASS [T4] PLIC_enable_all addr=0c002000 got=0000001f
+  PASS [T04] PLIC_thresh RO=0
+--- T05: APB Timer via AHB-APB Bridge ---
+  PASS [T5] mer_CTRL_reset=0 addr=40000000 got=00000000
+  PASS [T5] Timer_reload=255 addr=40000008 got=000000ff
+  PASS [T5] Timer_enable addr=40000000 got=00000001
+  PASS [T05] Timer counting CurrVal=226
+--- T06: APB GPIO via AHB-APB Bridge ---
+  PASS [T6] GPIO_all_output addr=40001008 got=000000ff
+  PASS [T6] GPIO_out=0xA5 addr=40001004 got=000000a5
+  PASS [T06] gpio_out=A5
+  PASS [T06] GPIO_input=5A
+--- T07: APB UART via AHB-APB Bridge ---
+  PASS [T7] UART_baud=27 addr=40002010 got=0000001b
+  PASS [T7] T_CTRL_TxEN_RxEN addr=40002000 got=00000003
+  PASS [T07] UART TXD start bit detected
+--- T08: APB SPI via AHB-APB Bridge ---
+  PASS [T8] SPI_CTRL=0x81 addr=40003000 got=00000081
+--- T09: APB I2C via AHB-APB Bridge ---
+  PASS [T9] I2C_prescaler=99 addr=40004000 got=00000063 (mask=0000ffff)
+  PASS [T9] I2C_core_enable addr=40004004 got=00000080 (mask=000000ff)
+--- T10: APB Bridge Protocol Verification ---
+  PASS [T10] APB SETUP  phase PSEL=1 PENABLE=0
+  PASS [T10] APB ENABLE phase PSEL=1 PENABLE=1
+--- T11: Unmapped Address Returns 0 ---
+  INFO [T11] Unmapped read=0x00000000
+--- T12: ASCON Engine via AHB (direct slave) ---
+  PASS [T12] ASCON chaos_ready asserted after 1 polls
+  PASS [T12] ASCON done asserted after 5 polls (status=0x0000009e)
+  PASS [T12] ASCON CT0 readable, no X bits: 0x7ca2d078
+  PASS [T12] ASCON TAG0 readable, no X bits: 0xefc99b72
+
+=========================================
+BFM VERIFICATION RESULTS (FIXED v5)
+PASS: 34  FAIL: 0  TOTAL: 34
+STATUS: ALL TESTS PASSED
+=========================================
+Simulation complete via $finish(1) at time 6231 NS + 0
+./tb/soc/tb_soc_bfm.v:721     $finish;
+xcelium> exit
+TOOL:	xrun(64)	22.09-s003: Exiting on Nov 16, 2026 at 12:20:42 IST  (total: 00:00:03)

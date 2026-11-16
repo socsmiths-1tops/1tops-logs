@@ -1,0 +1,133 @@
+xrun(64): 22.09-s003: (c) Copyright 1995-2022 Cadence Design Systems, Inc.
+TOOL:	xrun(64)	22.09-s003: Started on Nov 16, 2026 at 12:23:31 IST
+xrun
+	-64bit
+	-xmlibdirpath signoff/build/sa_apb_i2c
+	-sv
+	-access +rwc
+	-nowarn NONPRT
+	-incdir rtl/soc
+	-incdir rtl/peripherals/i2c
+	-incdir rtl/peripherals/ascon_updated
+	rtl/peripherals/i2c/i2c_master_bit_ctrl.v
+	rtl/peripherals/i2c/i2c_master_byte_ctrl.v
+	rtl/peripherals/i2c/apb_i2c.v
+	tb/peripherals/tb_apb_i2c.v
+	-top tb_apb_i2c
+	-l signoff/logs/standalone/apb_i2c.log
+file: rtl/peripherals/i2c/i2c_master_bit_ctrl.v
+	module worklib.i2c_master_bit_ctrl:v
+		errors: 0, warnings: 0
+file: rtl/peripherals/i2c/i2c_master_byte_ctrl.v
+	module worklib.i2c_master_byte_ctrl:v
+		errors: 0, warnings: 0
+file: rtl/peripherals/i2c/apb_i2c.v
+	module worklib.apb_i2c:v
+		errors: 0, warnings: 0
+file: tb/peripherals/tb_apb_i2c.v
+xmvlog: *W,SPDUSD: Include directory rtl/soc given but not used.
+xmvlog: *W,SPDUSD: Include directory rtl/peripherals/ascon_updated given but not used.
+	Total errors/warnings found outside modules and primitives:
+		errors: 0, warnings: 2
+	Elaborating the design hierarchy:
+		Caching library 'worklib' ....... Done
+	Top level design units:
+		tb_apb_i2c
+xmelab: *W,DSEMEL: This SystemVerilog design will be simulated as per IEEE 1800-2009 SystemVerilog simulation semantics. Use -disable_sem2009 option for turning off SV 2009 simulation semantics.
+	Building instance overlay tables: .................... Done
+	Generating native compiled code:
+		worklib.i2c_master_bit_ctrl:v <0x0089b216>
+			streams:  36, words: 22904
+		worklib.i2c_master_byte_ctrl:v <0x63536dee>
+			streams:  18, words: 11239
+		worklib.apb_i2c:v <0x7b45d9b9>
+			streams:  27, words: 10733
+	Building instance specific data structures.
+	Loading native compiled code:     .................... Done
+	Design hierarchy summary:
+		                 Instances  Unique
+		Modules:                 4       4
+		Registers:              67      67
+		Scalar wires:           41       -
+		Expanded wires:          3       1
+		Vectored wires:          8       -
+		Always blocks:          19      19
+		Initial blocks:          2       2
+		Parallel blocks:         2       2
+		Cont. assignments:      18      29
+		Pseudo assignments:     11      11
+		Simulation timescale:  1ps
+	Writing initial simulation snapshot: worklib.tb_apb_i2c:v
+Loading snapshot worklib.tb_apb_i2c:v .................... Done
+xmsim: *W,DSEM2009: This SystemVerilog design is simulated as per IEEE 1800-2009 SystemVerilog simulation semantics. Use -disable_sem2009 option for turning off SV 2009 simulation semantics.
+xcelium> source /home/install8/install/XCELIUM2209/tools/inca/files/xmsimrc
+xcelium> run
+
+TEST 1: APB register write/read and decode
+
+TEST 2: Register toggle coverage
+
+TEST 3: Disabled core command ignore
+PASS : Disabled core ignored CMD write
+
+TEST 4: Valid START/STOP command combinations
+PASS : Status IRQ flag set STATUS=000000c1 Time=4335000
+PASS : Status IRQ flag set STATUS=000000c1 Time=6835000
+PASS : Status IRQ flag set STATUS=000000c1 Time=9575000
+PASS : Status IRQ flag set STATUS=00000081 Time=9945000
+PASS : Status IRQ flag set STATUS=000000c1 Time=12655000
+PASS : Status IRQ flag set STATUS=000000c3 Time=15665000
+
+TEST 5: Write command variations
+PASS : Status IRQ flag set STATUS=000000c1 Time=18375000
+PASS : Status IRQ flag set STATUS=000000c3 Time=20845000
+PASS : Status IRQ flag set STATUS=000000c1 Time=23315000
+PASS : Status IRQ flag set STATUS=000000c3 Time=25785000
+PASS : Status IRQ flag set STATUS=000000c1 Time=28255000
+PASS : Status IRQ flag set STATUS=000000c1 Time=30995000
+PASS : Status IRQ flag set STATUS=000000c1 Time=33975000
+PASS : Status IRQ flag set STATUS=000000c3 Time=36685000
+PASS : Status IRQ flag set STATUS=000000c1 Time=39395000
+
+TEST 6: Read command variations
+PASS : Status IRQ flag set STATUS=000000c1 Time=42135000
+PASS : Status IRQ flag set STATUS=00000041 Time=44575000
+INFO : RX DATA = ff
+PASS : Status IRQ flag set STATUS=00000041 Time=47075000
+INFO : RX DATA = ff
+PASS : Status IRQ flag set STATUS=000000c3 Time=49545000
+INFO : RX DATA = ff
+PASS : Status IRQ flag set STATUS=000000c1 Time=52255000
+INFO : RX DATA = ff
+
+TEST 7: IRQ enable and disable
+PASS : Status IRQ flag set STATUS=000000c1 Time=55025000
+PASS : interrupt_o low when IEN=0
+PASS : Status IRQ flag set STATUS=000000c1 Time=58065000
+PASS : IRQ cleared
+
+TEST 8: NACK-like external SDA release
+PASS : Status IRQ flag set STATUS=000000c1 Time=61045000
+INFO : STATUS after NACK-like test = 00000080
+
+TEST 9: Clock stretch
+PASS : Status IRQ flag set STATUS=00000081 Time=64115000
+
+TEST 10: Arbitration-like SDA conflict
+PASS : Status IRQ flag set STATUS=00000061 Time=64815000
+INFO : STATUS after arbitration-like test = 00000060
+
+TEST 11: Reset during active command
+
+TEST 12: Extra APB activity for toggle/block coverage
+
+====================================
+ENHANCED APB I2C TEST COMPLETED
+PASS COUNT = 38
+FAIL COUNT = 0
+====================================
+FINAL RESULT: PASS
+Simulation complete via $finish(1) at time 72545 NS + 0
+./tb/peripherals/tb_apb_i2c.v:520         $finish;
+xcelium> exit
+TOOL:	xrun(64)	22.09-s003: Exiting on Nov 16, 2026 at 12:23:35 IST  (total: 00:00:04)

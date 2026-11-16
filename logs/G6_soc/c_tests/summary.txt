@@ -1,0 +1,15 @@
+SW tests on t1c_riscv_soc [rtl]  2026-11-16 12:07:32
+
+PASS  t_ascon      checks=15  cycles=949949
+PASS  t_bootflash  checks=5   cycles=787150
+PASS  t_cov_misc   checks=16  cycles=947126
+PASS  t_cpu        checks=29  cycles=700356
+PASS  t_gpio       checks=11  cycles=525129
+PASS  t_i2c        checks=11  cycles=668269
+PASS  t_irq        checks=21  cycles=697528
+PASS  t_mem        checks=13  cycles=600869
+PASS  t_plic       checks=12  cycles=701516
+PASS  t_regs       checks=45  cycles=1007471
+PASS  t_spi        checks=6   cycles=504229
+PASS  t_uart       checks=3   cycles=463768
+SUMMARY [rtl]: pass=12 fail=0

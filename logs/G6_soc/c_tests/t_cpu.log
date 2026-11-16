@@ -1,0 +1,60 @@
+xrun(64): 22.09-s003: (c) Copyright 1995-2022 Cadence Design Systems, Inc.
+TOOL:	xrun(64)	22.09-s003: Started on Nov 16, 2026 at 12:08:05 IST
+xrun
+	-64bit
+	-xmlibdirpath sim/build/rtl
+	-R
+	-snapshot soc_rtl
+	+FLASH=/home/onetops/1tops/rv32im/sw/build/t_cpu/flash.hex
+	+UART_DIV=32
+	+UART_LOG=/home/onetops/1tops/rv32im/sw/build/t_cpu/uart_rtl.txt
+	-l /home/onetops/1tops/rv32im/sw/build/t_cpu/sim_rtl.log
+
+   User defined plus("+") options:
+	+FLASH=/home/onetops/1tops/rv32im/sw/build/t_cpu/flash.hex
+	+UART_DIV=32
+	+UART_LOG=/home/onetops/1tops/rv32im/sw/build/t_cpu/uart_rtl.txt
+
+Loading snapshot worklib.soc_rtl:v .................... Done
+xmsim: *W,DSEM2009: This SystemVerilog design is simulated as per IEEE 1800-2009 SystemVerilog simulation semantics. Use -disable_sem2009 option for turning off SV 2009 simulation semantics.
+xcelium> source /home/install8/install/XCELIUM2209/tools/inca/files/xmsimrc
+xcelium> run
+TB: flash image /home/onetops/1tops/rv32im/sw/build/t_cpu/flash.hex, UART 32 clocks/bit, timeout 20000000 cycles
+[uart] t_cpu: RV32IM arithmetic, M-extension, memory, control flow
+[uart]   PASS  MUL signed
+[uart]   PASS  MULH  INT_MIN*-1 hi
+[uart]   PASS  MULHU max*max hi
+[uart]   PASS  MULHSU -1*max hi
+[uart]   PASS  DIV  -7/2
+[uart]   PASS  REM  -7%2
+[uart]   PASS  DIVU max/7
+[uart]   PASS  REMU max%7
+[uart]   PASS  DIV  by zero = -1
+[uart]   PASS  REM  by zero = dividend
+[uart]   PASS  DIVU by zero = max
+[uart]   PASS  REMU by zero = dividend
+[uart]   PASS  DIV  INT_MIN/-1 overflow
+[uart]   PASS  REM  INT_MIN/-1 = 0
+[uart]   PASS  dependent DIV/REM chain
+[uart]   PASS  SRA
+[uart]   PASS  SRL
+[uart]   PASS  SLT
+[uart]   PASS  SLTU
+[uart]   PASS  SB x4 then LW
+[uart]   PASS  LB sign-extend
+[uart]   PASS  LBU
+[uart]   PASS  LH sign-extend
+[uart]   PASS  LHU
+[uart]   PASS  recursion fact(10)
+[uart]   PASS  indirect call (jalr)
+[uart]   PASS  switch
+[uart]   PASS  64-bit multiply
+[uart]   PASS  64-bit divide (libgcc)
+[uart] RESULT: PASS (0 failures)
+TB: program exit after 700356 cycles (70037600000)
+EXIT code=0
+SIM RESULT: PASS
+Simulation complete via $finish(1) at time 7003760 NS + 0
+./sim/tb/tb_soc_app.v:173             $finish;
+xcelium> exit
+TOOL:	xrun(64)	22.09-s003: Exiting on Nov 16, 2026 at 12:08:13 IST  (total: 00:00:08)

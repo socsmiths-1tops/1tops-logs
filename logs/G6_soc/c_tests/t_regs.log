@@ -1,0 +1,76 @@
+xrun(64): 22.09-s003: (c) Copyright 1995-2022 Cadence Design Systems, Inc.
+TOOL:	xrun(64)	22.09-s003: Started on Nov 16, 2026 at 12:08:56 IST
+xrun
+	-64bit
+	-xmlibdirpath sim/build/rtl
+	-R
+	-snapshot soc_rtl
+	+FLASH=/home/onetops/1tops/rv32im/sw/build/t_regs/flash.hex
+	+UART_DIV=32
+	+UART_LOG=/home/onetops/1tops/rv32im/sw/build/t_regs/uart_rtl.txt
+	-l /home/onetops/1tops/rv32im/sw/build/t_regs/sim_rtl.log
+
+   User defined plus("+") options:
+	+FLASH=/home/onetops/1tops/rv32im/sw/build/t_regs/flash.hex
+	+UART_DIV=32
+	+UART_LOG=/home/onetops/1tops/rv32im/sw/build/t_regs/uart_rtl.txt
+
+Loading snapshot worklib.soc_rtl:v .................... Done
+xmsim: *W,DSEM2009: This SystemVerilog design is simulated as per IEEE 1800-2009 SystemVerilog simulation semantics. Use -disable_sem2009 option for turning off SV 2009 simulation semantics.
+xcelium> source /home/install8/install/XCELIUM2209/tools/inca/files/xmsimrc
+xcelium> run
+TB: flash image /home/onetops/1tops/rv32im/sw/build/t_regs/flash.hex, UART 32 clocks/bit, timeout 20000000 cycles
+[uart] t_regs: walking 1/0 over every R/W register
+[uart]   PASS  timer CTRL reset
+[uart]   PASS  GPIO DOUTEN reset
+[uart]   PASS  GPIO INTEN reset
+[uart]   PASS  SPI CTRL reset
+[uart]   PASS  I2C CTRL reset
+[uart]   PASS  mtimecmp reset (disabled)
+[uart]   PASS  mtimecmp_hi reset
+[uart]   PASS  PLIC enable reset (all on; gated by mie.MEIE)
+[uart]   PASS  PLIC threshold fixed 0
+[uart]   PASS  CSR mtvec[31:2]
+[uart]   PASS  CSR mepc
+[uart]   PASS  CSR mcause
+[uart]   PASS  CSR mie bits
+[uart]   PASS  CLINT mtimecmp lo
+[uart]   PASS  CLINT mtimecmp hi
+[uart]   PASS  CLINT msip
+[uart]   PASS  mtime hi (no overflow yet)
+[uart]   PASS  PLIC priority 1
+[uart]   PASS  PLIC priority 2
+[uart]   PASS  PLIC priority 3
+[uart]   PASS  PLIC priority 4
+[uart]   PASS  PLIC priority 5
+[uart]   PASS  PLIC enable
+[uart]   PASS  timer RELOAD
+[uart]   PASS  timer CTRL
+[uart]   PASS  timer VALUE load (stopped)
+[uart]   PASS  timer VALUE load inverse
+[uart]   PASS  GPIO DOUT
+[uart]   PASS  GPIO DOUTEN
+[uart]   PASS  GPIO INTTYPE
+[uart]   PASS  GPIO INTPOL
+[uart]   PASS  UART BAUDDIV (20 bit)
+[uart]   PASS  UART CTRL
+[uart]   PASS  SPI CTRL
+[uart]   PASS  SPI BAUD
+[uart]   PASS  SPI MODE fields (8 bit)
+[uart]   PASS  SPI MODE 16 bit
+[uart]   PASS  SPI MODE 32 bit
+[uart]   PASS  SPI MODE ignores bad width
+[uart]   PASS  I2C PRESCALE
+[uart]   PASS  I2C TX
+[uart]   PASS  I2C CTRL
+[uart]   PASS  BOOTFLASH ADDR
+[uart]   PASS  BOOTFLASH NBYTES
+[uart]   PASS  BOOTFLASH CLKDIV
+[uart] RESULT: PASS (0 failures)
+TB: program exit after 1007471 cycles (100749100000)
+EXIT code=0
+SIM RESULT: PASS
+Simulation complete via $finish(1) at time 10074910 NS + 0
+./sim/tb/tb_soc_app.v:173             $finish;
+xcelium> exit
+TOOL:	xrun(64)	22.09-s003: Exiting on Nov 16, 2026 at 12:09:06 IST  (total: 00:00:10)

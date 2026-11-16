@@ -1,0 +1,4 @@
+Spike ISS check  (Spike RISC-V ISA Simulator 1.1.1-dev, --isa=rv32im)
+Test   : riscv-tests rv32ui-p-add (env/p)
+Command: spike --isa=rv32im -l --log=spike_rv32ui-p-add.log rv32ui-p-add.elf
+Result : exit code 0 = PASS (tohost=1), 5510 instructions logged

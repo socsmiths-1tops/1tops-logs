@@ -1,0 +1,82 @@
+xrun(64): 22.09-s003: (c) Copyright 1995-2022 Cadence Design Systems, Inc.
+TOOL:	xrun(64)	22.09-s003: Started on Nov 16, 2026 at 12:23:41 IST
+xrun
+	-64bit
+	-xmlibdirpath signoff/build/sa_boot_flash_ctrl
+	-sv
+	-access +rwc
+	-nowarn NONPRT
+	rtl/peripherals/boot_flash/boot_flash_ctrl.v
+	rtl/peripherals/spi/spi_flash_model.v
+	tb/peripherals/tb_boot_flash_ctrl.v
+	-top tb_boot_flash_ctrl
+	-l signoff/logs/standalone/boot_flash_ctrl.log
+file: rtl/peripherals/boot_flash/boot_flash_ctrl.v
+	module worklib.boot_flash_ctrl:v
+		errors: 0, warnings: 0
+file: rtl/peripherals/spi/spi_flash_model.v
+	module worklib.spi_flash_model:v
+		errors: 0, warnings: 0
+	Elaborating the design hierarchy:
+		Caching library 'worklib' ....... Done
+	Top level design units:
+		tb_boot_flash_ctrl
+xmelab: *W,DSEMEL: This SystemVerilog design will be simulated as per IEEE 1800-2009 SystemVerilog simulation semantics. Use -disable_sem2009 option for turning off SV 2009 simulation semantics.
+	Building instance overlay tables: .................... Done
+	Generating native compiled code:
+		worklib.boot_flash_ctrl:v <0x192e014f>
+			streams:  36, words: 16781
+		worklib.tb_boot_flash_ctrl:v <0x31dff573>
+			streams:  18, words: 31930
+		worklib.spi_flash_model:v <0x00f2e07d>
+			streams:  10, words:  3374
+	Building instance specific data structures.
+	Loading native compiled code:     .................... Done
+	Design hierarchy summary:
+		                 Instances  Unique
+		Modules:                 3       3
+		Registers:              58      58
+		Scalar wires:           14       -
+		Vectored wires:          7       -
+		Always blocks:           6       6
+		Initial blocks:          6       6
+		Cont. assignments:       7      11
+		Pseudo assignments:      6       6
+		Simulation timescale:  1ps
+	Writing initial simulation snapshot: worklib.tb_boot_flash_ctrl:v
+Loading snapshot worklib.tb_boot_flash_ctrl:v .................... Done
+xmsim: *W,DSEM2009: This SystemVerilog design is simulated as per IEEE 1800-2009 SystemVerilog simulation semantics. Use -disable_sem2009 option for turning off SV 2009 simulation semantics.
+xcelium> source /home/install8/install/XCELIUM2209/tools/inca/files/xmsimrc
+xcelium> run
+T5: register readback / NBYTES=0
+PASS : CLKDIV reset = 00000004
+PASS : CMD ignored when NBYTES=0 (busy) = 00000000
+PASS : ADDR readback = 00000123
+T1: aligned reads
+PASS : aligned div1 = 7a55300b
+PASS : aligned div1 = 0ee9c49f
+PASS : aligned div1 = a27d5833
+PASS : aligned div1 = 3611ecc7
+PASS : aligned div1 idle+CS high = 00000001
+PASS : aligned div4 = 7a55300b
+PASS : aligned div4 = 0ee9c49f
+PASS : aligned div4 = a27d5833
+PASS : aligned div4 = 3611ecc7
+PASS : aligned div4 idle+CS high = 00000001
+T2: unaligned / partial word
+PASS : unaligned 7B = e9c49f7a
+PASS : unaligned 7B = 0058330e
+PASS : unaligned 7B idle+CS high = 00000001
+PASS : unaligned 1B = 000000e6
+PASS : unaligned 1B idle+CS high = 00000001
+T3: SCLK paused while DATA unread
+PASS : no SCLK while rx_valid = 00000000
+PASS : word0 after pause = 7a55300b
+PASS : word1 after pause = 0ee9c49f
+T4: abort
+PASS : ort -> idle, rx_valid=0, CS high = 00000001
+ALL TESTS PASS
+Simulation complete via $finish(1) at time 25710 NS + 0
+./tb/peripherals/tb_boot_flash_ctrl.v:133     $finish;
+xcelium> exit
+TOOL:	xrun(64)	22.09-s003: Exiting on Nov 16, 2026 at 12:23:46 IST  (total: 00:00:05)

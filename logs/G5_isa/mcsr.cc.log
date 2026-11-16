@@ -1,0 +1,11 @@
+In file included from /home/onetops/1tops/tool_chain/riscv-tests/isa/rv32mi/../rv64mi/mcsr.S:11,
+                 from /home/onetops/1tops/tool_chain/riscv-tests/isa/rv32mi/mcsr.S:7:
+/home/onetops/1tops/tool_chain/riscv-tests/isa/macros/scalar/test_macros.h:876:9: warning: 'TEST_PASSFAIL' redefined
+  876 | #define TEST_PASSFAIL \
+      |         ^~~~~~~~~~~~~
+In file included from /home/onetops/1tops/tool_chain/riscv-tests/isa/rv32mi/mcsr.S:3:
+/home/onetops/1tops/tool_chain/riscv-tests/env/simple/riscv_test.h:49:9: note: this is the location of the previous definition
+   49 | #define TEST_PASSFAIL                        \
+      |         ^~~~~~~~~~~~~
+/tmp/ccnpXoDS.s: Assembler messages:
+/home/onetops/1tops/tool_chain/riscv-tests/isa/rv32mi/../rv64mi/mcsr.S:13: Error: unrecognized opcode `rvtest_rv32m'

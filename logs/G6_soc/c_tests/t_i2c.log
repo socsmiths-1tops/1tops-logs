@@ -1,0 +1,42 @@
+xrun(64): 22.09-s003: (c) Copyright 1995-2022 Cadence Design Systems, Inc.
+TOOL:	xrun(64)	22.09-s003: Started on Nov 16, 2026 at 12:08:24 IST
+xrun
+	-64bit
+	-xmlibdirpath sim/build/rtl
+	-R
+	-snapshot soc_rtl
+	+FLASH=/home/onetops/1tops/rv32im/sw/build/t_i2c/flash.hex
+	+UART_DIV=32
+	+UART_LOG=/home/onetops/1tops/rv32im/sw/build/t_i2c/uart_rtl.txt
+	-l /home/onetops/1tops/rv32im/sw/build/t_i2c/sim_rtl.log
+
+   User defined plus("+") options:
+	+FLASH=/home/onetops/1tops/rv32im/sw/build/t_i2c/flash.hex
+	+UART_DIV=32
+	+UART_LOG=/home/onetops/1tops/rv32im/sw/build/t_i2c/uart_rtl.txt
+
+Loading snapshot worklib.soc_rtl:v .................... Done
+xmsim: *W,DSEM2009: This SystemVerilog design is simulated as per IEEE 1800-2009 SystemVerilog simulation semantics. Use -disable_sem2009 option for turning off SV 2009 simulation semantics.
+xcelium> source /home/install8/install/XCELIUM2209/tools/inca/files/xmsimrc
+xcelium> run
+TB: flash image /home/onetops/1tops/rv32im/sw/build/t_i2c/flash.hex, UART 32 clocks/bit, timeout 20000000 cycles
+[uart] t_i2c: write/read EEPROM-style slave @0x50, NACK test
+[uart]   PASS  prescaler for 400 kHz
+[uart]   PASS  read power-up contents
+[uart]   PASS  power-up data
+[uart]   PASS  write 4 bytes @0x40
+[uart]   PASS  read back 4 bytes
+[uart]   PASS  read data matches
+[uart]   PASS  set pointer 0x42
+[uart]   PASS  current-address read
+[uart]   PASS  current-address data
+[uart]   PASS  absent address NACKs
+[uart]   PASS  bus released after NACK
+[uart] RESULT: PASS (0 failures)
+TB: program exit after 668269 cycles (66828900000)
+EXIT code=0
+SIM RESULT: PASS
+Simulation complete via $finish(1) at time 6682890 NS + 0
+./sim/tb/tb_soc_app.v:173             $finish;
+xcelium> exit
+TOOL:	xrun(64)	22.09-s003: Exiting on Nov 16, 2026 at 12:08:31 IST  (total: 00:00:07)

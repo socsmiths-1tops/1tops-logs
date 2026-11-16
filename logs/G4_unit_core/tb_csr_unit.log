@@ -1,0 +1,1382 @@
+xrun(64): 22.09-s003: (c) Copyright 1995-2022 Cadence Design Systems, Inc.
+TOOL:	xrun(64)	22.09-s003: Started on Nov 16, 2026 at 12:22:47 IST
+xrun
+	-64bit
+	-xmlibdirpath signoff/build/sa_tb_csr_unit
+	-sv
+	-access +rwc
+	-nowarn NONPRT
+	-f rtl.f
+		rtl/core/adder.v
+		rtl/core/alu.v
+		rtl/core/alu_decoder.v
+		rtl/core/controller.v
+		rtl/core/data_parser.v
+		rtl/core/decode.v
+		rtl/core/execute.v
+		rtl/core/fetch.v
+		rtl/core/imm_extend.v
+		rtl/core/main_decoder.v
+		rtl/core/mdu_wrapper.v
+		rtl/core/memory.v
+		rtl/core/mux2.v
+		rtl/core/mux3.v
+		rtl/core/mux4.v
+		rtl/core/reg_file.v
+		rtl/core/reset_ff.v
+		rtl/core/writeback.v
+		rtl/core/csr_unit.v
+		rtl/core/t1c_riscv_cpu.v
+		rtl/core/hazard_unit.v
+	tb/tb_csr_unit.sv
+	-top tb_csr_unit
+	-l signoff/logs/standalone/tb_csr_unit.log
+file: rtl/core/adder.v
+	module worklib.adder:v
+		errors: 0, warnings: 0
+file: rtl/core/alu.v
+	module worklib.alu_unit:v
+		errors: 0, warnings: 0
+file: rtl/core/alu_decoder.v
+	module worklib.alu_decoder:v
+		errors: 0, warnings: 0
+file: rtl/core/controller.v
+	module worklib.controller:v
+		errors: 0, warnings: 0
+file: rtl/core/data_parser.v
+	module worklib.data_parser:v
+		errors: 0, warnings: 0
+file: rtl/core/decode.v
+	module worklib.decode:v
+		errors: 0, warnings: 0
+file: rtl/core/execute.v
+	module worklib.execute:v
+		errors: 0, warnings: 0
+file: rtl/core/fetch.v
+	module worklib.fetch:v
+		errors: 0, warnings: 0
+file: rtl/core/imm_extend.v
+	module worklib.ImmExt:v
+		errors: 0, warnings: 0
+file: rtl/core/main_decoder.v
+	module worklib.main_decoder:v
+		errors: 0, warnings: 0
+file: rtl/core/mdu_wrapper.v
+	module worklib.mdu_wrapper:v
+		errors: 0, warnings: 0
+file: rtl/core/memory.v
+	module worklib.memory:v
+		errors: 0, warnings: 0
+file: rtl/core/mux2.v
+	module worklib.mux2:v
+		errors: 0, warnings: 0
+file: rtl/core/mux3.v
+	module worklib.mux3:v
+		errors: 0, warnings: 0
+file: rtl/core/mux4.v
+	module worklib.mux4:v
+		errors: 0, warnings: 0
+file: rtl/core/reg_file.v
+	module worklib.reg_file:v
+		errors: 0, warnings: 0
+file: rtl/core/reset_ff.v
+	module worklib.reset_ff:v
+		errors: 0, warnings: 0
+file: rtl/core/writeback.v
+	module worklib.writeback:v
+		errors: 0, warnings: 0
+file: rtl/core/csr_unit.v
+	module worklib.csr_unit:v
+		errors: 0, warnings: 0
+file: rtl/core/t1c_riscv_cpu.v
+	module worklib.t1c_riscv_cpu:v
+		errors: 0, warnings: 0
+file: rtl/core/hazard_unit.v
+	module worklib.hazard_unit:v
+		errors: 0, warnings: 0
+	Elaborating the design hierarchy:
+		Caching library 'worklib' ....... Done
+	Top level design units:
+		tb_csr_unit
+xmelab: *W,DSEMEL: This SystemVerilog design will be simulated as per IEEE 1800-2009 SystemVerilog simulation semantics. Use -disable_sem2009 option for turning off SV 2009 simulation semantics.
+	Building instance overlay tables: .................... Done
+	Generating native compiled code:
+		worklib.csr_unit:v <0x45607ba5>
+			streams:  20, words:  8791
+	Building instance specific data structures.
+	Loading native compiled code:     .................... Done
+	Design hierarchy summary:
+		                 Instances  Unique
+		Modules:                 2       2
+		Registers:              65      65
+		Scalar wires:           21       -
+		Expanded wires:         29       4
+		Vectored wires:         13       -
+		Always blocks:           2       2
+		Initial blocks:          5       5
+		Cont. assignments:       8      20
+		Pseudo assignments:     17      17
+		Simulation timescale:  1ps
+	Writing initial simulation snapshot: worklib.tb_csr_unit:sv
+Loading snapshot worklib.tb_csr_unit:sv .................... Done
+xmsim: *W,DSEM2009: This SystemVerilog design is simulated as per IEEE 1800-2009 SystemVerilog simulation semantics. Use -disable_sem2009 option for turning off SV 2009 simulation semantics.
+xcelium> source /home/install8/install/XCELIUM2209/tools/inca/files/xmsimrc
+xcelium> run
+
+========================================
+CSR Unit Golden Scoreboard TB
+CSR RW/RS/RC + Interrupt Trap + MRET Verification
+========================================
+
+
+--- Test Group 1: Reset Behaviour ---
+
+[PASS] Test 1: Reset mstatus csr_rdata
+[PASS] Test 2: Reset mie csr_rdata
+[PASS] Test 3: Reset mtvec csr_rdata
+[PASS] Test 4: Reset mepc csr_rdata
+[PASS] Test 5: Reset mcause csr_rdata
+[PASS] Test 6: Reset outputs mtvec_out
+[PASS] Test 7: Reset outputs mepc_out
+[PASS] Test 8: Reset outputs trap_taken
+[PASS] Test 9: Reset outputs mret_taken
+
+--- Test Group 2: CSR Read/Write Operations ---
+
+[PASS] Test 10: Write mtvec CSRRW csr_rdata
+[PASS] Test 11: Write mtvec CSRRW mtvec_out
+[PASS] Test 12: Write mtvec CSRRW mepc_out
+[PASS] Test 13: Write mtvec CSRRW trap_taken
+[PASS] Test 14: Write mtvec CSRRW mret_taken
+[PASS] Test 15: Write mepc CSRRW csr_rdata
+[PASS] Test 16: Write mepc CSRRW mtvec_out
+[PASS] Test 17: Write mepc CSRRW mepc_out
+[PASS] Test 18: Write mepc CSRRW trap_taken
+[PASS] Test 19: Write mepc CSRRW mret_taken
+[PASS] Test 20: Write mcause CSRRW csr_rdata
+[PASS] Test 21: Write mcause CSRRW mtvec_out
+[PASS] Test 22: Write mcause CSRRW mepc_out
+[PASS] Test 23: Write mcause CSRRW trap_taken
+[PASS] Test 24: Write mcause CSRRW mret_taken
+[PASS] Test 25: Write mie CSRRW csr_rdata
+[PASS] Test 26: Write mie CSRRW mtvec_out
+[PASS] Test 27: Write mie CSRRW mepc_out
+[PASS] Test 28: Write mie CSRRW trap_taken
+[PASS] Test 29: Write mie CSRRW mret_taken
+[PASS] Test 30: Set mie CSRRS timer bit csr_rdata
+[PASS] Test 31: Set mie CSRRS timer bit mtvec_out
+[PASS] Test 32: Set mie CSRRS timer bit mepc_out
+[PASS] Test 33: Set mie CSRRS timer bit trap_taken
+[PASS] Test 34: Set mie CSRRS timer bit mret_taken
+[PASS] Test 35: Clear mie CSRRC software bit csr_rdata
+[PASS] Test 36: Clear mie CSRRC software bit mtvec_out
+[PASS] Test 37: Clear mie CSRRC software bit mepc_out
+[PASS] Test 38: Clear mie CSRRC software bit trap_taken
+[PASS] Test 39: Clear mie CSRRC software bit mret_taken
+[PASS] Test 40: Write mstatus MIE enable csr_rdata
+[PASS] Test 41: Write mstatus MIE enable mtvec_out
+[PASS] Test 42: Write mstatus MIE enable mepc_out
+[PASS] Test 43: Write mstatus MIE enable trap_taken
+[PASS] Test 44: Write mstatus MIE enable mret_taken
+[PASS] Test 45: Set mstatus bit using CSRRSI style csr_rdata
+[PASS] Test 46: Set mstatus bit using CSRRSI style mtvec_out
+[PASS] Test 47: Set mstatus bit using CSRRSI style mepc_out
+[PASS] Test 48: Set mstatus bit using CSRRSI style trap_taken
+[PASS] Test 49: Set mstatus bit using CSRRSI style mret_taken
+[PASS] Test 50: Clear mstatus bit using CSRRCI style csr_rdata
+[PASS] Test 51: Clear mstatus bit using CSRRCI style mtvec_out
+[PASS] Test 52: Clear mstatus bit using CSRRCI style mepc_out
+[PASS] Test 53: Clear mstatus bit using CSRRCI style trap_taken
+[PASS] Test 54: Clear mstatus bit using CSRRCI style mret_taken
+[PASS] Test 55: CSR op 000 no change csr_rdata
+[PASS] Test 56: CSR op 000 no change mtvec_out
+[PASS] Test 57: CSR op 000 no change mepc_out
+[PASS] Test 58: CSR op 000 no change trap_taken
+[PASS] Test 59: CSR op 000 no change mret_taken
+[PASS] Test 60: Read invalid CSR returns zero csr_rdata
+[PASS] Test 61: Attempt write MIP ignored csr_rdata
+[PASS] Test 62: Attempt write MIP ignored mtvec_out
+[PASS] Test 63: Attempt write MIP ignored mepc_out
+[PASS] Test 64: Attempt write MIP ignored trap_taken
+[PASS] Test 65: Attempt write MIP ignored mret_taken
+[PASS] Test 66: MIP remains hardware driven after ignored write csr_rdata
+
+--- Test Group 3: MIP Pending Bits ---
+
+[PASS] Test 67: MIP external pending csr_rdata
+[PASS] Test 68: MIP timer pending csr_rdata
+[PASS] Test 69: MIP software pending csr_rdata
+[PASS] Test 70: MIP all pending csr_rdata
+
+--- Test Group 4: Interrupt Disabled Cases ---
+
+[PASS] Test 71: Disable global MIE csr_rdata
+[PASS] Test 72: Disable global MIE mtvec_out
+[PASS] Test 73: Disable global MIE mepc_out
+[PASS] Test 74: Disable global MIE trap_taken
+[PASS] Test 75: Disable global MIE mret_taken
+[PASS] Test 76: Enable all individual mie bits csr_rdata
+[PASS] Test 77: Enable all individual mie bits mtvec_out
+[PASS] Test 78: Enable all individual mie bits mepc_out
+[PASS] Test 79: Enable all individual mie bits trap_taken
+[PASS] Test 80: Enable all individual mie bits mret_taken
+[PASS] Test 81: External pending but global MIE disabled mtvec_out
+[PASS] Test 82: External pending but global MIE disabled mepc_out
+[PASS] Test 83: External pending but global MIE disabled trap_taken
+[PASS] Test 84: External pending but global MIE disabled mret_taken
+[PASS] Test 85: Enable global MIE but disable individual mie csr_rdata
+[PASS] Test 86: Enable global MIE but disable individual mie mtvec_out
+[PASS] Test 87: Enable global MIE but disable individual mie mepc_out
+[PASS] Test 88: Enable global MIE but disable individual mie trap_taken
+[PASS] Test 89: Enable global MIE but disable individual mie mret_taken
+[PASS] Test 90: Disable individual mie bits csr_rdata
+[PASS] Test 91: Disable individual mie bits mtvec_out
+[PASS] Test 92: Disable individual mie bits mepc_out
+[PASS] Test 93: Disable individual mie bits trap_taken
+[PASS] Test 94: Disable individual mie bits mret_taken
+[PASS] Test 95: Timer pending but individual MTIE disabled mtvec_out
+[PASS] Test 96: Timer pending but individual MTIE disabled mepc_out
+[PASS] Test 97: Timer pending but individual MTIE disabled trap_taken
+[PASS] Test 98: Timer pending but individual MTIE disabled mret_taken
+
+--- Test Group 5: Trap Entry Priority and State Save ---
+
+[PASS] Test 99: Set mtvec csr_rdata
+[PASS] Test 100: Set mtvec mtvec_out
+[PASS] Test 101: Set mtvec mepc_out
+[PASS] Test 102: Set mtvec trap_taken
+[PASS] Test 103: Set mtvec mret_taken
+[PASS] Test 104: Enable all mie bits csr_rdata
+[PASS] Test 105: Enable all mie bits mtvec_out
+[PASS] Test 106: Enable all mie bits mepc_out
+[PASS] Test 107: Enable all mie bits trap_taken
+[PASS] Test 108: Enable all mie bits mret_taken
+[PASS] Test 109: Enable global MIE csr_rdata
+[PASS] Test 110: Enable global MIE mtvec_out
+[PASS] Test 111: Enable global MIE mepc_out
+[PASS] Test 112: Enable global MIE trap_taken
+[PASS] Test 113: Enable global MIE mret_taken
+[PASS] Test 114: External interrupt trap trap combinational before clock
+[PASS] Test 115: External interrupt trap mtvec_out
+[PASS] Test 116: External interrupt trap mepc_out
+[PASS] Test 117: External interrupt trap trap_taken
+[PASS] Test 118: External interrupt trap mret_taken
+[PASS] Test 119: External interrupt trap mepc saved csr_rdata
+[PASS] Test 120: External interrupt trap mcause saved csr_rdata
+[PASS] Test 121: External interrupt trap mstatus updated csr_rdata
+[PASS] Test 122: After trap MIE cleared blocks nested interrupt
+[PASS] Test 123: MRET after external interrupt mret_taken combinational
+[PASS] Test 124: MRET after external interrupt mepc_out return target
+[PASS] Test 125: MRET after external interrupt mstatus restored csr_rdata
+[PASS] Test 126: MRET after external interrupt mtvec_out
+[PASS] Test 127: MRET after external interrupt mepc_out
+[PASS] Test 128: MRET after external interrupt trap_taken
+[PASS] Test 129: MRET after external interrupt mret_taken
+[PASS] Test 130: Timer interrupt trap trap combinational before clock
+[PASS] Test 131: Timer interrupt trap mtvec_out
+[PASS] Test 132: Timer interrupt trap mepc_out
+[PASS] Test 133: Timer interrupt trap trap_taken
+[PASS] Test 134: Timer interrupt trap mret_taken
+[PASS] Test 135: Timer interrupt trap mepc saved csr_rdata
+[PASS] Test 136: Timer interrupt trap mcause saved csr_rdata
+[PASS] Test 137: Timer interrupt trap mstatus updated csr_rdata
+[PASS] Test 138: MRET after timer interrupt mret_taken combinational
+[PASS] Test 139: MRET after timer interrupt mepc_out return target
+[PASS] Test 140: MRET after timer interrupt mstatus restored csr_rdata
+[PASS] Test 141: MRET after timer interrupt mtvec_out
+[PASS] Test 142: MRET after timer interrupt mepc_out
+[PASS] Test 143: MRET after timer interrupt trap_taken
+[PASS] Test 144: MRET after timer interrupt mret_taken
+[PASS] Test 145: Software interrupt trap trap combinational before clock
+[PASS] Test 146: Software interrupt trap mtvec_out
+[PASS] Test 147: Software interrupt trap mepc_out
+[PASS] Test 148: Software interrupt trap trap_taken
+[PASS] Test 149: Software interrupt trap mret_taken
+[PASS] Test 150: Software interrupt trap mepc saved csr_rdata
+[PASS] Test 151: Software interrupt trap mcause saved csr_rdata
+[PASS] Test 152: Software interrupt trap mstatus updated csr_rdata
+[PASS] Test 153: MRET after software interrupt mret_taken combinational
+[PASS] Test 154: MRET after software interrupt mepc_out return target
+[PASS] Test 155: MRET after software interrupt mstatus restored csr_rdata
+[PASS] Test 156: MRET after software interrupt mtvec_out
+[PASS] Test 157: MRET after software interrupt mepc_out
+[PASS] Test 158: MRET after software interrupt trap_taken
+[PASS] Test 159: MRET after software interrupt mret_taken
+[PASS] Test 160: Re-enable global MIE for priority test csr_rdata
+[PASS] Test 161: Re-enable global MIE for priority test mtvec_out
+[PASS] Test 162: Re-enable global MIE for priority test mepc_out
+[PASS] Test 163: Re-enable global MIE for priority test trap_taken
+[PASS] Test 164: Re-enable global MIE for priority test mret_taken
+[PASS] Test 165: Priority external over timer/software trap combinational before clock
+[PASS] Test 166: Priority external over timer/software mtvec_out
+[PASS] Test 167: Priority external over timer/software mepc_out
+[PASS] Test 168: Priority external over timer/software trap_taken
+[PASS] Test 169: Priority external over timer/software mret_taken
+[PASS] Test 170: Priority external over timer/software mepc saved csr_rdata
+[PASS] Test 171: Priority external over timer/software mcause saved csr_rdata
+[PASS] Test 172: Priority external over timer/software mstatus updated csr_rdata
+[PASS] Test 173: MRET after priority trap mret_taken combinational
+[PASS] Test 174: MRET after priority trap mepc_out return target
+[PASS] Test 175: MRET after priority trap mstatus restored csr_rdata
+[PASS] Test 176: MRET after priority trap mtvec_out
+[PASS] Test 177: MRET after priority trap mepc_out
+[PASS] Test 178: MRET after priority trap trap_taken
+[PASS] Test 179: MRET after priority trap mret_taken
+
+--- Test Group 6: Trap Priority Over CSR Write and MRET ---
+
+[PASS] Test 180: Enable global MIE again csr_rdata
+[PASS] Test 181: Enable global MIE again mtvec_out
+[PASS] Test 182: Enable global MIE again mepc_out
+[PASS] Test 183: Enable global MIE again trap_taken
+[PASS] Test 184: Enable global MIE again mret_taken
+[PASS] Test 185: Trap priority saved mepc csr_rdata
+[PASS] Test 186: Trap priority saved mcause csr_rdata
+[PASS] Test 187: Trap priority ignored CSR mtvec write
+
+--- Test Group 7: Random CSR Operation Stress ---
+
+[PASS] Test 188: Random CSR scoreboard readback csr_rdata
+[PASS] Test 189: Random CSR scoreboard readback csr_rdata
+[PASS] Test 190: Random CSR scoreboard readback csr_rdata
+[PASS] Test 191: Random CSR scoreboard readback csr_rdata
+[PASS] Test 192: Random CSR scoreboard readback csr_rdata
+[PASS] Test 193: Random CSR scoreboard readback csr_rdata
+[PASS] Test 194: Random CSR scoreboard readback csr_rdata
+[PASS] Test 195: Random CSR scoreboard readback csr_rdata
+[PASS] Test 196: Random CSR scoreboard readback csr_rdata
+[PASS] Test 197: Random CSR scoreboard readback csr_rdata
+[PASS] Test 198: Random CSR scoreboard readback csr_rdata
+[PASS] Test 199: Random CSR scoreboard readback csr_rdata
+[PASS] Test 200: Random CSR scoreboard readback csr_rdata
+[PASS] Test 201: Random CSR scoreboard readback csr_rdata
+[PASS] Test 202: Random CSR scoreboard readback csr_rdata
+[PASS] Test 203: Random CSR scoreboard readback csr_rdata
+[PASS] Test 204: Random CSR scoreboard readback csr_rdata
+[PASS] Test 205: Random CSR scoreboard readback csr_rdata
+[PASS] Test 206: Random CSR scoreboard readback csr_rdata
+[PASS] Test 207: Random CSR scoreboard readback csr_rdata
+[PASS] Test 208: Random CSR scoreboard readback csr_rdata
+[PASS] Test 209: Random CSR scoreboard readback csr_rdata
+[PASS] Test 210: Random CSR scoreboard readback csr_rdata
+[PASS] Test 211: Random CSR scoreboard readback csr_rdata
+[PASS] Test 212: Random CSR scoreboard readback csr_rdata
+[PASS] Test 213: Random CSR scoreboard readback csr_rdata
+[PASS] Test 214: Random CSR scoreboard readback csr_rdata
+[PASS] Test 215: Random CSR scoreboard readback csr_rdata
+[PASS] Test 216: Random CSR scoreboard readback csr_rdata
+[PASS] Test 217: Random CSR scoreboard readback csr_rdata
+[PASS] Test 218: Random CSR scoreboard readback csr_rdata
+[PASS] Test 219: Random CSR scoreboard readback csr_rdata
+[PASS] Test 220: Random CSR scoreboard readback csr_rdata
+[PASS] Test 221: Random CSR scoreboard readback csr_rdata
+[PASS] Test 222: Random CSR scoreboard readback csr_rdata
+[PASS] Test 223: Random CSR scoreboard readback csr_rdata
+[PASS] Test 224: Random CSR scoreboard readback csr_rdata
+[PASS] Test 225: Random CSR scoreboard readback csr_rdata
+[PASS] Test 226: Random CSR scoreboard readback csr_rdata
+[PASS] Test 227: Random CSR scoreboard readback csr_rdata
+[PASS] Test 228: Random CSR scoreboard readback csr_rdata
+[PASS] Test 229: Random CSR scoreboard readback csr_rdata
+[PASS] Test 230: Random CSR scoreboard readback csr_rdata
+[PASS] Test 231: Random CSR scoreboard readback csr_rdata
+[PASS] Test 232: Random CSR scoreboard readback csr_rdata
+[PASS] Test 233: Random CSR scoreboard readback csr_rdata
+[PASS] Test 234: Random CSR scoreboard readback csr_rdata
+[PASS] Test 235: Random CSR scoreboard readback csr_rdata
+[PASS] Test 236: Random CSR scoreboard readback csr_rdata
+[PASS] Test 237: Random CSR scoreboard readback csr_rdata
+[PASS] Test 238: Random CSR scoreboard readback csr_rdata
+[PASS] Test 239: Random CSR scoreboard readback csr_rdata
+[PASS] Test 240: Random CSR scoreboard readback csr_rdata
+[PASS] Test 241: Random CSR scoreboard readback csr_rdata
+[PASS] Test 242: Random CSR scoreboard readback csr_rdata
+[PASS] Test 243: Random CSR scoreboard readback csr_rdata
+[PASS] Test 244: Random CSR scoreboard readback csr_rdata
+[PASS] Test 245: Random CSR scoreboard readback csr_rdata
+[PASS] Test 246: Random CSR scoreboard readback csr_rdata
+[PASS] Test 247: Random CSR scoreboard readback csr_rdata
+[PASS] Test 248: Random CSR scoreboard readback csr_rdata
+[PASS] Test 249: Random CSR scoreboard readback csr_rdata
+[PASS] Test 250: Random CSR scoreboard readback csr_rdata
+[PASS] Test 251: Random CSR scoreboard readback csr_rdata
+[PASS] Test 252: Random CSR scoreboard readback csr_rdata
+[PASS] Test 253: Random CSR scoreboard readback csr_rdata
+[PASS] Test 254: Random CSR scoreboard readback csr_rdata
+[PASS] Test 255: Random CSR scoreboard readback csr_rdata
+[PASS] Test 256: Random CSR scoreboard readback csr_rdata
+[PASS] Test 257: Random CSR scoreboard readback csr_rdata
+[PASS] Test 258: Random CSR scoreboard readback csr_rdata
+[PASS] Test 259: Random CSR scoreboard readback csr_rdata
+[PASS] Test 260: Random CSR scoreboard readback csr_rdata
+[PASS] Test 261: Random CSR scoreboard readback csr_rdata
+[PASS] Test 262: Random CSR scoreboard readback csr_rdata
+[PASS] Test 263: Random CSR scoreboard readback csr_rdata
+[PASS] Test 264: Random CSR scoreboard readback csr_rdata
+[PASS] Test 265: Random CSR scoreboard readback csr_rdata
+[PASS] Test 266: Random CSR scoreboard readback csr_rdata
+[PASS] Test 267: Random CSR scoreboard readback csr_rdata
+[PASS] Test 268: Random CSR scoreboard readback csr_rdata
+[PASS] Test 269: Random CSR scoreboard readback csr_rdata
+[PASS] Test 270: Random CSR scoreboard readback csr_rdata
+[PASS] Test 271: Random CSR scoreboard readback csr_rdata
+[PASS] Test 272: Random CSR scoreboard readback csr_rdata
+[PASS] Test 273: Random CSR scoreboard readback csr_rdata
+[PASS] Test 274: Random CSR scoreboard readback csr_rdata
+[PASS] Test 275: Random CSR scoreboard readback csr_rdata
+[PASS] Test 276: Random CSR scoreboard readback csr_rdata
+[PASS] Test 277: Random CSR scoreboard readback csr_rdata
+[PASS] Test 278: Random CSR scoreboard readback csr_rdata
+[PASS] Test 279: Random CSR scoreboard readback csr_rdata
+[PASS] Test 280: Random CSR scoreboard readback csr_rdata
+[PASS] Test 281: Random CSR scoreboard readback csr_rdata
+[PASS] Test 282: Random CSR scoreboard readback csr_rdata
+[PASS] Test 283: Random CSR scoreboard readback csr_rdata
+[PASS] Test 284: Random CSR scoreboard readback csr_rdata
+[PASS] Test 285: Random CSR scoreboard readback csr_rdata
+[PASS] Test 286: Random CSR scoreboard readback csr_rdata
+[PASS] Test 287: Random CSR scoreboard readback csr_rdata
+[PASS] Test 288: Random CSR scoreboard readback csr_rdata
+[PASS] Test 289: Random CSR scoreboard readback csr_rdata
+[PASS] Test 290: Random CSR scoreboard readback csr_rdata
+[PASS] Test 291: Random CSR scoreboard readback csr_rdata
+[PASS] Test 292: Random CSR scoreboard readback csr_rdata
+[PASS] Test 293: Random CSR scoreboard readback csr_rdata
+[PASS] Test 294: Random CSR scoreboard readback csr_rdata
+[PASS] Test 295: Random CSR scoreboard readback csr_rdata
+[PASS] Test 296: Random CSR scoreboard readback csr_rdata
+[PASS] Test 297: Random CSR scoreboard readback csr_rdata
+[PASS] Test 298: Random CSR scoreboard readback csr_rdata
+[PASS] Test 299: Random CSR scoreboard readback csr_rdata
+[PASS] Test 300: Random CSR scoreboard readback csr_rdata
+[PASS] Test 301: Random CSR scoreboard readback csr_rdata
+[PASS] Test 302: Random CSR scoreboard readback csr_rdata
+[PASS] Test 303: Random CSR scoreboard readback csr_rdata
+[PASS] Test 304: Random CSR scoreboard readback csr_rdata
+[PASS] Test 305: Random CSR scoreboard readback csr_rdata
+[PASS] Test 306: Random CSR scoreboard readback csr_rdata
+[PASS] Test 307: Random CSR scoreboard readback csr_rdata
+[PASS] Test 308: Random CSR scoreboard readback csr_rdata
+[PASS] Test 309: Random CSR scoreboard readback csr_rdata
+[PASS] Test 310: Random CSR scoreboard readback csr_rdata
+[PASS] Test 311: Random CSR scoreboard readback csr_rdata
+[PASS] Test 312: Random CSR scoreboard readback csr_rdata
+[PASS] Test 313: Random CSR scoreboard readback csr_rdata
+[PASS] Test 314: Random CSR scoreboard readback csr_rdata
+[PASS] Test 315: Random CSR scoreboard readback csr_rdata
+[PASS] Test 316: Random CSR scoreboard readback csr_rdata
+[PASS] Test 317: Random CSR scoreboard readback csr_rdata
+[PASS] Test 318: Random CSR scoreboard readback csr_rdata
+[PASS] Test 319: Random CSR scoreboard readback csr_rdata
+[PASS] Test 320: Random CSR scoreboard readback csr_rdata
+[PASS] Test 321: Random CSR scoreboard readback csr_rdata
+[PASS] Test 322: Random CSR scoreboard readback csr_rdata
+[PASS] Test 323: Random CSR scoreboard readback csr_rdata
+[PASS] Test 324: Random CSR scoreboard readback csr_rdata
+[PASS] Test 325: Random CSR scoreboard readback csr_rdata
+[PASS] Test 326: Random CSR scoreboard readback csr_rdata
+[PASS] Test 327: Random CSR scoreboard readback csr_rdata
+[PASS] Test 328: Random CSR scoreboard readback csr_rdata
+[PASS] Test 329: Random CSR scoreboard readback csr_rdata
+[PASS] Test 330: Random CSR scoreboard readback csr_rdata
+[PASS] Test 331: Random CSR scoreboard readback csr_rdata
+[PASS] Test 332: Random CSR scoreboard readback csr_rdata
+[PASS] Test 333: Random CSR scoreboard readback csr_rdata
+[PASS] Test 334: Random CSR scoreboard readback csr_rdata
+[PASS] Test 335: Random CSR scoreboard readback csr_rdata
+[PASS] Test 336: Random CSR scoreboard readback csr_rdata
+[PASS] Test 337: Random CSR scoreboard readback csr_rdata
+[PASS] Test 338: Random CSR scoreboard readback csr_rdata
+[PASS] Test 339: Random CSR scoreboard readback csr_rdata
+[PASS] Test 340: Random CSR scoreboard readback csr_rdata
+[PASS] Test 341: Random CSR scoreboard readback csr_rdata
+[PASS] Test 342: Random CSR scoreboard readback csr_rdata
+[PASS] Test 343: Random CSR scoreboard readback csr_rdata
+[PASS] Test 344: Random CSR scoreboard readback csr_rdata
+[PASS] Test 345: Random CSR scoreboard readback csr_rdata
+[PASS] Test 346: Random CSR scoreboard readback csr_rdata
+[PASS] Test 347: Random CSR scoreboard readback csr_rdata
+[PASS] Test 348: Random CSR scoreboard readback csr_rdata
+[PASS] Test 349: Random CSR scoreboard readback csr_rdata
+[PASS] Test 350: Random CSR scoreboard readback csr_rdata
+[PASS] Test 351: Random CSR scoreboard readback csr_rdata
+[PASS] Test 352: Random CSR scoreboard readback csr_rdata
+[PASS] Test 353: Random CSR scoreboard readback csr_rdata
+[PASS] Test 354: Random CSR scoreboard readback csr_rdata
+[PASS] Test 355: Random CSR scoreboard readback csr_rdata
+[PASS] Test 356: Random CSR scoreboard readback csr_rdata
+[PASS] Test 357: Random CSR scoreboard readback csr_rdata
+[PASS] Test 358: Random CSR scoreboard readback csr_rdata
+[PASS] Test 359: Random CSR scoreboard readback csr_rdata
+[PASS] Test 360: Random CSR scoreboard readback csr_rdata
+[PASS] Test 361: Random CSR scoreboard readback csr_rdata
+[PASS] Test 362: Random CSR scoreboard readback csr_rdata
+[PASS] Test 363: Random CSR scoreboard readback csr_rdata
+[PASS] Test 364: Random CSR scoreboard readback csr_rdata
+[PASS] Test 365: Random CSR scoreboard readback csr_rdata
+[PASS] Test 366: Random CSR scoreboard readback csr_rdata
+[PASS] Test 367: Random CSR scoreboard readback csr_rdata
+[PASS] Test 368: Random CSR scoreboard readback csr_rdata
+[PASS] Test 369: Random CSR scoreboard readback csr_rdata
+[PASS] Test 370: Random CSR scoreboard readback csr_rdata
+[PASS] Test 371: Random CSR scoreboard readback csr_rdata
+[PASS] Test 372: Random CSR scoreboard readback csr_rdata
+[PASS] Test 373: Random CSR scoreboard readback csr_rdata
+[PASS] Test 374: Random CSR scoreboard readback csr_rdata
+[PASS] Test 375: Random CSR scoreboard readback csr_rdata
+[PASS] Test 376: Random CSR scoreboard readback csr_rdata
+[PASS] Test 377: Random CSR scoreboard readback csr_rdata
+[PASS] Test 378: Random CSR scoreboard readback csr_rdata
+[PASS] Test 379: Random CSR scoreboard readback csr_rdata
+[PASS] Test 380: Random CSR scoreboard readback csr_rdata
+[PASS] Test 381: Random CSR scoreboard readback csr_rdata
+[PASS] Test 382: Random CSR scoreboard readback csr_rdata
+[PASS] Test 383: Random CSR scoreboard readback csr_rdata
+[PASS] Test 384: Random CSR scoreboard readback csr_rdata
+[PASS] Test 385: Random CSR scoreboard readback csr_rdata
+[PASS] Test 386: Random CSR scoreboard readback csr_rdata
+[PASS] Test 387: Random CSR scoreboard readback csr_rdata
+[PASS] Test 388: Random CSR scoreboard readback csr_rdata
+[PASS] Test 389: Random CSR scoreboard readback csr_rdata
+[PASS] Test 390: Random CSR scoreboard readback csr_rdata
+[PASS] Test 391: Random CSR scoreboard readback csr_rdata
+[PASS] Test 392: Random CSR scoreboard readback csr_rdata
+[PASS] Test 393: Random CSR scoreboard readback csr_rdata
+[PASS] Test 394: Random CSR scoreboard readback csr_rdata
+[PASS] Test 395: Random CSR scoreboard readback csr_rdata
+[PASS] Test 396: Random CSR scoreboard readback csr_rdata
+[PASS] Test 397: Random CSR scoreboard readback csr_rdata
+[PASS] Test 398: Random CSR scoreboard readback csr_rdata
+[PASS] Test 399: Random CSR scoreboard readback csr_rdata
+[PASS] Test 400: Random CSR scoreboard readback csr_rdata
+[PASS] Test 401: Random CSR scoreboard readback csr_rdata
+[PASS] Test 402: Random CSR scoreboard readback csr_rdata
+[PASS] Test 403: Random CSR scoreboard readback csr_rdata
+[PASS] Test 404: Random CSR scoreboard readback csr_rdata
+[PASS] Test 405: Random CSR scoreboard readback csr_rdata
+[PASS] Test 406: Random CSR scoreboard readback csr_rdata
+[PASS] Test 407: Random CSR scoreboard readback csr_rdata
+[PASS] Test 408: Random CSR scoreboard readback csr_rdata
+[PASS] Test 409: Random CSR scoreboard readback csr_rdata
+[PASS] Test 410: Random CSR scoreboard readback csr_rdata
+[PASS] Test 411: Random CSR scoreboard readback csr_rdata
+[PASS] Test 412: Random CSR scoreboard readback csr_rdata
+[PASS] Test 413: Random CSR scoreboard readback csr_rdata
+[PASS] Test 414: Random CSR scoreboard readback csr_rdata
+[PASS] Test 415: Random CSR scoreboard readback csr_rdata
+[PASS] Test 416: Random CSR scoreboard readback csr_rdata
+[PASS] Test 417: Random CSR scoreboard readback csr_rdata
+[PASS] Test 418: Random CSR scoreboard readback csr_rdata
+[PASS] Test 419: Random CSR scoreboard readback csr_rdata
+[PASS] Test 420: Random CSR scoreboard readback csr_rdata
+[PASS] Test 421: Random CSR scoreboard readback csr_rdata
+[PASS] Test 422: Random CSR scoreboard readback csr_rdata
+[PASS] Test 423: Random CSR scoreboard readback csr_rdata
+[PASS] Test 424: Random CSR scoreboard readback csr_rdata
+[PASS] Test 425: Random CSR scoreboard readback csr_rdata
+[PASS] Test 426: Random CSR scoreboard readback csr_rdata
+[PASS] Test 427: Random CSR scoreboard readback csr_rdata
+[PASS] Test 428: Random CSR scoreboard readback csr_rdata
+[PASS] Test 429: Random CSR scoreboard readback csr_rdata
+[PASS] Test 430: Random CSR scoreboard readback csr_rdata
+[PASS] Test 431: Random CSR scoreboard readback csr_rdata
+[PASS] Test 432: Random CSR scoreboard readback csr_rdata
+[PASS] Test 433: Random CSR scoreboard readback csr_rdata
+[PASS] Test 434: Random CSR scoreboard readback csr_rdata
+[PASS] Test 435: Random CSR scoreboard readback csr_rdata
+[PASS] Test 436: Random CSR scoreboard readback csr_rdata
+[PASS] Test 437: Random CSR scoreboard readback csr_rdata
+[PASS] Test 438: Random CSR scoreboard readback csr_rdata
+[PASS] Test 439: Random CSR scoreboard readback csr_rdata
+[PASS] Test 440: Random CSR scoreboard readback csr_rdata
+[PASS] Test 441: Random CSR scoreboard readback csr_rdata
+[PASS] Test 442: Random CSR scoreboard readback csr_rdata
+[PASS] Test 443: Random CSR scoreboard readback csr_rdata
+[PASS] Test 444: Random CSR scoreboard readback csr_rdata
+[PASS] Test 445: Random CSR scoreboard readback csr_rdata
+[PASS] Test 446: Random CSR scoreboard readback csr_rdata
+[PASS] Test 447: Random CSR scoreboard readback csr_rdata
+[PASS] Test 448: Random CSR scoreboard readback csr_rdata
+[PASS] Test 449: Random CSR scoreboard readback csr_rdata
+[PASS] Test 450: Random CSR scoreboard readback csr_rdata
+[PASS] Test 451: Random CSR scoreboard readback csr_rdata
+[PASS] Test 452: Random CSR scoreboard readback csr_rdata
+[PASS] Test 453: Random CSR scoreboard readback csr_rdata
+[PASS] Test 454: Random CSR scoreboard readback csr_rdata
+[PASS] Test 455: Random CSR scoreboard readback csr_rdata
+[PASS] Test 456: Random CSR scoreboard readback csr_rdata
+[PASS] Test 457: Random CSR scoreboard readback csr_rdata
+[PASS] Test 458: Random CSR scoreboard readback csr_rdata
+[PASS] Test 459: Random CSR scoreboard readback csr_rdata
+[PASS] Test 460: Random CSR scoreboard readback csr_rdata
+[PASS] Test 461: Random CSR scoreboard readback csr_rdata
+[PASS] Test 462: Random CSR scoreboard readback csr_rdata
+[PASS] Test 463: Random CSR scoreboard readback csr_rdata
+[PASS] Test 464: Random CSR scoreboard readback csr_rdata
+[PASS] Test 465: Random CSR scoreboard readback csr_rdata
+[PASS] Test 466: Random CSR scoreboard readback csr_rdata
+[PASS] Test 467: Random CSR scoreboard readback csr_rdata
+[PASS] Test 468: Random CSR scoreboard readback csr_rdata
+[PASS] Test 469: Random CSR scoreboard readback csr_rdata
+[PASS] Test 470: Random CSR scoreboard readback csr_rdata
+[PASS] Test 471: Random CSR scoreboard readback csr_rdata
+[PASS] Test 472: Random CSR scoreboard readback csr_rdata
+[PASS] Test 473: Random CSR scoreboard readback csr_rdata
+[PASS] Test 474: Random CSR scoreboard readback csr_rdata
+[PASS] Test 475: Random CSR scoreboard readback csr_rdata
+[PASS] Test 476: Random CSR scoreboard readback csr_rdata
+[PASS] Test 477: Random CSR scoreboard readback csr_rdata
+[PASS] Test 478: Random CSR scoreboard readback csr_rdata
+[PASS] Test 479: Random CSR scoreboard readback csr_rdata
+[PASS] Test 480: Random CSR scoreboard readback csr_rdata
+[PASS] Test 481: Random CSR scoreboard readback csr_rdata
+[PASS] Test 482: Random CSR scoreboard readback csr_rdata
+[PASS] Test 483: Random CSR scoreboard readback csr_rdata
+[PASS] Test 484: Random CSR scoreboard readback csr_rdata
+[PASS] Test 485: Random CSR scoreboard readback csr_rdata
+[PASS] Test 486: Random CSR scoreboard readback csr_rdata
+[PASS] Test 487: Random CSR scoreboard readback csr_rdata
+[PASS] Test 488: Random CSR scoreboard readback csr_rdata
+[PASS] Test 489: Random CSR scoreboard readback csr_rdata
+[PASS] Test 490: Random CSR scoreboard readback csr_rdata
+[PASS] Test 491: Random CSR scoreboard readback csr_rdata
+[PASS] Test 492: Random CSR scoreboard readback csr_rdata
+[PASS] Test 493: Random CSR scoreboard readback csr_rdata
+[PASS] Test 494: Random CSR scoreboard readback csr_rdata
+[PASS] Test 495: Random CSR scoreboard readback csr_rdata
+[PASS] Test 496: Random CSR scoreboard readback csr_rdata
+[PASS] Test 497: Random CSR scoreboard readback csr_rdata
+[PASS] Test 498: Random CSR scoreboard readback csr_rdata
+[PASS] Test 499: Random CSR scoreboard readback csr_rdata
+[PASS] Test 500: Random CSR scoreboard readback csr_rdata
+[PASS] Test 501: Random CSR scoreboard readback csr_rdata
+[PASS] Test 502: Random CSR scoreboard readback csr_rdata
+[PASS] Test 503: Random CSR scoreboard readback csr_rdata
+[PASS] Test 504: Random CSR scoreboard readback csr_rdata
+[PASS] Test 505: Random CSR scoreboard readback csr_rdata
+[PASS] Test 506: Random CSR scoreboard readback csr_rdata
+[PASS] Test 507: Random CSR scoreboard readback csr_rdata
+[PASS] Test 508: Random CSR scoreboard readback csr_rdata
+[PASS] Test 509: Random CSR scoreboard readback csr_rdata
+[PASS] Test 510: Random CSR scoreboard readback csr_rdata
+[PASS] Test 511: Random CSR scoreboard readback csr_rdata
+[PASS] Test 512: Random CSR scoreboard readback csr_rdata
+[PASS] Test 513: Random CSR scoreboard readback csr_rdata
+[PASS] Test 514: Random CSR scoreboard readback csr_rdata
+[PASS] Test 515: Random CSR scoreboard readback csr_rdata
+[PASS] Test 516: Random CSR scoreboard readback csr_rdata
+[PASS] Test 517: Random CSR scoreboard readback csr_rdata
+[PASS] Test 518: Random CSR scoreboard readback csr_rdata
+[PASS] Test 519: Random CSR scoreboard readback csr_rdata
+[PASS] Test 520: Random CSR scoreboard readback csr_rdata
+[PASS] Test 521: Random CSR scoreboard readback csr_rdata
+[PASS] Test 522: Random CSR scoreboard readback csr_rdata
+[PASS] Test 523: Random CSR scoreboard readback csr_rdata
+[PASS] Test 524: Random CSR scoreboard readback csr_rdata
+[PASS] Test 525: Random CSR scoreboard readback csr_rdata
+[PASS] Test 526: Random CSR scoreboard readback csr_rdata
+[PASS] Test 527: Random CSR scoreboard readback csr_rdata
+[PASS] Test 528: Random CSR scoreboard readback csr_rdata
+[PASS] Test 529: Random CSR scoreboard readback csr_rdata
+[PASS] Test 530: Random CSR scoreboard readback csr_rdata
+[PASS] Test 531: Random CSR scoreboard readback csr_rdata
+[PASS] Test 532: Random CSR scoreboard readback csr_rdata
+[PASS] Test 533: Random CSR scoreboard readback csr_rdata
+[PASS] Test 534: Random CSR scoreboard readback csr_rdata
+[PASS] Test 535: Random CSR scoreboard readback csr_rdata
+[PASS] Test 536: Random CSR scoreboard readback csr_rdata
+[PASS] Test 537: Random CSR scoreboard readback csr_rdata
+[PASS] Test 538: Random CSR scoreboard readback csr_rdata
+[PASS] Test 539: Random CSR scoreboard readback csr_rdata
+[PASS] Test 540: Random CSR scoreboard readback csr_rdata
+[PASS] Test 541: Random CSR scoreboard readback csr_rdata
+[PASS] Test 542: Random CSR scoreboard readback csr_rdata
+[PASS] Test 543: Random CSR scoreboard readback csr_rdata
+[PASS] Test 544: Random CSR scoreboard readback csr_rdata
+[PASS] Test 545: Random CSR scoreboard readback csr_rdata
+[PASS] Test 546: Random CSR scoreboard readback csr_rdata
+[PASS] Test 547: Random CSR scoreboard readback csr_rdata
+[PASS] Test 548: Random CSR scoreboard readback csr_rdata
+[PASS] Test 549: Random CSR scoreboard readback csr_rdata
+[PASS] Test 550: Random CSR scoreboard readback csr_rdata
+[PASS] Test 551: Random CSR scoreboard readback csr_rdata
+[PASS] Test 552: Random CSR scoreboard readback csr_rdata
+[PASS] Test 553: Random CSR scoreboard readback csr_rdata
+[PASS] Test 554: Random CSR scoreboard readback csr_rdata
+[PASS] Test 555: Random CSR scoreboard readback csr_rdata
+[PASS] Test 556: Random CSR scoreboard readback csr_rdata
+[PASS] Test 557: Random CSR scoreboard readback csr_rdata
+[PASS] Test 558: Random CSR scoreboard readback csr_rdata
+[PASS] Test 559: Random CSR scoreboard readback csr_rdata
+[PASS] Test 560: Random CSR scoreboard readback csr_rdata
+[PASS] Test 561: Random CSR scoreboard readback csr_rdata
+[PASS] Test 562: Random CSR scoreboard readback csr_rdata
+[PASS] Test 563: Random CSR scoreboard readback csr_rdata
+[PASS] Test 564: Random CSR scoreboard readback csr_rdata
+[PASS] Test 565: Random CSR scoreboard readback csr_rdata
+[PASS] Test 566: Random CSR scoreboard readback csr_rdata
+[PASS] Test 567: Random CSR scoreboard readback csr_rdata
+[PASS] Test 568: Random CSR scoreboard readback csr_rdata
+[PASS] Test 569: Random CSR scoreboard readback csr_rdata
+[PASS] Test 570: Random CSR scoreboard readback csr_rdata
+[PASS] Test 571: Random CSR scoreboard readback csr_rdata
+[PASS] Test 572: Random CSR scoreboard readback csr_rdata
+[PASS] Test 573: Random CSR scoreboard readback csr_rdata
+[PASS] Test 574: Random CSR scoreboard readback csr_rdata
+[PASS] Test 575: Random CSR scoreboard readback csr_rdata
+[PASS] Test 576: Random CSR scoreboard readback csr_rdata
+[PASS] Test 577: Random CSR scoreboard readback csr_rdata
+[PASS] Test 578: Random CSR scoreboard readback csr_rdata
+[PASS] Test 579: Random CSR scoreboard readback csr_rdata
+[PASS] Test 580: Random CSR scoreboard readback csr_rdata
+[PASS] Test 581: Random CSR scoreboard readback csr_rdata
+[PASS] Test 582: Random CSR scoreboard readback csr_rdata
+[PASS] Test 583: Random CSR scoreboard readback csr_rdata
+[PASS] Test 584: Random CSR scoreboard readback csr_rdata
+[PASS] Test 585: Random CSR scoreboard readback csr_rdata
+[PASS] Test 586: Random CSR scoreboard readback csr_rdata
+[PASS] Test 587: Random CSR scoreboard readback csr_rdata
+[PASS] Test 588: Random CSR scoreboard readback csr_rdata
+[PASS] Test 589: Random CSR scoreboard readback csr_rdata
+[PASS] Test 590: Random CSR scoreboard readback csr_rdata
+[PASS] Test 591: Random CSR scoreboard readback csr_rdata
+[PASS] Test 592: Random CSR scoreboard readback csr_rdata
+[PASS] Test 593: Random CSR scoreboard readback csr_rdata
+[PASS] Test 594: Random CSR scoreboard readback csr_rdata
+[PASS] Test 595: Random CSR scoreboard readback csr_rdata
+[PASS] Test 596: Random CSR scoreboard readback csr_rdata
+[PASS] Test 597: Random CSR scoreboard readback csr_rdata
+[PASS] Test 598: Random CSR scoreboard readback csr_rdata
+[PASS] Test 599: Random CSR scoreboard readback csr_rdata
+[PASS] Test 600: Random CSR scoreboard readback csr_rdata
+[PASS] Test 601: Random CSR scoreboard readback csr_rdata
+[PASS] Test 602: Random CSR scoreboard readback csr_rdata
+[PASS] Test 603: Random CSR scoreboard readback csr_rdata
+[PASS] Test 604: Random CSR scoreboard readback csr_rdata
+[PASS] Test 605: Random CSR scoreboard readback csr_rdata
+[PASS] Test 606: Random CSR scoreboard readback csr_rdata
+[PASS] Test 607: Random CSR scoreboard readback csr_rdata
+[PASS] Test 608: Random CSR scoreboard readback csr_rdata
+[PASS] Test 609: Random CSR scoreboard readback csr_rdata
+[PASS] Test 610: Random CSR scoreboard readback csr_rdata
+[PASS] Test 611: Random CSR scoreboard readback csr_rdata
+[PASS] Test 612: Random CSR scoreboard readback csr_rdata
+[PASS] Test 613: Random CSR scoreboard readback csr_rdata
+[PASS] Test 614: Random CSR scoreboard readback csr_rdata
+[PASS] Test 615: Random CSR scoreboard readback csr_rdata
+[PASS] Test 616: Random CSR scoreboard readback csr_rdata
+[PASS] Test 617: Random CSR scoreboard readback csr_rdata
+[PASS] Test 618: Random CSR scoreboard readback csr_rdata
+[PASS] Test 619: Random CSR scoreboard readback csr_rdata
+[PASS] Test 620: Random CSR scoreboard readback csr_rdata
+[PASS] Test 621: Random CSR scoreboard readback csr_rdata
+[PASS] Test 622: Random CSR scoreboard readback csr_rdata
+[PASS] Test 623: Random CSR scoreboard readback csr_rdata
+[PASS] Test 624: Random CSR scoreboard readback csr_rdata
+[PASS] Test 625: Random CSR scoreboard readback csr_rdata
+[PASS] Test 626: Random CSR scoreboard readback csr_rdata
+[PASS] Test 627: Random CSR scoreboard readback csr_rdata
+[PASS] Test 628: Random CSR scoreboard readback csr_rdata
+[PASS] Test 629: Random CSR scoreboard readback csr_rdata
+[PASS] Test 630: Random CSR scoreboard readback csr_rdata
+[PASS] Test 631: Random CSR scoreboard readback csr_rdata
+[PASS] Test 632: Random CSR scoreboard readback csr_rdata
+[PASS] Test 633: Random CSR scoreboard readback csr_rdata
+[PASS] Test 634: Random CSR scoreboard readback csr_rdata
+[PASS] Test 635: Random CSR scoreboard readback csr_rdata
+[PASS] Test 636: Random CSR scoreboard readback csr_rdata
+[PASS] Test 637: Random CSR scoreboard readback csr_rdata
+[PASS] Test 638: Random CSR scoreboard readback csr_rdata
+[PASS] Test 639: Random CSR scoreboard readback csr_rdata
+[PASS] Test 640: Random CSR scoreboard readback csr_rdata
+[PASS] Test 641: Random CSR scoreboard readback csr_rdata
+[PASS] Test 642: Random CSR scoreboard readback csr_rdata
+[PASS] Test 643: Random CSR scoreboard readback csr_rdata
+[PASS] Test 644: Random CSR scoreboard readback csr_rdata
+[PASS] Test 645: Random CSR scoreboard readback csr_rdata
+[PASS] Test 646: Random CSR scoreboard readback csr_rdata
+[PASS] Test 647: Random CSR scoreboard readback csr_rdata
+[PASS] Test 648: Random CSR scoreboard readback csr_rdata
+[PASS] Test 649: Random CSR scoreboard readback csr_rdata
+[PASS] Test 650: Random CSR scoreboard readback csr_rdata
+[PASS] Test 651: Random CSR scoreboard readback csr_rdata
+[PASS] Test 652: Random CSR scoreboard readback csr_rdata
+[PASS] Test 653: Random CSR scoreboard readback csr_rdata
+[PASS] Test 654: Random CSR scoreboard readback csr_rdata
+[PASS] Test 655: Random CSR scoreboard readback csr_rdata
+[PASS] Test 656: Random CSR scoreboard readback csr_rdata
+[PASS] Test 657: Random CSR scoreboard readback csr_rdata
+[PASS] Test 658: Random CSR scoreboard readback csr_rdata
+[PASS] Test 659: Random CSR scoreboard readback csr_rdata
+[PASS] Test 660: Random CSR scoreboard readback csr_rdata
+[PASS] Test 661: Random CSR scoreboard readback csr_rdata
+[PASS] Test 662: Random CSR scoreboard readback csr_rdata
+[PASS] Test 663: Random CSR scoreboard readback csr_rdata
+[PASS] Test 664: Random CSR scoreboard readback csr_rdata
+[PASS] Test 665: Random CSR scoreboard readback csr_rdata
+[PASS] Test 666: Random CSR scoreboard readback csr_rdata
+[PASS] Test 667: Random CSR scoreboard readback csr_rdata
+[PASS] Test 668: Random CSR scoreboard readback csr_rdata
+[PASS] Test 669: Random CSR scoreboard readback csr_rdata
+[PASS] Test 670: Random CSR scoreboard readback csr_rdata
+[PASS] Test 671: Random CSR scoreboard readback csr_rdata
+[PASS] Test 672: Random CSR scoreboard readback csr_rdata
+[PASS] Test 673: Random CSR scoreboard readback csr_rdata
+[PASS] Test 674: Random CSR scoreboard readback csr_rdata
+[PASS] Test 675: Random CSR scoreboard readback csr_rdata
+[PASS] Test 676: Random CSR scoreboard readback csr_rdata
+[PASS] Test 677: Random CSR scoreboard readback csr_rdata
+[PASS] Test 678: Random CSR scoreboard readback csr_rdata
+[PASS] Test 679: Random CSR scoreboard readback csr_rdata
+[PASS] Test 680: Random CSR scoreboard readback csr_rdata
+[PASS] Test 681: Random CSR scoreboard readback csr_rdata
+[PASS] Test 682: Random CSR scoreboard readback csr_rdata
+[PASS] Test 683: Random CSR scoreboard readback csr_rdata
+[PASS] Test 684: Random CSR scoreboard readback csr_rdata
+[PASS] Test 685: Random CSR scoreboard readback csr_rdata
+[PASS] Test 686: Random CSR scoreboard readback csr_rdata
+[PASS] Test 687: Random CSR scoreboard readback csr_rdata
+[PASS] Test 688: Random CSR scoreboard readback csr_rdata
+[PASS] Test 689: Random CSR scoreboard readback csr_rdata
+[PASS] Test 690: Random CSR scoreboard readback csr_rdata
+[PASS] Test 691: Random CSR scoreboard readback csr_rdata
+[PASS] Test 692: Random CSR scoreboard readback csr_rdata
+[PASS] Test 693: Random CSR scoreboard readback csr_rdata
+[PASS] Test 694: Random CSR scoreboard readback csr_rdata
+[PASS] Test 695: Random CSR scoreboard readback csr_rdata
+[PASS] Test 696: Random CSR scoreboard readback csr_rdata
+[PASS] Test 697: Random CSR scoreboard readback csr_rdata
+[PASS] Test 698: Random CSR scoreboard readback csr_rdata
+[PASS] Test 699: Random CSR scoreboard readback csr_rdata
+[PASS] Test 700: Random CSR scoreboard readback csr_rdata
+[PASS] Test 701: Random CSR scoreboard readback csr_rdata
+[PASS] Test 702: Random CSR scoreboard readback csr_rdata
+[PASS] Test 703: Random CSR scoreboard readback csr_rdata
+[PASS] Test 704: Random CSR scoreboard readback csr_rdata
+[PASS] Test 705: Random CSR scoreboard readback csr_rdata
+[PASS] Test 706: Random CSR scoreboard readback csr_rdata
+[PASS] Test 707: Random CSR scoreboard readback csr_rdata
+[PASS] Test 708: Random CSR scoreboard readback csr_rdata
+[PASS] Test 709: Random CSR scoreboard readback csr_rdata
+[PASS] Test 710: Random CSR scoreboard readback csr_rdata
+[PASS] Test 711: Random CSR scoreboard readback csr_rdata
+[PASS] Test 712: Random CSR scoreboard readback csr_rdata
+[PASS] Test 713: Random CSR scoreboard readback csr_rdata
+[PASS] Test 714: Random CSR scoreboard readback csr_rdata
+[PASS] Test 715: Random CSR scoreboard readback csr_rdata
+[PASS] Test 716: Random CSR scoreboard readback csr_rdata
+[PASS] Test 717: Random CSR scoreboard readback csr_rdata
+[PASS] Test 718: Random CSR scoreboard readback csr_rdata
+[PASS] Test 719: Random CSR scoreboard readback csr_rdata
+[PASS] Test 720: Random CSR scoreboard readback csr_rdata
+[PASS] Test 721: Random CSR scoreboard readback csr_rdata
+[PASS] Test 722: Random CSR scoreboard readback csr_rdata
+[PASS] Test 723: Random CSR scoreboard readback csr_rdata
+[PASS] Test 724: Random CSR scoreboard readback csr_rdata
+[PASS] Test 725: Random CSR scoreboard readback csr_rdata
+[PASS] Test 726: Random CSR scoreboard readback csr_rdata
+[PASS] Test 727: Random CSR scoreboard readback csr_rdata
+[PASS] Test 728: Random CSR scoreboard readback csr_rdata
+[PASS] Test 729: Random CSR scoreboard readback csr_rdata
+[PASS] Test 730: Random CSR scoreboard readback csr_rdata
+[PASS] Test 731: Random CSR scoreboard readback csr_rdata
+[PASS] Test 732: Random CSR scoreboard readback csr_rdata
+[PASS] Test 733: Random CSR scoreboard readback csr_rdata
+[PASS] Test 734: Random CSR scoreboard readback csr_rdata
+[PASS] Test 735: Random CSR scoreboard readback csr_rdata
+[PASS] Test 736: Random CSR scoreboard readback csr_rdata
+[PASS] Test 737: Random CSR scoreboard readback csr_rdata
+[PASS] Test 738: Random CSR scoreboard readback csr_rdata
+[PASS] Test 739: Random CSR scoreboard readback csr_rdata
+[PASS] Test 740: Random CSR scoreboard readback csr_rdata
+[PASS] Test 741: Random CSR scoreboard readback csr_rdata
+[PASS] Test 742: Random CSR scoreboard readback csr_rdata
+[PASS] Test 743: Random CSR scoreboard readback csr_rdata
+[PASS] Test 744: Random CSR scoreboard readback csr_rdata
+[PASS] Test 745: Random CSR scoreboard readback csr_rdata
+[PASS] Test 746: Random CSR scoreboard readback csr_rdata
+[PASS] Test 747: Random CSR scoreboard readback csr_rdata
+[PASS] Test 748: Random CSR scoreboard readback csr_rdata
+[PASS] Test 749: Random CSR scoreboard readback csr_rdata
+[PASS] Test 750: Random CSR scoreboard readback csr_rdata
+[PASS] Test 751: Random CSR scoreboard readback csr_rdata
+[PASS] Test 752: Random CSR scoreboard readback csr_rdata
+[PASS] Test 753: Random CSR scoreboard readback csr_rdata
+[PASS] Test 754: Random CSR scoreboard readback csr_rdata
+[PASS] Test 755: Random CSR scoreboard readback csr_rdata
+[PASS] Test 756: Random CSR scoreboard readback csr_rdata
+[PASS] Test 757: Random CSR scoreboard readback csr_rdata
+[PASS] Test 758: Random CSR scoreboard readback csr_rdata
+[PASS] Test 759: Random CSR scoreboard readback csr_rdata
+[PASS] Test 760: Random CSR scoreboard readback csr_rdata
+[PASS] Test 761: Random CSR scoreboard readback csr_rdata
+[PASS] Test 762: Random CSR scoreboard readback csr_rdata
+[PASS] Test 763: Random CSR scoreboard readback csr_rdata
+[PASS] Test 764: Random CSR scoreboard readback csr_rdata
+[PASS] Test 765: Random CSR scoreboard readback csr_rdata
+[PASS] Test 766: Random CSR scoreboard readback csr_rdata
+[PASS] Test 767: Random CSR scoreboard readback csr_rdata
+[PASS] Test 768: Random CSR scoreboard readback csr_rdata
+[PASS] Test 769: Random CSR scoreboard readback csr_rdata
+[PASS] Test 770: Random CSR scoreboard readback csr_rdata
+[PASS] Test 771: Random CSR scoreboard readback csr_rdata
+[PASS] Test 772: Random CSR scoreboard readback csr_rdata
+[PASS] Test 773: Random CSR scoreboard readback csr_rdata
+[PASS] Test 774: Random CSR scoreboard readback csr_rdata
+[PASS] Test 775: Random CSR scoreboard readback csr_rdata
+[PASS] Test 776: Random CSR scoreboard readback csr_rdata
+[PASS] Test 777: Random CSR scoreboard readback csr_rdata
+[PASS] Test 778: Random CSR scoreboard readback csr_rdata
+[PASS] Test 779: Random CSR scoreboard readback csr_rdata
+[PASS] Test 780: Random CSR scoreboard readback csr_rdata
+[PASS] Test 781: Random CSR scoreboard readback csr_rdata
+[PASS] Test 782: Random CSR scoreboard readback csr_rdata
+[PASS] Test 783: Random CSR scoreboard readback csr_rdata
+[PASS] Test 784: Random CSR scoreboard readback csr_rdata
+[PASS] Test 785: Random CSR scoreboard readback csr_rdata
+[PASS] Test 786: Random CSR scoreboard readback csr_rdata
+[PASS] Test 787: Random CSR scoreboard readback csr_rdata
+[PASS] Test 788: Random CSR scoreboard readback csr_rdata
+[PASS] Test 789: Random CSR scoreboard readback csr_rdata
+[PASS] Test 790: Random CSR scoreboard readback csr_rdata
+[PASS] Test 791: Random CSR scoreboard readback csr_rdata
+[PASS] Test 792: Random CSR scoreboard readback csr_rdata
+[PASS] Test 793: Random CSR scoreboard readback csr_rdata
+[PASS] Test 794: Random CSR scoreboard readback csr_rdata
+[PASS] Test 795: Random CSR scoreboard readback csr_rdata
+[PASS] Test 796: Random CSR scoreboard readback csr_rdata
+[PASS] Test 797: Random CSR scoreboard readback csr_rdata
+[PASS] Test 798: Random CSR scoreboard readback csr_rdata
+[PASS] Test 799: Random CSR scoreboard readback csr_rdata
+[PASS] Test 800: Random CSR scoreboard readback csr_rdata
+[PASS] Test 801: Random CSR scoreboard readback csr_rdata
+[PASS] Test 802: Random CSR scoreboard readback csr_rdata
+[PASS] Test 803: Random CSR scoreboard readback csr_rdata
+[PASS] Test 804: Random CSR scoreboard readback csr_rdata
+[PASS] Test 805: Random CSR scoreboard readback csr_rdata
+[PASS] Test 806: Random CSR scoreboard readback csr_rdata
+[PASS] Test 807: Random CSR scoreboard readback csr_rdata
+[PASS] Test 808: Random CSR scoreboard readback csr_rdata
+[PASS] Test 809: Random CSR scoreboard readback csr_rdata
+[PASS] Test 810: Random CSR scoreboard readback csr_rdata
+[PASS] Test 811: Random CSR scoreboard readback csr_rdata
+[PASS] Test 812: Random CSR scoreboard readback csr_rdata
+[PASS] Test 813: Random CSR scoreboard readback csr_rdata
+[PASS] Test 814: Random CSR scoreboard readback csr_rdata
+[PASS] Test 815: Random CSR scoreboard readback csr_rdata
+[PASS] Test 816: Random CSR scoreboard readback csr_rdata
+[PASS] Test 817: Random CSR scoreboard readback csr_rdata
+[PASS] Test 818: Random CSR scoreboard readback csr_rdata
+[PASS] Test 819: Random CSR scoreboard readback csr_rdata
+[PASS] Test 820: Random CSR scoreboard readback csr_rdata
+[PASS] Test 821: Random CSR scoreboard readback csr_rdata
+[PASS] Test 822: Random CSR scoreboard readback csr_rdata
+[PASS] Test 823: Random CSR scoreboard readback csr_rdata
+[PASS] Test 824: Random CSR scoreboard readback csr_rdata
+[PASS] Test 825: Random CSR scoreboard readback csr_rdata
+[PASS] Test 826: Random CSR scoreboard readback csr_rdata
+[PASS] Test 827: Random CSR scoreboard readback csr_rdata
+[PASS] Test 828: Random CSR scoreboard readback csr_rdata
+[PASS] Test 829: Random CSR scoreboard readback csr_rdata
+[PASS] Test 830: Random CSR scoreboard readback csr_rdata
+[PASS] Test 831: Random CSR scoreboard readback csr_rdata
+[PASS] Test 832: Random CSR scoreboard readback csr_rdata
+[PASS] Test 833: Random CSR scoreboard readback csr_rdata
+[PASS] Test 834: Random CSR scoreboard readback csr_rdata
+[PASS] Test 835: Random CSR scoreboard readback csr_rdata
+[PASS] Test 836: Random CSR scoreboard readback csr_rdata
+[PASS] Test 837: Random CSR scoreboard readback csr_rdata
+[PASS] Test 838: Random CSR scoreboard readback csr_rdata
+[PASS] Test 839: Random CSR scoreboard readback csr_rdata
+[PASS] Test 840: Random CSR scoreboard readback csr_rdata
+[PASS] Test 841: Random CSR scoreboard readback csr_rdata
+[PASS] Test 842: Random CSR scoreboard readback csr_rdata
+[PASS] Test 843: Random CSR scoreboard readback csr_rdata
+[PASS] Test 844: Random CSR scoreboard readback csr_rdata
+[PASS] Test 845: Random CSR scoreboard readback csr_rdata
+[PASS] Test 846: Random CSR scoreboard readback csr_rdata
+[PASS] Test 847: Random CSR scoreboard readback csr_rdata
+[PASS] Test 848: Random CSR scoreboard readback csr_rdata
+[PASS] Test 849: Random CSR scoreboard readback csr_rdata
+[PASS] Test 850: Random CSR scoreboard readback csr_rdata
+[PASS] Test 851: Random CSR scoreboard readback csr_rdata
+[PASS] Test 852: Random CSR scoreboard readback csr_rdata
+[PASS] Test 853: Random CSR scoreboard readback csr_rdata
+[PASS] Test 854: Random CSR scoreboard readback csr_rdata
+[PASS] Test 855: Random CSR scoreboard readback csr_rdata
+[PASS] Test 856: Random CSR scoreboard readback csr_rdata
+[PASS] Test 857: Random CSR scoreboard readback csr_rdata
+[PASS] Test 858: Random CSR scoreboard readback csr_rdata
+[PASS] Test 859: Random CSR scoreboard readback csr_rdata
+[PASS] Test 860: Random CSR scoreboard readback csr_rdata
+[PASS] Test 861: Random CSR scoreboard readback csr_rdata
+[PASS] Test 862: Random CSR scoreboard readback csr_rdata
+[PASS] Test 863: Random CSR scoreboard readback csr_rdata
+[PASS] Test 864: Random CSR scoreboard readback csr_rdata
+[PASS] Test 865: Random CSR scoreboard readback csr_rdata
+[PASS] Test 866: Random CSR scoreboard readback csr_rdata
+[PASS] Test 867: Random CSR scoreboard readback csr_rdata
+[PASS] Test 868: Random CSR scoreboard readback csr_rdata
+[PASS] Test 869: Random CSR scoreboard readback csr_rdata
+[PASS] Test 870: Random CSR scoreboard readback csr_rdata
+[PASS] Test 871: Random CSR scoreboard readback csr_rdata
+[PASS] Test 872: Random CSR scoreboard readback csr_rdata
+[PASS] Test 873: Random CSR scoreboard readback csr_rdata
+[PASS] Test 874: Random CSR scoreboard readback csr_rdata
+[PASS] Test 875: Random CSR scoreboard readback csr_rdata
+[PASS] Test 876: Random CSR scoreboard readback csr_rdata
+[PASS] Test 877: Random CSR scoreboard readback csr_rdata
+[PASS] Test 878: Random CSR scoreboard readback csr_rdata
+[PASS] Test 879: Random CSR scoreboard readback csr_rdata
+[PASS] Test 880: Random CSR scoreboard readback csr_rdata
+[PASS] Test 881: Random CSR scoreboard readback csr_rdata
+[PASS] Test 882: Random CSR scoreboard readback csr_rdata
+[PASS] Test 883: Random CSR scoreboard readback csr_rdata
+[PASS] Test 884: Random CSR scoreboard readback csr_rdata
+[PASS] Test 885: Random CSR scoreboard readback csr_rdata
+[PASS] Test 886: Random CSR scoreboard readback csr_rdata
+[PASS] Test 887: Random CSR scoreboard readback csr_rdata
+[PASS] Test 888: Random CSR scoreboard readback csr_rdata
+[PASS] Test 889: Random CSR scoreboard readback csr_rdata
+[PASS] Test 890: Random CSR scoreboard readback csr_rdata
+[PASS] Test 891: Random CSR scoreboard readback csr_rdata
+[PASS] Test 892: Random CSR scoreboard readback csr_rdata
+[PASS] Test 893: Random CSR scoreboard readback csr_rdata
+[PASS] Test 894: Random CSR scoreboard readback csr_rdata
+[PASS] Test 895: Random CSR scoreboard readback csr_rdata
+[PASS] Test 896: Random CSR scoreboard readback csr_rdata
+[PASS] Test 897: Random CSR scoreboard readback csr_rdata
+[PASS] Test 898: Random CSR scoreboard readback csr_rdata
+[PASS] Test 899: Random CSR scoreboard readback csr_rdata
+[PASS] Test 900: Random CSR scoreboard readback csr_rdata
+[PASS] Test 901: Random CSR scoreboard readback csr_rdata
+[PASS] Test 902: Random CSR scoreboard readback csr_rdata
+[PASS] Test 903: Random CSR scoreboard readback csr_rdata
+[PASS] Test 904: Random CSR scoreboard readback csr_rdata
+[PASS] Test 905: Random CSR scoreboard readback csr_rdata
+[PASS] Test 906: Random CSR scoreboard readback csr_rdata
+[PASS] Test 907: Random CSR scoreboard readback csr_rdata
+[PASS] Test 908: Random CSR scoreboard readback csr_rdata
+[PASS] Test 909: Random CSR scoreboard readback csr_rdata
+[PASS] Test 910: Random CSR scoreboard readback csr_rdata
+[PASS] Test 911: Random CSR scoreboard readback csr_rdata
+[PASS] Test 912: Random CSR scoreboard readback csr_rdata
+[PASS] Test 913: Random CSR scoreboard readback csr_rdata
+[PASS] Test 914: Random CSR scoreboard readback csr_rdata
+[PASS] Test 915: Random CSR scoreboard readback csr_rdata
+[PASS] Test 916: Random CSR scoreboard readback csr_rdata
+[PASS] Test 917: Random CSR scoreboard readback csr_rdata
+[PASS] Test 918: Random CSR scoreboard readback csr_rdata
+[PASS] Test 919: Random CSR scoreboard readback csr_rdata
+[PASS] Test 920: Random CSR scoreboard readback csr_rdata
+[PASS] Test 921: Random CSR scoreboard readback csr_rdata
+[PASS] Test 922: Random CSR scoreboard readback csr_rdata
+[PASS] Test 923: Random CSR scoreboard readback csr_rdata
+[PASS] Test 924: Random CSR scoreboard readback csr_rdata
+[PASS] Test 925: Random CSR scoreboard readback csr_rdata
+[PASS] Test 926: Random CSR scoreboard readback csr_rdata
+[PASS] Test 927: Random CSR scoreboard readback csr_rdata
+[PASS] Test 928: Random CSR scoreboard readback csr_rdata
+[PASS] Test 929: Random CSR scoreboard readback csr_rdata
+[PASS] Test 930: Random CSR scoreboard readback csr_rdata
+[PASS] Test 931: Random CSR scoreboard readback csr_rdata
+[PASS] Test 932: Random CSR scoreboard readback csr_rdata
+[PASS] Test 933: Random CSR scoreboard readback csr_rdata
+[PASS] Test 934: Random CSR scoreboard readback csr_rdata
+[PASS] Test 935: Random CSR scoreboard readback csr_rdata
+[PASS] Test 936: Random CSR scoreboard readback csr_rdata
+[PASS] Test 937: Random CSR scoreboard readback csr_rdata
+[PASS] Test 938: Random CSR scoreboard readback csr_rdata
+[PASS] Test 939: Random CSR scoreboard readback csr_rdata
+[PASS] Test 940: Random CSR scoreboard readback csr_rdata
+[PASS] Test 941: Random CSR scoreboard readback csr_rdata
+[PASS] Test 942: Random CSR scoreboard readback csr_rdata
+[PASS] Test 943: Random CSR scoreboard readback csr_rdata
+[PASS] Test 944: Random CSR scoreboard readback csr_rdata
+[PASS] Test 945: Random CSR scoreboard readback csr_rdata
+[PASS] Test 946: Random CSR scoreboard readback csr_rdata
+[PASS] Test 947: Random CSR scoreboard readback csr_rdata
+[PASS] Test 948: Random CSR scoreboard readback csr_rdata
+[PASS] Test 949: Random CSR scoreboard readback csr_rdata
+[PASS] Test 950: Random CSR scoreboard readback csr_rdata
+[PASS] Test 951: Random CSR scoreboard readback csr_rdata
+[PASS] Test 952: Random CSR scoreboard readback csr_rdata
+[PASS] Test 953: Random CSR scoreboard readback csr_rdata
+[PASS] Test 954: Random CSR scoreboard readback csr_rdata
+[PASS] Test 955: Random CSR scoreboard readback csr_rdata
+[PASS] Test 956: Random CSR scoreboard readback csr_rdata
+[PASS] Test 957: Random CSR scoreboard readback csr_rdata
+[PASS] Test 958: Random CSR scoreboard readback csr_rdata
+[PASS] Test 959: Random CSR scoreboard readback csr_rdata
+[PASS] Test 960: Random CSR scoreboard readback csr_rdata
+[PASS] Test 961: Random CSR scoreboard readback csr_rdata
+[PASS] Test 962: Random CSR scoreboard readback csr_rdata
+[PASS] Test 963: Random CSR scoreboard readback csr_rdata
+[PASS] Test 964: Random CSR scoreboard readback csr_rdata
+[PASS] Test 965: Random CSR scoreboard readback csr_rdata
+[PASS] Test 966: Random CSR scoreboard readback csr_rdata
+[PASS] Test 967: Random CSR scoreboard readback csr_rdata
+[PASS] Test 968: Random CSR scoreboard readback csr_rdata
+[PASS] Test 969: Random CSR scoreboard readback csr_rdata
+[PASS] Test 970: Random CSR scoreboard readback csr_rdata
+[PASS] Test 971: Random CSR scoreboard readback csr_rdata
+[PASS] Test 972: Random CSR scoreboard readback csr_rdata
+[PASS] Test 973: Random CSR scoreboard readback csr_rdata
+[PASS] Test 974: Random CSR scoreboard readback csr_rdata
+[PASS] Test 975: Random CSR scoreboard readback csr_rdata
+[PASS] Test 976: Random CSR scoreboard readback csr_rdata
+[PASS] Test 977: Random CSR scoreboard readback csr_rdata
+[PASS] Test 978: Random CSR scoreboard readback csr_rdata
+[PASS] Test 979: Random CSR scoreboard readback csr_rdata
+[PASS] Test 980: Random CSR scoreboard readback csr_rdata
+[PASS] Test 981: Random CSR scoreboard readback csr_rdata
+[PASS] Test 982: Random CSR scoreboard readback csr_rdata
+[PASS] Test 983: Random CSR scoreboard readback csr_rdata
+[PASS] Test 984: Random CSR scoreboard readback csr_rdata
+[PASS] Test 985: Random CSR scoreboard readback csr_rdata
+[PASS] Test 986: Random CSR scoreboard readback csr_rdata
+[PASS] Test 987: Random CSR scoreboard readback csr_rdata
+[PASS] Test 988: Random CSR scoreboard readback csr_rdata
+[PASS] Test 989: Random CSR scoreboard readback csr_rdata
+[PASS] Test 990: Random CSR scoreboard readback csr_rdata
+[PASS] Test 991: Random CSR scoreboard readback csr_rdata
+[PASS] Test 992: Random CSR scoreboard readback csr_rdata
+[PASS] Test 993: Random CSR scoreboard readback csr_rdata
+[PASS] Test 994: Random CSR scoreboard readback csr_rdata
+[PASS] Test 995: Random CSR scoreboard readback csr_rdata
+[PASS] Test 996: Random CSR scoreboard readback csr_rdata
+[PASS] Test 997: Random CSR scoreboard readback csr_rdata
+[PASS] Test 998: Random CSR scoreboard readback csr_rdata
+[PASS] Test 999: Random CSR scoreboard readback csr_rdata
+[PASS] Test 1000: Random CSR scoreboard readback csr_rdata
+[PASS] Test 1001: Random CSR scoreboard readback csr_rdata
+[PASS] Test 1002: Random CSR scoreboard readback csr_rdata
+[PASS] Test 1003: Random CSR scoreboard readback csr_rdata
+[PASS] Test 1004: Random CSR scoreboard readback csr_rdata
+[PASS] Test 1005: Random CSR scoreboard readback csr_rdata
+[PASS] Test 1006: Random CSR scoreboard readback csr_rdata
+[PASS] Test 1007: Random CSR scoreboard readback csr_rdata
+[PASS] Test 1008: Random CSR scoreboard readback csr_rdata
+[PASS] Test 1009: Random CSR scoreboard readback csr_rdata
+[PASS] Test 1010: Random CSR scoreboard readback csr_rdata
+[PASS] Test 1011: Random CSR scoreboard readback csr_rdata
+[PASS] Test 1012: Random CSR scoreboard readback csr_rdata
+[PASS] Test 1013: Random CSR scoreboard readback csr_rdata
+[PASS] Test 1014: Random CSR scoreboard readback csr_rdata
+[PASS] Test 1015: Random CSR scoreboard readback csr_rdata
+[PASS] Test 1016: Random CSR scoreboard readback csr_rdata
+[PASS] Test 1017: Random CSR scoreboard readback csr_rdata
+[PASS] Test 1018: Random CSR scoreboard readback csr_rdata
+[PASS] Test 1019: Random CSR scoreboard readback csr_rdata
+[PASS] Test 1020: Random CSR scoreboard readback csr_rdata
+[PASS] Test 1021: Random CSR scoreboard readback csr_rdata
+[PASS] Test 1022: Random CSR scoreboard readback csr_rdata
+[PASS] Test 1023: Random CSR scoreboard readback csr_rdata
+[PASS] Test 1024: Random CSR scoreboard readback csr_rdata
+[PASS] Test 1025: Random CSR scoreboard readback csr_rdata
+[PASS] Test 1026: Random CSR scoreboard readback csr_rdata
+[PASS] Test 1027: Random CSR scoreboard readback csr_rdata
+[PASS] Test 1028: Random CSR scoreboard readback csr_rdata
+[PASS] Test 1029: Random CSR scoreboard readback csr_rdata
+[PASS] Test 1030: Random CSR scoreboard readback csr_rdata
+[PASS] Test 1031: Random CSR scoreboard readback csr_rdata
+[PASS] Test 1032: Random CSR scoreboard readback csr_rdata
+[PASS] Test 1033: Random CSR scoreboard readback csr_rdata
+[PASS] Test 1034: Random CSR scoreboard readback csr_rdata
+[PASS] Test 1035: Random CSR scoreboard readback csr_rdata
+[PASS] Test 1036: Random CSR scoreboard readback csr_rdata
+[PASS] Test 1037: Random CSR scoreboard readback csr_rdata
+[PASS] Test 1038: Random CSR scoreboard readback csr_rdata
+[PASS] Test 1039: Random CSR scoreboard readback csr_rdata
+[PASS] Test 1040: Random CSR scoreboard readback csr_rdata
+[PASS] Test 1041: Random CSR scoreboard readback csr_rdata
+[PASS] Test 1042: Random CSR scoreboard readback csr_rdata
+[PASS] Test 1043: Random CSR scoreboard readback csr_rdata
+[PASS] Test 1044: Random CSR scoreboard readback csr_rdata
+[PASS] Test 1045: Random CSR scoreboard readback csr_rdata
+[PASS] Test 1046: Random CSR scoreboard readback csr_rdata
+[PASS] Test 1047: Random CSR scoreboard readback csr_rdata
+[PASS] Test 1048: Random CSR scoreboard readback csr_rdata
+[PASS] Test 1049: Random CSR scoreboard readback csr_rdata
+[PASS] Test 1050: Random CSR scoreboard readback csr_rdata
+[PASS] Test 1051: Random CSR scoreboard readback csr_rdata
+[PASS] Test 1052: Random CSR scoreboard readback csr_rdata
+[PASS] Test 1053: Random CSR scoreboard readback csr_rdata
+[PASS] Test 1054: Random CSR scoreboard readback csr_rdata
+[PASS] Test 1055: Random CSR scoreboard readback csr_rdata
+[PASS] Test 1056: Random CSR scoreboard readback csr_rdata
+[PASS] Test 1057: Random CSR scoreboard readback csr_rdata
+[PASS] Test 1058: Random CSR scoreboard readback csr_rdata
+[PASS] Test 1059: Random CSR scoreboard readback csr_rdata
+[PASS] Test 1060: Random CSR scoreboard readback csr_rdata
+[PASS] Test 1061: Random CSR scoreboard readback csr_rdata
+[PASS] Test 1062: Random CSR scoreboard readback csr_rdata
+[PASS] Test 1063: Random CSR scoreboard readback csr_rdata
+[PASS] Test 1064: Random CSR scoreboard readback csr_rdata
+[PASS] Test 1065: Random CSR scoreboard readback csr_rdata
+[PASS] Test 1066: Random CSR scoreboard readback csr_rdata
+[PASS] Test 1067: Random CSR scoreboard readback csr_rdata
+[PASS] Test 1068: Random CSR scoreboard readback csr_rdata
+[PASS] Test 1069: Random CSR scoreboard readback csr_rdata
+[PASS] Test 1070: Random CSR scoreboard readback csr_rdata
+[PASS] Test 1071: Random CSR scoreboard readback csr_rdata
+[PASS] Test 1072: Random CSR scoreboard readback csr_rdata
+[PASS] Test 1073: Random CSR scoreboard readback csr_rdata
+[PASS] Test 1074: Random CSR scoreboard readback csr_rdata
+[PASS] Test 1075: Random CSR scoreboard readback csr_rdata
+[PASS] Test 1076: Random CSR scoreboard readback csr_rdata
+[PASS] Test 1077: Random CSR scoreboard readback csr_rdata
+[PASS] Test 1078: Random CSR scoreboard readback csr_rdata
+[PASS] Test 1079: Random CSR scoreboard readback csr_rdata
+[PASS] Test 1080: Random CSR scoreboard readback csr_rdata
+[PASS] Test 1081: Random CSR scoreboard readback csr_rdata
+[PASS] Test 1082: Random CSR scoreboard readback csr_rdata
+[PASS] Test 1083: Random CSR scoreboard readback csr_rdata
+[PASS] Test 1084: Random CSR scoreboard readback csr_rdata
+[PASS] Test 1085: Random CSR scoreboard readback csr_rdata
+[PASS] Test 1086: Random CSR scoreboard readback csr_rdata
+[PASS] Test 1087: Random CSR scoreboard readback csr_rdata
+[PASS] Test 1088: Random CSR scoreboard readback csr_rdata
+[PASS] Test 1089: Random CSR scoreboard readback csr_rdata
+[PASS] Test 1090: Random CSR scoreboard readback csr_rdata
+[PASS] Test 1091: Random CSR scoreboard readback csr_rdata
+[PASS] Test 1092: Random CSR scoreboard readback csr_rdata
+[PASS] Test 1093: Random CSR scoreboard readback csr_rdata
+[PASS] Test 1094: Random CSR scoreboard readback csr_rdata
+[PASS] Test 1095: Random CSR scoreboard readback csr_rdata
+[PASS] Test 1096: Random CSR scoreboard readback csr_rdata
+[PASS] Test 1097: Random CSR scoreboard readback csr_rdata
+[PASS] Test 1098: Random CSR scoreboard readback csr_rdata
+[PASS] Test 1099: Random CSR scoreboard readback csr_rdata
+[PASS] Test 1100: Random CSR scoreboard readback csr_rdata
+[PASS] Test 1101: Random CSR scoreboard readback csr_rdata
+[PASS] Test 1102: Random CSR scoreboard readback csr_rdata
+[PASS] Test 1103: Random CSR scoreboard readback csr_rdata
+[PASS] Test 1104: Random CSR scoreboard readback csr_rdata
+[PASS] Test 1105: Random CSR scoreboard readback csr_rdata
+[PASS] Test 1106: Random CSR scoreboard readback csr_rdata
+[PASS] Test 1107: Random CSR scoreboard readback csr_rdata
+[PASS] Test 1108: Random CSR scoreboard readback csr_rdata
+[PASS] Test 1109: Random CSR scoreboard readback csr_rdata
+[PASS] Test 1110: Random CSR scoreboard readback csr_rdata
+[PASS] Test 1111: Random CSR scoreboard readback csr_rdata
+[PASS] Test 1112: Random CSR scoreboard readback csr_rdata
+[PASS] Test 1113: Random CSR scoreboard readback csr_rdata
+[PASS] Test 1114: Random CSR scoreboard readback csr_rdata
+[PASS] Test 1115: Random CSR scoreboard readback csr_rdata
+[PASS] Test 1116: Random CSR scoreboard readback csr_rdata
+[PASS] Test 1117: Random CSR scoreboard readback csr_rdata
+[PASS] Test 1118: Random CSR scoreboard readback csr_rdata
+[PASS] Test 1119: Random CSR scoreboard readback csr_rdata
+[PASS] Test 1120: Random CSR scoreboard readback csr_rdata
+[PASS] Test 1121: Random CSR scoreboard readback csr_rdata
+[PASS] Test 1122: Random CSR scoreboard readback csr_rdata
+[PASS] Test 1123: Random CSR scoreboard readback csr_rdata
+[PASS] Test 1124: Random CSR scoreboard readback csr_rdata
+[PASS] Test 1125: Random CSR scoreboard readback csr_rdata
+[PASS] Test 1126: Random CSR scoreboard readback csr_rdata
+[PASS] Test 1127: Random CSR scoreboard readback csr_rdata
+[PASS] Test 1128: Random CSR scoreboard readback csr_rdata
+[PASS] Test 1129: Random CSR scoreboard readback csr_rdata
+[PASS] Test 1130: Random CSR scoreboard readback csr_rdata
+[PASS] Test 1131: Random CSR scoreboard readback csr_rdata
+[PASS] Test 1132: Random CSR scoreboard readback csr_rdata
+[PASS] Test 1133: Random CSR scoreboard readback csr_rdata
+[PASS] Test 1134: Random CSR scoreboard readback csr_rdata
+[PASS] Test 1135: Random CSR scoreboard readback csr_rdata
+[PASS] Test 1136: Random CSR scoreboard readback csr_rdata
+[PASS] Test 1137: Random CSR scoreboard readback csr_rdata
+[PASS] Test 1138: Random CSR scoreboard readback csr_rdata
+[PASS] Test 1139: Random CSR scoreboard readback csr_rdata
+[PASS] Test 1140: Random CSR scoreboard readback csr_rdata
+[PASS] Test 1141: Random CSR scoreboard readback csr_rdata
+[PASS] Test 1142: Random CSR scoreboard readback csr_rdata
+[PASS] Test 1143: Random CSR scoreboard readback csr_rdata
+[PASS] Test 1144: Random CSR scoreboard readback csr_rdata
+[PASS] Test 1145: Random CSR scoreboard readback csr_rdata
+[PASS] Test 1146: Random CSR scoreboard readback csr_rdata
+[PASS] Test 1147: Random CSR scoreboard readback csr_rdata
+[PASS] Test 1148: Random CSR scoreboard readback csr_rdata
+[PASS] Test 1149: Random CSR scoreboard readback csr_rdata
+[PASS] Test 1150: Random CSR scoreboard readback csr_rdata
+[PASS] Test 1151: Random CSR scoreboard readback csr_rdata
+[PASS] Test 1152: Random CSR scoreboard readback csr_rdata
+[PASS] Test 1153: Random CSR scoreboard readback csr_rdata
+[PASS] Test 1154: Random CSR scoreboard readback csr_rdata
+[PASS] Test 1155: Random CSR scoreboard readback csr_rdata
+[PASS] Test 1156: Random CSR scoreboard readback csr_rdata
+[PASS] Test 1157: Random CSR scoreboard readback csr_rdata
+[PASS] Test 1158: Random CSR scoreboard readback csr_rdata
+[PASS] Test 1159: Random CSR scoreboard readback csr_rdata
+[PASS] Test 1160: Random CSR scoreboard readback csr_rdata
+[PASS] Test 1161: Random CSR scoreboard readback csr_rdata
+[PASS] Test 1162: Random CSR scoreboard readback csr_rdata
+[PASS] Test 1163: Random CSR scoreboard readback csr_rdata
+[PASS] Test 1164: Random CSR scoreboard readback csr_rdata
+[PASS] Test 1165: Random CSR scoreboard readback csr_rdata
+[PASS] Test 1166: Random CSR scoreboard readback csr_rdata
+[PASS] Test 1167: Random CSR scoreboard readback csr_rdata
+[PASS] Test 1168: Random CSR scoreboard readback csr_rdata
+[PASS] Test 1169: Random CSR scoreboard readback csr_rdata
+[PASS] Test 1170: Random CSR scoreboard readback csr_rdata
+[PASS] Test 1171: Random CSR scoreboard readback csr_rdata
+[PASS] Test 1172: Random CSR scoreboard readback csr_rdata
+[PASS] Test 1173: Random CSR scoreboard readback csr_rdata
+[PASS] Test 1174: Random CSR scoreboard readback csr_rdata
+[PASS] Test 1175: Random CSR scoreboard readback csr_rdata
+[PASS] Test 1176: Random CSR scoreboard readback csr_rdata
+[PASS] Test 1177: Random CSR scoreboard readback csr_rdata
+[PASS] Test 1178: Random CSR scoreboard readback csr_rdata
+[PASS] Test 1179: Random CSR scoreboard readback csr_rdata
+[PASS] Test 1180: Random CSR scoreboard readback csr_rdata
+[PASS] Test 1181: Random CSR scoreboard readback csr_rdata
+[PASS] Test 1182: Random CSR scoreboard readback csr_rdata
+[PASS] Test 1183: Random CSR scoreboard readback csr_rdata
+[PASS] Test 1184: Random CSR scoreboard readback csr_rdata
+[PASS] Test 1185: Random CSR scoreboard readback csr_rdata
+[PASS] Test 1186: Random CSR scoreboard readback csr_rdata
+[PASS] Test 1187: Random CSR scoreboard readback csr_rdata
+
+--- Test Group 8: Coverage Closure Sweep ---
+
+
+--- Final Known-State Recheck ---
+
+[PASS] Test 1188: Final mtvec write csr_rdata
+[PASS] Test 1189: Final mtvec write mtvec_out
+[PASS] Test 1190: Final mtvec write mepc_out
+[PASS] Test 1191: Final mtvec write trap_taken
+[PASS] Test 1192: Final mtvec write mret_taken
+[PASS] Test 1193: Final mie write csr_rdata
+[PASS] Test 1194: Final mie write mtvec_out
+[PASS] Test 1195: Final mie write mepc_out
+[PASS] Test 1196: Final mie write trap_taken
+[PASS] Test 1197: Final mie write mret_taken
+[PASS] Test 1198: Final mstatus write csr_rdata
+[PASS] Test 1199: Final mstatus write mtvec_out
+[PASS] Test 1200: Final mstatus write mepc_out
+[PASS] Test 1201: Final mstatus write trap_taken
+[PASS] Test 1202: Final mstatus write mret_taken
+[PASS] Test 1203: Final external trap trap combinational before clock
+[PASS] Test 1204: Final external trap mtvec_out
+[PASS] Test 1205: Final external trap mepc_out
+[PASS] Test 1206: Final external trap trap_taken
+[PASS] Test 1207: Final external trap mret_taken
+[PASS] Test 1208: Final external trap mepc saved csr_rdata
+[PASS] Test 1209: Final external trap mcause saved csr_rdata
+[PASS] Test 1210: Final external trap mstatus updated csr_rdata
+
+========================================
+Test Summary
+========================================
+Total Tests:  1210
+Passed:       1210
+Failed:       0
+Pass Rate:    100.0%
+========================================
+
+All CSR unit tests passed!
+Simulation complete via $finish(1) at time 11 US + 0
+./tb/tb_csr_unit.sv:527     $finish;
+xcelium> exit
+TOOL:	xrun(64)	22.09-s003: Exiting on Nov 16, 2026 at 12:22:52 IST  (total: 00:00:05)

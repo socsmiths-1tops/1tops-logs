@@ -1,0 +1,1795 @@
+xrun(64): 22.09-s003: (c) Copyright 1995-2022 Cadence Design Systems, Inc.
+TOOL:	xrun(64)	22.09-s003: Started on Nov 16, 2026 at 12:23:46 IST
+xrun
+	-64bit
+	-xmlibdirpath signoff/build/sa_ascon_updated
+	-sv
+	-access +rwc
+	-nowarn NONPRT
+	-timescale 1ns/1ps
+	-incdir rtl/peripherals/ascon_updated
+	rtl/peripherals/ascon_updated/ascon_peripheral.sv
+	rtl/peripherals/ascon_updated/tb/tb_ascon_updated.sv
+	rtl/peripherals/ascon_updated/tb/ascon_ref.c
+	-top tb_ascon_updated
+	+NVEC=50
+	+LOG=signoff/logs/standalone/ascon_updated_results.txt
+	-l signoff/logs/standalone/ascon_updated.log
+
+   User defined plus("+") options:
+	+NVEC=50
+	+LOG=signoff/logs/standalone/ascon_updated_results.txt
+
+file: rtl/peripherals/ascon_updated/ascon_peripheral.sv
+	package worklib.ascon_config:sv
+		errors: 0, warnings: 0
+	package worklib.ascon_regs_pkg:sv
+		errors: 0, warnings: 0
+	package worklib.ascon_functions:sv
+		errors: 0, warnings: 0
+	module worklib.chaos_core:sv
+		errors: 0, warnings: 0
+	module worklib.ascon_core:sv
+		errors: 0, warnings: 0
+	module worklib.ascon_peripheral:sv
+		errors: 0, warnings: 0
+file: rtl/peripherals/ascon_updated/tb/tb_ascon_updated.sv
+      bit leak = 0;
+               |
+xmvlog: *W,VARIST (rtl/peripherals/ascon_updated/tb/tb_ascon_updated.sv,318|15): Local static variable with initializer requires 'static' keyword.
+      int first = vec_no + 1;
+                |
+xmvlog: *W,VARIST (rtl/peripherals/ascon_updated/tb/tb_ascon_updated.sv,332|16): Local static variable with initializer requires 'static' keyword.
+      int f0 = n_fail;
+             |
+xmvlog: *W,VARIST (rtl/peripherals/ascon_updated/tb/tb_ascon_updated.sv,341|13): Local static variable with initializer requires 'static' keyword.
+      bit uniq = 1, rep = 0;
+               |
+xmvlog: *W,VARIST (rtl/peripherals/ascon_updated/tb/tb_ascon_updated.sv,350|15): Local static variable with initializer requires 'static' keyword.
+      bit uniq = 1, rep = 0;
+                        |
+xmvlog: *W,VARIST (rtl/peripherals/ascon_updated/tb/tb_ascon_updated.sv,350|24): Local static variable with initializer requires 'static' keyword.
+      int    rt_ok = 0;
+                   |
+xmvlog: *W,VARIST (rtl/peripherals/ascon_updated/tb/tb_ascon_updated.sv,500|19): Local static variable with initializer requires 'static' keyword.
+	module worklib.tb_ascon_updated:sv
+		errors: 0, warnings: 6
+$CDSROOT = /home/install8/install/XCELIUM2209
+$TESTDIR = /home/onetops/1tops/rv32im
+
+TOOL:	xmsc(64)	22.09-s003
+xmsc cc parameters: 
+	$CDSROOT/tools/cdsgcc/gcc/9.3/bin/gcc
+	-I$CDSROOT/tools/include
+	-I$CDSROOT/tools/inca/include 
+	-DXMSC
+	-DNCSC
+	-fPIC
+	-D_GLIBCXX_USE_CXX11_ABI=1 -c
+	-x c  -Wall
+
+xmsc: compiling $TESTDIR/rtl/peripherals/ascon_updated/tb/ascon_ref.c
+
+
+building library run.so
+
+	Elaborating the design hierarchy:
+		Caching library 'worklib' ....... Done
+	Top level design units:
+		ascon_regs_pkg
+		ascon_config
+		ascon_functions
+		tb_ascon_updated
+xmelab: *W,DSEMEL: This SystemVerilog design will be simulated as per IEEE 1800-2009 SystemVerilog simulation semantics. Use -disable_sem2009 option for turning off SV 2009 simulation semantics.
+	Building instance overlay tables: .................... Done
+	Generating native compiled code:
+		worklib.chaos_core:sv <0x5dad39da>
+			streams:  26, words: 15445
+		worklib.ascon_peripheral:sv <0x502bcc28>
+			streams:  49, words: 25914
+		worklib.tb_ascon_updated:sv <0x77c4ab98>
+			streams:  49, words: 272849
+		worklib.ascon_core:sv <0x262ee48c>
+			streams:  63, words: 51235
+		worklib.ascon_functions:sv <0x1f2f212c>
+			streams:   5, words: 16255
+	Building instance specific data structures.
+	Loading native compiled code:     .................... Done
+	Design hierarchy summary:
+		                 Instances  Unique
+		Modules:                 4       4
+		Verilog packages:        3       3
+		Registers:             367     351
+		Scalar wires:           53       -
+		Vectored wires:         48       -
+		Always blocks:          14      14
+		Initial blocks:         15      15
+		Cont. assignments:      32      35
+		Pseudo assignments:     41      41
+		Simulation timescale:  1ps
+	Writing initial simulation snapshot: worklib.tb_ascon_updated:sv
+Loading snapshot worklib.tb_ascon_updated:sv .................... Done
+SVSEED default: 1
+xmsim: *W,DSEM2009: This SystemVerilog design is simulated as per IEEE 1800-2009 SystemVerilog simulation semantics. Use -disable_sem2009 option for turning off SV 2009 simulation semantics.
+xcelium> source /home/install8/install/XCELIUM2209/tools/inca/files/xmsimrc
+xcelium> run
+==================================================================
+ ascon_updated - ASCON-128 v1.2 peripheral verification
+ DUT : rtl/peripherals/ascon_updated/ascon_peripheral.sv
+ Ref : tb/ascon_ref.c (ASCON-128 v1.2 C model, NIST KAT checked)
+ Mode: RTL
+ Run : Cadence Xcelium, 100 MHz clock, seed 0x1A5C0128
+==================================================================
+
+--- T1 Reset values ---
+  [PASS] STATUS: busy/done/ct_valid/tag_ok/key_loaded/err = 0       STATUS=0x000
+
+--- T2 Decrypt before any encryption must be refused ---
+  [PASS] decrypt without key -> done + err, tag_ok=0                
+  [PASS] external decrypt without key -> err                        
+
+--- T3 Encryption started before the chaos generator is ready ---
+  [PASS] chaos_ready still low right after reset                    
+  [PASS] V1 enc done (len=13 ad=5)                                  
+  [PASS] V1 enc status ct_valid & tag_valid, no err                 
+  [PASS] V1 CTLEN == 13                                             
+  [PASS] V1 CT  == reference                                        b44ea46154901d52446cdedf4b
+  [PASS] V1 TAG == reference                                        494a5d48647b5f435caac29c5144b00c
+  [PASS] V1 TAGIN auto-loaded with encryption tag                   
+  [PASS] V1 dec done                                                
+  [PASS] V1 decrypt tag == encryption tag                           494a5d48647b5f435caac29c5144b00c
+  [PASS] V1 decrypt tag == reference                                
+  [PASS] V1 STATUS.tag_ok = 1 (VERIFIED)                            
+  [PASS] V1 STATUS.pt_valid = 1                                     
+  [PASS] V1 recovered PT == original PT                             50accdaf4cfa3333a76c108969
+  [PASS] V1 led_tag_ok = 1                                          
+  [PASS] operation waited for chaos warm-up and completed           
+
+--- T4 Register access ---
+  [PASS] MSGLEN read-back                                           
+  [PASS] ADLEN read-back                                            
+  [PASS] DIN7 read-back                                             
+  [PASS] AD2 read-back                                              
+  [PASS] byte-strobe write (lane 1 only)                            
+  [PASS] TAGIN3 is read-only                                        
+  [PASS] CT0 is read-only                                           
+  [PASS] TAG0 is read-only                                          
+  [PASS] unmapped address reads 0xDEADBEEF                          
+  [PASS] reserved 0x14 reads 0xDEADBEEF                             
+  [PASS] no register returns any key or nonce word                  
+
+--- T5 50 random vectors: encrypt -> reference check -> decrypt stored CT -> verify ---
+xmsim: *W,OLDURR: The default algorithm for $urandom_range and randcase is used. It can have distribution problems..
+  [PASS] V2 enc done (len=30 ad=0)                                  
+  [PASS] V2 enc status ct_valid & tag_valid, no err                 
+  [PASS] V2 CTLEN == 30                                             
+  [PASS] V2 CT  == reference                                        69320ce31bb5cc76073d61d9e9e834266be3a2861c979bee5632ddaab01c
+  [PASS] V2 TAG == reference                                        563dc2be51e0c294bac43dfa5480309c
+  [PASS] V2 TAGIN auto-loaded with encryption tag                   
+  [PASS] V2 dec done                                                
+  [PASS] V2 decrypt tag == encryption tag                           563dc2be51e0c294bac43dfa5480309c
+  [PASS] V2 decrypt tag == reference                                
+  [PASS] V2 STATUS.tag_ok = 1 (VERIFIED)                            
+  [PASS] V2 STATUS.pt_valid = 1                                     
+  [PASS] V2 recovered PT == original PT                             c99ff8f47a6190047c4348825886b0a504b582b060292671bb8630c14d3e
+  [PASS] V2 led_tag_ok = 1                                          
+  [PASS] V3 enc done (len=6 ad=15)                                  
+  [PASS] V3 enc status ct_valid & tag_valid, no err                 
+  [PASS] V3 CTLEN == 6                                              
+  [PASS] V3 CT  == reference                                        de81eab4cac1
+  [PASS] V3 TAG == reference                                        2a972b30c7ec291451578e7277761377
+  [PASS] V3 TAGIN auto-loaded with encryption tag                   
+  [PASS] V3 dec done                                                
+  [PASS] V3 decrypt tag == encryption tag                           2a972b30c7ec291451578e7277761377
+  [PASS] V3 decrypt tag == reference                                
+  [PASS] V3 STATUS.tag_ok = 1 (VERIFIED)                            
+  [PASS] V3 STATUS.pt_valid = 1                                     
+  [PASS] V3 recovered PT == original PT                             9cb89a7782d0
+  [PASS] V3 led_tag_ok = 1                                          
+  [PASS] V4 enc done (len=8 ad=1)                                   
+  [PASS] V4 enc status ct_valid & tag_valid, no err                 
+  [PASS] V4 CTLEN == 8                                              
+  [PASS] V4 CT  == reference                                        aef2f16057d60aaf
+  [PASS] V4 TAG == reference                                        3b6fa86e8aa4844b58aefc23cec8fde5
+  [PASS] V4 TAGIN auto-loaded with encryption tag                   
+  [PASS] V4 dec done                                                
+  [PASS] V4 decrypt tag == encryption tag                           3b6fa86e8aa4844b58aefc23cec8fde5
+  [PASS] V4 decrypt tag == reference                                
+  [PASS] V4 STATUS.tag_ok = 1 (VERIFIED)                            
+  [PASS] V4 STATUS.pt_valid = 1                                     
+  [PASS] V4 recovered PT == original PT                             60ce3fea6106dce3
+  [PASS] V4 led_tag_ok = 1                                          
+  [PASS] V5 enc done (len=14 ad=10)                                 
+  [PASS] V5 enc status ct_valid & tag_valid, no err                 
+  [PASS] V5 CTLEN == 14                                             
+  [PASS] V5 CT  == reference                                        f53c8c94679643f987cb6215570e
+  [PASS] V5 TAG == reference                                        9d59008285c9d63beaf6510a772817e1
+  [PASS] V5 TAGIN auto-loaded with encryption tag                   
+  [PASS] V5 dec done                                                
+  [PASS] V5 decrypt tag == encryption tag                           9d59008285c9d63beaf6510a772817e1
+  [PASS] V5 decrypt tag == reference                                
+  [PASS] V5 STATUS.tag_ok = 1 (VERIFIED)                            
+  [PASS] V5 STATUS.pt_valid = 1                                     
+  [PASS] V5 recovered PT == original PT                             51feb1f00ab978874886c08bad7e
+  [PASS] V5 led_tag_ok = 1                                          
+  [PASS] V6 enc done (len=6 ad=6)                                   
+  [PASS] V6 enc status ct_valid & tag_valid, no err                 
+  [PASS] V6 CTLEN == 6                                              
+  [PASS] V6 CT  == reference                                        d00fac28a799
+  [PASS] V6 TAG == reference                                        e7e89129b37e76cb084e019edac3076c
+  [PASS] V6 TAGIN auto-loaded with encryption tag                   
+  [PASS] V6 dec done                                                
+  [PASS] V6 decrypt tag == encryption tag                           e7e89129b37e76cb084e019edac3076c
+  [PASS] V6 decrypt tag == reference                                
+  [PASS] V6 STATUS.tag_ok = 1 (VERIFIED)                            
+  [PASS] V6 STATUS.pt_valid = 1                                     
+  [PASS] V6 recovered PT == original PT                             a6d997a286fb
+  [PASS] V6 led_tag_ok = 1                                          
+  [PASS] V7 enc done (len=4 ad=1)                                   
+  [PASS] V7 enc status ct_valid & tag_valid, no err                 
+  [PASS] V7 CTLEN == 4                                              
+  [PASS] V7 CT  == reference                                        b257d8bc
+  [PASS] V7 TAG == reference                                        be76f27da8d2106b014de54e5fdff34e
+  [PASS] V7 TAGIN auto-loaded with encryption tag                   
+  [PASS] V7 dec done                                                
+  [PASS] V7 decrypt tag == encryption tag                           be76f27da8d2106b014de54e5fdff34e
+  [PASS] V7 decrypt tag == reference                                
+  [PASS] V7 STATUS.tag_ok = 1 (VERIFIED)                            
+  [PASS] V7 STATUS.pt_valid = 1                                     
+  [PASS] V7 recovered PT == original PT                             2ab4fd24
+  [PASS] V7 led_tag_ok = 1                                          
+  [PASS] V8 enc done (len=0 ad=10)                                  
+  [PASS] V8 enc status ct_valid & tag_valid, no err                 
+  [PASS] V8 CTLEN == 0                                              
+  [PASS] V8 CT  == reference                                        -
+  [PASS] V8 TAG == reference                                        21f12507e3ffac5812df1039b2340323
+  [PASS] V8 TAGIN auto-loaded with encryption tag                   
+  [PASS] V8 dec done                                                
+  [PASS] V8 decrypt tag == encryption tag                           21f12507e3ffac5812df1039b2340323
+  [PASS] V8 decrypt tag == reference                                
+  [PASS] V8 STATUS.tag_ok = 1 (VERIFIED)                            
+  [PASS] V8 STATUS.pt_valid = 1                                     
+  [PASS] V8 recovered PT == original PT                             -
+  [PASS] V8 led_tag_ok = 1                                          
+  [PASS] V9 enc done (len=28 ad=16)                                 
+  [PASS] V9 enc status ct_valid & tag_valid, no err                 
+  [PASS] V9 CTLEN == 28                                             
+  [PASS] V9 CT  == reference                                        3c33c63aec621856105a37dd5f93e79636e7cc29f301ce739d026fbe
+  [PASS] V9 TAG == reference                                        14ea03d324e4f6f2e750e88925e47509
+  [PASS] V9 TAGIN auto-loaded with encryption tag                   
+  [PASS] V9 dec done                                                
+  [PASS] V9 decrypt tag == encryption tag                           14ea03d324e4f6f2e750e88925e47509
+  [PASS] V9 decrypt tag == reference                                
+  [PASS] V9 STATUS.tag_ok = 1 (VERIFIED)                            
+  [PASS] V9 STATUS.pt_valid = 1                                     
+  [PASS] V9 recovered PT == original PT                             61379feccb686a09283546a5c76d58d102c9904fbf6e2a09f26d2e96
+  [PASS] V9 led_tag_ok = 1                                          
+  [PASS] V10 enc done (len=28 ad=7)                                 
+  [PASS] V10 enc status ct_valid & tag_valid, no err                
+  [PASS] V10 CTLEN == 28                                            
+  [PASS] V10 CT  == reference                                       246aa587e227dde5bcf76071e61434144f37d70eaad4c4e65bddde61
+  [PASS] V10 TAG == reference                                       dee41a5b6ecfb1b9a4e4a80eb5c831e7
+  [PASS] V10 TAGIN auto-loaded with encryption tag                  
+  [PASS] V10 dec done                                               
+  [PASS] V10 decrypt tag == encryption tag                          dee41a5b6ecfb1b9a4e4a80eb5c831e7
+  [PASS] V10 decrypt tag == reference                               
+  [PASS] V10 STATUS.tag_ok = 1 (VERIFIED)                           
+  [PASS] V10 STATUS.pt_valid = 1                                    
+  [PASS] V10 recovered PT == original PT                            a4c544067b930d5b0a76346e2f4c6d64d5de370a7262615d88f98204
+  [PASS] V10 led_tag_ok = 1                                         
+  [PASS] V11 enc done (len=3 ad=0)                                  
+  [PASS] V11 enc status ct_valid & tag_valid, no err                
+  [PASS] V11 CTLEN == 3                                             
+  [PASS] V11 CT  == reference                                       fa460f
+  [PASS] V11 TAG == reference                                       8323126e59f36a89811d4efc7c8d9ab3
+  [PASS] V11 TAGIN auto-loaded with encryption tag                  
+  [PASS] V11 dec done                                               
+  [PASS] V11 decrypt tag == encryption tag                          8323126e59f36a89811d4efc7c8d9ab3
+  [PASS] V11 decrypt tag == reference                               
+  [PASS] V11 STATUS.tag_ok = 1 (VERIFIED)                           
+  [PASS] V11 STATUS.pt_valid = 1                                    
+  [PASS] V11 recovered PT == original PT                            1073ef
+  [PASS] V11 led_tag_ok = 1                                         
+  [PASS] V12 enc done (len=6 ad=3)                                  
+  [PASS] V12 enc status ct_valid & tag_valid, no err                
+  [PASS] V12 CTLEN == 6                                             
+  [PASS] V12 CT  == reference                                       bd2ba9892fe0
+  [PASS] V12 TAG == reference                                       80950c56e51bb2bb7715f54e0a4052a3
+  [PASS] V12 TAGIN auto-loaded with encryption tag                  
+  [PASS] V12 dec done                                               
+  [PASS] V12 decrypt tag == encryption tag                          80950c56e51bb2bb7715f54e0a4052a3
+  [PASS] V12 decrypt tag == reference                               
+  [PASS] V12 STATUS.tag_ok = 1 (VERIFIED)                           
+  [PASS] V12 STATUS.pt_valid = 1                                    
+  [PASS] V12 recovered PT == original PT                            3c1f70804719
+  [PASS] V12 led_tag_ok = 1                                         
+  [PASS] V13 enc done (len=23 ad=9)                                 
+  [PASS] V13 enc status ct_valid & tag_valid, no err                
+  [PASS] V13 CTLEN == 23                                            
+  [PASS] V13 CT  == reference                                       8119a299a39d67fc7ba70fa39cc86ad52126c801b970a8
+  [PASS] V13 TAG == reference                                       27430ba7df8dbeb33315982c83d84c89
+  [PASS] V13 TAGIN auto-loaded with encryption tag                  
+  [PASS] V13 dec done                                               
+  [PASS] V13 decrypt tag == encryption tag                          27430ba7df8dbeb33315982c83d84c89
+  [PASS] V13 decrypt tag == reference                               
+  [PASS] V13 STATUS.tag_ok = 1 (VERIFIED)                           
+  [PASS] V13 STATUS.pt_valid = 1                                    
+  [PASS] V13 recovered PT == original PT                            3c63ea40a00ab994d5dde203e7ed96b68ed97220ad4c01
+  [PASS] V13 led_tag_ok = 1                                         
+  [PASS] V14 enc done (len=12 ad=1)                                 
+  [PASS] V14 enc status ct_valid & tag_valid, no err                
+  [PASS] V14 CTLEN == 12                                            
+  [PASS] V14 CT  == reference                                       1b1fbcd8e78c695cd8647bbd
+  [PASS] V14 TAG == reference                                       160aba868847c262f849ec02ed9e31a6
+  [PASS] V14 TAGIN auto-loaded with encryption tag                  
+  [PASS] V14 dec done                                               
+  [PASS] V14 decrypt tag == encryption tag                          160aba868847c262f849ec02ed9e31a6
+  [PASS] V14 decrypt tag == reference                               
+  [PASS] V14 STATUS.tag_ok = 1 (VERIFIED)                           
+  [PASS] V14 STATUS.pt_valid = 1                                    
+  [PASS] V14 recovered PT == original PT                            9f4f31ae6c028b95a2372cb1
+  [PASS] V14 led_tag_ok = 1                                         
+  [PASS] V15 enc done (len=15 ad=3)                                 
+  [PASS] V15 enc status ct_valid & tag_valid, no err                
+  [PASS] V15 CTLEN == 15                                            
+  [PASS] V15 CT  == reference                                       2da6ba6d169520f3fcf0158481eb07
+  [PASS] V15 TAG == reference                                       976aa7218331651726739b968f56cde2
+  [PASS] V15 TAGIN auto-loaded with encryption tag                  
+  [PASS] V15 dec done                                               
+  [PASS] V15 decrypt tag == encryption tag                          976aa7218331651726739b968f56cde2
+  [PASS] V15 decrypt tag == reference                               
+  [PASS] V15 STATUS.tag_ok = 1 (VERIFIED)                           
+  [PASS] V15 STATUS.pt_valid = 1                                    
+  [PASS] V15 recovered PT == original PT                            2921acf887b417f0a70cd27db8d5e2
+  [PASS] V15 led_tag_ok = 1                                         
+  [PASS] V16 enc done (len=8 ad=1)                                  
+  [PASS] V16 enc status ct_valid & tag_valid, no err                
+  [PASS] V16 CTLEN == 8                                             
+  [PASS] V16 CT  == reference                                       2fc7a8fe47205435
+  [PASS] V16 TAG == reference                                       e37e5d4914300f810a135bec3510cf9c
+  [PASS] V16 TAGIN auto-loaded with encryption tag                  
+  [PASS] V16 dec done                                               
+  [PASS] V16 decrypt tag == encryption tag                          e37e5d4914300f810a135bec3510cf9c
+  [PASS] V16 decrypt tag == reference                               
+  [PASS] V16 STATUS.tag_ok = 1 (VERIFIED)                           
+  [PASS] V16 STATUS.pt_valid = 1                                    
+  [PASS] V16 recovered PT == original PT                            8bff12702a9926b4
+  [PASS] V16 led_tag_ok = 1                                         
+  [PASS] V17 enc done (len=17 ad=0)                                 
+  [PASS] V17 enc status ct_valid & tag_valid, no err                
+  [PASS] V17 CTLEN == 17                                            
+  [PASS] V17 CT  == reference                                       123780bef73d3689766e058207bfa8d4c0
+  [PASS] V17 TAG == reference                                       af946cad2e5f13fb1c3e50e191444998
+  [PASS] V17 TAGIN auto-loaded with encryption tag                  
+  [PASS] V17 dec done                                               
+  [PASS] V17 decrypt tag == encryption tag                          af946cad2e5f13fb1c3e50e191444998
+  [PASS] V17 decrypt tag == reference                               
+  [PASS] V17 STATUS.tag_ok = 1 (VERIFIED)                           
+  [PASS] V17 STATUS.pt_valid = 1                                    
+  [PASS] V17 recovered PT == original PT                            48eae88826923051054f844237b9de8abc
+  [PASS] V17 led_tag_ok = 1                                         
+  [PASS] V18 enc done (len=8 ad=9)                                  
+  [PASS] V18 enc status ct_valid & tag_valid, no err                
+  [PASS] V18 CTLEN == 8                                             
+  [PASS] V18 CT  == reference                                       61c54e68cea8bf9d
+  [PASS] V18 TAG == reference                                       dc9a429e82b567bcfaf478df3d5df248
+  [PASS] V18 TAGIN auto-loaded with encryption tag                  
+  [PASS] V18 dec done                                               
+  [PASS] V18 decrypt tag == encryption tag                          dc9a429e82b567bcfaf478df3d5df248
+  [PASS] V18 decrypt tag == reference                               
+  [PASS] V18 STATUS.tag_ok = 1 (VERIFIED)                           
+  [PASS] V18 STATUS.pt_valid = 1                                    
+  [PASS] V18 recovered PT == original PT                            3e23e0174a1ecac8
+  [PASS] V18 led_tag_ok = 1                                         
+  [PASS] V19 enc done (len=30 ad=4)                                 
+  [PASS] V19 enc status ct_valid & tag_valid, no err                
+  [PASS] V19 CTLEN == 30                                            
+  [PASS] V19 CT  == reference                                       7ced093ceee7a220b03ed5a63be2cd4f486c5ab7a3fe6035b0966b5828f2
+  [PASS] V19 TAG == reference                                       84dac1c1f7145f76a68424ceda14580d
+  [PASS] V19 TAGIN auto-loaded with encryption tag                  
+  [PASS] V19 dec done                                               
+  [PASS] V19 decrypt tag == encryption tag                          84dac1c1f7145f76a68424ceda14580d
+  [PASS] V19 decrypt tag == reference                               
+  [PASS] V19 STATUS.tag_ok = 1 (VERIFIED)                           
+  [PASS] V19 STATUS.pt_valid = 1                                    
+  [PASS] V19 recovered PT == original PT                            5a574f6092cbf34990a7a17b06928f1610812243b83467ba74b89b3ca4e6
+  [PASS] V19 led_tag_ok = 1                                         
+  [PASS] V20 enc done (len=3 ad=13)                                 
+  [PASS] V20 enc status ct_valid & tag_valid, no err                
+  [PASS] V20 CTLEN == 3                                             
+  [PASS] V20 CT  == reference                                       51cd56
+  [PASS] V20 TAG == reference                                       3a34c9caca667df50170279100d0419d
+  [PASS] V20 TAGIN auto-loaded with encryption tag                  
+  [PASS] V20 dec done                                               
+  [PASS] V20 decrypt tag == encryption tag                          3a34c9caca667df50170279100d0419d
+  [PASS] V20 decrypt tag == reference                               
+  [PASS] V20 STATUS.tag_ok = 1 (VERIFIED)                           
+  [PASS] V20 STATUS.pt_valid = 1                                    
+  [PASS] V20 recovered PT == original PT                            36d115
+  [PASS] V20 led_tag_ok = 1                                         
+  [PASS] V21 enc done (len=31 ad=11)                                
+  [PASS] V21 enc status ct_valid & tag_valid, no err                
+  [PASS] V21 CTLEN == 31                                            
+  [PASS] V21 CT  == reference                                       c1812501fe199e0ae22cc11bebe5b51006524b7d8253fe5bf2892d3881b4e4
+  [PASS] V21 TAG == reference                                       9253725c9c95cf721fdc5bfd06ca671a
+  [PASS] V21 TAGIN auto-loaded with encryption tag                  
+  [PASS] V21 dec done                                               
+  [PASS] V21 decrypt tag == encryption tag                          9253725c9c95cf721fdc5bfd06ca671a
+  [PASS] V21 decrypt tag == reference                               
+  [PASS] V21 STATUS.tag_ok = 1 (VERIFIED)                           
+  [PASS] V21 STATUS.pt_valid = 1                                    
+  [PASS] V21 recovered PT == original PT                            5a7a747b3ec97a9fd74f77b34353f055ce2756ec70a9872d4cc44c9932edda
+  [PASS] V21 led_tag_ok = 1                                         
+  [PASS] V22 enc done (len=9 ad=1)                                  
+  [PASS] V22 enc status ct_valid & tag_valid, no err                
+  [PASS] V22 CTLEN == 9                                             
+  [PASS] V22 CT  == reference                                       87a76d181b0b180b04
+  [PASS] V22 TAG == reference                                       e128b8403ec109578d06f33de390e7f3
+  [PASS] V22 TAGIN auto-loaded with encryption tag                  
+  [PASS] V22 dec done                                               
+  [PASS] V22 decrypt tag == encryption tag                          e128b8403ec109578d06f33de390e7f3
+  [PASS] V22 decrypt tag == reference                               
+  [PASS] V22 STATUS.tag_ok = 1 (VERIFIED)                           
+  [PASS] V22 STATUS.pt_valid = 1                                    
+  [PASS] V22 recovered PT == original PT                            e2839916441559ef8c
+  [PASS] V22 led_tag_ok = 1                                         
+  [PASS] V23 enc done (len=24 ad=3)                                 
+  [PASS] V23 enc status ct_valid & tag_valid, no err                
+  [PASS] V23 CTLEN == 24                                            
+  [PASS] V23 CT  == reference                                       fd76e6d67a2b797633b72088aeef12f33bdec48c079c9b27
+  [PASS] V23 TAG == reference                                       5d07d9ad558d6d8cfe39e43ff4fe95b3
+  [PASS] V23 TAGIN auto-loaded with encryption tag                  
+  [PASS] V23 dec done                                               
+  [PASS] V23 decrypt tag == encryption tag                          5d07d9ad558d6d8cfe39e43ff4fe95b3
+  [PASS] V23 decrypt tag == reference                               
+  [PASS] V23 STATUS.tag_ok = 1 (VERIFIED)                           
+  [PASS] V23 STATUS.pt_valid = 1                                    
+  [PASS] V23 recovered PT == original PT                            974cdf84a08801fcbf8636b92ac257cebe41ab968716613a
+  [PASS] V23 led_tag_ok = 1                                         
+  [PASS] V24 enc done (len=7 ad=14)                                 
+  [PASS] V24 enc status ct_valid & tag_valid, no err                
+  [PASS] V24 CTLEN == 7                                             
+  [PASS] V24 CT  == reference                                       52663ac850d8cd
+  [PASS] V24 TAG == reference                                       4e4bde7ef535176ba094599067009868
+  [PASS] V24 TAGIN auto-loaded with encryption tag                  
+  [PASS] V24 dec done                                               
+  [PASS] V24 decrypt tag == encryption tag                          4e4bde7ef535176ba094599067009868
+  [PASS] V24 decrypt tag == reference                               
+  [PASS] V24 STATUS.tag_ok = 1 (VERIFIED)                           
+  [PASS] V24 STATUS.pt_valid = 1                                    
+  [PASS] V24 recovered PT == original PT                            b1a7831c52a7d8
+  [PASS] V24 led_tag_ok = 1                                         
+  [PASS] V25 enc done (len=3 ad=16)                                 
+  [PASS] V25 enc status ct_valid & tag_valid, no err                
+  [PASS] V25 CTLEN == 3                                             
+  [PASS] V25 CT  == reference                                       a2a16c
+  [PASS] V25 TAG == reference                                       c49ba6ec4dd05386a9cac2aebce2298c
+  [PASS] V25 TAGIN auto-loaded with encryption tag                  
+  [PASS] V25 dec done                                               
+  [PASS] V25 decrypt tag == encryption tag                          c49ba6ec4dd05386a9cac2aebce2298c
+  [PASS] V25 decrypt tag == reference                               
+  [PASS] V25 STATUS.tag_ok = 1 (VERIFIED)                           
+  [PASS] V25 STATUS.pt_valid = 1                                    
+  [PASS] V25 recovered PT == original PT                            db37ec
+  [PASS] V25 led_tag_ok = 1                                         
+  [PASS] V26 enc done (len=11 ad=10)                                
+  [PASS] V26 enc status ct_valid & tag_valid, no err                
+  [PASS] V26 CTLEN == 11                                            
+  [PASS] V26 CT  == reference                                       df0f2c4be0343aeb62efeb
+  [PASS] V26 TAG == reference                                       94f6636c04a1f7b9ba0fad7bdda931e4
+  [PASS] V26 TAGIN auto-loaded with encryption tag                  
+  [PASS] V26 dec done                                               
+  [PASS] V26 decrypt tag == encryption tag                          94f6636c04a1f7b9ba0fad7bdda931e4
+  [PASS] V26 decrypt tag == reference                               
+  [PASS] V26 STATUS.tag_ok = 1 (VERIFIED)                           
+  [PASS] V26 STATUS.pt_valid = 1                                    
+  [PASS] V26 recovered PT == original PT                            1c6311c06bca47287af3b8
+  [PASS] V26 led_tag_ok = 1                                         
+  [PASS] V27 enc done (len=2 ad=1)                                  
+  [PASS] V27 enc status ct_valid & tag_valid, no err                
+  [PASS] V27 CTLEN == 2                                             
+  [PASS] V27 CT  == reference                                       e8dc
+  [PASS] V27 TAG == reference                                       2e1f43b382062b5686f0d2dae36a0e2b
+  [PASS] V27 TAGIN auto-loaded with encryption tag                  
+  [PASS] V27 dec done                                               
+  [PASS] V27 decrypt tag == encryption tag                          2e1f43b382062b5686f0d2dae36a0e2b
+  [PASS] V27 decrypt tag == reference                               
+  [PASS] V27 STATUS.tag_ok = 1 (VERIFIED)                           
+  [PASS] V27 STATUS.pt_valid = 1                                    
+  [PASS] V27 recovered PT == original PT                            0a43
+  [PASS] V27 led_tag_ok = 1                                         
+  [PASS] V28 enc done (len=20 ad=0)                                 
+  [PASS] V28 enc status ct_valid & tag_valid, no err                
+  [PASS] V28 CTLEN == 20                                            
+  [PASS] V28 CT  == reference                                       ceee809d8692a6e6e4e1be8c2e31885091429227
+  [PASS] V28 TAG == reference                                       fe1fdcaefd59d007d163c365a8862be6
+  [PASS] V28 TAGIN auto-loaded with encryption tag                  
+  [PASS] V28 dec done                                               
+  [PASS] V28 decrypt tag == encryption tag                          fe1fdcaefd59d007d163c365a8862be6
+  [PASS] V28 decrypt tag == reference                               
+  [PASS] V28 STATUS.tag_ok = 1 (VERIFIED)                           
+  [PASS] V28 STATUS.pt_valid = 1                                    
+  [PASS] V28 recovered PT == original PT                            f7a6ae8daca0f95116472167c89ff1772558be98
+  [PASS] V28 led_tag_ok = 1                                         
+  [PASS] V29 enc done (len=3 ad=8)                                  
+  [PASS] V29 enc status ct_valid & tag_valid, no err                
+  [PASS] V29 CTLEN == 3                                             
+  [PASS] V29 CT  == reference                                       2021c6
+  [PASS] V29 TAG == reference                                       84ed3643275a1a4f6ac6bb1d83a7ad45
+  [PASS] V29 TAGIN auto-loaded with encryption tag                  
+  [PASS] V29 dec done                                               
+  [PASS] V29 decrypt tag == encryption tag                          84ed3643275a1a4f6ac6bb1d83a7ad45
+  [PASS] V29 decrypt tag == reference                               
+  [PASS] V29 STATUS.tag_ok = 1 (VERIFIED)                           
+  [PASS] V29 STATUS.pt_valid = 1                                    
+  [PASS] V29 recovered PT == original PT                            560369
+  [PASS] V29 led_tag_ok = 1                                         
+  [PASS] V30 enc done (len=10 ad=4)                                 
+  [PASS] V30 enc status ct_valid & tag_valid, no err                
+  [PASS] V30 CTLEN == 10                                            
+  [PASS] V30 CT  == reference                                       ac1e2c23e535f4302e3c
+  [PASS] V30 TAG == reference                                       074d2de6e454948b1647ae472d13f74c
+  [PASS] V30 TAGIN auto-loaded with encryption tag                  
+  [PASS] V30 dec done                                               
+  [PASS] V30 decrypt tag == encryption tag                          074d2de6e454948b1647ae472d13f74c
+  [PASS] V30 decrypt tag == reference                               
+  [PASS] V30 STATUS.tag_ok = 1 (VERIFIED)                           
+  [PASS] V30 STATUS.pt_valid = 1                                    
+  [PASS] V30 recovered PT == original PT                            a9ae96338e268f56e9fa
+  [PASS] V30 led_tag_ok = 1                                         
+  [PASS] V31 enc done (len=10 ad=1)                                 
+  [PASS] V31 enc status ct_valid & tag_valid, no err                
+  [PASS] V31 CTLEN == 10                                            
+  [PASS] V31 CT  == reference                                       c32d2020e06e6e125d9d
+  [PASS] V31 TAG == reference                                       c3442acc93452bda9c4fc69363f2b954
+  [PASS] V31 TAGIN auto-loaded with encryption tag                  
+  [PASS] V31 dec done                                               
+  [PASS] V31 decrypt tag == encryption tag                          c3442acc93452bda9c4fc69363f2b954
+  [PASS] V31 decrypt tag == reference                               
+  [PASS] V31 STATUS.tag_ok = 1 (VERIFIED)                           
+  [PASS] V31 STATUS.pt_valid = 1                                    
+  [PASS] V31 recovered PT == original PT                            57987098117cf1d1cc13
+  [PASS] V31 led_tag_ok = 1                                         
+  [PASS] V32 enc done (len=16 ad=6)                                 
+  [PASS] V32 enc status ct_valid & tag_valid, no err                
+  [PASS] V32 CTLEN == 16                                            
+  [PASS] V32 CT  == reference                                       7a16e63bee45d0bcdc15564b11a93ac9
+  [PASS] V32 TAG == reference                                       0ff56622076999cea6b6c922c9b003b0
+  [PASS] V32 TAGIN auto-loaded with encryption tag                  
+  [PASS] V32 dec done                                               
+  [PASS] V32 decrypt tag == encryption tag                          0ff56622076999cea6b6c922c9b003b0
+  [PASS] V32 decrypt tag == reference                               
+  [PASS] V32 STATUS.tag_ok = 1 (VERIFIED)                           
+  [PASS] V32 STATUS.pt_valid = 1                                    
+  [PASS] V32 recovered PT == original PT                            039faffc5810bbfabc398cbd9cb24309
+  [PASS] V32 led_tag_ok = 1                                         
+  [PASS] V33 enc done (len=6 ad=1)                                  
+  [PASS] V33 enc status ct_valid & tag_valid, no err                
+  [PASS] V33 CTLEN == 6                                             
+  [PASS] V33 CT  == reference                                       deed4d7c8a5b
+  [PASS] V33 TAG == reference                                       bd58707979349a8a306940705f03b5e1
+  [PASS] V33 TAGIN auto-loaded with encryption tag                  
+  [PASS] V33 dec done                                               
+  [PASS] V33 decrypt tag == encryption tag                          bd58707979349a8a306940705f03b5e1
+  [PASS] V33 decrypt tag == reference                               
+  [PASS] V33 STATUS.tag_ok = 1 (VERIFIED)                           
+  [PASS] V33 STATUS.pt_valid = 1                                    
+  [PASS] V33 recovered PT == original PT                            5bfdccf274e6
+  [PASS] V33 led_tag_ok = 1                                         
+  [PASS] V34 enc done (len=21 ad=2)                                 
+  [PASS] V34 enc status ct_valid & tag_valid, no err                
+  [PASS] V34 CTLEN == 21                                            
+  [PASS] V34 CT  == reference                                       839f054b442a7c91c9dfecdf61f0eed46f867e9105
+  [PASS] V34 TAG == reference                                       5796806b387d2655e70845ac8118ccf8
+  [PASS] V34 TAGIN auto-loaded with encryption tag                  
+  [PASS] V34 dec done                                               
+  [PASS] V34 decrypt tag == encryption tag                          5796806b387d2655e70845ac8118ccf8
+  [PASS] V34 decrypt tag == reference                               
+  [PASS] V34 STATUS.tag_ok = 1 (VERIFIED)                           
+  [PASS] V34 STATUS.pt_valid = 1                                    
+  [PASS] V34 recovered PT == original PT                            e5e2692b099802c68af85e880f100a566bf980df1e
+  [PASS] V34 led_tag_ok = 1                                         
+  [PASS] V35 enc done (len=8 ad=11)                                 
+  [PASS] V35 enc status ct_valid & tag_valid, no err                
+  [PASS] V35 CTLEN == 8                                             
+  [PASS] V35 CT  == reference                                       fbb6e61f5a582540
+  [PASS] V35 TAG == reference                                       ad510ac9537455bfa0cdc953d79bf8cd
+  [PASS] V35 TAGIN auto-loaded with encryption tag                  
+  [PASS] V35 dec done                                               
+  [PASS] V35 decrypt tag == encryption tag                          ad510ac9537455bfa0cdc953d79bf8cd
+  [PASS] V35 decrypt tag == reference                               
+  [PASS] V35 STATUS.tag_ok = 1 (VERIFIED)                           
+  [PASS] V35 STATUS.pt_valid = 1                                    
+  [PASS] V35 recovered PT == original PT                            e3e1dfad3acd89f7
+  [PASS] V35 led_tag_ok = 1                                         
+  [PASS] V36 enc done (len=29 ad=7)                                 
+  [PASS] V36 enc status ct_valid & tag_valid, no err                
+  [PASS] V36 CTLEN == 29                                            
+  [PASS] V36 CT  == reference                                       e3de1c43cdadce4e846dec9731c4c24bea2dfe3d3d4ff85033cd0a86ee
+  [PASS] V36 TAG == reference                                       00507f2569d929bbb735467a0db4f28f
+  [PASS] V36 TAGIN auto-loaded with encryption tag                  
+  [PASS] V36 dec done                                               
+  [PASS] V36 decrypt tag == encryption tag                          00507f2569d929bbb735467a0db4f28f
+  [PASS] V36 decrypt tag == reference                               
+  [PASS] V36 STATUS.tag_ok = 1 (VERIFIED)                           
+  [PASS] V36 STATUS.pt_valid = 1                                    
+  [PASS] V36 recovered PT == original PT                            a53956d5245ad66eddee9b146f6a8771640f2bbaaf68413334ce31aa3f
+  [PASS] V36 led_tag_ok = 1                                         
+  [PASS] V37 enc done (len=9 ad=12)                                 
+  [PASS] V37 enc status ct_valid & tag_valid, no err                
+  [PASS] V37 CTLEN == 9                                             
+  [PASS] V37 CT  == reference                                       eb46aa5c73e9e98b31
+  [PASS] V37 TAG == reference                                       ef2aa7fe55af7b3a89605b336bbc6ab7
+  [PASS] V37 TAGIN auto-loaded with encryption tag                  
+  [PASS] V37 dec done                                               
+  [PASS] V37 decrypt tag == encryption tag                          ef2aa7fe55af7b3a89605b336bbc6ab7
+  [PASS] V37 decrypt tag == reference                               
+  [PASS] V37 STATUS.tag_ok = 1 (VERIFIED)                           
+  [PASS] V37 STATUS.pt_valid = 1                                    
+  [PASS] V37 recovered PT == original PT                            5fb60fb2796fd45a6f
+  [PASS] V37 led_tag_ok = 1                                         
+  [PASS] V38 enc done (len=8 ad=3)                                  
+  [PASS] V38 enc status ct_valid & tag_valid, no err                
+  [PASS] V38 CTLEN == 8                                             
+  [PASS] V38 CT  == reference                                       b270b66ad0861b10
+  [PASS] V38 TAG == reference                                       ddf1393ec64259d9692b0dd04d2b161e
+  [PASS] V38 TAGIN auto-loaded with encryption tag                  
+  [PASS] V38 dec done                                               
+  [PASS] V38 decrypt tag == encryption tag                          ddf1393ec64259d9692b0dd04d2b161e
+  [PASS] V38 decrypt tag == reference                               
+  [PASS] V38 STATUS.tag_ok = 1 (VERIFIED)                           
+  [PASS] V38 STATUS.pt_valid = 1                                    
+  [PASS] V38 recovered PT == original PT                            53a831a57a45ac90
+  [PASS] V38 led_tag_ok = 1                                         
+  [PASS] V39 enc done (len=3 ad=10)                                 
+  [PASS] V39 enc status ct_valid & tag_valid, no err                
+  [PASS] V39 CTLEN == 3                                             
+  [PASS] V39 CT  == reference                                       2b1271
+  [PASS] V39 TAG == reference                                       a42dba66dafa787218c6128196c3145e
+  [PASS] V39 TAGIN auto-loaded with encryption tag                  
+  [PASS] V39 dec done                                               
+  [PASS] V39 decrypt tag == encryption tag                          a42dba66dafa787218c6128196c3145e
+  [PASS] V39 decrypt tag == reference                               
+  [PASS] V39 STATUS.tag_ok = 1 (VERIFIED)                           
+  [PASS] V39 STATUS.pt_valid = 1                                    
+  [PASS] V39 recovered PT == original PT                            d9a6f7
+  [PASS] V39 led_tag_ok = 1                                         
+  [PASS] V40 enc done (len=24 ad=12)                                
+  [PASS] V40 enc status ct_valid & tag_valid, no err                
+  [PASS] V40 CTLEN == 24                                            
+  [PASS] V40 CT  == reference                                       bb37e5f70f8d6d72a37789fa7d64d1faa2339a9ff80a7078
+  [PASS] V40 TAG == reference                                       a2d228161ed1395eb1a1841646643fb9
+  [PASS] V40 TAGIN auto-loaded with encryption tag                  
+  [PASS] V40 dec done                                               
+  [PASS] V40 decrypt tag == encryption tag                          a2d228161ed1395eb1a1841646643fb9
+  [PASS] V40 decrypt tag == reference                               
+  [PASS] V40 STATUS.tag_ok = 1 (VERIFIED)                           
+  [PASS] V40 STATUS.pt_valid = 1                                    
+  [PASS] V40 recovered PT == original PT                            93419428e131e42f7c27295ff7262d62b4dd474e5f28da24
+  [PASS] V40 led_tag_ok = 1                                         
+  [PASS] V41 enc done (len=27 ad=8)                                 
+  [PASS] V41 enc status ct_valid & tag_valid, no err                
+  [PASS] V41 CTLEN == 27                                            
+  [PASS] V41 CT  == reference                                       8e8371c3b96be4bec02f05b72a0150d517e7dade685b0b38b98f4f
+  [PASS] V41 TAG == reference                                       d1daec3c99e698542aaf6269914a357a
+  [PASS] V41 TAGIN auto-loaded with encryption tag                  
+  [PASS] V41 dec done                                               
+  [PASS] V41 decrypt tag == encryption tag                          d1daec3c99e698542aaf6269914a357a
+  [PASS] V41 decrypt tag == reference                               
+  [PASS] V41 STATUS.tag_ok = 1 (VERIFIED)                           
+  [PASS] V41 STATUS.pt_valid = 1                                    
+  [PASS] V41 recovered PT == original PT                            fa4c81bdfbab98caef6e289be5d0f392b4b8487a8039820e3a1386
+  [PASS] V41 led_tag_ok = 1                                         
+  [PASS] V42 enc done (len=30 ad=11)                                
+  [PASS] V42 enc status ct_valid & tag_valid, no err                
+  [PASS] V42 CTLEN == 30                                            
+  [PASS] V42 CT  == reference                                       aae2db5058e0acbedf4d2c9ff337b342dfb5bb9433792d01cd13b2836bb8
+  [PASS] V42 TAG == reference                                       e42e450e1cc4dc23396e785c2c64f22e
+  [PASS] V42 TAGIN auto-loaded with encryption tag                  
+  [PASS] V42 dec done                                               
+  [PASS] V42 decrypt tag == encryption tag                          e42e450e1cc4dc23396e785c2c64f22e
+  [PASS] V42 decrypt tag == reference                               
+  [PASS] V42 STATUS.tag_ok = 1 (VERIFIED)                           
+  [PASS] V42 STATUS.pt_valid = 1                                    
+  [PASS] V42 recovered PT == original PT                            d1186aa1df70bb3d4e15fc86498aa236ec20cc93ba74c5f025ec852c0c3f
+  [PASS] V42 led_tag_ok = 1                                         
+  [PASS] V43 enc done (len=5 ad=16)                                 
+  [PASS] V43 enc status ct_valid & tag_valid, no err                
+  [PASS] V43 CTLEN == 5                                             
+  [PASS] V43 CT  == reference                                       de2d716841
+  [PASS] V43 TAG == reference                                       dba83ffc2bd6076fd7f277bcf68f890e
+  [PASS] V43 TAGIN auto-loaded with encryption tag                  
+  [PASS] V43 dec done                                               
+  [PASS] V43 decrypt tag == encryption tag                          dba83ffc2bd6076fd7f277bcf68f890e
+  [PASS] V43 decrypt tag == reference                               
+  [PASS] V43 STATUS.tag_ok = 1 (VERIFIED)                           
+  [PASS] V43 STATUS.pt_valid = 1                                    
+  [PASS] V43 recovered PT == original PT                            89be0b8814
+  [PASS] V43 led_tag_ok = 1                                         
+  [PASS] V44 enc done (len=11 ad=7)                                 
+  [PASS] V44 enc status ct_valid & tag_valid, no err                
+  [PASS] V44 CTLEN == 11                                            
+  [PASS] V44 CT  == reference                                       35fccd325dc54c2978280e
+  [PASS] V44 TAG == reference                                       211a0ae0234231cfcb5fcbcdd8743130
+  [PASS] V44 TAGIN auto-loaded with encryption tag                  
+  [PASS] V44 dec done                                               
+  [PASS] V44 decrypt tag == encryption tag                          211a0ae0234231cfcb5fcbcdd8743130
+  [PASS] V44 decrypt tag == reference                               
+  [PASS] V44 STATUS.tag_ok = 1 (VERIFIED)                           
+  [PASS] V44 STATUS.pt_valid = 1                                    
+  [PASS] V44 recovered PT == original PT                            5863b22ed65bdd3d4dc0a4
+  [PASS] V44 led_tag_ok = 1                                         
+  [PASS] V45 enc done (len=11 ad=7)                                 
+  [PASS] V45 enc status ct_valid & tag_valid, no err                
+  [PASS] V45 CTLEN == 11                                            
+  [PASS] V45 CT  == reference                                       0619831bb149cf4e001bbb
+  [PASS] V45 TAG == reference                                       2d7d58d295caf90cf8b2cc88976d9313
+  [PASS] V45 TAGIN auto-loaded with encryption tag                  
+  [PASS] V45 dec done                                               
+  [PASS] V45 decrypt tag == encryption tag                          2d7d58d295caf90cf8b2cc88976d9313
+  [PASS] V45 decrypt tag == reference                               
+  [PASS] V45 STATUS.tag_ok = 1 (VERIFIED)                           
+  [PASS] V45 STATUS.pt_valid = 1                                    
+  [PASS] V45 recovered PT == original PT                            76d7fccb1d9c5e21f3ae8b
+  [PASS] V45 led_tag_ok = 1                                         
+  [PASS] V46 enc done (len=16 ad=15)                                
+  [PASS] V46 enc status ct_valid & tag_valid, no err                
+  [PASS] V46 CTLEN == 16                                            
+  [PASS] V46 CT  == reference                                       16e24933f12baeac517bf9eeb1a7caf0
+  [PASS] V46 TAG == reference                                       631e38fd16821b7069186c0584861813
+  [PASS] V46 TAGIN auto-loaded with encryption tag                  
+  [PASS] V46 dec done                                               
+  [PASS] V46 decrypt tag == encryption tag                          631e38fd16821b7069186c0584861813
+  [PASS] V46 decrypt tag == reference                               
+  [PASS] V46 STATUS.tag_ok = 1 (VERIFIED)                           
+  [PASS] V46 STATUS.pt_valid = 1                                    
+  [PASS] V46 recovered PT == original PT                            38111851d2d40180f35eb582dfba1ef7
+  [PASS] V46 led_tag_ok = 1                                         
+  [PASS] V47 enc done (len=26 ad=13)                                
+  [PASS] V47 enc status ct_valid & tag_valid, no err                
+  [PASS] V47 CTLEN == 26                                            
+  [PASS] V47 CT  == reference                                       8b7bb0be1e537130d5003cdcafb0ce10a6e8ef3c1bb7d8f7a60b
+  [PASS] V47 TAG == reference                                       38875b4a1eb95848780fb7bd6c5ec9c5
+  [PASS] V47 TAGIN auto-loaded with encryption tag                  
+  [PASS] V47 dec done                                               
+  [PASS] V47 decrypt tag == encryption tag                          38875b4a1eb95848780fb7bd6c5ec9c5
+  [PASS] V47 decrypt tag == reference                               
+  [PASS] V47 STATUS.tag_ok = 1 (VERIFIED)                           
+  [PASS] V47 STATUS.pt_valid = 1                                    
+  [PASS] V47 recovered PT == original PT                            b97141a7abb86bfbc214697fffd733e8af79cad8eb24bc5c152a
+  [PASS] V47 led_tag_ok = 1                                         
+  [PASS] V48 enc done (len=26 ad=15)                                
+  [PASS] V48 enc status ct_valid & tag_valid, no err                
+  [PASS] V48 CTLEN == 26                                            
+  [PASS] V48 CT  == reference                                       ad6c3c2938cb3f5d299bde549f8dc46d6ae144afc306f7bc8aa5
+  [PASS] V48 TAG == reference                                       6ff5b5e42c9b3a9874156c851dec3b3e
+  [PASS] V48 TAGIN auto-loaded with encryption tag                  
+  [PASS] V48 dec done                                               
+  [PASS] V48 decrypt tag == encryption tag                          6ff5b5e42c9b3a9874156c851dec3b3e
+  [PASS] V48 decrypt tag == reference                               
+  [PASS] V48 STATUS.tag_ok = 1 (VERIFIED)                           
+  [PASS] V48 STATUS.pt_valid = 1                                    
+  [PASS] V48 recovered PT == original PT                            fe741300b417b4f82db8c96ed41c045e05d3c54d83b997cd0176
+  [PASS] V48 led_tag_ok = 1                                         
+  [PASS] V49 enc done (len=29 ad=0)                                 
+  [PASS] V49 enc status ct_valid & tag_valid, no err                
+  [PASS] V49 CTLEN == 29                                            
+  [PASS] V49 CT  == reference                                       b7d66e18f5a7b4029858fd0a9736de7830d75437646d9d7fcedb9014c9
+  [PASS] V49 TAG == reference                                       8e843320d1cf69f414b3519db39b2bb6
+  [PASS] V49 TAGIN auto-loaded with encryption tag                  
+  [PASS] V49 dec done                                               
+  [PASS] V49 decrypt tag == encryption tag                          8e843320d1cf69f414b3519db39b2bb6
+  [PASS] V49 decrypt tag == reference                               
+  [PASS] V49 STATUS.tag_ok = 1 (VERIFIED)                           
+  [PASS] V49 STATUS.pt_valid = 1                                    
+  [PASS] V49 recovered PT == original PT                            9811b7dad30a282ad09e6d33976706757d267c58a34ce6b1757367422a
+  [PASS] V49 led_tag_ok = 1                                         
+  [PASS] V50 enc done (len=13 ad=10)                                
+  [PASS] V50 enc status ct_valid & tag_valid, no err                
+  [PASS] V50 CTLEN == 13                                            
+  [PASS] V50 CT  == reference                                       de94580b858971d49f8dfe5024
+  [PASS] V50 TAG == reference                                       6fa2b7ab195b1636883e6a709aa658aa
+  [PASS] V50 TAGIN auto-loaded with encryption tag                  
+  [PASS] V50 dec done                                               
+  [PASS] V50 decrypt tag == encryption tag                          6fa2b7ab195b1636883e6a709aa658aa
+  [PASS] V50 decrypt tag == reference                               
+  [PASS] V50 STATUS.tag_ok = 1 (VERIFIED)                           
+  [PASS] V50 STATUS.pt_valid = 1                                    
+  [PASS] V50 recovered PT == original PT                            1071ae1f19fb274b489d153597
+  [PASS] V50 led_tag_ok = 1                                         
+  [PASS] V51 enc done (len=20 ad=7)                                 
+  [PASS] V51 enc status ct_valid & tag_valid, no err                
+  [PASS] V51 CTLEN == 20                                            
+  [PASS] V51 CT  == reference                                       ec1841e55f8c1d3595fb99c1c6cb3b175ef7d5bb
+  [PASS] V51 TAG == reference                                       94d3ee17b4d65f1a3c71b88984a1de95
+  [PASS] V51 TAGIN auto-loaded with encryption tag                  
+  [PASS] V51 dec done                                               
+  [PASS] V51 decrypt tag == encryption tag                          94d3ee17b4d65f1a3c71b88984a1de95
+  [PASS] V51 decrypt tag == reference                               
+  [PASS] V51 STATUS.tag_ok = 1 (VERIFIED)                           
+  [PASS] V51 STATUS.pt_valid = 1                                    
+  [PASS] V51 recovered PT == original PT                            4ed9b9a5edc24c4078b3883beb551e650f014efe
+  [PASS] V51 led_tag_ok = 1                                         
+
+--- T6 Every message length 0..32 (AD 0) and every AD length 0..16 (msg 8) ---
+  [PASS] V52 enc done (len=0 ad=0)                                  
+  [PASS] V52 enc status ct_valid & tag_valid, no err                
+  [PASS] V52 CTLEN == 0                                             
+  [PASS] V52 CT  == reference                                       -
+  [PASS] V52 TAG == reference                                       1af07a640d50fad3be9a05899776b9d0
+  [PASS] V52 TAGIN auto-loaded with encryption tag                  
+  [PASS] V52 dec done                                               
+  [PASS] V52 decrypt tag == encryption tag                          1af07a640d50fad3be9a05899776b9d0
+  [PASS] V52 decrypt tag == reference                               
+  [PASS] V52 STATUS.tag_ok = 1 (VERIFIED)                           
+  [PASS] V52 STATUS.pt_valid = 1                                    
+  [PASS] V52 recovered PT == original PT                            -
+  [PASS] V52 led_tag_ok = 1                                         
+  [PASS] V53 enc done (len=1 ad=0)                                  
+  [PASS] V53 enc status ct_valid & tag_valid, no err                
+  [PASS] V53 CTLEN == 1                                             
+  [PASS] V53 CT  == reference                                       9e
+  [PASS] V53 TAG == reference                                       8dfa2316cac550aa937986eb67da1291
+  [PASS] V53 TAGIN auto-loaded with encryption tag                  
+  [PASS] V53 dec done                                               
+  [PASS] V53 decrypt tag == encryption tag                          8dfa2316cac550aa937986eb67da1291
+  [PASS] V53 decrypt tag == reference                               
+  [PASS] V53 STATUS.tag_ok = 1 (VERIFIED)                           
+  [PASS] V53 STATUS.pt_valid = 1                                    
+  [PASS] V53 recovered PT == original PT                            89
+  [PASS] V53 led_tag_ok = 1                                         
+  [PASS] V54 enc done (len=2 ad=0)                                  
+  [PASS] V54 enc status ct_valid & tag_valid, no err                
+  [PASS] V54 CTLEN == 2                                             
+  [PASS] V54 CT  == reference                                       4888
+  [PASS] V54 TAG == reference                                       61fdba56594f20531a5124ea57c7e13d
+  [PASS] V54 TAGIN auto-loaded with encryption tag                  
+  [PASS] V54 dec done                                               
+  [PASS] V54 decrypt tag == encryption tag                          61fdba56594f20531a5124ea57c7e13d
+  [PASS] V54 decrypt tag == reference                               
+  [PASS] V54 STATUS.tag_ok = 1 (VERIFIED)                           
+  [PASS] V54 STATUS.pt_valid = 1                                    
+  [PASS] V54 recovered PT == original PT                            e53d
+  [PASS] V54 led_tag_ok = 1                                         
+  [PASS] V55 enc done (len=3 ad=0)                                  
+  [PASS] V55 enc status ct_valid & tag_valid, no err                
+  [PASS] V55 CTLEN == 3                                             
+  [PASS] V55 CT  == reference                                       dc1003
+  [PASS] V55 TAG == reference                                       2d48b4b416ee4417917867b64f49daa9
+  [PASS] V55 TAGIN auto-loaded with encryption tag                  
+  [PASS] V55 dec done                                               
+  [PASS] V55 decrypt tag == encryption tag                          2d48b4b416ee4417917867b64f49daa9
+  [PASS] V55 decrypt tag == reference                               
+  [PASS] V55 STATUS.tag_ok = 1 (VERIFIED)                           
+  [PASS] V55 STATUS.pt_valid = 1                                    
+  [PASS] V55 recovered PT == original PT                            99930f
+  [PASS] V55 led_tag_ok = 1                                         
+  [PASS] V56 enc done (len=4 ad=0)                                  
+  [PASS] V56 enc status ct_valid & tag_valid, no err                
+  [PASS] V56 CTLEN == 4                                             
+  [PASS] V56 CT  == reference                                       52d7605a
+  [PASS] V56 TAG == reference                                       e621f5cf172f3fff38877d8c6e066ac0
+  [PASS] V56 TAGIN auto-loaded with encryption tag                  
+  [PASS] V56 dec done                                               
+  [PASS] V56 decrypt tag == encryption tag                          e621f5cf172f3fff38877d8c6e066ac0
+  [PASS] V56 decrypt tag == reference                               
+  [PASS] V56 STATUS.tag_ok = 1 (VERIFIED)                           
+  [PASS] V56 STATUS.pt_valid = 1                                    
+  [PASS] V56 recovered PT == original PT                            690e3847
+  [PASS] V56 led_tag_ok = 1                                         
+  [PASS] V57 enc done (len=5 ad=0)                                  
+  [PASS] V57 enc status ct_valid & tag_valid, no err                
+  [PASS] V57 CTLEN == 5                                             
+  [PASS] V57 CT  == reference                                       11697b5eda
+  [PASS] V57 TAG == reference                                       1a4134b13d658b2a69e19a01d703cb9c
+  [PASS] V57 TAGIN auto-loaded with encryption tag                  
+  [PASS] V57 dec done                                               
+  [PASS] V57 decrypt tag == encryption tag                          1a4134b13d658b2a69e19a01d703cb9c
+  [PASS] V57 decrypt tag == reference                               
+  [PASS] V57 STATUS.tag_ok = 1 (VERIFIED)                           
+  [PASS] V57 STATUS.pt_valid = 1                                    
+  [PASS] V57 recovered PT == original PT                            e707529e97
+  [PASS] V57 led_tag_ok = 1                                         
+  [PASS] V58 enc done (len=6 ad=0)                                  
+  [PASS] V58 enc status ct_valid & tag_valid, no err                
+  [PASS] V58 CTLEN == 6                                             
+  [PASS] V58 CT  == reference                                       e198b84856e2
+  [PASS] V58 TAG == reference                                       4a82d7c4095f60df21f4690226415b3c
+  [PASS] V58 TAGIN auto-loaded with encryption tag                  
+  [PASS] V58 dec done                                               
+  [PASS] V58 decrypt tag == encryption tag                          4a82d7c4095f60df21f4690226415b3c
+  [PASS] V58 decrypt tag == reference                               
+  [PASS] V58 STATUS.tag_ok = 1 (VERIFIED)                           
+  [PASS] V58 STATUS.pt_valid = 1                                    
+  [PASS] V58 recovered PT == original PT                            8d267085b0e5
+  [PASS] V58 led_tag_ok = 1                                         
+  [PASS] V59 enc done (len=7 ad=0)                                  
+  [PASS] V59 enc status ct_valid & tag_valid, no err                
+  [PASS] V59 CTLEN == 7                                             
+  [PASS] V59 CT  == reference                                       27ddeb083917ff
+  [PASS] V59 TAG == reference                                       f8785a51609b246687b9f06e4d50a894
+  [PASS] V59 TAGIN auto-loaded with encryption tag                  
+  [PASS] V59 dec done                                               
+  [PASS] V59 decrypt tag == encryption tag                          f8785a51609b246687b9f06e4d50a894
+  [PASS] V59 decrypt tag == reference                               
+  [PASS] V59 STATUS.tag_ok = 1 (VERIFIED)                           
+  [PASS] V59 STATUS.pt_valid = 1                                    
+  [PASS] V59 recovered PT == original PT                            e6670f2c742155
+  [PASS] V59 led_tag_ok = 1                                         
+  [PASS] V60 enc done (len=8 ad=0)                                  
+  [PASS] V60 enc status ct_valid & tag_valid, no err                
+  [PASS] V60 CTLEN == 8                                             
+  [PASS] V60 CT  == reference                                       7ab8c194411eb5cc
+  [PASS] V60 TAG == reference                                       ae825e0f5db3b86f561164bbcf16cb0c
+  [PASS] V60 TAGIN auto-loaded with encryption tag                  
+  [PASS] V60 dec done                                               
+  [PASS] V60 decrypt tag == encryption tag                          ae825e0f5db3b86f561164bbcf16cb0c
+  [PASS] V60 decrypt tag == reference                               
+  [PASS] V60 STATUS.tag_ok = 1 (VERIFIED)                           
+  [PASS] V60 STATUS.pt_valid = 1                                    
+  [PASS] V60 recovered PT == original PT                            865a42b9e725867b
+  [PASS] V60 led_tag_ok = 1                                         
+  [PASS] V61 enc done (len=9 ad=0)                                  
+  [PASS] V61 enc status ct_valid & tag_valid, no err                
+  [PASS] V61 CTLEN == 9                                             
+  [PASS] V61 CT  == reference                                       c8dc49774beac0b6d5
+  [PASS] V61 TAG == reference                                       9b3d92f01a0a64fc5cb0cd9b722fef15
+  [PASS] V61 TAGIN auto-loaded with encryption tag                  
+  [PASS] V61 dec done                                               
+  [PASS] V61 decrypt tag == encryption tag                          9b3d92f01a0a64fc5cb0cd9b722fef15
+  [PASS] V61 decrypt tag == reference                               
+  [PASS] V61 STATUS.tag_ok = 1 (VERIFIED)                           
+  [PASS] V61 STATUS.pt_valid = 1                                    
+  [PASS] V61 recovered PT == original PT                            322d536bb2163f64a2
+  [PASS] V61 led_tag_ok = 1                                         
+  [PASS] V62 enc done (len=10 ad=0)                                 
+  [PASS] V62 enc status ct_valid & tag_valid, no err                
+  [PASS] V62 CTLEN == 10                                            
+  [PASS] V62 CT  == reference                                       1d38af31355b0d3836f5
+  [PASS] V62 TAG == reference                                       c6f58f7cecc353747131968c8fbd2b00
+  [PASS] V62 TAGIN auto-loaded with encryption tag                  
+  [PASS] V62 dec done                                               
+  [PASS] V62 decrypt tag == encryption tag                          c6f58f7cecc353747131968c8fbd2b00
+  [PASS] V62 decrypt tag == reference                               
+  [PASS] V62 STATUS.tag_ok = 1 (VERIFIED)                           
+  [PASS] V62 STATUS.pt_valid = 1                                    
+  [PASS] V62 recovered PT == original PT                            5187cba79a9712527a87
+  [PASS] V62 led_tag_ok = 1                                         
+  [PASS] V63 enc done (len=11 ad=0)                                 
+  [PASS] V63 enc status ct_valid & tag_valid, no err                
+  [PASS] V63 CTLEN == 11                                            
+  [PASS] V63 CT  == reference                                       f3a6bb79fb96c23d5efd60
+  [PASS] V63 TAG == reference                                       c002b9493cb4c9f18771d1a0813975d4
+  [PASS] V63 TAGIN auto-loaded with encryption tag                  
+  [PASS] V63 dec done                                               
+  [PASS] V63 decrypt tag == encryption tag                          c002b9493cb4c9f18771d1a0813975d4
+  [PASS] V63 decrypt tag == reference                               
+  [PASS] V63 STATUS.tag_ok = 1 (VERIFIED)                           
+  [PASS] V63 STATUS.pt_valid = 1                                    
+  [PASS] V63 recovered PT == original PT                            39a1c59a4a7e1bbfdb3c69
+  [PASS] V63 led_tag_ok = 1                                         
+  [PASS] V64 enc done (len=12 ad=0)                                 
+  [PASS] V64 enc status ct_valid & tag_valid, no err                
+  [PASS] V64 CTLEN == 12                                            
+  [PASS] V64 CT  == reference                                       51d9d91a4857bd55dccad8ca
+  [PASS] V64 TAG == reference                                       2bd38cb9c05c0aca23b7659a492a3233
+  [PASS] V64 TAGIN auto-loaded with encryption tag                  
+  [PASS] V64 dec done                                               
+  [PASS] V64 decrypt tag == encryption tag                          2bd38cb9c05c0aca23b7659a492a3233
+  [PASS] V64 decrypt tag == reference                               
+  [PASS] V64 STATUS.tag_ok = 1 (VERIFIED)                           
+  [PASS] V64 STATUS.pt_valid = 1                                    
+  [PASS] V64 recovered PT == original PT                            118e1f675992d3198921f150
+  [PASS] V64 led_tag_ok = 1                                         
+  [PASS] V65 enc done (len=13 ad=0)                                 
+  [PASS] V65 enc status ct_valid & tag_valid, no err                
+  [PASS] V65 CTLEN == 13                                            
+  [PASS] V65 CT  == reference                                       40149fa76ebc48fee8c436b799
+  [PASS] V65 TAG == reference                                       28a9456a160f4ed971ca5cb053ed811d
+  [PASS] V65 TAGIN auto-loaded with encryption tag                  
+  [PASS] V65 dec done                                               
+  [PASS] V65 decrypt tag == encryption tag                          28a9456a160f4ed971ca5cb053ed811d
+  [PASS] V65 decrypt tag == reference                               
+  [PASS] V65 STATUS.tag_ok = 1 (VERIFIED)                           
+  [PASS] V65 STATUS.pt_valid = 1                                    
+  [PASS] V65 recovered PT == original PT                            41017f294c066f8b228c1dab65
+  [PASS] V65 led_tag_ok = 1                                         
+  [PASS] V66 enc done (len=14 ad=0)                                 
+  [PASS] V66 enc status ct_valid & tag_valid, no err                
+  [PASS] V66 CTLEN == 14                                            
+  [PASS] V66 CT  == reference                                       5e0a7edbf77aacc92d83b7aed386
+  [PASS] V66 TAG == reference                                       4d120368c5ddeed60b9629915b7c1bde
+  [PASS] V66 TAGIN auto-loaded with encryption tag                  
+  [PASS] V66 dec done                                               
+  [PASS] V66 decrypt tag == encryption tag                          4d120368c5ddeed60b9629915b7c1bde
+  [PASS] V66 decrypt tag == reference                               
+  [PASS] V66 STATUS.tag_ok = 1 (VERIFIED)                           
+  [PASS] V66 STATUS.pt_valid = 1                                    
+  [PASS] V66 recovered PT == original PT                            ffd48966564872a0911b7e39415a
+  [PASS] V66 led_tag_ok = 1                                         
+  [PASS] V67 enc done (len=15 ad=0)                                 
+  [PASS] V67 enc status ct_valid & tag_valid, no err                
+  [PASS] V67 CTLEN == 15                                            
+  [PASS] V67 CT  == reference                                       98b2b38478983d2843e41ce34fe8dd
+  [PASS] V67 TAG == reference                                       a50b4988d5a651e037c6b43a637c798d
+  [PASS] V67 TAGIN auto-loaded with encryption tag                  
+  [PASS] V67 dec done                                               
+  [PASS] V67 decrypt tag == encryption tag                          a50b4988d5a651e037c6b43a637c798d
+  [PASS] V67 decrypt tag == reference                               
+  [PASS] V67 STATUS.tag_ok = 1 (VERIFIED)                           
+  [PASS] V67 STATUS.pt_valid = 1                                    
+  [PASS] V67 recovered PT == original PT                            1186feff5d86f16edc644afad8f7c8
+  [PASS] V67 led_tag_ok = 1                                         
+  [PASS] V68 enc done (len=16 ad=0)                                 
+  [PASS] V68 enc status ct_valid & tag_valid, no err                
+  [PASS] V68 CTLEN == 16                                            
+  [PASS] V68 CT  == reference                                       70a40737c79e301c19a4ae7b355eb95a
+  [PASS] V68 TAG == reference                                       a5f8a0a8b8fd3235400a6aed1f0c2e82
+  [PASS] V68 TAGIN auto-loaded with encryption tag                  
+  [PASS] V68 dec done                                               
+  [PASS] V68 decrypt tag == encryption tag                          a5f8a0a8b8fd3235400a6aed1f0c2e82
+  [PASS] V68 decrypt tag == reference                               
+  [PASS] V68 STATUS.tag_ok = 1 (VERIFIED)                           
+  [PASS] V68 STATUS.pt_valid = 1                                    
+  [PASS] V68 recovered PT == original PT                            60e544364963f8eacafff146e532b439
+  [PASS] V68 led_tag_ok = 1                                         
+  [PASS] V69 enc done (len=17 ad=0)                                 
+  [PASS] V69 enc status ct_valid & tag_valid, no err                
+  [PASS] V69 CTLEN == 17                                            
+  [PASS] V69 CT  == reference                                       0bf78cc5693286b3e774dd65ff8ffddcaf
+  [PASS] V69 TAG == reference                                       905af30f3e0935ab87e3efbd6e950f77
+  [PASS] V69 TAGIN auto-loaded with encryption tag                  
+  [PASS] V69 dec done                                               
+  [PASS] V69 decrypt tag == encryption tag                          905af30f3e0935ab87e3efbd6e950f77
+  [PASS] V69 decrypt tag == reference                               
+  [PASS] V69 STATUS.tag_ok = 1 (VERIFIED)                           
+  [PASS] V69 STATUS.pt_valid = 1                                    
+  [PASS] V69 recovered PT == original PT                            08bef6bd8b36165934749e9eb422c8ac29
+  [PASS] V69 led_tag_ok = 1                                         
+  [PASS] V70 enc done (len=18 ad=0)                                 
+  [PASS] V70 enc status ct_valid & tag_valid, no err                
+  [PASS] V70 CTLEN == 18                                            
+  [PASS] V70 CT  == reference                                       bf770634bf6303ca441101ac9dbcb8fd3e02
+  [PASS] V70 TAG == reference                                       1a184f90d5fb38aa040bee19e3025026
+  [PASS] V70 TAGIN auto-loaded with encryption tag                  
+  [PASS] V70 dec done                                               
+  [PASS] V70 decrypt tag == encryption tag                          1a184f90d5fb38aa040bee19e3025026
+  [PASS] V70 decrypt tag == reference                               
+  [PASS] V70 STATUS.tag_ok = 1 (VERIFIED)                           
+  [PASS] V70 STATUS.pt_valid = 1                                    
+  [PASS] V70 recovered PT == original PT                            34f5ad9d6b365683d2c56b3f428a3a9de099
+  [PASS] V70 led_tag_ok = 1                                         
+  [PASS] V71 enc done (len=19 ad=0)                                 
+  [PASS] V71 enc status ct_valid & tag_valid, no err                
+  [PASS] V71 CTLEN == 19                                            
+  [PASS] V71 CT  == reference                                       3ca5efe48e4dc520d43a1822adb8de40dfbda6
+  [PASS] V71 TAG == reference                                       7cd154e4eeac087f80f699b9e83b7f84
+  [PASS] V71 TAGIN auto-loaded with encryption tag                  
+  [PASS] V71 dec done                                               
+  [PASS] V71 decrypt tag == encryption tag                          7cd154e4eeac087f80f699b9e83b7f84
+  [PASS] V71 decrypt tag == reference                               
+  [PASS] V71 STATUS.tag_ok = 1 (VERIFIED)                           
+  [PASS] V71 STATUS.pt_valid = 1                                    
+  [PASS] V71 recovered PT == original PT                            1c569bb0fa90b1bcc45d2953f93a5839248f5f
+  [PASS] V71 led_tag_ok = 1                                         
+  [PASS] V72 enc done (len=20 ad=0)                                 
+  [PASS] V72 enc status ct_valid & tag_valid, no err                
+  [PASS] V72 CTLEN == 20                                            
+  [PASS] V72 CT  == reference                                       06ef871bbbacec4a4d6d26c89a06b49d631b911e
+  [PASS] V72 TAG == reference                                       2783a12e5435e77b96d2444ffa91a84e
+  [PASS] V72 TAGIN auto-loaded with encryption tag                  
+  [PASS] V72 dec done                                               
+  [PASS] V72 decrypt tag == encryption tag                          2783a12e5435e77b96d2444ffa91a84e
+  [PASS] V72 decrypt tag == reference                               
+  [PASS] V72 STATUS.tag_ok = 1 (VERIFIED)                           
+  [PASS] V72 STATUS.pt_valid = 1                                    
+  [PASS] V72 recovered PT == original PT                            dd5b33a9dbc1e76f7b03d8362edc204e15934452
+  [PASS] V72 led_tag_ok = 1                                         
+  [PASS] V73 enc done (len=21 ad=0)                                 
+  [PASS] V73 enc status ct_valid & tag_valid, no err                
+  [PASS] V73 CTLEN == 21                                            
+  [PASS] V73 CT  == reference                                       a4772414e7688376ce9c3a0f90842e1c298a3c6c05
+  [PASS] V73 TAG == reference                                       20d493a9159e0561fd9eef7b12433ea4
+  [PASS] V73 TAGIN auto-loaded with encryption tag                  
+  [PASS] V73 dec done                                               
+  [PASS] V73 decrypt tag == encryption tag                          20d493a9159e0561fd9eef7b12433ea4
+  [PASS] V73 decrypt tag == reference                               
+  [PASS] V73 STATUS.tag_ok = 1 (VERIFIED)                           
+  [PASS] V73 STATUS.pt_valid = 1                                    
+  [PASS] V73 recovered PT == original PT                            7c7ab5ad596f5111d05de000b0b99a45f5079e7946
+  [PASS] V73 led_tag_ok = 1                                         
+  [PASS] V74 enc done (len=22 ad=0)                                 
+  [PASS] V74 enc status ct_valid & tag_valid, no err                
+  [PASS] V74 CTLEN == 22                                            
+  [PASS] V74 CT  == reference                                       07bb5218112ba41fdcaa41667c04fd213d1875ec915f
+  [PASS] V74 TAG == reference                                       78bbe3452fd6a628c7cd8971b3416d98
+  [PASS] V74 TAGIN auto-loaded with encryption tag                  
+  [PASS] V74 dec done                                               
+  [PASS] V74 decrypt tag == encryption tag                          78bbe3452fd6a628c7cd8971b3416d98
+  [PASS] V74 decrypt tag == reference                               
+  [PASS] V74 STATUS.tag_ok = 1 (VERIFIED)                           
+  [PASS] V74 STATUS.pt_valid = 1                                    
+  [PASS] V74 recovered PT == original PT                            557b8176bda90d05e60e199f817b6d99ce2e1f791651
+  [PASS] V74 led_tag_ok = 1                                         
+  [PASS] V75 enc done (len=23 ad=0)                                 
+  [PASS] V75 enc status ct_valid & tag_valid, no err                
+  [PASS] V75 CTLEN == 23                                            
+  [PASS] V75 CT  == reference                                       8288c2904166045738f19e94516f07b4425bd2694429cc
+  [PASS] V75 TAG == reference                                       042656a81c052b45462ccd5b8897fe0c
+  [PASS] V75 TAGIN auto-loaded with encryption tag                  
+  [PASS] V75 dec done                                               
+  [PASS] V75 decrypt tag == encryption tag                          042656a81c052b45462ccd5b8897fe0c
+  [PASS] V75 decrypt tag == reference                               
+  [PASS] V75 STATUS.tag_ok = 1 (VERIFIED)                           
+  [PASS] V75 STATUS.pt_valid = 1                                    
+  [PASS] V75 recovered PT == original PT                            0d6d307766d1ff2420acf04481317fb09940b1aec4e499
+  [PASS] V75 led_tag_ok = 1                                         
+  [PASS] V76 enc done (len=24 ad=0)                                 
+  [PASS] V76 enc status ct_valid & tag_valid, no err                
+  [PASS] V76 CTLEN == 24                                            
+  [PASS] V76 CT  == reference                                       8c99d1c42280765428f633208c51b6e7bcf521216e6ba2f0
+  [PASS] V76 TAG == reference                                       5b6b23a1668cfdb13eba002f50caf64e
+  [PASS] V76 TAGIN auto-loaded with encryption tag                  
+  [PASS] V76 dec done                                               
+  [PASS] V76 decrypt tag == encryption tag                          5b6b23a1668cfdb13eba002f50caf64e
+  [PASS] V76 decrypt tag == reference                               
+  [PASS] V76 STATUS.tag_ok = 1 (VERIFIED)                           
+  [PASS] V76 STATUS.pt_valid = 1                                    
+  [PASS] V76 recovered PT == original PT                            702ad5d59341f5109f48d5808bcb306738246d94f3f61fe1
+  [PASS] V76 led_tag_ok = 1                                         
+  [PASS] V77 enc done (len=25 ad=0)                                 
+  [PASS] V77 enc status ct_valid & tag_valid, no err                
+  [PASS] V77 CTLEN == 25                                            
+  [PASS] V77 CT  == reference                                       780415c6ba8d9cc7fb889d6cc19b79576f5575bbc0c2a038f1
+  [PASS] V77 TAG == reference                                       4c5fbae5016523616ecb2b5147c9b6df
+  [PASS] V77 TAGIN auto-loaded with encryption tag                  
+  [PASS] V77 dec done                                               
+  [PASS] V77 decrypt tag == encryption tag                          4c5fbae5016523616ecb2b5147c9b6df
+  [PASS] V77 decrypt tag == reference                               
+  [PASS] V77 STATUS.tag_ok = 1 (VERIFIED)                           
+  [PASS] V77 STATUS.pt_valid = 1                                    
+  [PASS] V77 recovered PT == original PT                            f6b285b5e6140c8154a4cb453e38040a8d6fa8689635d2009c
+  [PASS] V77 led_tag_ok = 1                                         
+  [PASS] V78 enc done (len=26 ad=0)                                 
+  [PASS] V78 enc status ct_valid & tag_valid, no err                
+  [PASS] V78 CTLEN == 26                                            
+  [PASS] V78 CT  == reference                                       e6ef4a65cfe3c184d5d015b7ec81a68f5ac1ea5f8da47c008d62
+  [PASS] V78 TAG == reference                                       13ecfe41580038f5ee231f4e3d5a10ca
+  [PASS] V78 TAGIN auto-loaded with encryption tag                  
+  [PASS] V78 dec done                                               
+  [PASS] V78 decrypt tag == encryption tag                          13ecfe41580038f5ee231f4e3d5a10ca
+  [PASS] V78 decrypt tag == reference                               
+  [PASS] V78 STATUS.tag_ok = 1 (VERIFIED)                           
+  [PASS] V78 STATUS.pt_valid = 1                                    
+  [PASS] V78 recovered PT == original PT                            4448004a9fffa43b1796b174c8d7fae79b3cdef0c466c6d943a6
+  [PASS] V78 led_tag_ok = 1                                         
+  [PASS] V79 enc done (len=27 ad=0)                                 
+  [PASS] V79 enc status ct_valid & tag_valid, no err                
+  [PASS] V79 CTLEN == 27                                            
+  [PASS] V79 CT  == reference                                       7ab046138791b54fb0205d756855ada9fc149d18e8b2e8d45a240f
+  [PASS] V79 TAG == reference                                       5a272a75ccee15d0e1460f9e437dda57
+  [PASS] V79 TAGIN auto-loaded with encryption tag                  
+  [PASS] V79 dec done                                               
+  [PASS] V79 decrypt tag == encryption tag                          5a272a75ccee15d0e1460f9e437dda57
+  [PASS] V79 decrypt tag == reference                               
+  [PASS] V79 STATUS.tag_ok = 1 (VERIFIED)                           
+  [PASS] V79 STATUS.pt_valid = 1                                    
+  [PASS] V79 recovered PT == original PT                            a9586476890d41fef5073d92883f89316719a105c4e8cee75f69a4
+  [PASS] V79 led_tag_ok = 1                                         
+  [PASS] V80 enc done (len=28 ad=0)                                 
+  [PASS] V80 enc status ct_valid & tag_valid, no err                
+  [PASS] V80 CTLEN == 28                                            
+  [PASS] V80 CT  == reference                                       ae8785693b3bd35b1d2248e17e2aa616f157c6bb3456daf1f42e0945
+  [PASS] V80 TAG == reference                                       711da082715697e5174f0550445e8f79
+  [PASS] V80 TAGIN auto-loaded with encryption tag                  
+  [PASS] V80 dec done                                               
+  [PASS] V80 decrypt tag == encryption tag                          711da082715697e5174f0550445e8f79
+  [PASS] V80 decrypt tag == reference                               
+  [PASS] V80 STATUS.tag_ok = 1 (VERIFIED)                           
+  [PASS] V80 STATUS.pt_valid = 1                                    
+  [PASS] V80 recovered PT == original PT                            db0244838e039018ddc44edb4f33eb90984cc1c81695955f569f18fe
+  [PASS] V80 led_tag_ok = 1                                         
+  [PASS] V81 enc done (len=29 ad=0)                                 
+  [PASS] V81 enc status ct_valid & tag_valid, no err                
+  [PASS] V81 CTLEN == 29                                            
+  [PASS] V81 CT  == reference                                       5ab7bdaf329471c676d877d005509cd0a71300d1c6cf1d81313046a8c4
+  [PASS] V81 TAG == reference                                       4ec7c18ea3b9e59db22c0710f49fdf3b
+  [PASS] V81 TAGIN auto-loaded with encryption tag                  
+  [PASS] V81 dec done                                               
+  [PASS] V81 decrypt tag == encryption tag                          4ec7c18ea3b9e59db22c0710f49fdf3b
+  [PASS] V81 decrypt tag == reference                               
+  [PASS] V81 STATUS.tag_ok = 1 (VERIFIED)                           
+  [PASS] V81 STATUS.pt_valid = 1                                    
+  [PASS] V81 recovered PT == original PT                            8e8a6899227f8ef02135ff10c76f1ed1fb7ab658d0b2829407fca7c289
+  [PASS] V81 led_tag_ok = 1                                         
+  [PASS] V82 enc done (len=30 ad=0)                                 
+  [PASS] V82 enc status ct_valid & tag_valid, no err                
+  [PASS] V82 CTLEN == 30                                            
+  [PASS] V82 CT  == reference                                       bc6e1f50829ab3c36d5815e4a7eb743ca2b08b36fa79f6b941c67f043698
+  [PASS] V82 TAG == reference                                       5fbfb2fa48e5fae9153c3b8f2b278842
+  [PASS] V82 TAGIN auto-loaded with encryption tag                  
+  [PASS] V82 dec done                                               
+  [PASS] V82 decrypt tag == encryption tag                          5fbfb2fa48e5fae9153c3b8f2b278842
+  [PASS] V82 decrypt tag == reference                               
+  [PASS] V82 STATUS.tag_ok = 1 (VERIFIED)                           
+  [PASS] V82 STATUS.pt_valid = 1                                    
+  [PASS] V82 recovered PT == original PT                            4a37ebef1dae63fcfc764b1f00650df44b3ce5c2892854fc7842acc25b11
+  [PASS] V82 led_tag_ok = 1                                         
+  [PASS] V83 enc done (len=31 ad=0)                                 
+  [PASS] V83 enc status ct_valid & tag_valid, no err                
+  [PASS] V83 CTLEN == 31                                            
+  [PASS] V83 CT  == reference                                       ccd0429803961be9f04eed9626a7ab935398fe3510d89ad1a8df769fc6bd25
+  [PASS] V83 TAG == reference                                       ed0c3e458c433944bdc85adc988c9a2c
+  [PASS] V83 TAGIN auto-loaded with encryption tag                  
+  [PASS] V83 dec done                                               
+  [PASS] V83 decrypt tag == encryption tag                          ed0c3e458c433944bdc85adc988c9a2c
+  [PASS] V83 decrypt tag == reference                               
+  [PASS] V83 STATUS.tag_ok = 1 (VERIFIED)                           
+  [PASS] V83 STATUS.pt_valid = 1                                    
+  [PASS] V83 recovered PT == original PT                            8a5f870555cbd8fbc2293bbe51482482cf231769d563220045da5ec1d20874
+  [PASS] V83 led_tag_ok = 1                                         
+  [PASS] V84 enc done (len=32 ad=0)                                 
+  [PASS] V84 enc status ct_valid & tag_valid, no err                
+  [PASS] V84 CTLEN == 32                                            
+  [PASS] V84 CT  == reference                                       e5582fc0efd60ac82c897cf845b2c1a5da94021aabd1a47859d434ba74b6c111
+  [PASS] V84 TAG == reference                                       f12ae097aa1e134abd5e0b44a9735ccd
+  [PASS] V84 TAGIN auto-loaded with encryption tag                  
+  [PASS] V84 dec done                                               
+  [PASS] V84 decrypt tag == encryption tag                          f12ae097aa1e134abd5e0b44a9735ccd
+  [PASS] V84 decrypt tag == reference                               
+  [PASS] V84 STATUS.tag_ok = 1 (VERIFIED)                           
+  [PASS] V84 STATUS.pt_valid = 1                                    
+  [PASS] V84 recovered PT == original PT                            9176981441fbe27d0f7568fa24c55b611516159465619f03ffeb2b26bec39905
+  [PASS] V84 led_tag_ok = 1                                         
+  [PASS] V85 enc done (len=8 ad=0)                                  
+  [PASS] V85 enc status ct_valid & tag_valid, no err                
+  [PASS] V85 CTLEN == 8                                             
+  [PASS] V85 CT  == reference                                       066de8a42caa8ee0
+  [PASS] V85 TAG == reference                                       e95d515669739b2f85c232f84d6df185
+  [PASS] V85 TAGIN auto-loaded with encryption tag                  
+  [PASS] V85 dec done                                               
+  [PASS] V85 decrypt tag == encryption tag                          e95d515669739b2f85c232f84d6df185
+  [PASS] V85 decrypt tag == reference                               
+  [PASS] V85 STATUS.tag_ok = 1 (VERIFIED)                           
+  [PASS] V85 STATUS.pt_valid = 1                                    
+  [PASS] V85 recovered PT == original PT                            e747f3b1ac9ef3ca
+  [PASS] V85 led_tag_ok = 1                                         
+  [PASS] V86 enc done (len=8 ad=1)                                  
+  [PASS] V86 enc status ct_valid & tag_valid, no err                
+  [PASS] V86 CTLEN == 8                                             
+  [PASS] V86 CT  == reference                                       4049d3a92e550480
+  [PASS] V86 TAG == reference                                       7eb02b4b5b4cf4219cc943c35c6857ab
+  [PASS] V86 TAGIN auto-loaded with encryption tag                  
+  [PASS] V86 dec done                                               
+  [PASS] V86 decrypt tag == encryption tag                          7eb02b4b5b4cf4219cc943c35c6857ab
+  [PASS] V86 decrypt tag == reference                               
+  [PASS] V86 STATUS.tag_ok = 1 (VERIFIED)                           
+  [PASS] V86 STATUS.pt_valid = 1                                    
+  [PASS] V86 recovered PT == original PT                            a93e7afa69651977
+  [PASS] V86 led_tag_ok = 1                                         
+  [PASS] V87 enc done (len=8 ad=2)                                  
+  [PASS] V87 enc status ct_valid & tag_valid, no err                
+  [PASS] V87 CTLEN == 8                                             
+  [PASS] V87 CT  == reference                                       814f37c805710bfe
+  [PASS] V87 TAG == reference                                       e0c6d017e139f6ce55dd45785879852f
+  [PASS] V87 TAGIN auto-loaded with encryption tag                  
+  [PASS] V87 dec done                                               
+  [PASS] V87 decrypt tag == encryption tag                          e0c6d017e139f6ce55dd45785879852f
+  [PASS] V87 decrypt tag == reference                               
+  [PASS] V87 STATUS.tag_ok = 1 (VERIFIED)                           
+  [PASS] V87 STATUS.pt_valid = 1                                    
+  [PASS] V87 recovered PT == original PT                            a28a83ef4b36ece5
+  [PASS] V87 led_tag_ok = 1                                         
+  [PASS] V88 enc done (len=8 ad=3)                                  
+  [PASS] V88 enc status ct_valid & tag_valid, no err                
+  [PASS] V88 CTLEN == 8                                             
+  [PASS] V88 CT  == reference                                       96263fce45221678
+  [PASS] V88 TAG == reference                                       5ec2805910e1a19a75ec2a0df7461716
+  [PASS] V88 TAGIN auto-loaded with encryption tag                  
+  [PASS] V88 dec done                                               
+  [PASS] V88 decrypt tag == encryption tag                          5ec2805910e1a19a75ec2a0df7461716
+  [PASS] V88 decrypt tag == reference                               
+  [PASS] V88 STATUS.tag_ok = 1 (VERIFIED)                           
+  [PASS] V88 STATUS.pt_valid = 1                                    
+  [PASS] V88 recovered PT == original PT                            8efa4234cfd5bd32
+  [PASS] V88 led_tag_ok = 1                                         
+  [PASS] V89 enc done (len=8 ad=4)                                  
+  [PASS] V89 enc status ct_valid & tag_valid, no err                
+  [PASS] V89 CTLEN == 8                                             
+  [PASS] V89 CT  == reference                                       9d7569732c234b23
+  [PASS] V89 TAG == reference                                       a6ab8871e5538fe2299467c494745d26
+  [PASS] V89 TAGIN auto-loaded with encryption tag                  
+  [PASS] V89 dec done                                               
+  [PASS] V89 decrypt tag == encryption tag                          a6ab8871e5538fe2299467c494745d26
+  [PASS] V89 decrypt tag == reference                               
+  [PASS] V89 STATUS.tag_ok = 1 (VERIFIED)                           
+  [PASS] V89 STATUS.pt_valid = 1                                    
+  [PASS] V89 recovered PT == original PT                            bf808adb1ffb4cf2
+  [PASS] V89 led_tag_ok = 1                                         
+  [PASS] V90 enc done (len=8 ad=5)                                  
+  [PASS] V90 enc status ct_valid & tag_valid, no err                
+  [PASS] V90 CTLEN == 8                                             
+  [PASS] V90 CT  == reference                                       4d71c06f04028bcd
+  [PASS] V90 TAG == reference                                       cecd483ff99f4ed946a6ca9a97276008
+  [PASS] V90 TAGIN auto-loaded with encryption tag                  
+  [PASS] V90 dec done                                               
+  [PASS] V90 decrypt tag == encryption tag                          cecd483ff99f4ed946a6ca9a97276008
+  [PASS] V90 decrypt tag == reference                               
+  [PASS] V90 STATUS.tag_ok = 1 (VERIFIED)                           
+  [PASS] V90 STATUS.pt_valid = 1                                    
+  [PASS] V90 recovered PT == original PT                            42a1c851e79f7155
+  [PASS] V90 led_tag_ok = 1                                         
+  [PASS] V91 enc done (len=8 ad=6)                                  
+  [PASS] V91 enc status ct_valid & tag_valid, no err                
+  [PASS] V91 CTLEN == 8                                             
+  [PASS] V91 CT  == reference                                       562539c048d5c90d
+  [PASS] V91 TAG == reference                                       79d4af261d820b6bfbd5502f9629ecde
+  [PASS] V91 TAGIN auto-loaded with encryption tag                  
+  [PASS] V91 dec done                                               
+  [PASS] V91 decrypt tag == encryption tag                          79d4af261d820b6bfbd5502f9629ecde
+  [PASS] V91 decrypt tag == reference                               
+  [PASS] V91 STATUS.tag_ok = 1 (VERIFIED)                           
+  [PASS] V91 STATUS.pt_valid = 1                                    
+  [PASS] V91 recovered PT == original PT                            911998131f0edb06
+  [PASS] V91 led_tag_ok = 1                                         
+  [PASS] V92 enc done (len=8 ad=7)                                  
+  [PASS] V92 enc status ct_valid & tag_valid, no err                
+  [PASS] V92 CTLEN == 8                                             
+  [PASS] V92 CT  == reference                                       d500e55e3d90f424
+  [PASS] V92 TAG == reference                                       e8a9c10b5e5143fe4c0e9471c0e759de
+  [PASS] V92 TAGIN auto-loaded with encryption tag                  
+  [PASS] V92 dec done                                               
+  [PASS] V92 decrypt tag == encryption tag                          e8a9c10b5e5143fe4c0e9471c0e759de
+  [PASS] V92 decrypt tag == reference                               
+  [PASS] V92 STATUS.tag_ok = 1 (VERIFIED)                           
+  [PASS] V92 STATUS.pt_valid = 1                                    
+  [PASS] V92 recovered PT == original PT                            2c952c1887fcb1b0
+  [PASS] V92 led_tag_ok = 1                                         
+  [PASS] V93 enc done (len=8 ad=8)                                  
+  [PASS] V93 enc status ct_valid & tag_valid, no err                
+  [PASS] V93 CTLEN == 8                                             
+  [PASS] V93 CT  == reference                                       afcc787b6d91a207
+  [PASS] V93 TAG == reference                                       5dcf39fb9533203f52202505ecef79c5
+  [PASS] V93 TAGIN auto-loaded with encryption tag                  
+  [PASS] V93 dec done                                               
+  [PASS] V93 decrypt tag == encryption tag                          5dcf39fb9533203f52202505ecef79c5
+  [PASS] V93 decrypt tag == reference                               
+  [PASS] V93 STATUS.tag_ok = 1 (VERIFIED)                           
+  [PASS] V93 STATUS.pt_valid = 1                                    
+  [PASS] V93 recovered PT == original PT                            2fe68b0d7497576f
+  [PASS] V93 led_tag_ok = 1                                         
+  [PASS] V94 enc done (len=8 ad=9)                                  
+  [PASS] V94 enc status ct_valid & tag_valid, no err                
+  [PASS] V94 CTLEN == 8                                             
+  [PASS] V94 CT  == reference                                       8a98331669f419e7
+  [PASS] V94 TAG == reference                                       173ce3ead9f52436332a9772da88fde7
+  [PASS] V94 TAGIN auto-loaded with encryption tag                  
+  [PASS] V94 dec done                                               
+  [PASS] V94 decrypt tag == encryption tag                          173ce3ead9f52436332a9772da88fde7
+  [PASS] V94 decrypt tag == reference                               
+  [PASS] V94 STATUS.tag_ok = 1 (VERIFIED)                           
+  [PASS] V94 STATUS.pt_valid = 1                                    
+  [PASS] V94 recovered PT == original PT                            efd3d44c06607a71
+  [PASS] V94 led_tag_ok = 1                                         
+  [PASS] V95 enc done (len=8 ad=10)                                 
+  [PASS] V95 enc status ct_valid & tag_valid, no err                
+  [PASS] V95 CTLEN == 8                                             
+  [PASS] V95 CT  == reference                                       0d5d9d4aadd828d9
+  [PASS] V95 TAG == reference                                       3e09c7c5750027acd1347f3c2c564a2b
+  [PASS] V95 TAGIN auto-loaded with encryption tag                  
+  [PASS] V95 dec done                                               
+  [PASS] V95 decrypt tag == encryption tag                          3e09c7c5750027acd1347f3c2c564a2b
+  [PASS] V95 decrypt tag == reference                               
+  [PASS] V95 STATUS.tag_ok = 1 (VERIFIED)                           
+  [PASS] V95 STATUS.pt_valid = 1                                    
+  [PASS] V95 recovered PT == original PT                            8bc701a67bbdd02c
+  [PASS] V95 led_tag_ok = 1                                         
+  [PASS] V96 enc done (len=8 ad=11)                                 
+  [PASS] V96 enc status ct_valid & tag_valid, no err                
+  [PASS] V96 CTLEN == 8                                             
+  [PASS] V96 CT  == reference                                       4f62a1746a45a319
+  [PASS] V96 TAG == reference                                       94a03b843c0fd1e89e9c5ffa370febeb
+  [PASS] V96 TAGIN auto-loaded with encryption tag                  
+  [PASS] V96 dec done                                               
+  [PASS] V96 decrypt tag == encryption tag                          94a03b843c0fd1e89e9c5ffa370febeb
+  [PASS] V96 decrypt tag == reference                               
+  [PASS] V96 STATUS.tag_ok = 1 (VERIFIED)                           
+  [PASS] V96 STATUS.pt_valid = 1                                    
+  [PASS] V96 recovered PT == original PT                            442b7f79a2ac901c
+  [PASS] V96 led_tag_ok = 1                                         
+  [PASS] V97 enc done (len=8 ad=12)                                 
+  [PASS] V97 enc status ct_valid & tag_valid, no err                
+  [PASS] V97 CTLEN == 8                                             
+  [PASS] V97 CT  == reference                                       8e4124a909dbc30b
+  [PASS] V97 TAG == reference                                       fd9f3cea621b34a844e15c9c8f1e08c6
+  [PASS] V97 TAGIN auto-loaded with encryption tag                  
+  [PASS] V97 dec done                                               
+  [PASS] V97 decrypt tag == encryption tag                          fd9f3cea621b34a844e15c9c8f1e08c6
+  [PASS] V97 decrypt tag == reference                               
+  [PASS] V97 STATUS.tag_ok = 1 (VERIFIED)                           
+  [PASS] V97 STATUS.pt_valid = 1                                    
+  [PASS] V97 recovered PT == original PT                            0601c1dd3b70d39e
+  [PASS] V97 led_tag_ok = 1                                         
+  [PASS] V98 enc done (len=8 ad=13)                                 
+  [PASS] V98 enc status ct_valid & tag_valid, no err                
+  [PASS] V98 CTLEN == 8                                             
+  [PASS] V98 CT  == reference                                       35fcb5403b907457
+  [PASS] V98 TAG == reference                                       95e9a73314abf1b026acff2abeda6921
+  [PASS] V98 TAGIN auto-loaded with encryption tag                  
+  [PASS] V98 dec done                                               
+  [PASS] V98 decrypt tag == encryption tag                          95e9a73314abf1b026acff2abeda6921
+  [PASS] V98 decrypt tag == reference                               
+  [PASS] V98 STATUS.tag_ok = 1 (VERIFIED)                           
+  [PASS] V98 STATUS.pt_valid = 1                                    
+  [PASS] V98 recovered PT == original PT                            b94027a27a43143b
+  [PASS] V98 led_tag_ok = 1                                         
+  [PASS] V99 enc done (len=8 ad=14)                                 
+  [PASS] V99 enc status ct_valid & tag_valid, no err                
+  [PASS] V99 CTLEN == 8                                             
+  [PASS] V99 CT  == reference                                       0df8ee19f017d1db
+  [PASS] V99 TAG == reference                                       17fc9cc92e811488a110df45bf8e74c9
+  [PASS] V99 TAGIN auto-loaded with encryption tag                  
+  [PASS] V99 dec done                                               
+  [PASS] V99 decrypt tag == encryption tag                          17fc9cc92e811488a110df45bf8e74c9
+  [PASS] V99 decrypt tag == reference                               
+  [PASS] V99 STATUS.tag_ok = 1 (VERIFIED)                           
+  [PASS] V99 STATUS.pt_valid = 1                                    
+  [PASS] V99 recovered PT == original PT                            494bd38fbf1a8a02
+  [PASS] V99 led_tag_ok = 1                                         
+  [PASS] V100 enc done (len=8 ad=15)                                
+  [PASS] V100 enc status ct_valid & tag_valid, no err               
+  [PASS] V100 CTLEN == 8                                            
+  [PASS] V100 CT  == reference                                      a1325f8f55f773e8
+  [PASS] V100 TAG == reference                                      feb59c26faa99d5c75480b2cb56941c8
+  [PASS] V100 TAGIN auto-loaded with encryption tag                 
+  [PASS] V100 dec done                                              
+  [PASS] V100 decrypt tag == encryption tag                         feb59c26faa99d5c75480b2cb56941c8
+  [PASS] V100 decrypt tag == reference                              
+  [PASS] V100 STATUS.tag_ok = 1 (VERIFIED)                          
+  [PASS] V100 STATUS.pt_valid = 1                                   
+  [PASS] V100 recovered PT == original PT                           0441d6b7b9da5d9f
+  [PASS] V100 led_tag_ok = 1                                        
+  [PASS] V101 enc done (len=8 ad=16)                                
+  [PASS] V101 enc status ct_valid & tag_valid, no err               
+  [PASS] V101 CTLEN == 8                                            
+  [PASS] V101 CT  == reference                                      b88307b4d85f57cd
+  [PASS] V101 TAG == reference                                      cd86e8fb4cb1816b6a6e3bd0e15103cc
+  [PASS] V101 TAGIN auto-loaded with encryption tag                 
+  [PASS] V101 dec done                                              
+  [PASS] V101 decrypt tag == encryption tag                         cd86e8fb4cb1816b6a6e3bd0e15103cc
+  [PASS] V101 decrypt tag == reference                              
+  [PASS] V101 STATUS.tag_ok = 1 (VERIFIED)                          
+  [PASS] V101 STATUS.pt_valid = 1                                   
+  [PASS] V101 recovered PT == original PT                           6b85d5fd7c1ea189
+  [PASS] V101 led_tag_ok = 1                                        
+  [PASS] all 50 length combinations pass (details above)            
+
+--- T7 Fresh key and nonce for every encryption ---
+  [PASS] V102 enc done (len=16 ad=4)                                
+  [PASS] V102 enc status ct_valid & tag_valid, no err               
+  [PASS] V102 CTLEN == 16                                           
+  [PASS] V102 CT  == reference                                      e0a759af766b3cb5eed448690f5ab236
+  [PASS] V102 TAG == reference                                      d8301198ef95bd747dde35c060f9e86d
+  [PASS] V102 TAGIN auto-loaded with encryption tag                 
+  [PASS] V102 dec done                                              
+  [PASS] V102 decrypt tag == encryption tag                         d8301198ef95bd747dde35c060f9e86d
+  [PASS] V102 decrypt tag == reference                              
+  [PASS] V102 STATUS.tag_ok = 1 (VERIFIED)                          
+  [PASS] V102 STATUS.pt_valid = 1                                   
+  [PASS] V102 recovered PT == original PT                           e3a895ce56a2af758646ee6baf039319
+  [PASS] V102 led_tag_ok = 1                                        
+  [PASS] V103 enc done (len=16 ad=4)                                
+  [PASS] V103 enc status ct_valid & tag_valid, no err               
+  [PASS] V103 CTLEN == 16                                           
+  [PASS] V103 CT  == reference                                      299942dcd22ebf05d91ffde9c5c60124
+  [PASS] V103 TAG == reference                                      3c0334d0cae0e281bad9f9751ebeb262
+  [PASS] V103 TAGIN auto-loaded with encryption tag                 
+  [PASS] V103 dec done                                              
+  [PASS] V103 decrypt tag == encryption tag                         3c0334d0cae0e281bad9f9751ebeb262
+  [PASS] V103 decrypt tag == reference                              
+  [PASS] V103 STATUS.tag_ok = 1 (VERIFIED)                          
+  [PASS] V103 STATUS.pt_valid = 1                                   
+  [PASS] V103 recovered PT == original PT                           678963ec87aeea1bbba68b125a5e6273
+  [PASS] V103 led_tag_ok = 1                                        
+  [PASS] V104 enc done (len=16 ad=4)                                
+  [PASS] V104 enc status ct_valid & tag_valid, no err               
+  [PASS] V104 CTLEN == 16                                           
+  [PASS] V104 CT  == reference                                      102aba71635054864a8996fe5efb9563
+  [PASS] V104 TAG == reference                                      b540a50eed1f2ea38ab41ae9f01d10ba
+  [PASS] V104 TAGIN auto-loaded with encryption tag                 
+  [PASS] V104 dec done                                              
+  [PASS] V104 decrypt tag == encryption tag                         b540a50eed1f2ea38ab41ae9f01d10ba
+  [PASS] V104 decrypt tag == reference                              
+  [PASS] V104 STATUS.tag_ok = 1 (VERIFIED)                          
+  [PASS] V104 STATUS.pt_valid = 1                                   
+  [PASS] V104 recovered PT == original PT                           493bfb3ae0344fa16e97fe74e64b8011
+  [PASS] V104 led_tag_ok = 1                                        
+  [PASS] V105 enc done (len=16 ad=4)                                
+  [PASS] V105 enc status ct_valid & tag_valid, no err               
+  [PASS] V105 CTLEN == 16                                           
+  [PASS] V105 CT  == reference                                      386a7092069cedb913084e9a925fe678
+  [PASS] V105 TAG == reference                                      cbdbc254cfe14fff5b3896cedbe4b994
+  [PASS] V105 TAGIN auto-loaded with encryption tag                 
+  [PASS] V105 dec done                                              
+  [PASS] V105 decrypt tag == encryption tag                         cbdbc254cfe14fff5b3896cedbe4b994
+  [PASS] V105 decrypt tag == reference                              
+  [PASS] V105 STATUS.tag_ok = 1 (VERIFIED)                          
+  [PASS] V105 STATUS.pt_valid = 1                                   
+  [PASS] V105 recovered PT == original PT                           f44635df88d93309035798ee7225ba2a
+  [PASS] V105 led_tag_ok = 1                                        
+  [PASS] V106 enc done (len=16 ad=4)                                
+  [PASS] V106 enc status ct_valid & tag_valid, no err               
+  [PASS] V106 CTLEN == 16                                           
+  [PASS] V106 CT  == reference                                      b75aa4d031c419d2bd82f7f79fd806ad
+  [PASS] V106 TAG == reference                                      254312b6604a4cb26fb4b5913437cdf7
+  [PASS] V106 TAGIN auto-loaded with encryption tag                 
+  [PASS] V106 dec done                                              
+  [PASS] V106 decrypt tag == encryption tag                         254312b6604a4cb26fb4b5913437cdf7
+  [PASS] V106 decrypt tag == reference                              
+  [PASS] V106 STATUS.tag_ok = 1 (VERIFIED)                          
+  [PASS] V106 STATUS.pt_valid = 1                                   
+  [PASS] V106 recovered PT == original PT                           7fbc584ad34bd81e89b2182a4b52c9c5
+  [PASS] V106 led_tag_ok = 1                                        
+  [PASS] V107 enc done (len=16 ad=4)                                
+  [PASS] V107 enc status ct_valid & tag_valid, no err               
+  [PASS] V107 CTLEN == 16                                           
+  [PASS] V107 CT  == reference                                      986da212d2c6fbb6f41e44f456ee90c4
+  [PASS] V107 TAG == reference                                      2b27e91b7043bc96ebf8147555ef91dc
+  [PASS] V107 TAGIN auto-loaded with encryption tag                 
+  [PASS] V107 dec done                                              
+  [PASS] V107 decrypt tag == encryption tag                         2b27e91b7043bc96ebf8147555ef91dc
+  [PASS] V107 decrypt tag == reference                              
+  [PASS] V107 STATUS.tag_ok = 1 (VERIFIED)                          
+  [PASS] V107 STATUS.pt_valid = 1                                   
+  [PASS] V107 recovered PT == original PT                           30bd95b8c2c4ecfb3e7d279d67c6d431
+  [PASS] V107 led_tag_ok = 1                                        
+  [PASS] V108 enc done (len=16 ad=4)                                
+  [PASS] V108 enc status ct_valid & tag_valid, no err               
+  [PASS] V108 CTLEN == 16                                           
+  [PASS] V108 CT  == reference                                      4b1401280fb390d9ac3cc4abe590b491
+  [PASS] V108 TAG == reference                                      127269d4bba635a4f91c72847947282f
+  [PASS] V108 TAGIN auto-loaded with encryption tag                 
+  [PASS] V108 dec done                                              
+  [PASS] V108 decrypt tag == encryption tag                         127269d4bba635a4f91c72847947282f
+  [PASS] V108 decrypt tag == reference                              
+  [PASS] V108 STATUS.tag_ok = 1 (VERIFIED)                          
+  [PASS] V108 STATUS.pt_valid = 1                                   
+  [PASS] V108 recovered PT == original PT                           f5f38cb3808c0883071ddc06eb80ed8b
+  [PASS] V108 led_tag_ok = 1                                        
+  [PASS] V109 enc done (len=16 ad=4)                                
+  [PASS] V109 enc status ct_valid & tag_valid, no err               
+  [PASS] V109 CTLEN == 16                                           
+  [PASS] V109 CT  == reference                                      f5bae6ebd69c190a2d8a68a21ee56411
+  [PASS] V109 TAG == reference                                      72abad78eac41cf0ec2902b886f02d1e
+  [PASS] V109 TAGIN auto-loaded with encryption tag                 
+  [PASS] V109 dec done                                              
+  [PASS] V109 decrypt tag == encryption tag                         72abad78eac41cf0ec2902b886f02d1e
+  [PASS] V109 decrypt tag == reference                              
+  [PASS] V109 STATUS.tag_ok = 1 (VERIFIED)                          
+  [PASS] V109 STATUS.pt_valid = 1                                   
+  [PASS] V109 recovered PT == original PT                           eb15c490e57534e8fa0037f4a709913d
+  [PASS] V109 led_tag_ok = 1                                        
+  [PASS] 8 encryptions -> 8 different keys (and key != nonce)       
+  [PASS] no repeated 32-bit word inside any key or nonce            
+  [PASS] every vector so far used a new key (109 vectors)           repeats=0
+  [PASS] no key/nonce word reused across 109 encryptions            872 distinct words
+  [PASS] same PT/AD encrypted twice -> different CT                 
+  [PASS] same PT/AD encrypted twice -> different TAG                
+
+--- T8 External ciphertext (DIN), TAGIN write-protection ---
+  [PASS] TAGIN writes (full + byte strobe) ignored, still = enc tag 952dd68dbb9a765c491cb21382d018b8
+  [PASS] external decrypt: tag_ok = 1                               
+  [PASS] external decrypt: PT recovered                             878a627490c70e1bad4b1b5db23101eb1d20a7c19bc9dca8826ce0
+
+--- T9 Tamper / wrong-input detection ---
+  [PASS] 1 flipped CT bit -> tag_ok = 0                             
+  [PASS] 1 flipped CT bit -> pt_valid = 0, DOUT zeroised            
+  [PASS] 1 flipped CT bit -> led_tag_ok = 0                         
+  [PASS] tampered CT + software-written matching tag -> still tag_ok = 0 
+  [PASS] modified associated data -> tag_ok = 0                     
+  [PASS] wrong AD length -> tag_ok = 0                              
+  [PASS] truncated ciphertext (26 of 27 bytes) -> tag_ok = 0        
+  [PASS] same inputs restored -> tag_ok = 1 again                   
+  [PASS] old CT/tag after a new encryption (new key) -> tag_ok = 0  
+
+--- T10 Errors, soft reset, bus protection ---
+  [PASS] MSGLEN = 33 -> err, no operation                           
+  [PASS] ADLEN = 17 -> err                                          
+  [PASS] encryption running (busy = 1)                              
+  [PASS] DIN write ignored while busy                               
+  [PASS] sw_rst aborts: busy=0 done=0 ct_valid=0                    
+  [PASS] decrypt of aborted (invalid) stored CT -> err              
+  [PASS] V110 enc done (len=32 ad=16)                               
+  [PASS] V110 enc status ct_valid & tag_valid, no err               
+  [PASS] V110 CTLEN == 32                                           
+  [PASS] V110 CT  == reference                                      4612bb416c35de906ea727bff9ac74a530383dd316f03df36eceb801d8fd2fac
+  [PASS] V110 TAG == reference                                      8fc5360c50a89ad85ce595676c3adfd7
+  [PASS] V110 TAGIN auto-loaded with encryption tag                 
+  [PASS] V110 dec done                                              
+  [PASS] V110 decrypt tag == encryption tag                         8fc5360c50a89ad85ce595676c3adfd7
+  [PASS] V110 decrypt tag == reference                              
+  [PASS] V110 STATUS.tag_ok = 1 (VERIFIED)                          
+  [PASS] V110 STATUS.pt_valid = 1                                   
+  [PASS] V110 recovered PT == original PT                           d82dd8b5de7913f3a193c3a08ced7943b78733b0656bda8a852fc4ba337532fb
+  [PASS] V110 led_tag_ok = 1                                        
+  [PASS] full encrypt/decrypt works after soft reset                
+  [PASS] sw_rst while idle keeps ct_valid/tag_valid                 
+  [PASS] decryption running (busy = 1)                              
+  [PASS] sw_rst aborts decrypt, keeps ct_valid/tag_valid            
+  [PASS] decrypt after aborted decrypt -> tag_ok = 1                
+  [PASS] decrypt after aborted decrypt -> plaintext correct         
+
+--- T11 Round trip: PT -> encrypt -> CT,TAG -> CT given to decrypt -> PT',TAG' -> compare ---
+  [PASS] RT1 len=5 ad=0: PT' == PT, TAG' == TAG, tag_ok             
+  [PASS] RT2 len=22 ad=2: PT' == PT, TAG' == TAG, tag_ok            
+  [PASS] RT3 len=24 ad=8: PT' == PT, TAG' == TAG, tag_ok            
+  [PASS] RT4 len=27 ad=11: PT' == PT, TAG' == TAG, tag_ok           
+  [PASS] RT5 len=12 ad=1: PT' == PT, TAG' == TAG, tag_ok            
+  [PASS] RT6 len=15 ad=14: PT' == PT, TAG' == TAG, tag_ok           
+  [PASS] RT7 len=18 ad=11: PT' == PT, TAG' == TAG, tag_ok           
+  [PASS] RT8 len=21 ad=2: PT' == PT, TAG' == TAG, tag_ok            
+  [PASS] RT9 len=15 ad=8: PT' == PT, TAG' == TAG, tag_ok            
+  [PASS] RT10 len=28 ad=11: PT' == PT, TAG' == TAG, tag_ok          
+  [PASS] RT11 len=15 ad=11: PT' == PT, TAG' == TAG, tag_ok          
+  [PASS] RT12 len=5 ad=8: PT' == PT, TAG' == TAG, tag_ok            
+  [PASS] RT13 len=20 ad=6: PT' == PT, TAG' == TAG, tag_ok           
+  [PASS] RT14 len=16 ad=11: PT' == PT, TAG' == TAG, tag_ok          
+  [PASS] RT15 len=11 ad=3: PT' == PT, TAG' == TAG, tag_ok           
+  [PASS] RT16 len=10 ad=3: PT' == PT, TAG' == TAG, tag_ok           
+  [PASS] RT17 len=12 ad=16: PT' == PT, TAG' == TAG, tag_ok          
+  [PASS] RT18 len=23 ad=15: PT' == PT, TAG' == TAG, tag_ok          
+  [PASS] RT19 len=14 ad=10: PT' == PT, TAG' == TAG, tag_ok          
+  [PASS] RT20 len=6 ad=6: PT' == PT, TAG' == TAG, tag_ok            
+  [PASS] RT21 len=6 ad=0: PT' == PT, TAG' == TAG, tag_ok            
+  [PASS] RT22 len=4 ad=14: PT' == PT, TAG' == TAG, tag_ok           
+  [PASS] RT23 len=8 ad=9: PT' == PT, TAG' == TAG, tag_ok            
+  [PASS] RT24 len=30 ad=4: PT' == PT, TAG' == TAG, tag_ok           
+  [PASS] RT25 len=23 ad=10: PT' == PT, TAG' == TAG, tag_ok          
+  [PASS] RT26 len=5 ad=2: PT' == PT, TAG' == TAG, tag_ok            
+  [PASS] RT27 len=27 ad=5: PT' == PT, TAG' == TAG, tag_ok           
+  [PASS] RT28 len=9 ad=14: PT' == PT, TAG' == TAG, tag_ok           
+  [PASS] RT29 len=10 ad=1: PT' == PT, TAG' == TAG, tag_ok           
+  [PASS] RT30 len=23 ad=13: PT' == PT, TAG' == TAG, tag_ok          
+  [PASS] RT31 len=4 ad=8: PT' == PT, TAG' == TAG, tag_ok            
+  [PASS] RT32 len=21 ad=10: PT' == PT, TAG' == TAG, tag_ok          
+  [PASS] RT33 len=2 ad=12: PT' == PT, TAG' == TAG, tag_ok           
+  [PASS] RT34 len=14 ad=0: PT' == PT, TAG' == TAG, tag_ok           
+  [PASS] RT35 len=13 ad=12: PT' == PT, TAG' == TAG, tag_ok          
+  [PASS] RT36 len=12 ad=9: PT' == PT, TAG' == TAG, tag_ok           
+  [PASS] RT37 len=29 ad=9: PT' == PT, TAG' == TAG, tag_ok           
+  [PASS] RT38 len=8 ad=2: PT' == PT, TAG' == TAG, tag_ok            
+  [PASS] RT39 len=20 ad=11: PT' == PT, TAG' == TAG, tag_ok          
+  [PASS] RT40 len=26 ad=2: PT' == PT, TAG' == TAG, tag_ok           
+  [PASS] RT41 len=28 ad=10: PT' == PT, TAG' == TAG, tag_ok          
+  [PASS] RT42 len=31 ad=6: PT' == PT, TAG' == TAG, tag_ok           
+  [PASS] RT43 len=31 ad=7: PT' == PT, TAG' == TAG, tag_ok           
+  [PASS] RT44 len=10 ad=4: PT' == PT, TAG' == TAG, tag_ok           
+  [PASS] RT45 len=3 ad=9: PT' == PT, TAG' == TAG, tag_ok            
+  [PASS] RT46 len=23 ad=1: PT' == PT, TAG' == TAG, tag_ok           
+  [PASS] RT47 len=10 ad=12: PT' == PT, TAG' == TAG, tag_ok          
+  [PASS] RT48 len=1 ad=0: PT' == PT, TAG' == TAG, tag_ok            
+  [PASS] RT49 len=11 ad=3: PT' == PT, TAG' == TAG, tag_ok           
+  [PASS] RT50 len=22 ad=13: PT' == PT, TAG' == TAG, tag_ok          
+
+==================================================================
+ T11 round-trip table (50 different plaintexts)
+  PT  = plaintext given to encrypt     CT/TAG   = encrypt output
+  PT' = plaintext from decrypt         TAG'     = decrypt tag
+==================================================================
+  # | LEN | PT (input)                                                       | CT (encrypt out)                                                 |                    TAG (encrypt) | PT' (decrypt out)                                                |                   TAG' (decrypt) | PT   | TAG  | TAG_OK   | RESULT
+  1 |   5 | a201bf8756                                                       | 0eb343a25f                                                       | b19e1dafdffb4162167324d4b92a0a02 | a201bf8756                                                       | b19e1dafdffb4162167324d4b92a0a02 | SAME | SAME | VERIFIED | PASS
+  2 |  22 | 81c25da8f64143b6269d1a84a03869d8429cc163b300                     | b4d795a61fb321c577a884021309145a814978e8b276                     | c1aa5dc2ceaf3ce5201d9d4d5f67e9bd | 81c25da8f64143b6269d1a84a03869d8429cc163b300                     | c1aa5dc2ceaf3ce5201d9d4d5f67e9bd | SAME | SAME | VERIFIED | PASS
+  3 |  24 | a104f293ecee9ada9f6e5c23df9891279e2a220c1611ffe4                 | 52f693099ae27e43d5a9f4d8a30d49ade112b95283637f0a                 | ab29da83db2bd2c8e87ab92dd5ff560f | a104f293ecee9ada9f6e5c23df9891279e2a220c1611ffe4                 | ab29da83db2bd2c8e87ab92dd5ff560f | SAME | SAME | VERIFIED | PASS
+  4 |  27 | 5b5d085a64b73d36ce8569c9e8e8d3985029cd146d41351af553f6           | 331308dfb5f52a44048155fb0db23a4aee00906d6d7c5837f60194           | 267fffcabb1a492bffaa7f3da16aa4ca | 5b5d085a64b73d36ce8569c9e8e8d3985029cd146d41351af553f6           | 267fffcabb1a492bffaa7f3da16aa4ca | SAME | SAME | VERIFIED | PASS
+  5 |  12 | 622a3f303e3aaea4ecb2c6da                                         | 5fb6bc6036f0ddaf51c54830                                         | 033f470a62c514c209d801f99439e3df | 622a3f303e3aaea4ecb2c6da                                         | 033f470a62c514c209d801f99439e3df | SAME | SAME | VERIFIED | PASS
+  6 |  15 | bd0c44140f4702764745985a514938                                   | c265ee13bb8525b49734b2c899f903                                   | 16d92de17676c5fdbf46ea6eaeae0a88 | bd0c44140f4702764745985a514938                                   | 16d92de17676c5fdbf46ea6eaeae0a88 | SAME | SAME | VERIFIED | PASS
+  7 |  18 | de047cfb45b9f633e0b116d9557eb6271460                             | dba50ad9c22e135eabcda8aa80b48b34cc4c                             | 16db34228ed04e75a9e4517ee47bd632 | de047cfb45b9f633e0b116d9557eb6271460                             | 16db34228ed04e75a9e4517ee47bd632 | SAME | SAME | VERIFIED | PASS
+  8 |  21 | 2f7cde47b3a76e99e49a0897b6914412c8512826e5                       | c214f232be462ebeee2d183a816315f435a60f110e                       | 02dc81a89a1d1d0fbf764cfff90c5148 | 2f7cde47b3a76e99e49a0897b6914412c8512826e5                       | 02dc81a89a1d1d0fbf764cfff90c5148 | SAME | SAME | VERIFIED | PASS
+  9 |  15 | 0749bfce0984d5780eaf48b82ef3a7                                   | 7dd8464a0162fa2aa341dc978d18d9                                   | b13e0ccd196288d57ebeb1f599694c25 | 0749bfce0984d5780eaf48b82ef3a7                                   | b13e0ccd196288d57ebeb1f599694c25 | SAME | SAME | VERIFIED | PASS
+ 10 |  28 | 7f87889d6a80161311e2c44788596f9bd15f9cfd59b8ff697af3f965         | 224cff208574a4d61f889f40ec1dc522c2856f0729b10b9749d281c9         | 6c622bc411fb26954123be0110ab35ac | 7f87889d6a80161311e2c44788596f9bd15f9cfd59b8ff697af3f965         | 6c622bc411fb26954123be0110ab35ac | SAME | SAME | VERIFIED | PASS
+ 11 |  15 | 91cfeab05e78ee9f5cfc1790e71356                                   | e989568a3c1dd2760c8db611d0388f                                   | b99e56579f7ec4f4cd27d23bbc84d54f | 91cfeab05e78ee9f5cfc1790e71356                                   | b99e56579f7ec4f4cd27d23bbc84d54f | SAME | SAME | VERIFIED | PASS
+ 12 |   5 | d905740d7f                                                       | b321e294e8                                                       | 20c14f4951268e9802c7b3e47f56d436 | d905740d7f                                                       | 20c14f4951268e9802c7b3e47f56d436 | SAME | SAME | VERIFIED | PASS
+ 13 |  20 | 545b2547cc9a23d6735f85666c94137886b002d9                         | ebc9e50f0adfc15e0e59fa73f23db5f6de5dd0da                         | ff01e8864dd398322ecb170b1edcb854 | 545b2547cc9a23d6735f85666c94137886b002d9                         | ff01e8864dd398322ecb170b1edcb854 | SAME | SAME | VERIFIED | PASS
+ 14 |  16 | 02c4f28c7dcc5d3f3814e21b71b1036b                                 | f9f6f1549a27915f148ea9aeb78a36e1                                 | a70021b593d6f825049b1b1ffe25453c | 02c4f28c7dcc5d3f3814e21b71b1036b                                 | a70021b593d6f825049b1b1ffe25453c | SAME | SAME | VERIFIED | PASS
+ 15 |  11 | a3d74edb35ab3511f47b4f                                           | b26dbd7bc817404eea4692                                           | 845761f0f98f8487e7225cf383e3b2ed | a3d74edb35ab3511f47b4f                                           | 845761f0f98f8487e7225cf383e3b2ed | SAME | SAME | VERIFIED | PASS
+ 16 |  10 | bc07330fdbd4d2aac73a                                             | 9e2343e945c46f4f7948                                             | 8301a6a17c59b1bf9b74c7c84cb66267 | bc07330fdbd4d2aac73a                                             | 8301a6a17c59b1bf9b74c7c84cb66267 | SAME | SAME | VERIFIED | PASS
+ 17 |  12 | ce177143a77bad476f4f9c46                                         | 12712d0f4a77f5f2a8f87735                                         | b19152b76a93f9121f1a32e182f9b734 | ce177143a77bad476f4f9c46                                         | b19152b76a93f9121f1a32e182f9b734 | SAME | SAME | VERIFIED | PASS
+ 18 |  23 | 8df18db5e0928dbc0e455c10ba7543b33418f8f0f6301b                   | 0cff78c475a4dd80c9b0c2980e7d2650c0dbb0574670a3                   | 962d36f3492f6bac86eca2af9ce0068e | 8df18db5e0928dbc0e455c10ba7543b33418f8f0f6301b                   | 962d36f3492f6bac86eca2af9ce0068e | SAME | SAME | VERIFIED | PASS
+ 19 |  14 | e32f1dcf7cf1ca50be62cb08aaf8                                     | 716d2708742fb5f351d17ba592fb                                     | d97596b62eec33a35c1779e71092dc68 | e32f1dcf7cf1ca50be62cb08aaf8                                     | d97596b62eec33a35c1779e71092dc68 | SAME | SAME | VERIFIED | PASS
+ 20 |   6 | 5b1bbcadf062                                                     | 44e59906ea73                                                     | c2416e6f54e11180d2ec69d384f080bb | 5b1bbcadf062                                                     | c2416e6f54e11180d2ec69d384f080bb | SAME | SAME | VERIFIED | PASS
+ 21 |   6 | c76d818d857f                                                     | 0a1210fd8cc7                                                     | bf87edc66701dfdbdd532999ae833180 | c76d818d857f                                                     | bf87edc66701dfdbdd532999ae833180 | SAME | SAME | VERIFIED | PASS
+ 22 |   4 | 08d66ae9                                                         | 2acbe84f                                                         | 08a2a686271bb4bf2808da583cd8ba8a | 08d66ae9                                                         | 08a2a686271bb4bf2808da583cd8ba8a | SAME | SAME | VERIFIED | PASS
+ 23 |   8 | 33fe75fa05ba5150                                                 | 6addc16582238db2                                                 | 6b965e25ae3589fb8cd476bcabf6cc2b | 33fe75fa05ba5150                                                 | 6b965e25ae3589fb8cd476bcabf6cc2b | SAME | SAME | VERIFIED | PASS
+ 24 |  30 | 06356260ba8d0b5a535b36ae6c44f0ebe91d558a79650a6f19c7c26d929a     | b68a843cdd96ea4745dbb756bc1a9a63ee46deb8374e53140e81b59c460d     | 92fe3462647c788423208b87f44cd0bc | 06356260ba8d0b5a535b36ae6c44f0ebe91d558a79650a6f19c7c26d929a     | 92fe3462647c788423208b87f44cd0bc | SAME | SAME | VERIFIED | PASS
+ 25 |  23 | 267b58bb51f877ae2ff8cc5c3a5569a37954a890fd26b3                   | 48e0dc36e5224a82b36396fa44f4516bf68f972f9140d7                   | 4eabecbdb5ae12fa7e425a1011cc42eb | 267b58bb51f877ae2ff8cc5c3a5569a37954a890fd26b3                   | 4eabecbdb5ae12fa7e425a1011cc42eb | SAME | SAME | VERIFIED | PASS
+ 26 |   5 | d1df7377ec                                                       | ee1821547e                                                       | 842567440f7f327bbc7100a9f80ff877 | d1df7377ec                                                       | 842567440f7f327bbc7100a9f80ff877 | SAME | SAME | VERIFIED | PASS
+ 27 |  27 | 21d0dc3c0ace91d37a59d9f57c585592a622f0c49af863538787b2           | 20ec714b3718c3baccc2c3e7bef12196189cfe8456a3bf99349eee           | 39b54c94b9bf13d0a1da95fb5cd39898 | 21d0dc3c0ace91d37a59d9f57c585592a622f0c49af863538787b2           | 39b54c94b9bf13d0a1da95fb5cd39898 | SAME | SAME | VERIFIED | PASS
+ 28 |   9 | a725ec48b74f49db5b                                               | 0f40a259f00bddb936                                               | 4f8d721891a9c7c87e8fb504ceeb5730 | a725ec48b74f49db5b                                               | 4f8d721891a9c7c87e8fb504ceeb5730 | SAME | SAME | VERIFIED | PASS
+ 29 |  10 | a01b8b323d95ea83f8dc                                             | 9f8352a184e190d25674                                             | bdd360f85cc055439ef81d7b8f44f163 | a01b8b323d95ea83f8dc                                             | bdd360f85cc055439ef81d7b8f44f163 | SAME | SAME | VERIFIED | PASS
+ 30 |  23 | 318089a49ad7a632c26202b06bd39876288aed4bd41294                   | 663d9710b6a6a618845164a5cbb7d4a2b1ccc1b5a3b9f9                   | 7916b8f3a0a1c3c40a01568580949b7b | 318089a49ad7a632c26202b06bd39876288aed4bd41294                   | 7916b8f3a0a1c3c40a01568580949b7b | SAME | SAME | VERIFIED | PASS
+ 31 |   4 | 1c12edbf                                                         | 757bc77e                                                         | 13e2a1a504c962582c1f0acc38d3ea88 | 1c12edbf                                                         | 13e2a1a504c962582c1f0acc38d3ea88 | SAME | SAME | VERIFIED | PASS
+ 32 |  21 | 6808e2d995fdfe52c018ce0158f675a893dca175f7                       | 3060ccf28b3f35572468e87eea9a2549e709af29e9                       | 5327d31f9d910b443393f84e95cc528e | 6808e2d995fdfe52c018ce0158f675a893dca175f7                       | 5327d31f9d910b443393f84e95cc528e | SAME | SAME | VERIFIED | PASS
+ 33 |   2 | 6ad7                                                             | 2120                                                             | e4e2bfb760fec3da87f47efac19dc7f4 | 6ad7                                                             | e4e2bfb760fec3da87f47efac19dc7f4 | SAME | SAME | VERIFIED | PASS
+ 34 |  14 | a116c25d87b81297e0745340028a                                     | 06c588e636231626a72f466cf2b6                                     | fc43765ee9f697cd4f0ed57758e6bc8f | a116c25d87b81297e0745340028a                                     | fc43765ee9f697cd4f0ed57758e6bc8f | SAME | SAME | VERIFIED | PASS
+ 35 |  13 | 87035c7739281f0759d8c162d4                                       | 2750f7a74f2e0e4f970977cb13                                       | bdb1aeebbbd577c713e7b9ea0b505abc | 87035c7739281f0759d8c162d4                                       | bdb1aeebbbd577c713e7b9ea0b505abc | SAME | SAME | VERIFIED | PASS
+ 36 |  12 | 1b076890071e3147981819a7                                         | 1194bca5a6c06525f87cd708                                         | 462dfa5c5248418a365af0ce196db06e | 1b076890071e3147981819a7                                         | 462dfa5c5248418a365af0ce196db06e | SAME | SAME | VERIFIED | PASS
+ 37 |  29 | 82c9a00be8d6c59c308c37f84b834c0c545c44901246ce88787b83c626       | 366965d8faf4297ecc745c82175e0835b68ff32b9bad1b95f694c73850       | 5a5a4882b2dfb46271c63b821b3c05a0 | 82c9a00be8d6c59c308c37f84b834c0c545c44901246ce88787b83c626       | 5a5a4882b2dfb46271c63b821b3c05a0 | SAME | SAME | VERIFIED | PASS
+ 38 |   8 | 3e96a32e08459290                                                 | 9d5a768abe5658a3                                                 | 4177788a65b62f7c7f75187c0bd2566e | 3e96a32e08459290                                                 | 4177788a65b62f7c7f75187c0bd2566e | SAME | SAME | VERIFIED | PASS
+ 39 |  20 | 258940021be10647af60a8c9b8c4e41c3ad863a1                         | 7a8ac8ed09024060b96c40d0c2c0fbb41fa76b0b                         | ad3bd9dc7864b25c8590a7064a6fe906 | 258940021be10647af60a8c9b8c4e41c3ad863a1                         | ad3bd9dc7864b25c8590a7064a6fe906 | SAME | SAME | VERIFIED | PASS
+ 40 |  26 | 0b5a797c0f99e4124338d85d9c9c7f66d8d28ea30517c975fb53             | 44671411240997313b913268ace910597b8ddae0458ca9e3fc50             | db884f7ee22daab88c131046a3454d11 | 0b5a797c0f99e4124338d85d9c9c7f66d8d28ea30517c975fb53             | db884f7ee22daab88c131046a3454d11 | SAME | SAME | VERIFIED | PASS
+ 41 |  28 | a0a54a887c663a6b7a74551df0902609fc2ac3030cde4fcd59f37794         | 3677358790907931f121f36499e5f5cd7eed8d5fee6efcc1b573fb13         | 8f105e8131f8c3deb546057ce1a40af9 | a0a54a887c663a6b7a74551df0902609fc2ac3030cde4fcd59f37794         | 8f105e8131f8c3deb546057ce1a40af9 | SAME | SAME | VERIFIED | PASS
+ 42 |  31 | fbe4d8d68f0acdad511ad8a8c634936ef9e6e0d507aa725a966544a957e91e   | 4c7000239d34e207b56aacfccb9527ac8747877b3bccdce02da8cdf7f40b9d   | e83a97e7dd12d68a95a0678369341f98 | fbe4d8d68f0acdad511ad8a8c634936ef9e6e0d507aa725a966544a957e91e   | e83a97e7dd12d68a95a0678369341f98 | SAME | SAME | VERIFIED | PASS
+ 43 |  31 | a72934ed6a6984c45f1040f9622e4591b61f9f9f8e0c06c186685ca2297532   | aab1660cc3788d19b2f3c23edb5697b3f806f71bb6880ea03cad29319ef282   | 7e235aa3114f554457f739327debb9ee | a72934ed6a6984c45f1040f9622e4591b61f9f9f8e0c06c186685ca2297532   | 7e235aa3114f554457f739327debb9ee | SAME | SAME | VERIFIED | PASS
+ 44 |  10 | dd8b58773ac59e9f77b7                                             | da8f97f9a7b627e33616                                             | 61e53c6e852ada6681d5e0d804a9f59b | dd8b58773ac59e9f77b7                                             | 61e53c6e852ada6681d5e0d804a9f59b | SAME | SAME | VERIFIED | PASS
+ 45 |   3 | c7ccb5                                                           | 37a7c5                                                           | 4a759fd57f8ebd93b03fe65f6b3a2d93 | c7ccb5                                                           | 4a759fd57f8ebd93b03fe65f6b3a2d93 | SAME | SAME | VERIFIED | PASS
+ 46 |  23 | 4d0cfaf1dc83f26164dccd2a444b2db8c3d0620198b7e9                   | dce9f7913c421c203527d09b72af4da4fb58af30318eaf                   | f445074c4447aafec435a35f13c53ea0 | 4d0cfaf1dc83f26164dccd2a444b2db8c3d0620198b7e9                   | f445074c4447aafec435a35f13c53ea0 | SAME | SAME | VERIFIED | PASS
+ 47 |  10 | 335cb19200ae45d7318d                                             | ef01d54dbd44ee5f4e0f                                             | 86caf88aec341d1d485b17a93ffc9c5d | 335cb19200ae45d7318d                                             | 86caf88aec341d1d485b17a93ffc9c5d | SAME | SAME | VERIFIED | PASS
+ 48 |   1 | 00                                                               | 4e                                                               | 4bff260fb09cb5f3ba9883a4f5c435c9 | 00                                                               | 4bff260fb09cb5f3ba9883a4f5c435c9 | SAME | SAME | VERIFIED | PASS
+ 49 |  11 | c8c7df6786331ddb355d7b                                           | 3ea43b4fad7a110295e7be                                           | 34b824e06f1a3626b3558feb3195e0f1 | c8c7df6786331ddb355d7b                                           | 34b824e06f1a3626b3558feb3195e0f1 | SAME | SAME | VERIFIED | PASS
+ 50 |  22 | 8049d1d8de3eed9fc39a4dd30a443e42d74f1ca4197b                     | 6540ca321873fd4d135217fe8a3616b6beac52b0aadd                     | 3a000746b05b81accdb5814dabf8f685 | 8049d1d8de3eed9fc39a4dd30a443e42d74f1ca4197b                     | 3a000746b05b81accdb5814dabf8f685 | SAME | SAME | VERIFIED | PASS
+ T11 round trip: 50/50 PASS (plaintext same and tag same)
+  [PASS] T11 all 50 round trips: PT' == PT and TAG' == TAG          
+
+==================================================================
+ T5 vector table (50 random vectors)
+==================================================================
+VEC# |                              KEY |                            NONCE | ADL | AD                               | LEN | PT                                                               | CT                                                               |                              TAG | TAG_VER  | PT_MATCH | STATUS
+   2 | dbf2bd6df70af10944f0ab8491c51a84 | 39768555636e237ae502ae5bc0906a6e |   0 | -                                |  30 | c99ff8f47a6190047c4348825886b0a504b582b060292671bb8630c14d3e     | 69320ce31bb5cc76073d61d9e9e834266be3a2861c979bee5632ddaab01c     | 563dc2be51e0c294bac43dfa5480309c | VERIFIED |    MATCH | PASS
+   3 | fce53779187604e4b0735f2cb54e1e8e | fe5f02550ce89a1261c34557e1f49bc6 |  15 | e356d35982497feaca3ba025ffe5fe   |   6 | 9cb89a7782d0                                                     | de81eab4cac1                                                     | 2a972b30c7ec291451578e7277761377 | VERIFIED |    MATCH | PASS
+   4 | e49d3ea5c30d9887725d471ff8a5ba61 | adee0347bcb7bbd58b956127fa427cff |   1 | 0e                               |   8 | 60ce3fea6106dce3                                                 | aef2f16057d60aaf                                                 | 3b6fa86e8aa4844b58aefc23cec8fde5 | VERIFIED |    MATCH | PASS
+   5 | 61fb231ce25d7c0dd0fed355320e7ded | 053b741528e0a29011f6fcb98539cb1e |  10 | b08a47069b200e4d8172             |  14 | 51feb1f00ab978874886c08bad7e                                     | f53c8c94679643f987cb6215570e                                     | 9d59008285c9d63beaf6510a772817e1 | VERIFIED |    MATCH | PASS
+   6 | abad68cfc3016e93729014c5f8d093f7 | 38fca4fa6154ab0be122bc95d87be361 |   6 | a208b1955d3c                     |   6 | a6d997a286fb                                                     | d00fac28a799                                                     | e7e89129b37e76cb084e019edac3076c | VERIFIED |    MATCH | PASS
+   7 | 5debfed5da42637d00a13e2a0502d927 | fa84db702ac7570a1c2c4505c7f7fe5b |   1 | e7                               |   4 | 2ab4fd24                                                         | b257d8bc                                                         | be76f27da8d2106b014de54e5fdff34e | VERIFIED |    MATCH | PASS
+   8 | a4e20114d40f0dc4224dcf95ecef06d4 | 106865a67a79a065fd7d302d13d48a0b |  10 | 2863fd9fab5a6a12a639             |   0 | -                                                                | -                                                                | 21f12507e3ffac5812df1039b2340323 | VERIFIED |    MATCH | PASS
+   9 | dce8ab92f182959d6d065dd9f338f8c4 | 9811652cec64a13e90668925f60f6090 |  16 | 1843f2bbbb5b95e5f28983b2e090f667 |  28 | 61379feccb686a09283546a5c76d58d102c9904fbf6e2a09f26d2e96         | 3c33c63aec621856105a37dd5f93e79636e7cc29f301ce739d026fbe         | 14ea03d324e4f6f2e750e88925e47509 | VERIFIED |    MATCH | PASS
+  10 | b0b6dbbfb481d3b8a88bd8b3cb38b57d | fb40fbd12526db0bfd4e9fae15405edb |   7 | 272f7ed3678006                   |  28 | a4c544067b930d5b0a76346e2f4c6d64d5de370a7262615d88f98204         | 246aa587e227dde5bcf76071e61434144f37d70eaad4c4e65bddde61         | dee41a5b6ecfb1b9a4e4a80eb5c831e7 | VERIFIED |    MATCH | PASS
+  11 | 0c5dc1595ddd3707da22fa2d0151c7ef | 9fc55f80defe140de54fffc0bea90e29 |   0 | -                                |   3 | 1073ef                                                           | fa460f                                                           | 8323126e59f36a89811d4efc7c8d9ab3 | VERIFIED |    MATCH | PASS
+  12 | d84c1edc0b8b4eb057eb876dcc649146 | 2fd5bb213639b8ab54dfdc27c47f7875 |   3 | 0bb1c4                           |   6 | 3c1f70804719                                                     | bd2ba9892fe0                                                     | 80950c56e51bb2bb7715f54e0a4052a3 | VERIFIED |    MATCH | PASS
+  13 | 5b93ea47d51c5bbb1cc274f6cb9b70ce | fda6348912939d938968b0b4fbae925b |   9 | 83d37c386bbcacf730               |  23 | 3c63ea40a00ab994d5dde203e7ed96b68ed97220ad4c01                   | 8119a299a39d67fc7ba70fa39cc86ad52126c801b970a8                   | 27430ba7df8dbeb33315982c83d84c89 | VERIFIED |    MATCH | PASS
+  14 | a0bb0296dd107698f09c0677735e969a | fdda829b10f9c77d7e69ef4ffe5c92c2 |   1 | 57                               |  12 | 9f4f31ae6c028b95a2372cb1                                         | 1b1fbcd8e78c695cd8647bbd                                         | 160aba868847c262f849ec02ed9e31a6 | VERIFIED |    MATCH | PASS
+  15 | 1c8b340cca4566d4529586cdbe2e135c | 2e306d0c2debadd32c8ca8d2257a6f30 |   3 | 92f4a8                           |  15 | 2921acf887b417f0a70cd27db8d5e2                                   | 2da6ba6d169520f3fcf0158481eb07                                   | 976aa7218331651726739b968f56cde2 | VERIFIED |    MATCH | PASS
+  16 | da2752120139628609b77cf54a8e407e | fbb9ef0621843122e850fef4ab6a9cbe |   1 | 27                               |   8 | 8bff12702a9926b4                                                 | 2fc7a8fe47205435                                                 | e37e5d4914300f810a135bec3510cf9c | VERIFIED |    MATCH | PASS
+  17 | 92c71462f3746e9c5f270b3adcd3480c | ffe18d5b00f2ba400788bbdc3a522359 |   0 | -                                |  17 | 48eae88826923051054f844237b9de8abc                               | 123780bef73d3689766e058207bfa8d4c0                               | af946cad2e5f13fb1c3e50e191444998 | VERIFIED |    MATCH | PASS
+  18 | f83ff4653bf0f1906e21871af47e0126 | d7af69cd0ee67c736fec299af6630e18 |   9 | e53cc58265927e1f2f               |   8 | 3e23e0174a1ecac8                                                 | 61c54e68cea8bf9d                                                 | dc9a429e82b567bcfaf478df3d5df248 | VERIFIED |    MATCH | PASS
+  19 | 1e60f88fd589bb011a7cfa1bbd66a329 | 3c50458e6fb4ae5df62b19a74b66ea74 |   4 | a61717e0                         |  30 | 5a574f6092cbf34990a7a17b06928f1610812243b83467ba74b89b3ca4e6     | 7ced093ceee7a220b03ed5a63be2cd4f486c5ab7a3fe6035b0966b5828f2     | 84dac1c1f7145f76a68424ceda14580d | VERIFIED |    MATCH | PASS
+  20 | dbbc37d3f842f30c3bda80f96dc24e3e | bfec319f7f236a5dfe6ab7ec0c8c625f |  13 | 4b6689d601c34b480d0ea3d290       |   3 | 36d115                                                           | 51cd56                                                           | 3a34c9caca667df50170279100d0419d | VERIFIED |    MATCH | PASS
+  21 | da390e3600d5b8cf06a301cc338f586a | 183f94aaaf13cdb5b96470e197d1e041 |  11 | fb1ba853edb1034552c718           |  31 | 5a7a747b3ec97a9fd74f77b34353f055ce2756ec70a9872d4cc44c9932edda   | c1812501fe199e0ae22cc11bebe5b51006524b7d8253fe5bf2892d3881b4e4   | 9253725c9c95cf721fdc5bfd06ca671a | VERIFIED |    MATCH | PASS
+  22 | da3111a001029cf40806763d3dfff38a | 7cd97851fe2179f10ecca87d6f361111 |   1 | a3                               |   9 | e2839916441559ef8c                                               | 87a76d181b0b180b04                                               | e128b8403ec109578d06f33de390e7f3 | VERIFIED |    MATCH | PASS
+  23 | 2e7001ad2f2f4b9b32f6fecc458df24c | f6ce6dc846b113d3981ec57bec508c5c |   3 | 3cdf19                           |  24 | 974cdf84a08801fcbf8636b92ac257cebe41ab968716613a                 | fd76e6d67a2b797633b72088aeef12f33bdec48c079c9b27                 | 5d07d9ad558d6d8cfe39e43ff4fe95b3 | VERIFIED |    MATCH | PASS
+  24 | 3c85f6a37096c69ef70a6e0a44f4772a | fd8183c413b2b50e91041625f56b5a88 |  14 | 3d6728120e96bf0cc54fab2c0a4e     |   7 | b1a7831c52a7d8                                                   | 52663ac850d8cd                                                   | 4e4bde7ef535176ba094599067009868 | VERIFIED |    MATCH | PASS
+  25 | 1d8fc17dd08bcdac34515fca4bfdf94d | 47dda24c9c45058de58ac014bd35c0f8 |  16 | 8c7929704022544e24f059c9efac668c |   3 | db37ec                                                           | a2a16c                                                           | c49ba6ec4dd05386a9cac2aebce2298c | VERIFIED |    MATCH | PASS
+  26 | f95afbf9339e88e948aeb98f9f1b09d3 | fad78751284f62d80edfed256fbdede0 |  10 | c68083cde47cc77d38bb             |  11 | 1c6311c06bca47287af3b8                                           | df0f2c4be0343aeb62efeb                                           | 94f6636c04a1f7b9ba0fad7bdda931e4 | VERIFIED |    MATCH | PASS
+  27 | 316f2d673e22869d7748a857fc12b79f | 5e40ad07daf55373fcaeffbf1a1b97cc |   1 | 71                               |   2 | 0a43                                                             | e8dc                                                             | 2e1f43b382062b5686f0d2dae36a0e2b | VERIFIED |    MATCH | PASS
+  28 | f47c8de957b2796fcbd5af5c4b45988f | a126d29fdc332c4af59948734f95fbb1 |   0 | -                                |  20 | f7a6ae8daca0f95116472167c89ff1772558be98                         | ceee809d8692a6e6e4e1be8c2e31885091429227                         | fe1fdcaefd59d007d163c365a8862be6 | VERIFIED |    MATCH | PASS
+  29 | c0a6598e7c39bd8afdff03f00fdb58fe | e1b67916d4fb0f701d72e897cfdac34b |   8 | 7e68312f089e34c5                 |   3 | 560369                                                           | 2021c6                                                           | 84ed3643275a1a4f6ac6bb1d83a7ad45 | VERIFIED |    MATCH | PASS
+  30 | 2277daf4ede4461086358581fd3d28d3 | e790f1c3b04670edb5d58441a4267140 |   4 | 93d93037                         |  10 | a9ae96338e268f56e9fa                                             | ac1e2c23e535f4302e3c                                             | 074d2de6e454948b1647ae472d13f74c | VERIFIED |    MATCH | PASS
+  31 | 262e399603190a61186874d1b01bd97b | 082b16253f1194097b16c7e9fdb04897 |   1 | 6c                               |  10 | 57987098117cf1d1cc13                                             | c32d2020e06e6e125d9d                                             | c3442acc93452bda9c4fc69363f2b954 | VERIFIED |    MATCH | PASS
+  32 | ac3b65d1c17c8df878d5466ffcd6fa1f | ab55d03ac3eee4736ea9ccd8f51378ca |   6 | 30c58f0afce5                     |  16 | 039faffc5810bbfabc398cbd9cb24309                                 | 7a16e63bee45d0bcdc15564b11a93ac9                                 | 0ff56622076999cea6b6c922c9b003b0 | VERIFIED |    MATCH | PASS
+  33 | 0ee759e66ff2422bf6692848499d84e7 | f796159140e638f982641d35fe430aa6 |   1 | d4                               |   6 | 5bfdccf274e6                                                     | deed4d7c8a5b                                                     | bd58707979349a8a306940705f03b5e1 | VERIFIED |    MATCH | PASS
+  34 | dd4b96b3ef44be587cb8ef1cfe1af5e2 | f0508af9756f8739faf6848427621266 |   2 | 5ba5                             |  21 | e5e2692b099802c68af85e880f100a566bf980df1e                       | 839f054b442a7c91c9dfecdf61f0eed46f867e9105                       | 5796806b387d2655e70845ac8118ccf8 | VERIFIED |    MATCH | PASS
+  35 | 24247ab8f78fe7c6411442508318dc80 | 0d01506362746a34e33e8a7ecb954522 |  11 | 06c5bdbd74245d827df3d9           |   8 | e3e1dfad3acd89f7                                                 | fbb6e61f5a582540                                                 | ad510ac9537455bfa0cdc953d79bf8cd | VERIFIED |    MATCH | PASS
+  36 | da6b8b89ffb9927902311a361154d3c5 | f70bddbd44e9cfba91abdbc3f4b60bf6 |   7 | e68ff90a209a86                   |  29 | a53956d5245ad66eddee9b146f6a8771640f2bbaaf68413334ce31aa3f       | e3de1c43cdadce4e846dec9731c4c24bea2dfe3d3d4ff85033cd0a86ee       | 00507f2569d929bbb735467a0db4f28f | VERIFIED |    MATCH | PASS
+  37 | fe4567980db222806763948feb91c9a9 | 4eb0a97fb2b02a96ae64f548bb619b57 |  12 | 04fb519860a13a353d8b45f4         |   9 | 5fb60fb2796fd45a6f                                               | eb46aa5c73e9e98b31                                               | ef2aa7fe55af7b3a89605b336bbc6ab7 | VERIFIED |    MATCH | PASS
+  38 | 44b65c8090ee1d3ef5829757503c3211 | da1e6ecf016b4d330b417e8955d3414c |   3 | fafe79                           |   8 | 53a831a57a45ac90                                                 | b270b66ad0861b10                                                 | ddf1393ec64259d9692b0dd04d2b161e | VERIFIED |    MATCH | PASS
+  39 | e8f3bb52a7459f0bce63f08f3efe001c | b922c2b598bc3ae6eb60e2209738a24d |  10 | 40381d03324588bf680f             |   3 | d9a6f7                                                           | 2b1271                                                           | a42dba66dafa787218c6128196c3145e | VERIFIED |    MATCH | PASS
+  40 | def697c7e57c4c52bd912af888590234 | 0c68bfa95e2c689fdacaa88ffda09951 |  12 | 6f8ed451aac22e2fa0247182         |  24 | 93419428e131e42f7c27295ff7262d62b4dd474e5f28da24                 | bb37e5f70f8d6d72a37789fa7d64d1faa2339a9ff80a7078                 | a2d228161ed1395eb1a1841646643fb9 | VERIFIED |    MATCH | PASS
+  41 | d8810d740a67bf284f9d8742b5811ae6 | b237f555afdedc03b70bc8ffa009f82e |   8 | 731e3146ba352b42                 |  27 | fa4c81bdfbab98caef6e289be5d0f392b4b8487a8039820e3a1386           | 8e8371c3b96be4bec02f05b72a0150d517e7dade685b0b38b98f4f           | d1daec3c99e698542aaf6269914a357a | VERIFIED |    MATCH | PASS
+  42 | 31402ccc3d3c29677390c74ff99f7b8e | fb7a571b236df675f37732e05f1323c5 |  11 | 2e3036ec9173dac0a87819           |  30 | d1186aa1df70bb3d4e15fc86498aa236ec20cc93ba74c5f025ec852c0c3f     | aae2db5058e0acbedf4d2c9ff337b342dfb5bb9433792d01cd13b2836bb8     | e42e450e1cc4dc23396e785c2c64f22e | VERIFIED |    MATCH | PASS
+  43 | 9140123cf52b510752ba4b4abe95f521 | f474fed957e954c8cc5f13fe48ba15ba |  16 | 105a18eebceb00e119fe7d01acddba2e |   5 | 89be0b8814                                                       | de2d716841                                                       | dba83ffc2bd6076fd7f277bcf68f890e | VERIFIED |    MATCH | PASS
+  44 | f3cb21aa5cb66b25d7a55f180f1d56b0 | 25ecb52301a9d7c80d2e4b5763b6770b |   7 | d49f994d4dd5f7                   |  11 | 5863b22ed65bdd3d4dc0a4                                           | 35fccd325dc54c2978280e                                           | 211a0ae0234231cfcb5fcbcdd8743130 | VERIFIED |    MATCH | PASS
+  45 | 448746c6903fe76ff636ac764b11af13 | a8cee796ca8ebe9d514174a1ba5da724 |   7 | bfdb65ea732166                   |  11 | 76d7fccb1d9c5e21f3ae8b                                           | 0619831bb149cf4e001bbb                                           | 2d7d58d295caf90cf8b2cc88976d9313 | VERIFIED |    MATCH | PASS
+  46 | 711353f5f78024c74189a6bd84e36ddb | bfcd668b7f9df310fe6f78520c66f424 |  15 | 857e92cc014c52ba1a530bc3c3cd57   |  16 | 38111851d2d40180f35eb582dfba1ef7                                 | 16e24933f12baeac517bf9eeb1a7caf0                                 | 631e38fd16821b7069186c0584861813 | VERIFIED |    MATCH | PASS
+  47 | 92e9a206f34bdbc5604aba3fdf1deb8b | 636dd98be5022abbc093a6d87c8504f7 |  13 | a56e608bab734773ffbd12b760       |  26 | b97141a7abb86bfbc214697fffd733e8af79cad8eb24bc5c152a             | 8b7bb0be1e537130d5003cdcafb0ce10a6e8ef3c1bb7d8f7a60b             | 38875b4a1eb95848780fb7bd6c5ec9c5 | VERIFIED |    MATCH | PASS
+  48 | b5f5e81aa3b9aa96d6ad658014601790 | cb02feb44f23c094b4102aa0a9fe2319 |  15 | b2ff9bff780a5b15faa7b7c4729710   |  26 | fe741300b417b4f82db8c96ed41c045e05d3c54d83b997cd0176             | ad6c3c2938cb3f5d299bde549f8dc46d6ae144afc306f7bc8aa5             | 6ff5b5e42c9b3a9874156c851dec3b3e | VERIFIED |    MATCH | PASS
+  49 | c093e7517c840188fe0fcf6e0f5775e1 | b3562545ac556241c134da4a79f9397d |   0 | -                                |  29 | 9811b7dad30a282ad09e6d33976706757d267c58a34ce6b1757367422a       | b7d66e18f5a7b4029858fd0a9736de7830d75437646d9d7fcedb9014c9       | 8e843320d1cf69f414b3519db39b2bb6 | VERIFIED |    MATCH | PASS
+  50 | cda53d66429d0aed890a05bdfbe4fb51 | ebab7c0a9544d26af058c267753604c2 |  10 | 35569027aeb3dec87e62             |  13 | 1071ae1f19fb274b489d153597                                       | de94580b858971d49f8dfe5024                                       | 6fa2b7ab195b1636883e6a709aa658aa | VERIFIED |    MATCH | PASS
+  51 | 70030db7f679ec524921c8f3a0a60475 | 360af3de54089ab9c237693575d691eb |   7 | f83a612d86302f                   |  20 | 4ed9b9a5edc24c4078b3883beb551e650f014efe                         | ec1841e55f8c1d3595fb99c1c6cb3b175ef7d5bb                         | 94d3ee17b4d65f1a3c71b88984a1de95 | VERIFIED |    MATCH | PASS
+
+==================================================================
+ SUMMARY: checks PASS=1528 FAIL=0 | vectors 110/110 PASS
+ RESULT : ALL TESTS PASSED
+==================================================================
+Simulation complete via $finish(1) at time 277250 NS + 0
+./rtl/peripherals/ascon_updated/tb/tb_ascon_updated.sv:570     $finish;
+xcelium> exit
+TOOL:	xrun(64)	22.09-s003: Exiting on Nov 16, 2026 at 12:23:53 IST  (total: 00:00:07)

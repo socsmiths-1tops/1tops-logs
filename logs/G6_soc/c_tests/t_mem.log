@@ -1,0 +1,45 @@
+xrun(64): 22.09-s003: (c) Copyright 1995-2022 Cadence Design Systems, Inc.
+TOOL:	xrun(64)	22.09-s003: Started on Nov 16, 2026 at 12:08:41 IST
+xrun
+	-64bit
+	-xmlibdirpath sim/build/rtl
+	-R
+	-snapshot soc_rtl
+	+FLASH=/home/onetops/1tops/rv32im/sw/build/t_mem/flash.hex
+	+UART_DIV=32
+	+UART_LOG=/home/onetops/1tops/rv32im/sw/build/t_mem/uart_rtl.txt
+	-l /home/onetops/1tops/rv32im/sw/build/t_mem/sim_rtl.log
+
+   User defined plus("+") options:
+	+FLASH=/home/onetops/1tops/rv32im/sw/build/t_mem/flash.hex
+	+UART_DIV=32
+	+UART_LOG=/home/onetops/1tops/rv32im/sw/build/t_mem/uart_rtl.txt
+
+Loading snapshot worklib.soc_rtl:v .................... Done
+xmsim: *W,DSEM2009: This SystemVerilog design is simulated as per IEEE 1800-2009 SystemVerilog simulation semantics. Use -disable_sem2009 option for turning off SV 2009 simulation semantics.
+xcelium> source /home/install8/install/XCELIUM2209/tools/inca/files/xmsimrc
+xcelium> run
+TB: flash image /home/onetops/1tops/rv32im/sw/build/t_mem/flash.hex, UART 32 clocks/bit, timeout 20000000 cycles
+[uart] t_mem: crt0 init, DMEM banks, sub-word RMW, IMEM data access
+[uart]   PASS  .bss zeroed
+[uart]   PASS  .data initialised
+[uart]   PASS  .rodata copied
+[uart]   PASS  .data placed in DMEM
+[uart]     free DMEM 60256 bytes (0x100103a0..0x1001ef00)
+[uart]   PASS  DMEM pattern across banks
+[uart]   PASS  4 back-to-back SB
+[uart]   PASS  SH upper half
+[uart]   PASS  LB/SB increment in place
+[uart]   PASS  IMEM readable via data bus
+[uart]   PASS  IMEM data-side write + byte merge
+[uart]   PASS  memcpy
+[uart]   PASS  memset
+[uart]   PASS  40-deep recursion on stack
+[uart] RESULT: PASS (0 failures)
+TB: program exit after 600869 cycles (60088900000)
+EXIT code=0
+SIM RESULT: PASS
+Simulation complete via $finish(1) at time 6008890 NS + 0
+./sim/tb/tb_soc_app.v:173             $finish;
+xcelium> exit
+TOOL:	xrun(64)	22.09-s003: Exiting on Nov 16, 2026 at 12:08:47 IST  (total: 00:00:06)

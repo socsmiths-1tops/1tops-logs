@@ -1,0 +1,1301 @@
+xrun(64): 22.09-s003: (c) Copyright 1995-2022 Cadence Design Systems, Inc.
+TOOL:	xrun(64)	22.09-s003: Started on Nov 16, 2026 at 12:24:23 IST
+xrun
+	-64bit
+	-xmlibdirpath signoff/build/sa_boot_app
+	-sv
+	-access +rwc
+	-nowarn NONPRT
+	-f rtl_soc.f
+		rtl/core/adder.v
+		rtl/core/alu.v
+		rtl/core/alu_decoder.v
+		rtl/core/controller.v
+		rtl/core/data_parser.v
+		rtl/core/decode.v
+		rtl/core/execute.v
+		rtl/core/fetch.v
+		rtl/core/hazard_unit.v
+		rtl/core/imm_extend.v
+		rtl/core/main_decoder.v
+		rtl/core/mdu_wrapper.v
+		rtl/core/memory.v
+		rtl/core/mux2.v
+		rtl/core/mux3.v
+		rtl/core/mux4.v
+		rtl/core/reg_file.v
+		rtl/core/reset_ff.v
+		rtl/core/t1c_riscv_cpu.v
+		rtl/core/writeback.v
+		rtl/core/csr_unit.v
+		rtl/soc/soc_sram.v
+		rtl/soc/boot_rom.v
+		rtl/peripherals/boot_flash/boot_flash_ctrl.v
+		rtl/soc/soc_interconnect.v
+		rtl/soc/ahb_apb_bridge.v
+		rtl/soc/apb_decoder.v
+		rtl/soc/clint.v
+		rtl/soc/plic_new.v
+		rtl/soc/reset_sync.v
+		rtl/soc/t1c_riscv_soc.v
+		rtl/peripherals/ascon_updated/config.sv
+		rtl/peripherals/ascon_updated/functions.sv
+		rtl/peripherals/ascon_updated/ascon_regs_pkg.sv
+		rtl/peripherals/ascon_updated/chaos_core.sv
+		rtl/peripherals/ascon_updated/ascon_core.sv
+		rtl/peripherals/ascon_updated/ascon_peripheral.sv
+		rtl/peripherals/ascon_updated/ascon_ahb_wrapper.sv
+		rtl/peripherals/gpio/apb_gpio.v
+		rtl/peripherals/i2c/apb_i2c.v
+		rtl/peripherals/i2c/i2c_master_bit_ctrl.v
+		rtl/peripherals/i2c/i2c_master_byte_ctrl.v
+		rtl/peripherals/i2c/i2c_master_defines.v
+		rtl/peripherals/spi/apb_spi.v
+		rtl/peripherals/spi/spi_fifo.v
+		rtl/peripherals/spi/spi_protocol_engine.v
+		rtl/peripherals/timer/apb_timer.v
+		rtl/peripherals/uart/apb_uart.v
+	-f signoff/tb_models.f
+		-notimingchecks
+		+define+nobanner
+		rtl/peripherals/spi/spi_flash_model.v
+		/home/install/scl180/memory/dpram/4M1L/DP_SRAM_rd3_4096x32/rd3_4096x32.v
+	-incdir rtl/soc
+	-incdir rtl/peripherals/i2c
+	-incdir rtl/peripherals/ascon_updated
+	tb/soc/tb_boot_app.v
+	-top tb_boot_app
+	+define+BOOTROM_LEGACY_PRELOAD
+	-l signoff/logs/standalone/boot_app.log
+file: rtl/core/adder.v
+	module worklib.adder:v
+		errors: 0, warnings: 0
+file: rtl/core/alu.v
+	module worklib.alu_unit:v
+		errors: 0, warnings: 0
+file: rtl/core/alu_decoder.v
+	module worklib.alu_decoder:v
+		errors: 0, warnings: 0
+file: rtl/core/controller.v
+	module worklib.controller:v
+		errors: 0, warnings: 0
+file: rtl/core/data_parser.v
+	module worklib.data_parser:v
+		errors: 0, warnings: 0
+file: rtl/core/decode.v
+	module worklib.decode:v
+		errors: 0, warnings: 0
+file: rtl/core/execute.v
+	module worklib.execute:v
+		errors: 0, warnings: 0
+file: rtl/core/fetch.v
+	module worklib.fetch:v
+		errors: 0, warnings: 0
+file: rtl/core/hazard_unit.v
+	module worklib.hazard_unit:v
+		errors: 0, warnings: 0
+file: rtl/core/imm_extend.v
+	module worklib.ImmExt:v
+		errors: 0, warnings: 0
+file: rtl/core/main_decoder.v
+	module worklib.main_decoder:v
+		errors: 0, warnings: 0
+file: rtl/core/mdu_wrapper.v
+	module worklib.mdu_wrapper:v
+		errors: 0, warnings: 0
+file: rtl/core/memory.v
+	module worklib.memory:v
+		errors: 0, warnings: 0
+file: rtl/core/mux2.v
+	module worklib.mux2:v
+		errors: 0, warnings: 0
+file: rtl/core/mux3.v
+	module worklib.mux3:v
+		errors: 0, warnings: 0
+file: rtl/core/mux4.v
+	module worklib.mux4:v
+		errors: 0, warnings: 0
+file: rtl/core/reg_file.v
+	module worklib.reg_file:v
+		errors: 0, warnings: 0
+file: rtl/core/reset_ff.v
+	module worklib.reset_ff:v
+		errors: 0, warnings: 0
+file: rtl/core/t1c_riscv_cpu.v
+	module worklib.t1c_riscv_cpu:v
+		errors: 0, warnings: 0
+file: rtl/core/writeback.v
+	module worklib.writeback:v
+		errors: 0, warnings: 0
+file: rtl/core/csr_unit.v
+	module worklib.csr_unit:v
+		errors: 0, warnings: 0
+file: rtl/soc/soc_sram.v
+	module worklib.soc_sram:v
+		errors: 0, warnings: 0
+file: rtl/soc/boot_rom.v
+	module worklib.boot_rom:v
+		errors: 0, warnings: 0
+file: rtl/peripherals/boot_flash/boot_flash_ctrl.v
+	module worklib.boot_flash_ctrl:v
+		errors: 0, warnings: 0
+file: rtl/soc/soc_interconnect.v
+	module worklib.soc_interconnect:v
+		errors: 0, warnings: 0
+file: rtl/soc/ahb_apb_bridge.v
+	module worklib.ahb_apb_bridge:v
+		errors: 0, warnings: 0
+file: rtl/soc/apb_decoder.v
+	module worklib.apb_decoder:v
+		errors: 0, warnings: 0
+file: rtl/soc/clint.v
+	module worklib.clint:v
+		errors: 0, warnings: 0
+file: rtl/soc/plic_new.v
+	module worklib.plic_new:v
+		errors: 0, warnings: 0
+file: rtl/soc/reset_sync.v
+	module worklib.reset_sync:v
+		errors: 0, warnings: 0
+file: rtl/soc/t1c_riscv_soc.v
+	module worklib.t1c_riscv_soc:v
+		errors: 0, warnings: 0
+file: rtl/peripherals/ascon_updated/chaos_core.sv
+	module worklib.chaos_core:sv
+		errors: 0, warnings: 0
+file: rtl/peripherals/ascon_updated/ascon_core.sv
+	module worklib.ascon_core:sv
+		errors: 0, warnings: 0
+file: rtl/peripherals/ascon_updated/ascon_peripheral.sv
+	module worklib.ascon_peripheral:sv
+		errors: 0, warnings: 0
+file: rtl/peripherals/ascon_updated/ascon_ahb_wrapper.sv
+	module worklib.ascon_ahb_wrapper:sv
+		errors: 0, warnings: 0
+file: rtl/peripherals/gpio/apb_gpio.v
+	module worklib.apb_gpio:v
+		errors: 0, warnings: 0
+file: rtl/peripherals/i2c/apb_i2c.v
+	module worklib.apb_i2c:v
+		errors: 0, warnings: 0
+file: rtl/peripherals/i2c/i2c_master_bit_ctrl.v
+	module worklib.i2c_master_bit_ctrl:v
+		errors: 0, warnings: 0
+file: rtl/peripherals/i2c/i2c_master_byte_ctrl.v
+	module worklib.i2c_master_byte_ctrl:v
+		errors: 0, warnings: 0
+file: rtl/peripherals/i2c/i2c_master_defines.v
+file: rtl/peripherals/spi/apb_spi.v
+	module worklib.apb_spi:v
+		errors: 0, warnings: 0
+file: rtl/peripherals/spi/spi_fifo.v
+	module worklib.spi_fifo:v
+		errors: 0, warnings: 0
+file: rtl/peripherals/spi/spi_protocol_engine.v
+	module worklib.spi_protocol_engine:v
+		errors: 0, warnings: 0
+file: rtl/peripherals/timer/apb_timer.v
+	module worklib.apb_timer:v
+		errors: 0, warnings: 0
+file: rtl/peripherals/uart/apb_uart.v
+	module worklib.apb_uart:v
+		errors: 0, warnings: 0
+file: rtl/peripherals/spi/spi_flash_model.v
+	module worklib.spi_flash_model:v
+		errors: 0, warnings: 0
+file: /home/install/scl180/memory/dpram/4M1L/DP_SRAM_rd3_4096x32/rd3_4096x32.v
+	module worklib.rd3_4096x32:v
+		errors: 0, warnings: 0
+	module worklib.rd3_4096x32_behave:v
+		errors: 0, warnings: 0
+	module worklib.rd3_4096x32_Port:v
+		errors: 0, warnings: 0
+file: tb/soc/tb_boot_app.v
+	module worklib.tb_boot_app:v
+		errors: 0, warnings: 0
+xmvlog: *W,SPDUSD: Include directory rtl/soc given but not used.
+	Total errors/warnings found outside modules and primitives:
+		errors: 0, warnings: 1
+	Elaborating the design hierarchy:
+		Caching library 'worklib' ....... Done
+	Top level design units:
+		ascon_regs_pkg
+		ascon_config
+		ascon_functions
+		tb_boot_app
+xmelab: *W,DSEMEL: This SystemVerilog design will be simulated as per IEEE 1800-2009 SystemVerilog simulation semantics. Use -disable_sem2009 option for turning off SV 2009 simulation semantics.
+	Building instance overlay tables: .................... Done
+	Generating native compiled code:
+		worklib.chaos_core:sv <0x7d99f93e>
+			streams:  26, words: 15445
+		worklib.ascon_core:sv <0x48ac28ad>
+			streams:  63, words: 50595
+		worklib.ascon_peripheral:sv <0x011d4e2a>
+			streams:  49, words: 25914
+		worklib.ascon_ahb_wrapper:sv <0x1a67202f>
+			streams:  20, words:  6460
+		worklib.boot_flash_ctrl:v <0x0c78f4a1>
+			streams:  36, words: 17115
+		worklib.i2c_master_bit_ctrl:v <0x0089b216>
+			streams:  36, words: 22904
+		worklib.i2c_master_byte_ctrl:v <0x63536dee>
+			streams:  18, words: 11239
+		worklib.apb_i2c:v <0x37d42d75>
+			streams:  27, words: 10813
+		worklib.spi_protocol_engine:v <0x481690e7>
+			streams:  28, words: 17390
+		worklib.spi_fifo:v <0x1c2c6b4d>
+			streams:   8, words:  3770
+		worklib.apb_spi:v <0x3224f4d7>
+			streams:  27, words: 12145
+		worklib.apb_uart:v <0x000a1b4c>
+			streams:  65, words: 26437
+		worklib.apb_gpio:v <0x03554156>
+			streams:  27, words:  8977
+		worklib.apb_timer:v <0x26ceb0f0>
+			streams:  23, words:  7416
+		worklib.apb_decoder:v <0x462884ff>
+			streams:   7, words:  4363
+		worklib.ahb_apb_bridge:v <0x00114ef3>
+			streams:   9, words:  4205
+		worklib.plic_new:v <0x7bed9eeb>
+			streams:  15, words:  8840
+		worklib.clint:v <0x185dfd28>
+			streams:  11, words:  4353
+		worklib.rd3_4096x32:v <0x2aa6d24c>
+			streams:  40, words: 18967
+		worklib.rd3_4096x32_Port:v <0x21f3f316>
+			streams:  15, words: 18870
+		worklib.rd3_4096x32:v <0x60bee88b>
+			streams:  40, words: 18967
+		worklib.hazard_unit:v <0x558941bf>
+			streams:   3, words:  1795
+		worklib.mux4:v <0x6fef6af2>
+			streams:   2, words:   862
+		worklib.writeback:v <0x06e5fdd7>
+			streams:   1, words:   194
+		worklib.data_parser:v <0x101c4781>
+			streams:   3, words:  1454
+		worklib.memory:v <0x172b11ac>
+			streams:   6, words:  4596
+		worklib.csr_unit:v <0x0923ac68>
+			streams:  20, words:  9025
+		worklib.mdu_wrapper:v <0x3031b4e0>
+			streams:  29, words: 12612
+		worklib.alu_unit:v <0x7891c3b4>
+			streams:   1, words:  4594
+		worklib.mux2:v <0x1c0d254f>
+			streams:   1, words:   234
+		worklib.mux3:v <0x09c7c4fc>
+			streams:   2, words:   698
+		worklib.execute:v <0x0f8f4794>
+			streams:  10, words:  8352
+		worklib.ImmExt:v <0x7252124a>
+			streams:   1, words:  1274
+		worklib.reg_file:v <0x2685b595>
+			streams:   5, words:  2987
+		worklib.alu_decoder:v <0x3a213f94>
+			streams:   1, words:  3207
+		worklib.main_decoder:v <0x17a4d89e>
+			streams:   2, words:  3716
+		worklib.controller:v <0x14712ef1>
+			streams:   3, words:  1061
+		worklib.decode:v <0x5c64187d>
+			streams:   4, words: 10586
+		worklib.adder:v <0x664419f9>
+			streams:   1, words:   176
+		worklib.reset_ff:v <0x1ca424c4>
+			streams:   3, words:   897
+		worklib.mux3:v <0x77bf8c5a>
+			streams:   2, words:   656
+		worklib.fetch:v <0x11f23bfb>
+			streams:  11, words:  4513
+		worklib.t1c_riscv_cpu:v <0x0eeab408>
+			streams:   6, words:  2232
+		worklib.reset_sync:v <0x623a33b8>
+			streams:   3, words:   645
+		worklib.t1c_riscv_soc:v <0x794b38cb>
+			streams:   4, words:  1626
+		worklib.tb_boot_app:v <0x5f3e1a14>
+			streams:  14, words: 36588
+		worklib.soc_sram:v <0x29f8e6e3>
+			streams:  37, words: 17158
+		worklib.spi_flash_model:v <0x609fb236>
+			streams:  10, words:  3290
+		worklib.boot_rom:v <0x232405a7>
+			streams:   3, words:  1438
+		worklib.soc_interconnect:v <0x378d8fb9>
+			streams:  26, words: 11046
+		worklib.rd3_4096x32_behave:v <0x60ae7528>
+			streams:   7, words:  7974
+	Building instance specific data structures.
+	Loading native compiled code:     .................... Done
+	Design hierarchy summary:
+		                   Instances  Unique
+		Modules:                  84      49
+		Verilog packages:          3       3
+		Primitives:             1304       4
+		Timing outputs:          512       1
+		Registers:               916     546
+		Scalar wires:           1673       -
+		Expanded wires:         1122      42
+		Vectored wires:          252       -
+		Named events:             16       1
+		Always blocks:           469     141
+		Initial blocks:           34      12
+		Cont. assignments:       257     374
+		Pseudo assignments:      145      82
+		Timing checks:           380       -
+		Sparse arrays:             2       -
+		Simulation timescale:  100fs
+	Writing initial simulation snapshot: worklib.tb_boot_app:v
+Loading snapshot worklib.tb_boot_app:v .................... Done
+xmsim: *W,DSEM2009: This SystemVerilog design is simulated as per IEEE 1800-2009 SystemVerilog simulation semantics. Use -disable_sem2009 option for turning off SV 2009 simulation semantics.
+xcelium> source /home/install8/install/XCELIUM2209/tools/inca/files/xmsimrc
+xcelium> run
+
+========================================
+FLASH IMAGE AFTER READMEMH
+========================================
+flash_bytes[0] = 31
+flash_bytes[1] = 54
+flash_bytes[2] = 4f
+flash_bytes[3] = 50
+========================================
+
+
+========================================
+FLASH MODEL MEMORY AFTER COPY
+========================================
+flash.mem[0] = 31
+flash.mem[1] = 54
+flash.mem[2] = 4f
+flash.mem[3] = 50
+========================================
+
+FLASH WORD 0 = 50 4f 54 31
+FLASH WORD 1 = 00 00 00 14
+=== tb_boot_app: flash preloaded from /tmp/flash_image.hex ===
+=== tb_boot_app: boot ROM preloaded from /tmp/boot_rom.mem ===
+=== tb_boot_app: SRAM initialized with NOPs ===
+
+========================================
+MEMORY PRELOAD COMPLETE
+========================================
+
+Cyc1 PC=00000000 InstrF=400054b7 daddr=00000000 dwe=0000 dwdata=00000000
+Cyc2 PC=00000000 InstrF=400054b7 daddr=00000000 dwe=0000 dwdata=00000000
+Cyc3 PC=00000000 InstrF=400054b7 daddr=00000000 dwe=0000 dwdata=00000000
+Cyc4 PC=00000004 InstrF=0004a223 daddr=00000000 dwe=0000 dwdata=00000000
+Cyc5 PC=00000008 InstrF=01000293 daddr=40005000 dwe=0000 dwdata=00000000
+Cyc6 PC=00000008 InstrF=01000293 daddr=40005000 dwe=0000 dwdata=00000000
+Cyc7 PC=0000000c InstrF=0054a423 daddr=00000000 dwe=0000 dwdata=00000000
+Cyc8 PC=00000010 InstrF=00300293 daddr=40005004 dwe=0000 dwdata=00000000
+Cyc9 PC=00000010 InstrF=00300293 daddr=40005004 dwe=0000 dwdata=00000000
+Cyc10 PC=00000010 InstrF=00300293 daddr=40005004 dwe=0000 dwdata=00000000
+Cyc11 PC=00000010 InstrF=00300293 daddr=40005004 dwe=0000 dwdata=00000000
+Cyc12 PC=00000014 InstrF=0054a023 daddr=00000010 dwe=0000 dwdata=00000000
+Cyc13 PC=00000018 InstrF=0c4000ef daddr=40005008 dwe=0000 dwdata=00000010
+Cyc14 PC=00000018 InstrF=0c4000ef daddr=40005008 dwe=0000 dwdata=00000010
+Cyc15 PC=00000018 InstrF=0c4000ef daddr=40005008 dwe=0000 dwdata=00000010
+Cyc16 PC=00000018 InstrF=0c4000ef daddr=40005008 dwe=0000 dwdata=00000010
+Cyc17 PC=0000001c InstrF=504f52b7 daddr=00000003 dwe=0000 dwdata=00000000
+Cyc18 PC=00000020 InstrF=43128293 daddr=40005000 dwe=0000 dwdata=00000003
+Cyc19 PC=00000020 InstrF=43128293 daddr=40005000 dwe=0000 dwdata=00000003
+Cyc20 PC=00000020 InstrF=43128293 daddr=40005000 dwe=0000 dwdata=00000003
+Cyc21 PC=00000020 InstrF=43128293 daddr=40005000 dwe=0000 dwdata=00000003
+SPI CS CHANGE: time=5100000 CS=0 SCLK=0 MOSI=0 MISO=1
+Cyc22 PC=000000dc InstrF=00c4a303 daddr=0000001c dwe=0000 dwdata=00000000
+Cyc23 PC=000000e0 InstrF=00237313 daddr=00000000 dwe=0000 dwdata=00000000
+Cyc24 PC=000000e4 InstrF=fe030ce3 daddr=00000000 dwe=0000 dwdata=00000000
+Cyc25 PC=000000e4 InstrF=fe030ce3 daddr=4000500c dwe=0000 dwdata=00000000
+SPI EDGE: time=5900000 CS=0 SCLK=1 MOSI=0 MISO=1
+Cyc26 PC=000000e4 InstrF=fe030ce3 daddr=4000500c dwe=0000 dwdata=00000000
+Cyc27 PC=000000e4 InstrF=fe030ce3 daddr=4000500c dwe=0000 dwdata=00000000
+Cyc28 PC=000000e4 InstrF=fe030ce3 daddr=4000500c dwe=0000 dwdata=00000000
+Cyc29 PC=000000e8 InstrF=0104a503 daddr=00000000 dwe=0000 dwdata=00000000
+SPI EDGE: time=6700000 CS=0 SCLK=0 MOSI=0 MISO=1
+Cyc30 PC=000000ec InstrF=00008067 daddr=00000000 dwe=0000 dwdata=00000000
+Cyc31 PC=000000dc InstrF=00c4a303 daddr=00000000 dwe=0000 dwdata=00000000
+Cyc32 PC=000000e0 InstrF=00237313 daddr=00000000 dwe=0000 dwdata=00000000
+Cyc33 PC=000000e4 InstrF=fe030ce3 daddr=00000000 dwe=0000 dwdata=00000000
+SPI EDGE: time=7500000 CS=0 SCLK=1 MOSI=0 MISO=1
+Cyc34 PC=000000e4 InstrF=fe030ce3 daddr=4000500c dwe=0000 dwdata=00000000
+Cyc35 PC=000000e4 InstrF=fe030ce3 daddr=4000500c dwe=0000 dwdata=00000000
+Cyc36 PC=000000e4 InstrF=fe030ce3 daddr=4000500c dwe=0000 dwdata=00000000
+Cyc37 PC=000000e4 InstrF=fe030ce3 daddr=4000500c dwe=0000 dwdata=00000000
+SPI EDGE: time=8300000 CS=0 SCLK=0 MOSI=0 MISO=1
+Cyc38 PC=000000e8 InstrF=0104a503 daddr=00000000 dwe=0000 dwdata=00000000
+Cyc39 PC=000000ec InstrF=00008067 daddr=00000000 dwe=0000 dwdata=00000000
+Cyc40 PC=000000dc InstrF=00c4a303 daddr=00000000 dwe=0000 dwdata=00000000
+Cyc41 PC=000000e0 InstrF=00237313 daddr=00000000 dwe=0000 dwdata=00000000
+SPI EDGE: time=9100000 CS=0 SCLK=1 MOSI=0 MISO=1
+Cyc42 PC=000000e4 InstrF=fe030ce3 daddr=00000000 dwe=0000 dwdata=00000000
+Cyc43 PC=000000e4 InstrF=fe030ce3 daddr=4000500c dwe=0000 dwdata=00000000
+Cyc44 PC=000000e4 InstrF=fe030ce3 daddr=4000500c dwe=0000 dwdata=00000000
+Cyc45 PC=000000e4 InstrF=fe030ce3 daddr=4000500c dwe=0000 dwdata=00000000
+SPI EDGE: time=9900000 CS=0 SCLK=0 MOSI=0 MISO=1
+Cyc46 PC=000000e4 InstrF=fe030ce3 daddr=4000500c dwe=0000 dwdata=00000000
+Cyc47 PC=000000e8 InstrF=0104a503 daddr=00000000 dwe=0000 dwdata=00000000
+Cyc48 PC=000000ec InstrF=00008067 daddr=00000000 dwe=0000 dwdata=00000000
+Cyc49 PC=000000dc InstrF=00c4a303 daddr=00000000 dwe=0000 dwdata=00000000
+SPI EDGE: time=10700000 CS=0 SCLK=1 MOSI=0 MISO=1
+Cyc50 PC=000000e0 InstrF=00237313 daddr=00000000 dwe=0000 dwdata=00000000
+Cyc51 PC=000000e4 InstrF=fe030ce3 daddr=00000000 dwe=0000 dwdata=00000000
+Cyc52 PC=000000e4 InstrF=fe030ce3 daddr=4000500c dwe=0000 dwdata=00000000
+Cyc53 PC=000000e4 InstrF=fe030ce3 daddr=4000500c dwe=0000 dwdata=00000000
+SPI EDGE: time=11500000 CS=0 SCLK=0 MOSI=0 MISO=1
+Cyc54 PC=000000e4 InstrF=fe030ce3 daddr=4000500c dwe=0000 dwdata=00000000
+Cyc55 PC=000000e4 InstrF=fe030ce3 daddr=4000500c dwe=0000 dwdata=00000000
+Cyc56 PC=000000e8 InstrF=0104a503 daddr=00000000 dwe=0000 dwdata=00000000
+Cyc57 PC=000000ec InstrF=00008067 daddr=00000000 dwe=0000 dwdata=00000000
+SPI EDGE: time=12300000 CS=0 SCLK=1 MOSI=0 MISO=1
+Cyc58 PC=000000dc InstrF=00c4a303 daddr=00000000 dwe=0000 dwdata=00000000
+Cyc59 PC=000000e0 InstrF=00237313 daddr=00000000 dwe=0000 dwdata=00000000
+Cyc60 PC=000000e4 InstrF=fe030ce3 daddr=00000000 dwe=0000 dwdata=00000000
+Cyc61 PC=000000e4 InstrF=fe030ce3 daddr=4000500c dwe=0000 dwdata=00000000
+SPI EDGE: time=13100000 CS=0 SCLK=0 MOSI=0 MISO=1
+Cyc62 PC=000000e4 InstrF=fe030ce3 daddr=4000500c dwe=0000 dwdata=00000000
+Cyc63 PC=000000e4 InstrF=fe030ce3 daddr=4000500c dwe=0000 dwdata=00000000
+Cyc64 PC=000000e4 InstrF=fe030ce3 daddr=4000500c dwe=0000 dwdata=00000000
+Cyc65 PC=000000e8 InstrF=0104a503 daddr=00000000 dwe=0000 dwdata=00000000
+SPI EDGE: time=13900000 CS=0 SCLK=1 MOSI=0 MISO=1
+Cyc66 PC=000000ec InstrF=00008067 daddr=00000000 dwe=0000 dwdata=00000000
+Cyc67 PC=000000dc InstrF=00c4a303 daddr=00000000 dwe=0000 dwdata=00000000
+Cyc68 PC=000000e0 InstrF=00237313 daddr=00000000 dwe=0000 dwdata=00000000
+Cyc69 PC=000000e4 InstrF=fe030ce3 daddr=00000000 dwe=0000 dwdata=00000000
+SPI EDGE: time=14700000 CS=0 SCLK=0 MOSI=1 MISO=1
+Cyc70 PC=000000e4 InstrF=fe030ce3 daddr=4000500c dwe=0000 dwdata=00000000
+Cyc71 PC=000000e4 InstrF=fe030ce3 daddr=4000500c dwe=0000 dwdata=00000000
+Cyc72 PC=000000e4 InstrF=fe030ce3 daddr=4000500c dwe=0000 dwdata=00000000
+Cyc73 PC=000000e4 InstrF=fe030ce3 daddr=4000500c dwe=0000 dwdata=00000000
+SPI EDGE: time=15500000 CS=0 SCLK=1 MOSI=1 MISO=1
+Cyc74 PC=000000e8 InstrF=0104a503 daddr=00000000 dwe=0000 dwdata=00000000
+Cyc75 PC=000000ec InstrF=00008067 daddr=00000000 dwe=0000 dwdata=00000000
+Cyc76 PC=000000dc InstrF=00c4a303 daddr=00000000 dwe=0000 dwdata=00000000
+Cyc77 PC=000000e0 InstrF=00237313 daddr=00000000 dwe=0000 dwdata=00000000
+SPI EDGE: time=16300000 CS=0 SCLK=0 MOSI=1 MISO=1
+Cyc78 PC=000000e4 InstrF=fe030ce3 daddr=00000000 dwe=0000 dwdata=00000000
+Cyc79 PC=000000e4 InstrF=fe030ce3 daddr=4000500c dwe=0000 dwdata=00000000
+Cyc80 PC=000000e4 InstrF=fe030ce3 daddr=4000500c dwe=0000 dwdata=00000000
+Cyc81 PC=000000e4 InstrF=fe030ce3 daddr=4000500c dwe=0000 dwdata=00000000
+SPI EDGE: time=17100000 CS=0 SCLK=1 MOSI=1 MISO=1
+Cyc82 PC=000000e4 InstrF=fe030ce3 daddr=4000500c dwe=0000 dwdata=00000000
+Cyc83 PC=000000e8 InstrF=0104a503 daddr=00000000 dwe=0000 dwdata=00000000
+Cyc84 PC=000000ec InstrF=00008067 daddr=00000000 dwe=0000 dwdata=00000000
+Cyc85 PC=000000dc InstrF=00c4a303 daddr=00000000 dwe=0000 dwdata=00000000
+SPI EDGE: time=17900000 CS=0 SCLK=0 MOSI=0 MISO=1
+Cyc86 PC=000000e0 InstrF=00237313 daddr=00000000 dwe=0000 dwdata=00000000
+Cyc87 PC=000000e4 InstrF=fe030ce3 daddr=00000000 dwe=0000 dwdata=00000000
+Cyc88 PC=000000e4 InstrF=fe030ce3 daddr=4000500c dwe=0000 dwdata=00000000
+Cyc89 PC=000000e4 InstrF=fe030ce3 daddr=4000500c dwe=0000 dwdata=00000000
+SPI EDGE: time=18700000 CS=0 SCLK=1 MOSI=0 MISO=1
+Cyc90 PC=000000e4 InstrF=fe030ce3 daddr=4000500c dwe=0000 dwdata=00000000
+Cyc91 PC=000000e4 InstrF=fe030ce3 daddr=4000500c dwe=0000 dwdata=00000000
+Cyc92 PC=000000e8 InstrF=0104a503 daddr=00000000 dwe=0000 dwdata=00000000
+Cyc93 PC=000000ec InstrF=00008067 daddr=00000000 dwe=0000 dwdata=00000000
+SPI EDGE: time=19500000 CS=0 SCLK=0 MOSI=0 MISO=1
+Cyc94 PC=000000dc InstrF=00c4a303 daddr=00000000 dwe=0000 dwdata=00000000
+Cyc95 PC=000000e0 InstrF=00237313 daddr=00000000 dwe=0000 dwdata=00000000
+Cyc96 PC=000000e4 InstrF=fe030ce3 daddr=00000000 dwe=0000 dwdata=00000000
+Cyc97 PC=000000e4 InstrF=fe030ce3 daddr=4000500c dwe=0000 dwdata=00000000
+SPI EDGE: time=20300000 CS=0 SCLK=1 MOSI=0 MISO=1
+Cyc98 PC=000000e4 InstrF=fe030ce3 daddr=4000500c dwe=0000 dwdata=00000000
+Cyc99 PC=000000e4 InstrF=fe030ce3 daddr=4000500c dwe=0000 dwdata=00000000
+Cyc100 PC=000000e4 InstrF=fe030ce3 daddr=4000500c dwe=0000 dwdata=00000000
+Cyc101 PC=000000e8 InstrF=0104a503 daddr=00000000 dwe=0000 dwdata=00000000
+SPI EDGE: time=21100000 CS=0 SCLK=0 MOSI=0 MISO=1
+Cyc102 PC=000000ec InstrF=00008067 daddr=00000000 dwe=0000 dwdata=00000000
+Cyc103 PC=000000dc InstrF=00c4a303 daddr=00000000 dwe=0000 dwdata=00000000
+Cyc104 PC=000000e0 InstrF=00237313 daddr=00000000 dwe=0000 dwdata=00000000
+Cyc105 PC=000000e4 InstrF=fe030ce3 daddr=00000000 dwe=0000 dwdata=00000000
+SPI EDGE: time=21900000 CS=0 SCLK=1 MOSI=0 MISO=1
+Cyc106 PC=000000e4 InstrF=fe030ce3 daddr=4000500c dwe=0000 dwdata=00000000
+Cyc107 PC=000000e4 InstrF=fe030ce3 daddr=4000500c dwe=0000 dwdata=00000000
+Cyc108 PC=000000e4 InstrF=fe030ce3 daddr=4000500c dwe=0000 dwdata=00000000
+Cyc109 PC=000000e4 InstrF=fe030ce3 daddr=4000500c dwe=0000 dwdata=00000000
+SPI EDGE: time=22700000 CS=0 SCLK=0 MOSI=0 MISO=1
+Cyc110 PC=000000e8 InstrF=0104a503 daddr=00000000 dwe=0000 dwdata=00000000
+Cyc111 PC=000000ec InstrF=00008067 daddr=00000000 dwe=0000 dwdata=00000000
+Cyc112 PC=000000dc InstrF=00c4a303 daddr=00000000 dwe=0000 dwdata=00000000
+Cyc113 PC=000000e0 InstrF=00237313 daddr=00000000 dwe=0000 dwdata=00000000
+SPI EDGE: time=23500000 CS=0 SCLK=1 MOSI=0 MISO=1
+Cyc114 PC=000000e4 InstrF=fe030ce3 daddr=00000000 dwe=0000 dwdata=00000000
+Cyc115 PC=000000e4 InstrF=fe030ce3 daddr=4000500c dwe=0000 dwdata=00000000
+Cyc116 PC=000000e4 InstrF=fe030ce3 daddr=4000500c dwe=0000 dwdata=00000000
+Cyc117 PC=000000e4 InstrF=fe030ce3 daddr=4000500c dwe=0000 dwdata=00000000
+SPI EDGE: time=24300000 CS=0 SCLK=0 MOSI=0 MISO=1
+Cyc118 PC=000000e4 InstrF=fe030ce3 daddr=4000500c dwe=0000 dwdata=00000000
+Cyc119 PC=000000e8 InstrF=0104a503 daddr=00000000 dwe=0000 dwdata=00000000
+Cyc120 PC=000000ec InstrF=00008067 daddr=00000000 dwe=0000 dwdata=00000000
+Cyc121 PC=000000dc InstrF=00c4a303 daddr=00000000 dwe=0000 dwdata=00000000
+SPI EDGE: time=25100000 CS=0 SCLK=1 MOSI=0 MISO=1
+Cyc122 PC=000000e0 InstrF=00237313 daddr=00000000 dwe=0000 dwdata=00000000
+Cyc123 PC=000000e4 InstrF=fe030ce3 daddr=00000000 dwe=0000 dwdata=00000000
+Cyc124 PC=000000e4 InstrF=fe030ce3 daddr=4000500c dwe=0000 dwdata=00000000
+Cyc125 PC=000000e4 InstrF=fe030ce3 daddr=4000500c dwe=0000 dwdata=00000000
+SPI EDGE: time=25900000 CS=0 SCLK=0 MOSI=0 MISO=1
+Cyc126 PC=000000e4 InstrF=fe030ce3 daddr=4000500c dwe=0000 dwdata=00000000
+Cyc127 PC=000000e4 InstrF=fe030ce3 daddr=4000500c dwe=0000 dwdata=00000000
+Cyc128 PC=000000e8 InstrF=0104a503 daddr=00000000 dwe=0000 dwdata=00000000
+Cyc129 PC=000000ec InstrF=00008067 daddr=00000000 dwe=0000 dwdata=00000000
+SPI EDGE: time=26700000 CS=0 SCLK=1 MOSI=0 MISO=1
+Cyc130 PC=000000dc InstrF=00c4a303 daddr=00000000 dwe=0000 dwdata=00000000
+Cyc131 PC=000000e0 InstrF=00237313 daddr=00000000 dwe=0000 dwdata=00000000
+Cyc132 PC=000000e4 InstrF=fe030ce3 daddr=00000000 dwe=0000 dwdata=00000000
+Cyc133 PC=000000e4 InstrF=fe030ce3 daddr=4000500c dwe=0000 dwdata=00000000
+SPI EDGE: time=27500000 CS=0 SCLK=0 MOSI=0 MISO=1
+Cyc134 PC=000000e4 InstrF=fe030ce3 daddr=4000500c dwe=0000 dwdata=00000000
+Cyc135 PC=000000e4 InstrF=fe030ce3 daddr=4000500c dwe=0000 dwdata=00000000
+Cyc136 PC=000000e4 InstrF=fe030ce3 daddr=4000500c dwe=0000 dwdata=00000000
+Cyc137 PC=000000e8 InstrF=0104a503 daddr=00000000 dwe=0000 dwdata=00000000
+SPI EDGE: time=28300000 CS=0 SCLK=1 MOSI=0 MISO=1
+Cyc138 PC=000000ec InstrF=00008067 daddr=00000000 dwe=0000 dwdata=00000000
+Cyc139 PC=000000dc InstrF=00c4a303 daddr=00000000 dwe=0000 dwdata=00000000
+Cyc140 PC=000000e0 InstrF=00237313 daddr=00000000 dwe=0000 dwdata=00000000
+Cyc141 PC=000000e4 InstrF=fe030ce3 daddr=00000000 dwe=0000 dwdata=00000000
+SPI EDGE: time=29100000 CS=0 SCLK=0 MOSI=0 MISO=1
+Cyc142 PC=000000e4 InstrF=fe030ce3 daddr=4000500c dwe=0000 dwdata=00000000
+Cyc143 PC=000000e4 InstrF=fe030ce3 daddr=4000500c dwe=0000 dwdata=00000000
+Cyc144 PC=000000e4 InstrF=fe030ce3 daddr=4000500c dwe=0000 dwdata=00000000
+Cyc145 PC=000000e4 InstrF=fe030ce3 daddr=4000500c dwe=0000 dwdata=00000000
+SPI EDGE: time=29900000 CS=0 SCLK=1 MOSI=0 MISO=1
+Cyc146 PC=000000e8 InstrF=0104a503 daddr=00000000 dwe=0000 dwdata=00000000
+Cyc147 PC=000000ec InstrF=00008067 daddr=00000000 dwe=0000 dwdata=00000000
+Cyc148 PC=000000dc InstrF=00c4a303 daddr=00000000 dwe=0000 dwdata=00000000
+Cyc149 PC=000000e0 InstrF=00237313 daddr=00000000 dwe=0000 dwdata=00000000
+SPI EDGE: time=30700000 CS=0 SCLK=0 MOSI=0 MISO=1
+Cyc150 PC=000000e4 InstrF=fe030ce3 daddr=00000000 dwe=0000 dwdata=00000000
+Cyc151 PC=000000e4 InstrF=fe030ce3 daddr=4000500c dwe=0000 dwdata=00000000
+Cyc152 PC=000000e4 InstrF=fe030ce3 daddr=4000500c dwe=0000 dwdata=00000000
+Cyc153 PC=000000e4 InstrF=fe030ce3 daddr=4000500c dwe=0000 dwdata=00000000
+SPI EDGE: time=31500000 CS=0 SCLK=1 MOSI=0 MISO=1
+Cyc154 PC=000000e4 InstrF=fe030ce3 daddr=4000500c dwe=0000 dwdata=00000000
+Cyc155 PC=000000e8 InstrF=0104a503 daddr=00000000 dwe=0000 dwdata=00000000
+Cyc156 PC=000000ec InstrF=00008067 daddr=00000000 dwe=0000 dwdata=00000000
+Cyc157 PC=000000dc InstrF=00c4a303 daddr=00000000 dwe=0000 dwdata=00000000
+SPI EDGE: time=32300000 CS=0 SCLK=0 MOSI=0 MISO=1
+Cyc158 PC=000000e0 InstrF=00237313 daddr=00000000 dwe=0000 dwdata=00000000
+Cyc159 PC=000000e4 InstrF=fe030ce3 daddr=00000000 dwe=0000 dwdata=00000000
+Cyc160 PC=000000e4 InstrF=fe030ce3 daddr=4000500c dwe=0000 dwdata=00000000
+Cyc161 PC=000000e4 InstrF=fe030ce3 daddr=4000500c dwe=0000 dwdata=00000000
+SPI EDGE: time=33100000 CS=0 SCLK=1 MOSI=0 MISO=1
+Cyc162 PC=000000e4 InstrF=fe030ce3 daddr=4000500c dwe=0000 dwdata=00000000
+Cyc163 PC=000000e4 InstrF=fe030ce3 daddr=4000500c dwe=0000 dwdata=00000000
+Cyc164 PC=000000e8 InstrF=0104a503 daddr=00000000 dwe=0000 dwdata=00000000
+Cyc165 PC=000000ec InstrF=00008067 daddr=00000000 dwe=0000 dwdata=00000000
+SPI EDGE: time=33900000 CS=0 SCLK=0 MOSI=0 MISO=1
+Cyc166 PC=000000dc InstrF=00c4a303 daddr=00000000 dwe=0000 dwdata=00000000
+Cyc167 PC=000000e0 InstrF=00237313 daddr=00000000 dwe=0000 dwdata=00000000
+Cyc168 PC=000000e4 InstrF=fe030ce3 daddr=00000000 dwe=0000 dwdata=00000000
+Cyc169 PC=000000e4 InstrF=fe030ce3 daddr=4000500c dwe=0000 dwdata=00000000
+SPI EDGE: time=34700000 CS=0 SCLK=1 MOSI=0 MISO=1
+Cyc170 PC=000000e4 InstrF=fe030ce3 daddr=4000500c dwe=0000 dwdata=00000000
+Cyc171 PC=000000e4 InstrF=fe030ce3 daddr=4000500c dwe=0000 dwdata=00000000
+Cyc172 PC=000000e4 InstrF=fe030ce3 daddr=4000500c dwe=0000 dwdata=00000000
+Cyc173 PC=000000e8 InstrF=0104a503 daddr=00000000 dwe=0000 dwdata=00000000
+SPI EDGE: time=35500000 CS=0 SCLK=0 MOSI=0 MISO=1
+Cyc174 PC=000000ec InstrF=00008067 daddr=00000000 dwe=0000 dwdata=00000000
+Cyc175 PC=000000dc InstrF=00c4a303 daddr=00000000 dwe=0000 dwdata=00000000
+Cyc176 PC=000000e0 InstrF=00237313 daddr=00000000 dwe=0000 dwdata=00000000
+Cyc177 PC=000000e4 InstrF=fe030ce3 daddr=00000000 dwe=0000 dwdata=00000000
+SPI EDGE: time=36300000 CS=0 SCLK=1 MOSI=0 MISO=1
+Cyc178 PC=000000e4 InstrF=fe030ce3 daddr=4000500c dwe=0000 dwdata=00000000
+Cyc179 PC=000000e4 InstrF=fe030ce3 daddr=4000500c dwe=0000 dwdata=00000000
+Cyc180 PC=000000e4 InstrF=fe030ce3 daddr=4000500c dwe=0000 dwdata=00000000
+Cyc181 PC=000000e4 InstrF=fe030ce3 daddr=4000500c dwe=0000 dwdata=00000000
+SPI EDGE: time=37100000 CS=0 SCLK=0 MOSI=0 MISO=1
+Cyc182 PC=000000e8 InstrF=0104a503 daddr=00000000 dwe=0000 dwdata=00000000
+Cyc183 PC=000000ec InstrF=00008067 daddr=00000000 dwe=0000 dwdata=00000000
+Cyc184 PC=000000dc InstrF=00c4a303 daddr=00000000 dwe=0000 dwdata=00000000
+Cyc185 PC=000000e0 InstrF=00237313 daddr=00000000 dwe=0000 dwdata=00000000
+SPI EDGE: time=37900000 CS=0 SCLK=1 MOSI=0 MISO=1
+Cyc186 PC=000000e4 InstrF=fe030ce3 daddr=00000000 dwe=0000 dwdata=00000000
+Cyc187 PC=000000e4 InstrF=fe030ce3 daddr=4000500c dwe=0000 dwdata=00000000
+Cyc188 PC=000000e4 InstrF=fe030ce3 daddr=4000500c dwe=0000 dwdata=00000000
+Cyc189 PC=000000e4 InstrF=fe030ce3 daddr=4000500c dwe=0000 dwdata=00000000
+SPI EDGE: time=38700000 CS=0 SCLK=0 MOSI=0 MISO=1
+Cyc190 PC=000000e4 InstrF=fe030ce3 daddr=4000500c dwe=0000 dwdata=00000000
+Cyc191 PC=000000e8 InstrF=0104a503 daddr=00000000 dwe=0000 dwdata=00000000
+Cyc192 PC=000000ec InstrF=00008067 daddr=00000000 dwe=0000 dwdata=00000000
+Cyc193 PC=000000dc InstrF=00c4a303 daddr=00000000 dwe=0000 dwdata=00000000
+SPI EDGE: time=39500000 CS=0 SCLK=1 MOSI=0 MISO=1
+Cyc194 PC=000000e0 InstrF=00237313 daddr=00000000 dwe=0000 dwdata=00000000
+Cyc195 PC=000000e4 InstrF=fe030ce3 daddr=00000000 dwe=0000 dwdata=00000000
+Cyc196 PC=000000e4 InstrF=fe030ce3 daddr=4000500c dwe=0000 dwdata=00000000
+Cyc197 PC=000000e4 InstrF=fe030ce3 daddr=4000500c dwe=0000 dwdata=00000000
+SPI EDGE: time=40300000 CS=0 SCLK=0 MOSI=0 MISO=1
+Cyc198 PC=000000e4 InstrF=fe030ce3 daddr=4000500c dwe=0000 dwdata=00000000
+Cyc199 PC=000000e4 InstrF=fe030ce3 daddr=4000500c dwe=0000 dwdata=00000000
+Cyc200 PC=000000e8 InstrF=0104a503 daddr=00000000 dwe=0000 dwdata=00000000
+SPI EDGE: time=41100000 CS=0 SCLK=1 MOSI=0 MISO=1
+SPI EDGE: time=41900000 CS=0 SCLK=0 MOSI=0 MISO=1
+SPI EDGE: time=42700000 CS=0 SCLK=1 MOSI=0 MISO=1
+SPI EDGE: time=43500000 CS=0 SCLK=0 MOSI=0 MISO=1
+SPI EDGE: time=44300000 CS=0 SCLK=1 MOSI=0 MISO=1
+SPI EDGE: time=45100000 CS=0 SCLK=0 MOSI=0 MISO=1
+SPI EDGE: time=45900000 CS=0 SCLK=1 MOSI=0 MISO=1
+SPI EDGE: time=46700000 CS=0 SCLK=0 MOSI=0 MISO=1
+SPI EDGE: time=47500000 CS=0 SCLK=1 MOSI=0 MISO=1
+SPI EDGE: time=48300000 CS=0 SCLK=0 MOSI=0 MISO=1
+SPI EDGE: time=49100000 CS=0 SCLK=1 MOSI=0 MISO=1
+SPI EDGE: time=49900000 CS=0 SCLK=0 MOSI=0 MISO=1
+SPI EDGE: time=50700000 CS=0 SCLK=1 MOSI=0 MISO=1
+SPI EDGE: time=51500000 CS=0 SCLK=0 MOSI=0 MISO=1
+SPI EDGE: time=52300000 CS=0 SCLK=1 MOSI=0 MISO=1
+SPI EDGE: time=53100000 CS=0 SCLK=0 MOSI=0 MISO=1
+SPI EDGE: time=53900000 CS=0 SCLK=1 MOSI=0 MISO=1
+SPI EDGE: time=54700000 CS=0 SCLK=0 MOSI=0 MISO=1
+SPI EDGE: time=55500000 CS=0 SCLK=1 MOSI=0 MISO=1
+SPI EDGE: time=56300000 CS=0 SCLK=0 MOSI=0 MISO=0
+SPI EDGE: time=57100000 CS=0 SCLK=1 MOSI=0 MISO=0
+SPI EDGE: time=57900000 CS=0 SCLK=0 MOSI=0 MISO=0
+SPI EDGE: time=58700000 CS=0 SCLK=1 MOSI=0 MISO=0
+SPI EDGE: time=59500000 CS=0 SCLK=0 MOSI=0 MISO=1
+SPI EDGE: time=60300000 CS=0 SCLK=1 MOSI=0 MISO=1
+SPI EDGE: time=61100000 CS=0 SCLK=0 MOSI=0 MISO=1
+SPI EDGE: time=61900000 CS=0 SCLK=1 MOSI=0 MISO=1
+SPI EDGE: time=62700000 CS=0 SCLK=0 MOSI=0 MISO=0
+SPI EDGE: time=63500000 CS=0 SCLK=1 MOSI=0 MISO=0
+SPI EDGE: time=64300000 CS=0 SCLK=0 MOSI=0 MISO=0
+SPI EDGE: time=65100000 CS=0 SCLK=1 MOSI=0 MISO=0
+SPI EDGE: time=65900000 CS=0 SCLK=0 MOSI=0 MISO=0
+SPI EDGE: time=66700000 CS=0 SCLK=1 MOSI=0 MISO=0
+SPI EDGE: time=67500000 CS=0 SCLK=0 MOSI=0 MISO=1
+SPI EDGE: time=68300000 CS=0 SCLK=1 MOSI=0 MISO=1
+SPI EDGE: time=69100000 CS=0 SCLK=0 MOSI=0 MISO=0
+SPI EDGE: time=69900000 CS=0 SCLK=1 MOSI=0 MISO=0
+SPI EDGE: time=70700000 CS=0 SCLK=0 MOSI=0 MISO=1
+SPI EDGE: time=71500000 CS=0 SCLK=1 MOSI=0 MISO=1
+SPI EDGE: time=72300000 CS=0 SCLK=0 MOSI=0 MISO=0
+SPI EDGE: time=73100000 CS=0 SCLK=1 MOSI=0 MISO=0
+SPI EDGE: time=73900000 CS=0 SCLK=0 MOSI=0 MISO=1
+SPI EDGE: time=74700000 CS=0 SCLK=1 MOSI=0 MISO=1
+SPI EDGE: time=75500000 CS=0 SCLK=0 MOSI=0 MISO=0
+SPI EDGE: time=76300000 CS=0 SCLK=1 MOSI=0 MISO=0
+SPI EDGE: time=77100000 CS=0 SCLK=0 MOSI=0 MISO=1
+SPI EDGE: time=77900000 CS=0 SCLK=1 MOSI=0 MISO=1
+SPI EDGE: time=78700000 CS=0 SCLK=0 MOSI=0 MISO=0
+SPI EDGE: time=79500000 CS=0 SCLK=1 MOSI=0 MISO=0
+SPI EDGE: time=80300000 CS=0 SCLK=0 MOSI=0 MISO=0
+SPI EDGE: time=81100000 CS=0 SCLK=1 MOSI=0 MISO=0
+SPI EDGE: time=81900000 CS=0 SCLK=0 MOSI=0 MISO=0
+SPI EDGE: time=82700000 CS=0 SCLK=1 MOSI=0 MISO=0
+SPI EDGE: time=83500000 CS=0 SCLK=0 MOSI=0 MISO=1
+SPI EDGE: time=84300000 CS=0 SCLK=1 MOSI=0 MISO=1
+SPI EDGE: time=85100000 CS=0 SCLK=0 MOSI=0 MISO=0
+SPI EDGE: time=85900000 CS=0 SCLK=1 MOSI=0 MISO=0
+SPI EDGE: time=86700000 CS=0 SCLK=0 MOSI=0 MISO=0
+SPI EDGE: time=87500000 CS=0 SCLK=1 MOSI=0 MISO=0
+SPI EDGE: time=88300000 CS=0 SCLK=0 MOSI=0 MISO=1
+SPI EDGE: time=89100000 CS=0 SCLK=1 MOSI=0 MISO=1
+SPI EDGE: time=89900000 CS=0 SCLK=0 MOSI=0 MISO=1
+SPI EDGE: time=90700000 CS=0 SCLK=1 MOSI=0 MISO=1
+SPI EDGE: time=91500000 CS=0 SCLK=0 MOSI=0 MISO=1
+SPI EDGE: time=92300000 CS=0 SCLK=1 MOSI=0 MISO=1
+SPI EDGE: time=93100000 CS=0 SCLK=0 MOSI=0 MISO=1
+SPI EDGE: time=93900000 CS=0 SCLK=1 MOSI=0 MISO=1
+SPI EDGE: time=94700000 CS=0 SCLK=0 MOSI=0 MISO=0
+SPI EDGE: time=95500000 CS=0 SCLK=1 MOSI=0 MISO=0
+SPI EDGE: time=96300000 CS=0 SCLK=0 MOSI=0 MISO=1
+SPI EDGE: time=97100000 CS=0 SCLK=1 MOSI=0 MISO=1
+SPI EDGE: time=97900000 CS=0 SCLK=0 MOSI=0 MISO=0
+SPI EDGE: time=98700000 CS=0 SCLK=1 MOSI=0 MISO=0
+SPI EDGE: time=99500000 CS=0 SCLK=0 MOSI=0 MISO=1
+SPI EDGE: time=100300000 CS=0 SCLK=1 MOSI=0 MISO=1
+SPI EDGE: time=101100000 CS=0 SCLK=0 MOSI=0 MISO=0
+SPI EDGE: time=101900000 CS=0 SCLK=1 MOSI=0 MISO=0
+SPI EDGE: time=102700000 CS=0 SCLK=0 MOSI=0 MISO=0
+SPI EDGE: time=103500000 CS=0 SCLK=1 MOSI=0 MISO=0
+SPI EDGE: time=104300000 CS=0 SCLK=0 MOSI=0 MISO=0
+SPI EDGE: time=105100000 CS=0 SCLK=1 MOSI=0 MISO=0
+SPI EDGE: time=105900000 CS=0 SCLK=0 MOSI=0 MISO=0
+SPI EDGE: time=106700000 CS=0 SCLK=1 MOSI=0 MISO=0
+SPI EDGE: time=107500000 CS=0 SCLK=0 MOSI=0 MISO=0
+SPI EDGE: time=109500000 CS=0 SCLK=1 MOSI=0 MISO=0
+SPI EDGE: time=110300000 CS=0 SCLK=0 MOSI=0 MISO=0
+SPI EDGE: time=111100000 CS=0 SCLK=1 MOSI=0 MISO=0
+SPI EDGE: time=111900000 CS=0 SCLK=0 MOSI=0 MISO=0
+SPI EDGE: time=112700000 CS=0 SCLK=1 MOSI=0 MISO=0
+SPI EDGE: time=113500000 CS=0 SCLK=0 MOSI=0 MISO=1
+SPI EDGE: time=114300000 CS=0 SCLK=1 MOSI=0 MISO=1
+SPI EDGE: time=115100000 CS=0 SCLK=0 MOSI=0 MISO=0
+SPI EDGE: time=115900000 CS=0 SCLK=1 MOSI=0 MISO=0
+SPI EDGE: time=116700000 CS=0 SCLK=0 MOSI=0 MISO=1
+SPI EDGE: time=117500000 CS=0 SCLK=1 MOSI=0 MISO=1
+SPI EDGE: time=118300000 CS=0 SCLK=0 MOSI=0 MISO=0
+SPI EDGE: time=119100000 CS=0 SCLK=1 MOSI=0 MISO=0
+SPI EDGE: time=119900000 CS=0 SCLK=0 MOSI=0 MISO=0
+SPI EDGE: time=120700000 CS=0 SCLK=1 MOSI=0 MISO=0
+SPI EDGE: time=121500000 CS=0 SCLK=0 MOSI=0 MISO=0
+SPI EDGE: time=122300000 CS=0 SCLK=1 MOSI=0 MISO=0
+SPI EDGE: time=123100000 CS=0 SCLK=0 MOSI=0 MISO=0
+SPI EDGE: time=123900000 CS=0 SCLK=1 MOSI=0 MISO=0
+SPI EDGE: time=124700000 CS=0 SCLK=0 MOSI=0 MISO=0
+SPI EDGE: time=125500000 CS=0 SCLK=1 MOSI=0 MISO=0
+SPI EDGE: time=126300000 CS=0 SCLK=0 MOSI=0 MISO=0
+SPI EDGE: time=127100000 CS=0 SCLK=1 MOSI=0 MISO=0
+SPI EDGE: time=127900000 CS=0 SCLK=0 MOSI=0 MISO=0
+SPI EDGE: time=128700000 CS=0 SCLK=1 MOSI=0 MISO=0
+SPI EDGE: time=129500000 CS=0 SCLK=0 MOSI=0 MISO=0
+SPI EDGE: time=130300000 CS=0 SCLK=1 MOSI=0 MISO=0
+SPI EDGE: time=131100000 CS=0 SCLK=0 MOSI=0 MISO=0
+SPI EDGE: time=131900000 CS=0 SCLK=1 MOSI=0 MISO=0
+SPI EDGE: time=132700000 CS=0 SCLK=0 MOSI=0 MISO=0
+SPI EDGE: time=133500000 CS=0 SCLK=1 MOSI=0 MISO=0
+SPI EDGE: time=134300000 CS=0 SCLK=0 MOSI=0 MISO=0
+SPI EDGE: time=135100000 CS=0 SCLK=1 MOSI=0 MISO=0
+SPI EDGE: time=135900000 CS=0 SCLK=0 MOSI=0 MISO=0
+SPI EDGE: time=136700000 CS=0 SCLK=1 MOSI=0 MISO=0
+SPI EDGE: time=137500000 CS=0 SCLK=0 MOSI=0 MISO=0
+SPI EDGE: time=138300000 CS=0 SCLK=1 MOSI=0 MISO=0
+SPI EDGE: time=139100000 CS=0 SCLK=0 MOSI=0 MISO=0
+SPI EDGE: time=139900000 CS=0 SCLK=1 MOSI=0 MISO=0
+SPI EDGE: time=140700000 CS=0 SCLK=0 MOSI=0 MISO=0
+SPI EDGE: time=141500000 CS=0 SCLK=1 MOSI=0 MISO=0
+SPI EDGE: time=142300000 CS=0 SCLK=0 MOSI=0 MISO=0
+SPI EDGE: time=143100000 CS=0 SCLK=1 MOSI=0 MISO=0
+SPI EDGE: time=143900000 CS=0 SCLK=0 MOSI=0 MISO=0
+SPI EDGE: time=144700000 CS=0 SCLK=1 MOSI=0 MISO=0
+SPI EDGE: time=145500000 CS=0 SCLK=0 MOSI=0 MISO=0
+SPI EDGE: time=146300000 CS=0 SCLK=1 MOSI=0 MISO=0
+SPI EDGE: time=147100000 CS=0 SCLK=0 MOSI=0 MISO=0
+SPI EDGE: time=147900000 CS=0 SCLK=1 MOSI=0 MISO=0
+SPI EDGE: time=148700000 CS=0 SCLK=0 MOSI=0 MISO=0
+SPI EDGE: time=149500000 CS=0 SCLK=1 MOSI=0 MISO=0
+SPI EDGE: time=150300000 CS=0 SCLK=0 MOSI=0 MISO=0
+SPI EDGE: time=151100000 CS=0 SCLK=1 MOSI=0 MISO=0
+SPI EDGE: time=151900000 CS=0 SCLK=0 MOSI=0 MISO=0
+SPI EDGE: time=152700000 CS=0 SCLK=1 MOSI=0 MISO=0
+SPI EDGE: time=153500000 CS=0 SCLK=0 MOSI=0 MISO=0
+SPI EDGE: time=154300000 CS=0 SCLK=1 MOSI=0 MISO=0
+SPI EDGE: time=155100000 CS=0 SCLK=0 MOSI=0 MISO=0
+SPI EDGE: time=155900000 CS=0 SCLK=1 MOSI=0 MISO=0
+SPI EDGE: time=156700000 CS=0 SCLK=0 MOSI=0 MISO=0
+SPI EDGE: time=157500000 CS=0 SCLK=1 MOSI=0 MISO=0
+SPI EDGE: time=158300000 CS=0 SCLK=0 MOSI=0 MISO=0
+SPI EDGE: time=159100000 CS=0 SCLK=1 MOSI=0 MISO=0
+SPI EDGE: time=159900000 CS=0 SCLK=0 MOSI=0 MISO=1
+SPI EDGE: time=162500000 CS=0 SCLK=1 MOSI=0 MISO=1
+SPI EDGE: time=163300000 CS=0 SCLK=0 MOSI=0 MISO=1
+SPI EDGE: time=164100000 CS=0 SCLK=1 MOSI=0 MISO=1
+SPI EDGE: time=164900000 CS=0 SCLK=0 MOSI=0 MISO=0
+SPI EDGE: time=165700000 CS=0 SCLK=1 MOSI=0 MISO=0
+SPI EDGE: time=166500000 CS=0 SCLK=0 MOSI=0 MISO=0
+SPI EDGE: time=167300000 CS=0 SCLK=1 MOSI=0 MISO=0
+SPI EDGE: time=168100000 CS=0 SCLK=0 MOSI=0 MISO=0
+SPI EDGE: time=168900000 CS=0 SCLK=1 MOSI=0 MISO=0
+SPI EDGE: time=169700000 CS=0 SCLK=0 MOSI=0 MISO=1
+SPI EDGE: time=170500000 CS=0 SCLK=1 MOSI=0 MISO=1
+SPI EDGE: time=171300000 CS=0 SCLK=0 MOSI=0 MISO=0
+SPI EDGE: time=172100000 CS=0 SCLK=1 MOSI=0 MISO=0
+SPI EDGE: time=172900000 CS=0 SCLK=0 MOSI=0 MISO=0
+SPI EDGE: time=173700000 CS=0 SCLK=1 MOSI=0 MISO=0
+SPI EDGE: time=174500000 CS=0 SCLK=0 MOSI=0 MISO=1
+SPI EDGE: time=175300000 CS=0 SCLK=1 MOSI=0 MISO=1
+SPI EDGE: time=176100000 CS=0 SCLK=0 MOSI=0 MISO=1
+SPI EDGE: time=176900000 CS=0 SCLK=1 MOSI=0 MISO=1
+SPI EDGE: time=177700000 CS=0 SCLK=0 MOSI=0 MISO=1
+SPI EDGE: time=178500000 CS=0 SCLK=1 MOSI=0 MISO=1
+SPI EDGE: time=179300000 CS=0 SCLK=0 MOSI=0 MISO=0
+SPI EDGE: time=180100000 CS=0 SCLK=1 MOSI=0 MISO=0
+SPI EDGE: time=180900000 CS=0 SCLK=0 MOSI=0 MISO=1
+SPI EDGE: time=181700000 CS=0 SCLK=1 MOSI=0 MISO=1
+SPI EDGE: time=182500000 CS=0 SCLK=0 MOSI=0 MISO=0
+SPI EDGE: time=183300000 CS=0 SCLK=1 MOSI=0 MISO=0
+SPI EDGE: time=184100000 CS=0 SCLK=0 MOSI=0 MISO=1
+SPI EDGE: time=184900000 CS=0 SCLK=1 MOSI=0 MISO=1
+SPI EDGE: time=185700000 CS=0 SCLK=0 MOSI=0 MISO=1
+SPI EDGE: time=186500000 CS=0 SCLK=1 MOSI=0 MISO=1
+SPI EDGE: time=187300000 CS=0 SCLK=0 MOSI=0 MISO=1
+SPI EDGE: time=188100000 CS=0 SCLK=1 MOSI=0 MISO=1
+SPI EDGE: time=188900000 CS=0 SCLK=0 MOSI=0 MISO=0
+SPI EDGE: time=189700000 CS=0 SCLK=1 MOSI=0 MISO=0
+SPI EDGE: time=190500000 CS=0 SCLK=0 MOSI=0 MISO=1
+SPI EDGE: time=191300000 CS=0 SCLK=1 MOSI=0 MISO=1
+SPI EDGE: time=192100000 CS=0 SCLK=0 MOSI=0 MISO=0
+SPI EDGE: time=192900000 CS=0 SCLK=1 MOSI=0 MISO=0
+SPI EDGE: time=193700000 CS=0 SCLK=0 MOSI=0 MISO=1
+SPI EDGE: time=194500000 CS=0 SCLK=1 MOSI=0 MISO=1
+SPI EDGE: time=195300000 CS=0 SCLK=0 MOSI=0 MISO=0
+SPI EDGE: time=196100000 CS=0 SCLK=1 MOSI=0 MISO=0
+SPI EDGE: time=196900000 CS=0 SCLK=0 MOSI=0 MISO=0
+SPI EDGE: time=197700000 CS=0 SCLK=1 MOSI=0 MISO=0
+SPI EDGE: time=198500000 CS=0 SCLK=0 MOSI=0 MISO=1
+SPI EDGE: time=199300000 CS=0 SCLK=1 MOSI=0 MISO=1
+SPI EDGE: time=200100000 CS=0 SCLK=0 MOSI=0 MISO=0
+SPI EDGE: time=200900000 CS=0 SCLK=1 MOSI=0 MISO=0
+SPI EDGE: time=201700000 CS=0 SCLK=0 MOSI=0 MISO=1
+SPI EDGE: time=202500000 CS=0 SCLK=1 MOSI=0 MISO=1
+SPI EDGE: time=203300000 CS=0 SCLK=0 MOSI=0 MISO=0
+SPI EDGE: time=204100000 CS=0 SCLK=1 MOSI=0 MISO=0
+SPI EDGE: time=204900000 CS=0 SCLK=0 MOSI=0 MISO=1
+SPI EDGE: time=205700000 CS=0 SCLK=1 MOSI=0 MISO=1
+SPI EDGE: time=206500000 CS=0 SCLK=0 MOSI=0 MISO=0
+SPI EDGE: time=207300000 CS=0 SCLK=1 MOSI=0 MISO=0
+SPI EDGE: time=208100000 CS=0 SCLK=0 MOSI=0 MISO=0
+SPI EDGE: time=208900000 CS=0 SCLK=1 MOSI=0 MISO=0
+SPI EDGE: time=209700000 CS=0 SCLK=0 MOSI=0 MISO=1
+SPI EDGE: time=210500000 CS=0 SCLK=1 MOSI=0 MISO=1
+SPI EDGE: time=211300000 CS=0 SCLK=0 MOSI=0 MISO=0
+SPI EDGE: time=212100000 CS=0 SCLK=1 MOSI=0 MISO=0
+SPI EDGE: time=212900000 CS=0 SCLK=0 MOSI=0 MISO=0
+SPI EDGE: time=214700000 CS=0 SCLK=1 MOSI=0 MISO=0
+SPI EDGE: time=215500000 CS=0 SCLK=0 MOSI=0 MISO=0
+SPI EDGE: time=216300000 CS=0 SCLK=1 MOSI=0 MISO=0
+SPI EDGE: time=217100000 CS=0 SCLK=0 MOSI=0 MISO=0
+SPI EDGE: time=217900000 CS=0 SCLK=1 MOSI=0 MISO=0
+SPI EDGE: time=218700000 CS=0 SCLK=0 MOSI=0 MISO=0
+SPI EDGE: time=219500000 CS=0 SCLK=1 MOSI=0 MISO=0
+SPI EDGE: time=220300000 CS=0 SCLK=0 MOSI=0 MISO=0
+SPI EDGE: time=221100000 CS=0 SCLK=1 MOSI=0 MISO=0
+SPI EDGE: time=221900000 CS=0 SCLK=0 MOSI=0 MISO=0
+SPI EDGE: time=222700000 CS=0 SCLK=1 MOSI=0 MISO=0
+SPI EDGE: time=223500000 CS=0 SCLK=0 MOSI=0 MISO=0
+SPI EDGE: time=224300000 CS=0 SCLK=1 MOSI=0 MISO=0
+SPI EDGE: time=225100000 CS=0 SCLK=0 MOSI=0 MISO=0
+SPI EDGE: time=225900000 CS=0 SCLK=1 MOSI=0 MISO=0
+SPI EDGE: time=226700000 CS=0 SCLK=0 MOSI=0 MISO=0
+SPI EDGE: time=227500000 CS=0 SCLK=1 MOSI=0 MISO=0
+SPI EDGE: time=228300000 CS=0 SCLK=0 MOSI=0 MISO=0
+SPI EDGE: time=229100000 CS=0 SCLK=1 MOSI=0 MISO=0
+SPI EDGE: time=229900000 CS=0 SCLK=0 MOSI=0 MISO=0
+SPI EDGE: time=230700000 CS=0 SCLK=1 MOSI=0 MISO=0
+SPI EDGE: time=231500000 CS=0 SCLK=0 MOSI=0 MISO=0
+SPI EDGE: time=232300000 CS=0 SCLK=1 MOSI=0 MISO=0
+SPI EDGE: time=233100000 CS=0 SCLK=0 MOSI=0 MISO=0
+SPI EDGE: time=233900000 CS=0 SCLK=1 MOSI=0 MISO=0
+SPI EDGE: time=234700000 CS=0 SCLK=0 MOSI=0 MISO=0
+SPI EDGE: time=235500000 CS=0 SCLK=1 MOSI=0 MISO=0
+SPI EDGE: time=236300000 CS=0 SCLK=0 MOSI=0 MISO=0
+SPI EDGE: time=237100000 CS=0 SCLK=1 MOSI=0 MISO=0
+SPI EDGE: time=237900000 CS=0 SCLK=0 MOSI=0 MISO=0
+SPI EDGE: time=238700000 CS=0 SCLK=1 MOSI=0 MISO=0
+SPI EDGE: time=239500000 CS=0 SCLK=0 MOSI=0 MISO=0
+SPI EDGE: time=240300000 CS=0 SCLK=1 MOSI=0 MISO=0
+SPI EDGE: time=241100000 CS=0 SCLK=0 MOSI=0 MISO=0
+SPI EDGE: time=241900000 CS=0 SCLK=1 MOSI=0 MISO=0
+SPI EDGE: time=242700000 CS=0 SCLK=0 MOSI=0 MISO=0
+SPI EDGE: time=243500000 CS=0 SCLK=1 MOSI=0 MISO=0
+SPI EDGE: time=244300000 CS=0 SCLK=0 MOSI=0 MISO=0
+SPI EDGE: time=245100000 CS=0 SCLK=1 MOSI=0 MISO=0
+SPI EDGE: time=245900000 CS=0 SCLK=0 MOSI=0 MISO=0
+SPI EDGE: time=246700000 CS=0 SCLK=1 MOSI=0 MISO=0
+SPI EDGE: time=247500000 CS=0 SCLK=0 MOSI=0 MISO=0
+SPI EDGE: time=248300000 CS=0 SCLK=1 MOSI=0 MISO=0
+SPI EDGE: time=249100000 CS=0 SCLK=0 MOSI=0 MISO=0
+SPI EDGE: time=249900000 CS=0 SCLK=1 MOSI=0 MISO=0
+SPI EDGE: time=250700000 CS=0 SCLK=0 MOSI=0 MISO=0
+SPI EDGE: time=251500000 CS=0 SCLK=1 MOSI=0 MISO=0
+SPI EDGE: time=252300000 CS=0 SCLK=0 MOSI=0 MISO=0
+SPI EDGE: time=253100000 CS=0 SCLK=1 MOSI=0 MISO=0
+SPI EDGE: time=253900000 CS=0 SCLK=0 MOSI=0 MISO=0
+SPI EDGE: time=254700000 CS=0 SCLK=1 MOSI=0 MISO=0
+SPI EDGE: time=255500000 CS=0 SCLK=0 MOSI=0 MISO=0
+SPI EDGE: time=256300000 CS=0 SCLK=1 MOSI=0 MISO=0
+SPI EDGE: time=257100000 CS=0 SCLK=0 MOSI=0 MISO=1
+SPI EDGE: time=257900000 CS=0 SCLK=1 MOSI=0 MISO=1
+SPI EDGE: time=258700000 CS=0 SCLK=0 MOSI=0 MISO=0
+SPI EDGE: time=259500000 CS=0 SCLK=1 MOSI=0 MISO=0
+SPI EDGE: time=260300000 CS=0 SCLK=0 MOSI=0 MISO=0
+SPI EDGE: time=261100000 CS=0 SCLK=1 MOSI=0 MISO=0
+SPI EDGE: time=261900000 CS=0 SCLK=0 MOSI=0 MISO=0
+SPI EDGE: time=262700000 CS=0 SCLK=1 MOSI=0 MISO=0
+SPI EDGE: time=263500000 CS=0 SCLK=0 MOSI=0 MISO=0
+SPI EDGE: time=264300000 CS=0 SCLK=1 MOSI=0 MISO=0
+SPI CS CHANGE: time=265100000 CS=1 SCLK=0 MOSI=0 MISO=1
+SPI CS CHANGE: time=272700000 CS=0 SCLK=0 MOSI=0 MISO=1
+SPI EDGE: time=273500000 CS=0 SCLK=1 MOSI=0 MISO=1
+SPI EDGE: time=274300000 CS=0 SCLK=0 MOSI=0 MISO=1
+SPI EDGE: time=275100000 CS=0 SCLK=1 MOSI=0 MISO=1
+SPI EDGE: time=275900000 CS=0 SCLK=0 MOSI=0 MISO=1
+SPI EDGE: time=276700000 CS=0 SCLK=1 MOSI=0 MISO=1
+SPI EDGE: time=277500000 CS=0 SCLK=0 MOSI=0 MISO=1
+SPI EDGE: time=278300000 CS=0 SCLK=1 MOSI=0 MISO=1
+SPI EDGE: time=279100000 CS=0 SCLK=0 MOSI=0 MISO=1
+SPI EDGE: time=279900000 CS=0 SCLK=1 MOSI=0 MISO=1
+SPI EDGE: time=280700000 CS=0 SCLK=0 MOSI=0 MISO=1
+SPI EDGE: time=281500000 CS=0 SCLK=1 MOSI=0 MISO=1
+SPI EDGE: time=282300000 CS=0 SCLK=0 MOSI=1 MISO=1
+SPI EDGE: time=283100000 CS=0 SCLK=1 MOSI=1 MISO=1
+SPI EDGE: time=283900000 CS=0 SCLK=0 MOSI=1 MISO=1
+SPI EDGE: time=284700000 CS=0 SCLK=1 MOSI=1 MISO=1
+SPI EDGE: time=285500000 CS=0 SCLK=0 MOSI=0 MISO=1
+SPI EDGE: time=286300000 CS=0 SCLK=1 MOSI=0 MISO=1
+SPI EDGE: time=287100000 CS=0 SCLK=0 MOSI=0 MISO=1
+SPI EDGE: time=287900000 CS=0 SCLK=1 MOSI=0 MISO=1
+SPI EDGE: time=288700000 CS=0 SCLK=0 MOSI=0 MISO=1
+SPI EDGE: time=289500000 CS=0 SCLK=1 MOSI=0 MISO=1
+SPI EDGE: time=290300000 CS=0 SCLK=0 MOSI=0 MISO=1
+SPI EDGE: time=291100000 CS=0 SCLK=1 MOSI=0 MISO=1
+SPI EDGE: time=291900000 CS=0 SCLK=0 MOSI=0 MISO=1
+SPI EDGE: time=292700000 CS=0 SCLK=1 MOSI=0 MISO=1
+SPI EDGE: time=293500000 CS=0 SCLK=0 MOSI=0 MISO=1
+SPI EDGE: time=294300000 CS=0 SCLK=1 MOSI=0 MISO=1
+SPI EDGE: time=295100000 CS=0 SCLK=0 MOSI=0 MISO=1
+SPI EDGE: time=295900000 CS=0 SCLK=1 MOSI=0 MISO=1
+SPI EDGE: time=296700000 CS=0 SCLK=0 MOSI=0 MISO=1
+SPI EDGE: time=297500000 CS=0 SCLK=1 MOSI=0 MISO=1
+SPI EDGE: time=298300000 CS=0 SCLK=0 MOSI=0 MISO=1
+SPI EDGE: time=299100000 CS=0 SCLK=1 MOSI=0 MISO=1
+SPI EDGE: time=299900000 CS=0 SCLK=0 MOSI=0 MISO=1
+SPI EDGE: time=300700000 CS=0 SCLK=1 MOSI=0 MISO=1
+SPI EDGE: time=301500000 CS=0 SCLK=0 MOSI=0 MISO=1
+SPI EDGE: time=302300000 CS=0 SCLK=1 MOSI=0 MISO=1
+SPI EDGE: time=303100000 CS=0 SCLK=0 MOSI=0 MISO=1
+SPI EDGE: time=303900000 CS=0 SCLK=1 MOSI=0 MISO=1
+SPI EDGE: time=304700000 CS=0 SCLK=0 MOSI=0 MISO=1
+SPI EDGE: time=305500000 CS=0 SCLK=1 MOSI=0 MISO=1
+SPI EDGE: time=306300000 CS=0 SCLK=0 MOSI=0 MISO=1
+SPI EDGE: time=307100000 CS=0 SCLK=1 MOSI=0 MISO=1
+SPI EDGE: time=307900000 CS=0 SCLK=0 MOSI=0 MISO=1
+SPI EDGE: time=308700000 CS=0 SCLK=1 MOSI=0 MISO=1
+SPI EDGE: time=309500000 CS=0 SCLK=0 MOSI=0 MISO=1
+SPI EDGE: time=310300000 CS=0 SCLK=1 MOSI=0 MISO=1
+SPI EDGE: time=311100000 CS=0 SCLK=0 MOSI=0 MISO=1
+SPI EDGE: time=311900000 CS=0 SCLK=1 MOSI=0 MISO=1
+SPI EDGE: time=312700000 CS=0 SCLK=0 MOSI=0 MISO=1
+SPI EDGE: time=313500000 CS=0 SCLK=1 MOSI=0 MISO=1
+SPI EDGE: time=314300000 CS=0 SCLK=0 MOSI=0 MISO=1
+SPI EDGE: time=315100000 CS=0 SCLK=1 MOSI=0 MISO=1
+SPI EDGE: time=315900000 CS=0 SCLK=0 MOSI=1 MISO=1
+SPI EDGE: time=316700000 CS=0 SCLK=1 MOSI=1 MISO=1
+SPI EDGE: time=317500000 CS=0 SCLK=0 MOSI=0 MISO=1
+SPI EDGE: time=318300000 CS=0 SCLK=1 MOSI=0 MISO=1
+SPI EDGE: time=319100000 CS=0 SCLK=0 MOSI=0 MISO=1
+SPI EDGE: time=319900000 CS=0 SCLK=1 MOSI=0 MISO=1
+SPI EDGE: time=320700000 CS=0 SCLK=0 MOSI=0 MISO=1
+SPI EDGE: time=321500000 CS=0 SCLK=1 MOSI=0 MISO=1
+SPI EDGE: time=322300000 CS=0 SCLK=0 MOSI=0 MISO=1
+SPI EDGE: time=323100000 CS=0 SCLK=1 MOSI=0 MISO=1
+SPI EDGE: time=323900000 CS=0 SCLK=0 MOSI=0 MISO=1
+SPI EDGE: time=324700000 CS=0 SCLK=1 MOSI=0 MISO=1
+SPI EDGE: time=325500000 CS=0 SCLK=0 MOSI=0 MISO=0
+SPI EDGE: time=326300000 CS=0 SCLK=1 MOSI=0 MISO=0
+SPI EDGE: time=327100000 CS=0 SCLK=0 MOSI=0 MISO=1
+SPI EDGE: time=327900000 CS=0 SCLK=1 MOSI=0 MISO=1
+SPI EDGE: time=328700000 CS=0 SCLK=0 MOSI=0 MISO=1
+SPI EDGE: time=329500000 CS=0 SCLK=1 MOSI=0 MISO=1
+SPI EDGE: time=330300000 CS=0 SCLK=0 MOSI=0 MISO=0
+SPI EDGE: time=331100000 CS=0 SCLK=1 MOSI=0 MISO=0
+SPI EDGE: time=331900000 CS=0 SCLK=0 MOSI=0 MISO=1
+SPI EDGE: time=332700000 CS=0 SCLK=1 MOSI=0 MISO=1
+SPI EDGE: time=333500000 CS=0 SCLK=0 MOSI=0 MISO=1
+SPI EDGE: time=334300000 CS=0 SCLK=1 MOSI=0 MISO=1
+SPI EDGE: time=335100000 CS=0 SCLK=0 MOSI=0 MISO=1
+SPI EDGE: time=335900000 CS=0 SCLK=1 MOSI=0 MISO=1
+SPI EDGE: time=336700000 CS=0 SCLK=0 MOSI=0 MISO=0
+SPI EDGE: time=337500000 CS=0 SCLK=1 MOSI=0 MISO=0
+SPI EDGE: time=338300000 CS=0 SCLK=0 MOSI=0 MISO=0
+SPI EDGE: time=339100000 CS=0 SCLK=1 MOSI=0 MISO=0
+SPI EDGE: time=339900000 CS=0 SCLK=0 MOSI=0 MISO=0
+SPI EDGE: time=340700000 CS=0 SCLK=1 MOSI=0 MISO=0
+SPI EDGE: time=341500000 CS=0 SCLK=0 MOSI=0 MISO=0
+SPI EDGE: time=342300000 CS=0 SCLK=1 MOSI=0 MISO=0
+SPI EDGE: time=343100000 CS=0 SCLK=0 MOSI=0 MISO=0
+SPI EDGE: time=343900000 CS=0 SCLK=1 MOSI=0 MISO=0
+SPI EDGE: time=344700000 CS=0 SCLK=0 MOSI=0 MISO=0
+SPI EDGE: time=345500000 CS=0 SCLK=1 MOSI=0 MISO=0
+SPI EDGE: time=346300000 CS=0 SCLK=0 MOSI=0 MISO=1
+SPI EDGE: time=347100000 CS=0 SCLK=1 MOSI=0 MISO=1
+SPI EDGE: time=347900000 CS=0 SCLK=0 MOSI=0 MISO=0
+SPI EDGE: time=348700000 CS=0 SCLK=1 MOSI=0 MISO=0
+SPI EDGE: time=349500000 CS=0 SCLK=0 MOSI=0 MISO=0
+SPI EDGE: time=350300000 CS=0 SCLK=1 MOSI=0 MISO=0
+SPI EDGE: time=351100000 CS=0 SCLK=0 MOSI=0 MISO=0
+SPI EDGE: time=351900000 CS=0 SCLK=1 MOSI=0 MISO=0
+SPI EDGE: time=352700000 CS=0 SCLK=0 MOSI=0 MISO=0
+SPI EDGE: time=353500000 CS=0 SCLK=1 MOSI=0 MISO=0
+SPI EDGE: time=354300000 CS=0 SCLK=0 MOSI=0 MISO=0
+SPI EDGE: time=355100000 CS=0 SCLK=1 MOSI=0 MISO=0
+SPI EDGE: time=355900000 CS=0 SCLK=0 MOSI=0 MISO=0
+SPI EDGE: time=356700000 CS=0 SCLK=1 MOSI=0 MISO=0
+SPI EDGE: time=357500000 CS=0 SCLK=0 MOSI=0 MISO=0
+SPI EDGE: time=358300000 CS=0 SCLK=1 MOSI=0 MISO=0
+SPI EDGE: time=359100000 CS=0 SCLK=0 MOSI=0 MISO=0
+SPI EDGE: time=359900000 CS=0 SCLK=1 MOSI=0 MISO=0
+SPI EDGE: time=360700000 CS=0 SCLK=0 MOSI=0 MISO=0
+SPI EDGE: time=361500000 CS=0 SCLK=1 MOSI=0 MISO=0
+SPI EDGE: time=362300000 CS=0 SCLK=0 MOSI=0 MISO=0
+SPI EDGE: time=363100000 CS=0 SCLK=1 MOSI=0 MISO=0
+SPI EDGE: time=363900000 CS=0 SCLK=0 MOSI=0 MISO=0
+SPI EDGE: time=364700000 CS=0 SCLK=1 MOSI=0 MISO=0
+SPI EDGE: time=365500000 CS=0 SCLK=0 MOSI=0 MISO=0
+SPI EDGE: time=366300000 CS=0 SCLK=1 MOSI=0 MISO=0
+SPI EDGE: time=367100000 CS=0 SCLK=0 MOSI=0 MISO=1
+SPI EDGE: time=367900000 CS=0 SCLK=1 MOSI=0 MISO=1
+SPI EDGE: time=368700000 CS=0 SCLK=0 MOSI=0 MISO=0
+SPI EDGE: time=369500000 CS=0 SCLK=1 MOSI=0 MISO=0
+SPI EDGE: time=370300000 CS=0 SCLK=0 MOSI=0 MISO=0
+SPI EDGE: time=371100000 CS=0 SCLK=1 MOSI=0 MISO=0
+SPI EDGE: time=371900000 CS=0 SCLK=0 MOSI=0 MISO=0
+SPI EDGE: time=372700000 CS=0 SCLK=1 MOSI=0 MISO=0
+SPI EDGE: time=373500000 CS=0 SCLK=0 MOSI=0 MISO=0
+SPI EDGE: time=374300000 CS=0 SCLK=1 MOSI=0 MISO=0
+SPI EDGE: time=375100000 CS=0 SCLK=0 MOSI=0 MISO=1
+SPI EDGE: time=378100000 CS=0 SCLK=1 MOSI=0 MISO=1
+SPI EDGE: time=378900000 CS=0 SCLK=0 MOSI=0 MISO=0
+SPI EDGE: time=379700000 CS=0 SCLK=1 MOSI=0 MISO=0
+SPI EDGE: time=380500000 CS=0 SCLK=0 MOSI=0 MISO=0
+SPI EDGE: time=381300000 CS=0 SCLK=1 MOSI=0 MISO=0
+SPI EDGE: time=382100000 CS=0 SCLK=0 MOSI=0 MISO=1
+SPI EDGE: time=382900000 CS=0 SCLK=1 MOSI=0 MISO=1
+SPI EDGE: time=383700000 CS=0 SCLK=0 MOSI=0 MISO=0
+SPI EDGE: time=384500000 CS=0 SCLK=1 MOSI=0 MISO=0
+SPI EDGE: time=385300000 CS=0 SCLK=0 MOSI=0 MISO=0
+SPI EDGE: time=386100000 CS=0 SCLK=1 MOSI=0 MISO=0
+SPI EDGE: time=386900000 CS=0 SCLK=0 MOSI=0 MISO=1
+SPI EDGE: time=387700000 CS=0 SCLK=1 MOSI=0 MISO=1
+SPI EDGE: time=388500000 CS=0 SCLK=0 MOSI=0 MISO=1
+SPI EDGE: time=389300000 CS=0 SCLK=1 MOSI=0 MISO=1
+SPI EDGE: time=390100000 CS=0 SCLK=0 MOSI=0 MISO=1
+SPI EDGE: time=390900000 CS=0 SCLK=1 MOSI=0 MISO=1
+SPI EDGE: time=391700000 CS=0 SCLK=0 MOSI=0 MISO=0
+SPI EDGE: time=392500000 CS=0 SCLK=1 MOSI=0 MISO=0
+SPI EDGE: time=393300000 CS=0 SCLK=0 MOSI=0 MISO=0
+SPI EDGE: time=394100000 CS=0 SCLK=1 MOSI=0 MISO=0
+SPI EDGE: time=394900000 CS=0 SCLK=0 MOSI=0 MISO=0
+SPI EDGE: time=395700000 CS=0 SCLK=1 MOSI=0 MISO=0
+SPI EDGE: time=396500000 CS=0 SCLK=0 MOSI=0 MISO=0
+SPI EDGE: time=397300000 CS=0 SCLK=1 MOSI=0 MISO=0
+SPI EDGE: time=398100000 CS=0 SCLK=0 MOSI=0 MISO=0
+SPI EDGE: time=398900000 CS=0 SCLK=1 MOSI=0 MISO=0
+SPI EDGE: time=399700000 CS=0 SCLK=0 MOSI=0 MISO=1
+SPI EDGE: time=400500000 CS=0 SCLK=1 MOSI=0 MISO=1
+SPI EDGE: time=401300000 CS=0 SCLK=0 MOSI=0 MISO=0
+SPI EDGE: time=402100000 CS=0 SCLK=1 MOSI=0 MISO=0
+SPI EDGE: time=402900000 CS=0 SCLK=0 MOSI=0 MISO=0
+SPI EDGE: time=403700000 CS=0 SCLK=1 MOSI=0 MISO=0
+SPI EDGE: time=404500000 CS=0 SCLK=0 MOSI=0 MISO=0
+SPI EDGE: time=405300000 CS=0 SCLK=1 MOSI=0 MISO=0
+SPI EDGE: time=406100000 CS=0 SCLK=0 MOSI=0 MISO=0
+SPI EDGE: time=406900000 CS=0 SCLK=1 MOSI=0 MISO=0
+SPI EDGE: time=407700000 CS=0 SCLK=0 MOSI=0 MISO=0
+SPI EDGE: time=408500000 CS=0 SCLK=1 MOSI=0 MISO=0
+SPI EDGE: time=409300000 CS=0 SCLK=0 MOSI=0 MISO=0
+SPI EDGE: time=410100000 CS=0 SCLK=1 MOSI=0 MISO=0
+SPI EDGE: time=410900000 CS=0 SCLK=0 MOSI=0 MISO=0
+SPI EDGE: time=411700000 CS=0 SCLK=1 MOSI=0 MISO=0
+SPI EDGE: time=412500000 CS=0 SCLK=0 MOSI=0 MISO=1
+SPI EDGE: time=413300000 CS=0 SCLK=1 MOSI=0 MISO=1
+SPI EDGE: time=414100000 CS=0 SCLK=0 MOSI=0 MISO=0
+SPI EDGE: time=414900000 CS=0 SCLK=1 MOSI=0 MISO=0
+SPI EDGE: time=415700000 CS=0 SCLK=0 MOSI=0 MISO=0
+SPI EDGE: time=416500000 CS=0 SCLK=1 MOSI=0 MISO=0
+SPI EDGE: time=417300000 CS=0 SCLK=0 MOSI=0 MISO=1
+SPI EDGE: time=418100000 CS=0 SCLK=1 MOSI=0 MISO=1
+SPI EDGE: time=418900000 CS=0 SCLK=0 MOSI=0 MISO=0
+SPI EDGE: time=419700000 CS=0 SCLK=1 MOSI=0 MISO=0
+SPI EDGE: time=420500000 CS=0 SCLK=0 MOSI=0 MISO=1
+SPI EDGE: time=421300000 CS=0 SCLK=1 MOSI=0 MISO=1
+SPI EDGE: time=422100000 CS=0 SCLK=0 MOSI=0 MISO=0
+SPI EDGE: time=422900000 CS=0 SCLK=1 MOSI=0 MISO=0
+SPI EDGE: time=423700000 CS=0 SCLK=0 MOSI=0 MISO=0
+SPI EDGE: time=424500000 CS=0 SCLK=1 MOSI=0 MISO=0
+SPI EDGE: time=425300000 CS=0 SCLK=0 MOSI=0 MISO=0
+SPI EDGE: time=426100000 CS=0 SCLK=1 MOSI=0 MISO=0
+SPI EDGE: time=426900000 CS=0 SCLK=0 MOSI=0 MISO=0
+SPI EDGE: time=427700000 CS=0 SCLK=1 MOSI=0 MISO=0
+SPI EDGE: time=428500000 CS=0 SCLK=0 MOSI=0 MISO=0
+SPI EDGE: time=437100000 CS=0 SCLK=1 MOSI=0 MISO=0
+SPI EDGE: time=437900000 CS=0 SCLK=0 MOSI=0 MISO=0
+SPI EDGE: time=438700000 CS=0 SCLK=1 MOSI=0 MISO=0
+SPI EDGE: time=439500000 CS=0 SCLK=0 MOSI=0 MISO=0
+SPI EDGE: time=440300000 CS=0 SCLK=1 MOSI=0 MISO=0
+SPI EDGE: time=441100000 CS=0 SCLK=0 MOSI=0 MISO=1
+SPI EDGE: time=441900000 CS=0 SCLK=1 MOSI=0 MISO=1
+SPI EDGE: time=442700000 CS=0 SCLK=0 MOSI=0 MISO=0
+SPI EDGE: time=443500000 CS=0 SCLK=1 MOSI=0 MISO=0
+SPI EDGE: time=444300000 CS=0 SCLK=0 MOSI=0 MISO=0
+SPI EDGE: time=445100000 CS=0 SCLK=1 MOSI=0 MISO=0
+SPI EDGE: time=445900000 CS=0 SCLK=0 MOSI=0 MISO=1
+SPI EDGE: time=446700000 CS=0 SCLK=1 MOSI=0 MISO=1
+SPI EDGE: time=447500000 CS=0 SCLK=0 MOSI=0 MISO=1
+SPI EDGE: time=448300000 CS=0 SCLK=1 MOSI=0 MISO=1
+SPI EDGE: time=449100000 CS=0 SCLK=0 MOSI=0 MISO=0
+SPI EDGE: time=449900000 CS=0 SCLK=1 MOSI=0 MISO=0
+SPI EDGE: time=450700000 CS=0 SCLK=0 MOSI=0 MISO=0
+SPI EDGE: time=451500000 CS=0 SCLK=1 MOSI=0 MISO=0
+SPI EDGE: time=452300000 CS=0 SCLK=0 MOSI=0 MISO=0
+SPI EDGE: time=453100000 CS=0 SCLK=1 MOSI=0 MISO=0
+SPI EDGE: time=453900000 CS=0 SCLK=0 MOSI=0 MISO=0
+SPI EDGE: time=454700000 CS=0 SCLK=1 MOSI=0 MISO=0
+SPI EDGE: time=455500000 CS=0 SCLK=0 MOSI=0 MISO=0
+SPI EDGE: time=456300000 CS=0 SCLK=1 MOSI=0 MISO=0
+SPI EDGE: time=457100000 CS=0 SCLK=0 MOSI=0 MISO=0
+SPI EDGE: time=457900000 CS=0 SCLK=1 MOSI=0 MISO=0
+SPI EDGE: time=458700000 CS=0 SCLK=0 MOSI=0 MISO=1
+SPI EDGE: time=459500000 CS=0 SCLK=1 MOSI=0 MISO=1
+SPI EDGE: time=460300000 CS=0 SCLK=0 MOSI=0 MISO=1
+SPI EDGE: time=461100000 CS=0 SCLK=1 MOSI=0 MISO=1
+SPI EDGE: time=461900000 CS=0 SCLK=0 MOSI=0 MISO=0
+SPI EDGE: time=462700000 CS=0 SCLK=1 MOSI=0 MISO=0
+SPI EDGE: time=463500000 CS=0 SCLK=0 MOSI=0 MISO=0
+SPI EDGE: time=464300000 CS=0 SCLK=1 MOSI=0 MISO=0
+SPI EDGE: time=465100000 CS=0 SCLK=0 MOSI=0 MISO=0
+SPI EDGE: time=465900000 CS=0 SCLK=1 MOSI=0 MISO=0
+SPI EDGE: time=466700000 CS=0 SCLK=0 MOSI=0 MISO=1
+SPI EDGE: time=467500000 CS=0 SCLK=1 MOSI=0 MISO=1
+SPI EDGE: time=468300000 CS=0 SCLK=0 MOSI=0 MISO=0
+SPI EDGE: time=469100000 CS=0 SCLK=1 MOSI=0 MISO=0
+SPI EDGE: time=469900000 CS=0 SCLK=0 MOSI=0 MISO=0
+SPI EDGE: time=470700000 CS=0 SCLK=1 MOSI=0 MISO=0
+SPI EDGE: time=471500000 CS=0 SCLK=0 MOSI=0 MISO=0
+SPI EDGE: time=472300000 CS=0 SCLK=1 MOSI=0 MISO=0
+SPI EDGE: time=473100000 CS=0 SCLK=0 MOSI=0 MISO=0
+SPI EDGE: time=473900000 CS=0 SCLK=1 MOSI=0 MISO=0
+SPI EDGE: time=474700000 CS=0 SCLK=0 MOSI=0 MISO=0
+SPI EDGE: time=475500000 CS=0 SCLK=1 MOSI=0 MISO=0
+SPI EDGE: time=476300000 CS=0 SCLK=0 MOSI=0 MISO=0
+SPI EDGE: time=477100000 CS=0 SCLK=1 MOSI=0 MISO=0
+SPI EDGE: time=477900000 CS=0 SCLK=0 MOSI=0 MISO=0
+SPI EDGE: time=478700000 CS=0 SCLK=1 MOSI=0 MISO=0
+SPI EDGE: time=479500000 CS=0 SCLK=0 MOSI=0 MISO=0
+SPI EDGE: time=480300000 CS=0 SCLK=1 MOSI=0 MISO=0
+SPI EDGE: time=481100000 CS=0 SCLK=0 MOSI=0 MISO=0
+SPI EDGE: time=481900000 CS=0 SCLK=1 MOSI=0 MISO=0
+SPI EDGE: time=482700000 CS=0 SCLK=0 MOSI=0 MISO=0
+SPI EDGE: time=483500000 CS=0 SCLK=1 MOSI=0 MISO=0
+SPI EDGE: time=484300000 CS=0 SCLK=0 MOSI=0 MISO=0
+SPI EDGE: time=485100000 CS=0 SCLK=1 MOSI=0 MISO=0
+SPI EDGE: time=485900000 CS=0 SCLK=0 MOSI=0 MISO=0
+SPI EDGE: time=486700000 CS=0 SCLK=1 MOSI=0 MISO=0
+SPI EDGE: time=487500000 CS=0 SCLK=0 MOSI=0 MISO=0
+SPI EDGE: time=496300000 CS=0 SCLK=1 MOSI=0 MISO=0
+SPI EDGE: time=497100000 CS=0 SCLK=0 MOSI=0 MISO=0
+SPI EDGE: time=497900000 CS=0 SCLK=1 MOSI=0 MISO=0
+SPI EDGE: time=498700000 CS=0 SCLK=0 MOSI=0 MISO=1
+SPI EDGE: time=499500000 CS=0 SCLK=1 MOSI=0 MISO=1
+SPI EDGE: time=500300000 CS=0 SCLK=0 MOSI=0 MISO=0
+SPI EDGE: time=501100000 CS=0 SCLK=1 MOSI=0 MISO=0
+SPI EDGE: time=501900000 CS=0 SCLK=0 MOSI=0 MISO=0
+SPI EDGE: time=502700000 CS=0 SCLK=1 MOSI=0 MISO=0
+SPI EDGE: time=503500000 CS=0 SCLK=0 MOSI=0 MISO=0
+SPI EDGE: time=504300000 CS=0 SCLK=1 MOSI=0 MISO=0
+SPI EDGE: time=505100000 CS=0 SCLK=0 MOSI=0 MISO=1
+SPI EDGE: time=505900000 CS=0 SCLK=1 MOSI=0 MISO=1
+SPI EDGE: time=506700000 CS=0 SCLK=0 MOSI=0 MISO=1
+SPI EDGE: time=507500000 CS=0 SCLK=1 MOSI=0 MISO=1
+SPI EDGE: time=508300000 CS=0 SCLK=0 MOSI=0 MISO=1
+SPI EDGE: time=509100000 CS=0 SCLK=1 MOSI=0 MISO=1
+SPI EDGE: time=509900000 CS=0 SCLK=0 MOSI=0 MISO=0
+SPI EDGE: time=510700000 CS=0 SCLK=1 MOSI=0 MISO=0
+SPI EDGE: time=511500000 CS=0 SCLK=0 MOSI=0 MISO=1
+SPI EDGE: time=512300000 CS=0 SCLK=1 MOSI=0 MISO=1
+SPI EDGE: time=513100000 CS=0 SCLK=0 MOSI=0 MISO=0
+SPI EDGE: time=513900000 CS=0 SCLK=1 MOSI=0 MISO=0
+SPI EDGE: time=514700000 CS=0 SCLK=0 MOSI=0 MISO=0
+SPI EDGE: time=515500000 CS=0 SCLK=1 MOSI=0 MISO=0
+SPI EDGE: time=516300000 CS=0 SCLK=0 MOSI=0 MISO=0
+SPI EDGE: time=517100000 CS=0 SCLK=1 MOSI=0 MISO=0
+SPI EDGE: time=517900000 CS=0 SCLK=0 MOSI=0 MISO=0
+SPI EDGE: time=518700000 CS=0 SCLK=1 MOSI=0 MISO=0
+SPI EDGE: time=519500000 CS=0 SCLK=0 MOSI=0 MISO=0
+SPI EDGE: time=520300000 CS=0 SCLK=1 MOSI=0 MISO=0
+SPI EDGE: time=521100000 CS=0 SCLK=0 MOSI=0 MISO=0
+SPI EDGE: time=521900000 CS=0 SCLK=1 MOSI=0 MISO=0
+SPI EDGE: time=522700000 CS=0 SCLK=0 MOSI=0 MISO=1
+SPI EDGE: time=523500000 CS=0 SCLK=1 MOSI=0 MISO=1
+SPI EDGE: time=524300000 CS=0 SCLK=0 MOSI=0 MISO=1
+SPI EDGE: time=525100000 CS=0 SCLK=1 MOSI=0 MISO=1
+SPI EDGE: time=525900000 CS=0 SCLK=0 MOSI=0 MISO=0
+SPI EDGE: time=526700000 CS=0 SCLK=1 MOSI=0 MISO=0
+SPI EDGE: time=527500000 CS=0 SCLK=0 MOSI=0 MISO=0
+SPI EDGE: time=528300000 CS=0 SCLK=1 MOSI=0 MISO=0
+SPI EDGE: time=529100000 CS=0 SCLK=0 MOSI=0 MISO=0
+SPI EDGE: time=529900000 CS=0 SCLK=1 MOSI=0 MISO=0
+SPI EDGE: time=530700000 CS=0 SCLK=0 MOSI=0 MISO=1
+SPI EDGE: time=531500000 CS=0 SCLK=1 MOSI=0 MISO=1
+SPI EDGE: time=532300000 CS=0 SCLK=0 MOSI=0 MISO=0
+SPI EDGE: time=533100000 CS=0 SCLK=1 MOSI=0 MISO=0
+SPI EDGE: time=533900000 CS=0 SCLK=0 MOSI=0 MISO=0
+SPI EDGE: time=534700000 CS=0 SCLK=1 MOSI=0 MISO=0
+SPI EDGE: time=535500000 CS=0 SCLK=0 MOSI=0 MISO=0
+SPI EDGE: time=536300000 CS=0 SCLK=1 MOSI=0 MISO=0
+SPI EDGE: time=537100000 CS=0 SCLK=0 MOSI=0 MISO=0
+SPI EDGE: time=537900000 CS=0 SCLK=1 MOSI=0 MISO=0
+SPI EDGE: time=538700000 CS=0 SCLK=0 MOSI=0 MISO=0
+SPI EDGE: time=539500000 CS=0 SCLK=1 MOSI=0 MISO=0
+SPI EDGE: time=540300000 CS=0 SCLK=0 MOSI=0 MISO=0
+SPI EDGE: time=541100000 CS=0 SCLK=1 MOSI=0 MISO=0
+SPI EDGE: time=541900000 CS=0 SCLK=0 MOSI=0 MISO=0
+SPI EDGE: time=542700000 CS=0 SCLK=1 MOSI=0 MISO=0
+SPI EDGE: time=543500000 CS=0 SCLK=0 MOSI=0 MISO=0
+SPI EDGE: time=544300000 CS=0 SCLK=1 MOSI=0 MISO=0
+SPI EDGE: time=545100000 CS=0 SCLK=0 MOSI=0 MISO=0
+SPI EDGE: time=545900000 CS=0 SCLK=1 MOSI=0 MISO=0
+SPI EDGE: time=546700000 CS=0 SCLK=0 MOSI=0 MISO=0
+SPI EDGE: time=554500000 CS=0 SCLK=1 MOSI=0 MISO=0
+SPI EDGE: time=555300000 CS=0 SCLK=0 MOSI=0 MISO=1
+SPI EDGE: time=556100000 CS=0 SCLK=1 MOSI=0 MISO=1
+SPI EDGE: time=556900000 CS=0 SCLK=0 MOSI=0 MISO=1
+SPI EDGE: time=557700000 CS=0 SCLK=1 MOSI=0 MISO=1
+SPI EDGE: time=558500000 CS=0 SCLK=0 MOSI=0 MISO=0
+SPI EDGE: time=559300000 CS=0 SCLK=1 MOSI=0 MISO=0
+SPI EDGE: time=560100000 CS=0 SCLK=0 MOSI=0 MISO=1
+SPI EDGE: time=560900000 CS=0 SCLK=1 MOSI=0 MISO=1
+SPI EDGE: time=561700000 CS=0 SCLK=0 MOSI=0 MISO=1
+SPI EDGE: time=562500000 CS=0 SCLK=1 MOSI=0 MISO=1
+SPI EDGE: time=563300000 CS=0 SCLK=0 MOSI=0 MISO=1
+SPI EDGE: time=564100000 CS=0 SCLK=1 MOSI=0 MISO=1
+SPI EDGE: time=564900000 CS=0 SCLK=0 MOSI=0 MISO=1
+SPI EDGE: time=565700000 CS=0 SCLK=1 MOSI=0 MISO=1
+SPI EDGE: time=566500000 CS=0 SCLK=0 MOSI=0 MISO=0
+SPI EDGE: time=567300000 CS=0 SCLK=1 MOSI=0 MISO=0
+SPI EDGE: time=568100000 CS=0 SCLK=0 MOSI=0 MISO=0
+SPI EDGE: time=568900000 CS=0 SCLK=1 MOSI=0 MISO=0
+SPI EDGE: time=569700000 CS=0 SCLK=0 MOSI=0 MISO=0
+SPI EDGE: time=570500000 CS=0 SCLK=1 MOSI=0 MISO=0
+SPI EDGE: time=571300000 CS=0 SCLK=0 MOSI=0 MISO=0
+SPI EDGE: time=572100000 CS=0 SCLK=1 MOSI=0 MISO=0
+SPI EDGE: time=572900000 CS=0 SCLK=0 MOSI=0 MISO=0
+SPI EDGE: time=573700000 CS=0 SCLK=1 MOSI=0 MISO=0
+SPI EDGE: time=574500000 CS=0 SCLK=0 MOSI=0 MISO=0
+SPI EDGE: time=575300000 CS=0 SCLK=1 MOSI=0 MISO=0
+SPI EDGE: time=576100000 CS=0 SCLK=0 MOSI=0 MISO=0
+SPI EDGE: time=576900000 CS=0 SCLK=1 MOSI=0 MISO=0
+SPI EDGE: time=577700000 CS=0 SCLK=0 MOSI=0 MISO=0
+SPI EDGE: time=578500000 CS=0 SCLK=1 MOSI=0 MISO=0
+SPI EDGE: time=579300000 CS=0 SCLK=0 MOSI=0 MISO=0
+SPI EDGE: time=580100000 CS=0 SCLK=1 MOSI=0 MISO=0
+SPI EDGE: time=580900000 CS=0 SCLK=0 MOSI=0 MISO=0
+SPI EDGE: time=581700000 CS=0 SCLK=1 MOSI=0 MISO=0
+SPI EDGE: time=582500000 CS=0 SCLK=0 MOSI=0 MISO=0
+SPI EDGE: time=583300000 CS=0 SCLK=1 MOSI=0 MISO=0
+SPI EDGE: time=584100000 CS=0 SCLK=0 MOSI=0 MISO=0
+SPI EDGE: time=584900000 CS=0 SCLK=1 MOSI=0 MISO=0
+SPI EDGE: time=585700000 CS=0 SCLK=0 MOSI=0 MISO=0
+SPI EDGE: time=586500000 CS=0 SCLK=1 MOSI=0 MISO=0
+SPI EDGE: time=587300000 CS=0 SCLK=0 MOSI=0 MISO=0
+SPI EDGE: time=588100000 CS=0 SCLK=1 MOSI=0 MISO=0
+SPI EDGE: time=588900000 CS=0 SCLK=0 MOSI=0 MISO=0
+SPI EDGE: time=589700000 CS=0 SCLK=1 MOSI=0 MISO=0
+SPI EDGE: time=590500000 CS=0 SCLK=0 MOSI=0 MISO=0
+SPI EDGE: time=591300000 CS=0 SCLK=1 MOSI=0 MISO=0
+SPI EDGE: time=592100000 CS=0 SCLK=0 MOSI=0 MISO=0
+SPI EDGE: time=592900000 CS=0 SCLK=1 MOSI=0 MISO=0
+SPI EDGE: time=593700000 CS=0 SCLK=0 MOSI=0 MISO=0
+SPI EDGE: time=594500000 CS=0 SCLK=1 MOSI=0 MISO=0
+SPI EDGE: time=595300000 CS=0 SCLK=0 MOSI=0 MISO=0
+SPI EDGE: time=596100000 CS=0 SCLK=1 MOSI=0 MISO=0
+SPI EDGE: time=596900000 CS=0 SCLK=0 MOSI=0 MISO=0
+SPI EDGE: time=597700000 CS=0 SCLK=1 MOSI=0 MISO=0
+SPI EDGE: time=598500000 CS=0 SCLK=0 MOSI=0 MISO=0
+SPI EDGE: time=599300000 CS=0 SCLK=1 MOSI=0 MISO=0
+SPI EDGE: time=600100000 CS=0 SCLK=0 MOSI=0 MISO=0
+SPI EDGE: time=600900000 CS=0 SCLK=1 MOSI=0 MISO=0
+SPI EDGE: time=601700000 CS=0 SCLK=0 MOSI=0 MISO=0
+SPI EDGE: time=602500000 CS=0 SCLK=1 MOSI=0 MISO=0
+SPI EDGE: time=603300000 CS=0 SCLK=0 MOSI=0 MISO=0
+SPI EDGE: time=604100000 CS=0 SCLK=1 MOSI=0 MISO=0
+SPI CS CHANGE: time=604900000 CS=1 SCLK=0 MOSI=0 MISO=1
+
+========================================
+BOOT_APP: SUCCESS at cycle 3347
+Application is running from SRAM
+========================================
+
+Simulation complete via $finish(1) at time 67030 NS + 0
+./tb/soc/tb_boot_app.v:349             $finish;
+xcelium> exit
+TOOL:	xrun(64)	22.09-s003: Exiting on Nov 16, 2026 at 12:24:28 IST  (total: 00:00:05)

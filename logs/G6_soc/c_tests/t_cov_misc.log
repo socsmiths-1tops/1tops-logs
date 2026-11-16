@@ -1,0 +1,47 @@
+xrun(64): 22.09-s003: (c) Copyright 1995-2022 Cadence Design Systems, Inc.
+TOOL:	xrun(64)	22.09-s003: Started on Nov 16, 2026 at 12:07:57 IST
+xrun
+	-64bit
+	-xmlibdirpath sim/build/rtl
+	-R
+	-snapshot soc_rtl
+	+FLASH=/home/onetops/1tops/rv32im/sw/build/t_cov_misc/flash.hex
+	+UART_DIV=32
+	+UART_LOG=/home/onetops/1tops/rv32im/sw/build/t_cov_misc/uart_rtl.txt
+	-l /home/onetops/1tops/rv32im/sw/build/t_cov_misc/sim_rtl.log
+
+   User defined plus("+") options:
+	+FLASH=/home/onetops/1tops/rv32im/sw/build/t_cov_misc/flash.hex
+	+UART_DIV=32
+	+UART_LOG=/home/onetops/1tops/rv32im/sw/build/t_cov_misc/uart_rtl.txt
+
+Loading snapshot worklib.soc_rtl:v .................... Done
+xmsim: *W,DSEM2009: This SystemVerilog design is simulated as per IEEE 1800-2009 SystemVerilog simulation semantics. Use -disable_sem2009 option for turning off SV 2009 simulation semantics.
+xcelium> source /home/install8/install/XCELIUM2209/tools/inca/files/xmsimrc
+xcelium> run
+TB: flash image /home/onetops/1tops/rv32im/sw/build/t_cov_misc/flash.hex, UART 32 clocks/bit, timeout 20000000 cycles
+[uart] t_cov_misc: ASCON all lengths/reset, SPI overflow, I2C IRQ, CLINT hi
+[uart]   PASS  ASCON 33 message + 17 AD lengths round trip
+[uart]   PASS  ASCON soft reset clears busy/done
+[uart]   PASS  ASCON usable after reset
+[uart]   PASS  TX FIFO full at 16
+[uart]   PASS  TX overflow on 17th write
+[uart]   PASS  TX overflow cleared
+[uart]   PASS  RX FIFO full
+[uart]   PASS  RX overflow flagged
+[uart]   PASS  RXHOLD returns last popped word
+[uart]   PASS  first received frame = first sent (0)
+[uart]   PASS  I2C transfer interrupts delivered
+[uart]   PASS  I2C data with interrupts on
+[uart]   PASS  no MTIP while mtimecmp_hi > mtime_hi
+[uart]   PASS  MTIP when mtime >= mtimecmp (hi equal)
+[uart]   PASS  MSIP visible in mip
+[uart]   PASS  MSIP cleared
+[uart] RESULT: PASS (0 failures)
+TB: program exit after 947126 cycles (94714600000)
+EXIT code=0
+SIM RESULT: PASS
+Simulation complete via $finish(1) at time 9471460 NS + 0
+./sim/tb/tb_soc_app.v:173             $finish;
+xcelium> exit
+TOOL:	xrun(64)	22.09-s003: Exiting on Nov 16, 2026 at 12:08:04 IST  (total: 00:00:07)

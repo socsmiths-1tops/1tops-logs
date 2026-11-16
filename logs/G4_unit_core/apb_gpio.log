@@ -1,0 +1,215 @@
+xrun(64): 22.09-s003: (c) Copyright 1995-2022 Cadence Design Systems, Inc.
+TOOL:	xrun(64)	22.09-s003: Started on Nov 16, 2026 at 12:23:14 IST
+xrun
+	-64bit
+	-xmlibdirpath signoff/build/sa_apb_gpio
+	-sv
+	-access +rwc
+	-nowarn NONPRT
+	rtl/peripherals/gpio/apb_gpio.v
+	tb/peripherals/tb_apb_gpio.v
+	-top tb_apb_gpio
+	-l signoff/logs/standalone/apb_gpio.log
+file: rtl/peripherals/gpio/apb_gpio.v
+	module worklib.apb_gpio:v
+		errors: 0, warnings: 0
+	Elaborating the design hierarchy:
+		Caching library 'worklib' ....... Done
+	Top level design units:
+		tb_apb_gpio
+xmelab: *W,DSEMEL: This SystemVerilog design will be simulated as per IEEE 1800-2009 SystemVerilog simulation semantics. Use -disable_sem2009 option for turning off SV 2009 simulation semantics.
+	Building instance overlay tables: .................... Done
+	Generating native compiled code:
+		worklib.apb_gpio:v <0x70fee04d>
+			streams:  27, words:  8977
+	Building instance specific data structures.
+	Loading native compiled code:     .................... Done
+	Design hierarchy summary:
+		                 Instances  Unique
+		Modules:                 2       2
+		Registers:              32      32
+		Scalar wires:           16       -
+		Vectored wires:         11       -
+		Always blocks:          11      11
+		Initial blocks:          1       1
+		Cont. assignments:       8      19
+		Pseudo assignments:      8       8
+		Simulation timescale:  1ps
+	Writing initial simulation snapshot: worklib.tb_apb_gpio:v
+Loading snapshot worklib.tb_apb_gpio:v .................... Done
+xmsim: *W,DSEM2009: This SystemVerilog design is simulated as per IEEE 1800-2009 SystemVerilog simulation semantics. Use -disable_sem2009 option for turning off SV 2009 simulation semantics.
+xcelium> source /home/install8/install/XCELIUM2209/tools/inca/files/xmsimrc
+xcelium> run
+Starting maximum practical GPIO coverage TB...
+READ PASS : addr=00 data=00000000 time=127000
+READ PASS : addr=04 data=00000000 time=157000
+READ PASS : addr=08 data=00000000 time=187000
+READ PASS : addr=0c data=00000000 time=217000
+READ PASS : addr=10 data=00000000 time=247000
+READ PASS : addr=14 data=00000000 time=277000
+READ PASS : addr=18 data=00000000 time=307000
+READ PASS : addr=1c data=00000000 time=337000
+READ PASS : addr=20 data=00000000 time=367000
+READ PASS : addr=24 data=00000000 time=397000
+READ PASS : addr=fc data=00000000 time=427000
+READ PASS : addr=04 data=000000ff time=517000
+READ PASS : addr=04 data=00000000 time=577000
+READ PASS : addr=04 data=000000aa time=637000
+READ PASS : addr=04 data=00000055 time=697000
+READ PASS : addr=08 data=000000ff time=757000
+READ PASS : addr=08 data=00000000 time=817000
+READ PASS : addr=08 data=000000aa time=877000
+READ PASS : addr=08 data=00000055 time=937000
+READ PASS : addr=0c data=000000ff time=997000
+READ PASS : addr=0c data=00000000 time=1057000
+READ PASS : addr=10 data=000000ff time=1117000
+READ PASS : addr=10 data=00000000 time=1177000
+READ PASS : addr=14 data=000000ff time=1237000
+READ PASS : addr=14 data=00000000 time=1297000
+READ PASS : addr=04 data=00000001 time=1357000
+READ PASS : addr=08 data=00000001 time=1417000
+READ PASS : addr=0c data=00000001 time=1477000
+READ PASS : addr=10 data=00000001 time=1537000
+READ PASS : addr=14 data=00000001 time=1597000
+READ PASS : addr=04 data=00000002 time=1657000
+READ PASS : addr=08 data=00000002 time=1717000
+READ PASS : addr=0c data=00000002 time=1777000
+READ PASS : addr=10 data=00000002 time=1837000
+READ PASS : addr=14 data=00000002 time=1897000
+READ PASS : addr=04 data=00000004 time=1957000
+READ PASS : addr=08 data=00000004 time=2017000
+READ PASS : addr=0c data=00000004 time=2077000
+READ PASS : addr=10 data=00000004 time=2137000
+READ PASS : addr=14 data=00000004 time=2197000
+READ PASS : addr=04 data=00000008 time=2257000
+READ PASS : addr=08 data=00000008 time=2317000
+READ PASS : addr=0c data=00000008 time=2377000
+READ PASS : addr=10 data=00000008 time=2437000
+READ PASS : addr=14 data=00000008 time=2497000
+READ PASS : addr=04 data=00000010 time=2557000
+READ PASS : addr=08 data=00000010 time=2617000
+READ PASS : addr=0c data=00000010 time=2677000
+READ PASS : addr=10 data=00000010 time=2737000
+READ PASS : addr=14 data=00000010 time=2797000
+READ PASS : addr=04 data=00000020 time=2857000
+READ PASS : addr=08 data=00000020 time=2917000
+READ PASS : addr=0c data=00000020 time=2977000
+READ PASS : addr=10 data=00000020 time=3037000
+READ PASS : addr=14 data=00000020 time=3097000
+READ PASS : addr=04 data=00000040 time=3157000
+READ PASS : addr=08 data=00000040 time=3217000
+READ PASS : addr=0c data=00000040 time=3277000
+READ PASS : addr=10 data=00000040 time=3337000
+READ PASS : addr=14 data=00000040 time=3397000
+READ PASS : addr=04 data=00000080 time=3457000
+READ PASS : addr=08 data=00000080 time=3517000
+READ PASS : addr=0c data=00000080 time=3577000
+READ PASS : addr=10 data=00000080 time=3637000
+READ PASS : addr=14 data=00000080 time=3697000
+READ PASS : addr=04 data=000000fe time=3757000
+READ PASS : addr=08 data=000000fe time=3817000
+READ PASS : addr=0c data=000000fe time=3877000
+READ PASS : addr=10 data=000000fe time=3937000
+READ PASS : addr=14 data=000000fe time=3997000
+READ PASS : addr=04 data=000000fd time=4057000
+READ PASS : addr=08 data=000000fd time=4117000
+READ PASS : addr=0c data=000000fd time=4177000
+READ PASS : addr=10 data=000000fd time=4237000
+READ PASS : addr=14 data=000000fd time=4297000
+READ PASS : addr=04 data=000000fb time=4357000
+READ PASS : addr=08 data=000000fb time=4417000
+READ PASS : addr=0c data=000000fb time=4477000
+READ PASS : addr=10 data=000000fb time=4537000
+READ PASS : addr=14 data=000000fb time=4597000
+READ PASS : addr=04 data=000000f7 time=4657000
+READ PASS : addr=08 data=000000f7 time=4717000
+READ PASS : addr=0c data=000000f7 time=4777000
+READ PASS : addr=10 data=000000f7 time=4837000
+READ PASS : addr=14 data=000000f7 time=4897000
+READ PASS : addr=04 data=000000ef time=4957000
+READ PASS : addr=08 data=000000ef time=5017000
+READ PASS : addr=0c data=000000ef time=5077000
+READ PASS : addr=10 data=000000ef time=5137000
+READ PASS : addr=14 data=000000ef time=5197000
+READ PASS : addr=04 data=000000df time=5257000
+READ PASS : addr=08 data=000000df time=5317000
+READ PASS : addr=0c data=000000df time=5377000
+READ PASS : addr=10 data=000000df time=5437000
+READ PASS : addr=14 data=000000df time=5497000
+READ PASS : addr=04 data=000000bf time=5557000
+READ PASS : addr=08 data=000000bf time=5617000
+READ PASS : addr=0c data=000000bf time=5677000
+READ PASS : addr=10 data=000000bf time=5737000
+READ PASS : addr=14 data=000000bf time=5797000
+READ PASS : addr=04 data=0000007f time=5857000
+READ PASS : addr=08 data=0000007f time=5917000
+READ PASS : addr=0c data=0000007f time=5977000
+READ PASS : addr=10 data=0000007f time=6037000
+READ PASS : addr=14 data=0000007f time=6097000
+READ PASS : addr=04 data=00000011 time=6177000
+READ PASS : addr=08 data=00000022 time=6257000
+READ PASS : addr=0c data=00000033 time=6337000
+READ PASS : addr=10 data=00000044 time=6417000
+READ PASS : addr=14 data=00000055 time=6497000
+READ PASS : addr=00 data=00000000 time=6677000
+READ PASS : addr=00 data=000000ff time=6767000
+READ PASS : addr=00 data=000000aa time=6857000
+READ PASS : addr=00 data=00000055 time=6947000
+READ PASS : addr=00 data=0000000f time=7037000
+READ PASS : addr=00 data=000000f0 time=7127000
+READ PASS : addr=00 data=00000001 time=7217000
+READ PASS : addr=00 data=00000002 time=7307000
+READ PASS : addr=00 data=00000004 time=7397000
+READ PASS : addr=00 data=00000008 time=7487000
+READ PASS : addr=00 data=00000010 time=7577000
+READ PASS : addr=00 data=00000020 time=7667000
+READ PASS : addr=00 data=00000040 time=7757000
+READ PASS : addr=00 data=00000080 time=7847000
+READ PASS : addr=18 data=000000ff time=8147000
+READ PASS : addr=18 data=000000ff time=8237000
+READ PASS : addr=18 data=00000000 time=8387000
+READ PASS : addr=18 data=0000000f time=8687000
+READ PASS : addr=18 data=00000000 time=9047000
+READ PASS : addr=18 data=000000ff time=9137000
+READ PASS : addr=18 data=000000f0 time=9227000
+READ PASS : addr=18 data=00000000 time=9317000
+READ PASS : addr=18 data=00000000 time=9407000
+READ PASS : addr=18 data=00000001 time=9617000
+READ PASS : addr=18 data=00000002 time=9887000
+READ PASS : addr=18 data=00000004 time=10157000
+READ PASS : addr=18 data=00000008 time=10427000
+READ PASS : addr=18 data=00000010 time=10697000
+READ PASS : addr=18 data=00000020 time=10967000
+READ PASS : addr=18 data=00000040 time=11237000
+READ PASS : addr=18 data=00000080 time=11507000
+READ PASS : addr=18 data=00000000 time=11807000
+READ PASS : addr=18 data=000000ff time=11897000
+READ PASS : addr=18 data=000000ff time=11987000
+READ PASS : addr=18 data=00000000 time=12137000
+READ PASS : addr=18 data=00000000 time=12377000
+READ PASS : addr=18 data=000000ff time=12467000
+READ PASS : addr=18 data=00000000 time=12557000
+READ PASS : addr=18 data=00000000 time=12647000
+READ PASS : addr=18 data=00000001 time=12857000
+READ PASS : addr=18 data=00000002 time=13127000
+READ PASS : addr=18 data=00000004 time=13397000
+READ PASS : addr=18 data=00000008 time=13667000
+READ PASS : addr=18 data=00000010 time=13937000
+READ PASS : addr=18 data=00000020 time=14207000
+READ PASS : addr=18 data=00000040 time=14477000
+READ PASS : addr=18 data=00000080 time=14747000
+READ PASS : addr=18 data=000000a5 time=15127000
+READ PASS : addr=18 data=00000018 time=15507000
+READ PASS : addr=18 data=00000000 time=15837000
+READ PASS : addr=00 data=00000000 time=16037000
+READ PASS : addr=04 data=00000000 time=16067000
+READ PASS : addr=08 data=00000000 time=16097000
+READ PASS : addr=0c data=00000000 time=16127000
+READ PASS : addr=10 data=00000000 time=16157000
+READ PASS : addr=14 data=00000000 time=16187000
+READ PASS : addr=18 data=00000000 time=16217000
+TEST PASSED: Maximum practical GPIO coverage test completed.
+Simulation complete via $finish(1) at time 16251 NS + 0
+./tb/peripherals/tb_apb_gpio.v:603         $finish;
+xcelium> exit
+TOOL:	xrun(64)	22.09-s003: Exiting on Nov 16, 2026 at 12:23:20 IST  (total: 00:00:06)

@@ -1,0 +1,130 @@
+xrun(64): 22.09-s003: (c) Copyright 1995-2022 Cadence Design Systems, Inc.
+TOOL:	xrun(64)	22.09-s003: Started on Nov 16, 2026 at 12:23:35 IST
+xrun
+	-64bit
+	-xmlibdirpath signoff/build/sa_apb_spi
+	-sv
+	-access +rwc
+	-nowarn NONPRT
+	rtl/peripherals/spi/spi_fifo.v
+	rtl/peripherals/spi/spi_protocol_engine.v
+	rtl/peripherals/spi/apb_spi.v
+	tb/peripherals/tb_apb_spi.v
+	-top tb_apb_spi
+	-l signoff/logs/standalone/apb_spi.log
+file: rtl/peripherals/spi/spi_fifo.v
+	module worklib.spi_fifo:v
+		errors: 0, warnings: 0
+file: rtl/peripherals/spi/spi_protocol_engine.v
+	module worklib.spi_protocol_engine:v
+		errors: 0, warnings: 0
+file: rtl/peripherals/spi/apb_spi.v
+	module worklib.apb_spi:v
+		errors: 0, warnings: 0
+	Elaborating the design hierarchy:
+		Caching library 'worklib' ....... Done
+	Top level design units:
+		tb_apb_spi
+xmelab: *W,DSEMEL: This SystemVerilog design will be simulated as per IEEE 1800-2009 SystemVerilog simulation semantics. Use -disable_sem2009 option for turning off SV 2009 simulation semantics.
+	Building instance overlay tables: .................... Done
+	Generating native compiled code:
+		worklib.spi_protocol_engine:v <0x2f694967>
+			streams:  28, words: 17390
+		worklib.spi_fifo:v <0x43f64aef>
+			streams:   8, words:  3770
+		worklib.apb_spi:v <0x5aec6147>
+			streams:  27, words: 12145
+	Building instance specific data structures.
+	Loading native compiled code:     .................... Done
+	Design hierarchy summary:
+		                 Instances  Unique
+		Modules:                 5       4
+		Registers:              92      87
+		Scalar wires:           41       -
+		Vectored wires:         14       -
+		Always blocks:          10       9
+		Initial blocks:          2       2
+		Cont. assignments:      14      28
+		Pseudo assignments:     16      16
+		Simulation timescale:  1ps
+	Writing initial simulation snapshot: worklib.tb_apb_spi:v
+Loading snapshot worklib.tb_apb_spi:v .................... Done
+xmsim: *W,DSEM2009: This SystemVerilog design is simulated as per IEEE 1800-2009 SystemVerilog simulation semantics. Use -disable_sem2009 option for turning off SV 2009 simulation semantics.
+xcelium> source /home/install8/install/XCELIUM2209/tools/inca/files/xmsimrc
+xcelium> run
+
+TEST 1: Reset/APB checks
+
+TEST 2: Register/APB toggle stress
+
+TEST 3: Functional SPI sweep loopback
+PASS : 8-bit loopback RX=0000005a
+PASS : 8-bit loopback RX=0000005a
+PASS : 8-bit loopback RX=0000005a
+PASS : 8-bit loopback RX=0000005a
+PASS : 16-bit loopback RX=00004b4b
+PASS : 16-bit loopback RX=00004b4b
+PASS : 16-bit loopback RX=00004b4b
+PASS : 16-bit loopback RX=00004b4b
+PASS : 32-bit loopback RX=87877878
+PASS : 32-bit loopback RX=87877878
+PASS : 32-bit loopback RX=87877878
+PASS : 32-bit loopback RX=87877878
+PASS : 8-bit loopback RX=0000005b
+PASS : 8-bit loopback RX=0000005b
+PASS : 8-bit loopback RX=0000005b
+PASS : 8-bit loopback RX=0000005b
+PASS : 16-bit loopback RX=00004b4a
+PASS : 16-bit loopback RX=00004b4a
+PASS : 16-bit loopback RX=00004b4a
+PASS : 16-bit loopback RX=00004b4a
+PASS : 32-bit loopback RX=87877879
+PASS : 32-bit loopback RX=87877879
+PASS : 32-bit loopback RX=87877879
+PASS : 32-bit loopback RX=87877879
+PASS : 8-bit loopback RX=00000058
+PASS : 8-bit loopback RX=00000058
+PASS : 8-bit loopback RX=00000058
+PASS : 8-bit loopback RX=00000058
+PASS : 16-bit loopback RX=00004b49
+PASS : 16-bit loopback RX=00004b49
+PASS : 16-bit loopback RX=00004b49
+PASS : 16-bit loopback RX=00004b49
+PASS : 32-bit loopback RX=8787787a
+PASS : 32-bit loopback RX=8787787a
+PASS : 32-bit loopback RX=8787787a
+PASS : 32-bit loopback RX=8787787a
+PASS : 8-bit loopback RX=00000059
+PASS : 8-bit loopback RX=00000059
+PASS : 8-bit loopback RX=00000059
+PASS : 8-bit loopback RX=00000059
+PASS : 16-bit loopback RX=00004b48
+PASS : 16-bit loopback RX=00004b48
+PASS : 16-bit loopback RX=00004b48
+PASS : 16-bit loopback RX=00004b48
+PASS : 32-bit loopback RX=8787787b
+PASS : 32-bit loopback RX=8787787b
+PASS : 32-bit loopback RX=8787787b
+PASS : 32-bit loopback RX=8787787b
+
+TEST 4: LSB-first and external MISO
+PASS : LSB loopback RX=00000096
+PASS : External MISO constant high RX=0000007f
+PASS : ÿ RX=583d2568
+
+TEST 5: FIFO and error paths
+
+TEST 6: Disable and reset corner cases
+
+TEST 7: Interrupt clear/toggle tests
+
+======================================
+APB SPI COVERAGE STRESS TEST COMPLETED
+PASS COUNT = 183
+FAIL COUNT = 0
+======================================
+FINAL RESULT: PASS
+Simulation complete via $finish(1) at time 117730 NS + 0
+./tb/peripherals/tb_apb_spi.v:469     $finish;
+xcelium> exit
+TOOL:	xrun(64)	22.09-s003: Exiting on Nov 16, 2026 at 12:23:41 IST  (total: 00:00:06)

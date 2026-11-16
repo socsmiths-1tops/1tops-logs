@@ -1,0 +1,259 @@
+xrun(64): 22.09-s003: (c) Copyright 1995-2022 Cadence Design Systems, Inc.
+TOOL:	xrun(64)	22.09-s003: Started on Oct 02, 2026 at 11:17:27 IST
+xrun
+	-64bit
+	-xmlibdirpath signoff/build/sa_ascon_peripheral
+	-sv
+	-access +rwc
+	-nowarn NONPRT
+	-incdir rtl/soc
+	-incdir rtl/peripherals/i2c
+	-incdir rtl/peripherals/ascon
+	rtl/peripherals/ascon/config.sv
+	rtl/peripherals/ascon/functions.sv
+	rtl/peripherals/ascon/ascon_regs_pkg.sv
+	rtl/peripherals/ascon/asconp.sv
+	rtl/peripherals/ascon/chaos_core.sv
+	rtl/peripherals/ascon/ascon_core.sv
+	rtl/peripherals/ascon/ascon_word_assembler.sv
+	rtl/peripherals/ascon/ascon_peripheral.sv
+	tb/peripherals/tb_ascon_peripheral_gls.sv
+	-top tb_ascon_peripheral_gls
+	-l signoff/logs/standalone/ascon_peripheral.log
+file: rtl/peripherals/ascon/config.sv
+	package worklib.ascon_config:sv
+		errors: 0, warnings: 0
+file: rtl/peripherals/ascon/functions.sv
+	package worklib.ascon_functions:sv
+		errors: 0, warnings: 0
+file: rtl/peripherals/ascon/asconp.sv
+	module worklib.asconp:sv
+		errors: 0, warnings: 0
+file: rtl/peripherals/ascon/chaos_core.sv
+	module worklib.chaos_core:sv
+		errors: 0, warnings: 0
+file: rtl/peripherals/ascon/ascon_core.sv
+	module worklib.ascon_core:sv
+		errors: 0, warnings: 0
+file: rtl/peripherals/ascon/ascon_word_assembler.sv
+	module worklib.ascon_word_assembler:sv
+		errors: 0, warnings: 0
+file: rtl/peripherals/ascon/ascon_peripheral.sv
+	module worklib.ascon_peripheral:sv
+		errors: 0, warnings: 0
+file: tb/peripherals/tb_ascon_peripheral_gls.sv
+xmvlog: *W,SPDUSD: Include directory rtl/soc given but not used.
+xmvlog: *W,SPDUSD: Include directory rtl/peripherals/i2c given but not used.
+	Total errors/warnings found outside modules and primitives:
+		errors: 0, warnings: 2
+	Elaborating the design hierarchy:
+		Caching library 'worklib' ....... Done
+	Top level design units:
+		ascon_config
+		ascon_functions
+		ascon_regs_pkg
+		$unit_0x28e174d4
+		tb_ascon_peripheral_gls
+xmelab: *W,DSEMEL: This SystemVerilog design will be simulated as per IEEE 1800-2009 SystemVerilog simulation semantics. Use -disable_sem2009 option for turning off SV 2009 simulation semantics.
+	Building instance overlay tables: .................... Done
+	Generating native compiled code:
+		worklib.ascon_word_assembler:sv <0x61c355ad>
+			streams:  16, words: 19678
+		worklib.chaos_core:sv <0x7fb0e2c4>
+			streams:  31, words: 21716
+		worklib.ascon_core:sv <0x6abc3463>
+			streams:  46, words: 27196
+		worklib.ascon_peripheral:sv <0x3537d9a1>
+			streams:  70, words: 26523
+		worklib.tb_ascon_peripheral_gls:sv <0x33585ed7>
+			streams:  43, words: 83963
+		worklib.asconp:sv <0x27da48c1>
+			streams:  14, words:  9563
+		worklib.asconp:sv <0x0cb5e48a>
+			streams:  14, words:  9387
+		worklib.ascon_functions:sv <0x74fc89f6>
+			streams:   5, words: 16255
+	Building instance specific data structures.
+	Loading native compiled code:     .................... Done
+	Design hierarchy summary:
+		                 Instances  Unique
+		Modules:                 7       6
+		Verilog packages:        3       3
+		Registers:             312     249
+		Scalar wires:           73       -
+		Vectored wires:        143       -
+		Always blocks:          37      29
+		Initial blocks:          7       7
+		Cont. assignments:     121      42
+		Pseudo assignments:     58      58
+		Compilation units:       1       1
+		Simulation timescale:  1ps
+	Writing initial simulation snapshot: worklib.tb_ascon_peripheral_gls:sv
+Loading snapshot worklib.tb_ascon_peripheral_gls:sv .................... Done
+xmsim: *W,DSEM2009: This SystemVerilog design is simulated as per IEEE 1800-2009 SystemVerilog simulation semantics. Use -disable_sem2009 option for turning off SV 2009 simulation semantics.
+xcelium> source /home/install8/install/XCELIUM2209/tools/inca/files/xmsimrc
+xcelium> run
+============================================================
+  ASCON Gate-Level Simulation Testbench
+============================================================
+
+--- PREREQ: Chaos warm-up (gate-level, no seed force) ---
+  [PASS] T1 chaos_ready asserted
+  [PASS] T2 D1: chaos_ready stable in STATUS
+
+--- [C1] REG_CTRL read-back ---
+  [PASS] T3 C1: CTRL mode=0 reads back 0
+  [PASS] T4 C1: CTRL mode=1 reads back 1
+  [PASS] T5 C1: sw_rst self-clears to 0 in CTRL read
+
+--- [C5] Default address read ---
+  [PASS] T6 C5: unknown addr reads DEAD_BEEF  got=0xdeadbeef
+
+--- [C2] Partial bus_wstrb ---
+  [PASS] T7 C2: partial byte write issued without bus error
+  [PASS] T8 C2: byte-3-only write OK
+
+--- Baseline: single 4-byte encrypt ---
+  [PASS] T9 Baseline: done asserted
+  [PASS] T10 Baseline: ct non-zero (hi|lo)
+  [PASS] T11 Baseline: tag_valid set
+
+--- [C6] TAG registers ---
+  [PASS] T12 C6: TAG0 readable
+  [PASS] T13 C6: TAG1 readable
+  [PASS] T14 C6: TAG2 readable
+  [PASS] T15 C6: TAG3 readable
+
+--- [C7] CT_VALID status bit ---
+  [PASS] T16 C7: CT_VALID pulsed in STATUS during encrypt
+  [PASS] T17 C7: done after multi-word
+
+--- [B1] S_DATA_PB: 3-word message ---
+  [PASS] T18 B1: done after 3-word message
+  [PASS] T19 B1: tag_valid after 3-word message
+  [PASS] T20 B1: CT output readable (not X)
+
+--- [B1b] 4-word message (two PB rounds) ---
+  [PASS] T21 B1b: done after 4-word message
+  [PASS] T22 B1b: tag_valid
+
+--- [B2][C3][B4][C4] Decrypt mode ---
+  [PASS] T23 B2: encrypt for decrypt test done
+  [PASS] T24 C3: decrypt mode bit set in CTRL read
+  [PASS] T25 B2: done after decrypt
+  [PASS] T26 B2: S_VERIFY: tag_valid set after decrypt
+  [PASS] T27 B4: tag_ok readable (not X)
+  [INFO] B4: tag_ok=0 (seed-dependent)
+  [PASS] T28 C4: tag_valid=1 confirms S_VERIFY visited
+
+=== [A] ascon_word_assembler: valid_bits_last coverage ===
+
+--- [A1] nb=1, vbl=1..7 ---
+    nb=1 vbl=1: done=1
+  [PASS] T29 A1: nb=1 vbl=1 done
+  [PASS] T30 A1: nb=1 vbl=1 tag_valid
+    nb=1 vbl=2: done=1
+  [PASS] T31 A1: nb=1 vbl=2 done
+  [PASS] T32 A1: nb=1 vbl=2 tag_valid
+    nb=1 vbl=3: done=1
+  [PASS] T33 A1: nb=1 vbl=3 done
+  [PASS] T34 A1: nb=1 vbl=3 tag_valid
+    nb=1 vbl=4: done=1
+  [PASS] T35 A1: nb=1 vbl=4 done
+  [PASS] T36 A1: nb=1 vbl=4 tag_valid
+    nb=1 vbl=5: done=1
+  [PASS] T37 A1: nb=1 vbl=5 done
+  [PASS] T38 A1: nb=1 vbl=5 tag_valid
+    nb=1 vbl=6: done=1
+  [PASS] T39 A1: nb=1 vbl=6 done
+  [PASS] T40 A1: nb=1 vbl=6 tag_valid
+    nb=1 vbl=7: done=1
+  [PASS] T41 A1: nb=1 vbl=7 done
+  [PASS] T42 A1: nb=1 vbl=7 tag_valid
+
+--- [A2] nb=2, vbl=1..7 ---
+  [PASS] T43 A2: nb=2 vbl=1 done
+  [PASS] T44 A2: nb=2 vbl=1 tag_valid
+  [PASS] T45 A2: nb=2 vbl=2 done
+  [PASS] T46 A2: nb=2 vbl=2 tag_valid
+  [PASS] T47 A2: nb=2 vbl=3 done
+  [PASS] T48 A2: nb=2 vbl=3 tag_valid
+  [PASS] T49 A2: nb=2 vbl=4 done
+  [PASS] T50 A2: nb=2 vbl=4 tag_valid
+  [PASS] T51 A2: nb=2 vbl=5 done
+  [PASS] T52 A2: nb=2 vbl=5 tag_valid
+  [PASS] T53 A2: nb=2 vbl=6 done
+  [PASS] T54 A2: nb=2 vbl=6 tag_valid
+  [PASS] T55 A2: nb=2 vbl=7 done
+  [PASS] T56 A2: nb=2 vbl=7 tag_valid
+
+--- [A3] nb=3, vbl=1..7 ---
+  [PASS] T57 A3: nb=3 vbl=1 done
+  [PASS] T58 A3: nb=3 vbl=1 tag_valid
+  [PASS] T59 A3: nb=3 vbl=2 done
+  [PASS] T60 A3: nb=3 vbl=2 tag_valid
+  [PASS] T61 A3: nb=3 vbl=3 done
+  [PASS] T62 A3: nb=3 vbl=3 tag_valid
+  [PASS] T63 A3: nb=3 vbl=4 done
+  [PASS] T64 A3: nb=3 vbl=4 tag_valid
+  [PASS] T65 A3: nb=3 vbl=5 done
+  [PASS] T66 A3: nb=3 vbl=5 tag_valid
+  [PASS] T67 A3: nb=3 vbl=6 done
+  [PASS] T68 A3: nb=3 vbl=6 tag_valid
+  [PASS] T69 A3: nb=3 vbl=7 done
+  [PASS] T70 A3: nb=3 vbl=7 tag_valid
+
+--- [A4] nb=4, vbl=1..7 ---
+  [PASS] T71 A4: nb=4 vbl=1 done
+  [PASS] T72 A4: nb=4 vbl=1 tag_valid
+  [PASS] T73 A4: nb=4 vbl=2 done
+  [PASS] T74 A4: nb=4 vbl=2 tag_valid
+  [PASS] T75 A4: nb=4 vbl=3 done
+  [PASS] T76 A4: nb=4 vbl=3 tag_valid
+  [PASS] T77 A4: nb=4 vbl=4 done
+  [PASS] T78 A4: nb=4 vbl=4 tag_valid
+  [PASS] T79 A4: nb=4 vbl=5 done
+  [PASS] T80 A4: nb=4 vbl=5 tag_valid
+  [PASS] T81 A4: nb=4 vbl=6 done
+  [PASS] T82 A4: nb=4 vbl=6 tag_valid
+  [PASS] T83 A4: nb=4 vbl=7 done
+  [PASS] T84 A4: nb=4 vbl=7 tag_valid
+
+--- [A5] half_full: non-last second half ---
+  [PASS] T85 A5: half_full non-last second half: done
+  [PASS] T86 A5: tag_valid
+
+--- [A6] half_full + full_last_word (pad in lo half) ---
+  [PASS] T87 A6: full_last_word via second half: done
+  [PASS] T88 A6: tag_valid
+
+--- [A7] stall_datacnt: assembler back-pressure ---
+  [PASS] T89 A7: stall_datacnt path: eventually done
+
+--- [D2] sw_rst while chaos READY ---
+  [PASS] T90 D2: chaos_ready still set after sw_rst
+  [PASS] T91 D2: busy cleared after sw_rst
+
+=== Regression tests ===
+-- REG3: Two-word 8-byte message --
+  [PASS] T92 REG3: done after two-word
+-- REG4: 3-byte partial last word --
+  [PASS] T93 REG4: done after 3-byte
+-- REG7: 1-byte message --
+  [PASS] T94 REG7: done after 1-byte
+-- REG8: 0-byte (clamped) --
+  [PASS] T95 REG8: done after 0-byte
+-- REG9: 4+1 bytes --
+  [PASS] T96 REG9: done after 4+1 bytes
+-- REG10: 4+4 bytes (full block) --
+  [PASS] T97 REG10: done after 4+4 full block
+
+============================================================
+  GLS TB Results
+  PASS=97  FAIL=0  TOTAL=97
+  RESULT: ALL TESTS PASSED
+============================================================
+Simulation complete via $finish(1) at time 21130 NS + 0
+./tb/peripherals/tb_ascon_peripheral_gls.sv:636     $finish;
+xcelium> exit
+TOOL:	xrun(64)	22.09-s003: Exiting on Oct 02, 2026 at 11:17:35 IST  (total: 00:00:08)

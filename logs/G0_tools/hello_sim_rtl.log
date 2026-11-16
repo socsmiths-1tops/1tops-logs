@@ -1,0 +1,31 @@
+xrun(64): 22.09-s003: (c) Copyright 1995-2022 Cadence Design Systems, Inc.
+TOOL:	xrun(64)	22.09-s003: Started on Oct 02, 2026 at 11:27:51 IST
+xrun
+	-64bit
+	-xmlibdirpath sim/build/rtl
+	-R
+	+FLASH=/home/onetops/1tops/rv32im/sw/build/hello/flash.hex
+	+UART_DIV=32
+	+UART_LOG=/home/onetops/1tops/rv32im/sw/build/hello/uart_rtl.txt
+	-l /home/onetops/1tops/rv32im/sw/build/hello/sim_rtl.log
+
+   User defined plus("+") options:
+	+FLASH=/home/onetops/1tops/rv32im/sw/build/hello/flash.hex
+	+UART_DIV=32
+	+UART_LOG=/home/onetops/1tops/rv32im/sw/build/hello/uart_rtl.txt
+
+Loading snapshot worklib.tb_soc_app:v .................... Done
+xmsim: *W,DSEM2009: This SystemVerilog design is simulated as per IEEE 1800-2009 SystemVerilog simulation semantics. Use -disable_sem2009 option for turning off SV 2009 simulation semantics.
+xcelium> source /home/install8/install/XCELIUM2209/tools/inca/files/xmsimrc
+xcelium> run
+TB: flash image /home/onetops/1tops/rv32im/sw/build/hello/flash.hex, UART 32 clocks/bit, timeout 20000000 cycles
+[uart] Hello from t1c_riscv_soc (RV32IM @ 100 MHz)
+[uart] fib(11) = 89, 1234567 / 89 = 13871 rem 48
+[uart] GPIO out = 0xa5
+TB: program exit after 302089 cycles (30210900000)
+EXIT code=0
+SIM RESULT: PASS
+Simulation complete via $finish(1) at time 3021090 NS + 0
+./sim/tb/tb_soc_app.v:133             $finish;
+xcelium> exit
+TOOL:	xrun(64)	22.09-s003: Exiting on Oct 02, 2026 at 11:27:56 IST  (total: 00:00:05)

@@ -1,0 +1,283 @@
+xrun(64): 22.09-s003: (c) Copyright 1995-2022 Cadence Design Systems, Inc.
+TOOL:	xrun(64)	22.09-s003: Started on Nov 16, 2026 at 12:21:53 IST
+xrun
+	-64bit
+	-xmlibdirpath signoff/build/sa_tb_controller
+	-sv
+	-access +rwc
+	-nowarn NONPRT
+	-f rtl.f
+		rtl/core/adder.v
+		rtl/core/alu.v
+		rtl/core/alu_decoder.v
+		rtl/core/controller.v
+		rtl/core/data_parser.v
+		rtl/core/decode.v
+		rtl/core/execute.v
+		rtl/core/fetch.v
+		rtl/core/imm_extend.v
+		rtl/core/main_decoder.v
+		rtl/core/mdu_wrapper.v
+		rtl/core/memory.v
+		rtl/core/mux2.v
+		rtl/core/mux3.v
+		rtl/core/mux4.v
+		rtl/core/reg_file.v
+		rtl/core/reset_ff.v
+		rtl/core/writeback.v
+		rtl/core/csr_unit.v
+		rtl/core/t1c_riscv_cpu.v
+		rtl/core/hazard_unit.v
+	tb/unit/tb_controller.sv
+	-top tb_controller
+	-l signoff/logs/standalone/tb_controller.log
+file: rtl/core/adder.v
+	module worklib.adder:v
+		errors: 0, warnings: 0
+file: rtl/core/alu.v
+	module worklib.alu_unit:v
+		errors: 0, warnings: 0
+file: rtl/core/alu_decoder.v
+	module worklib.alu_decoder:v
+		errors: 0, warnings: 0
+file: rtl/core/controller.v
+	module worklib.controller:v
+		errors: 0, warnings: 0
+file: rtl/core/data_parser.v
+	module worklib.data_parser:v
+		errors: 0, warnings: 0
+file: rtl/core/decode.v
+	module worklib.decode:v
+		errors: 0, warnings: 0
+file: rtl/core/execute.v
+	module worklib.execute:v
+		errors: 0, warnings: 0
+file: rtl/core/fetch.v
+	module worklib.fetch:v
+		errors: 0, warnings: 0
+file: rtl/core/imm_extend.v
+	module worklib.ImmExt:v
+		errors: 0, warnings: 0
+file: rtl/core/main_decoder.v
+	module worklib.main_decoder:v
+		errors: 0, warnings: 0
+file: rtl/core/mdu_wrapper.v
+	module worklib.mdu_wrapper:v
+		errors: 0, warnings: 0
+file: rtl/core/memory.v
+	module worklib.memory:v
+		errors: 0, warnings: 0
+file: rtl/core/mux2.v
+	module worklib.mux2:v
+		errors: 0, warnings: 0
+file: rtl/core/mux3.v
+	module worklib.mux3:v
+		errors: 0, warnings: 0
+file: rtl/core/mux4.v
+	module worklib.mux4:v
+		errors: 0, warnings: 0
+file: rtl/core/reg_file.v
+	module worklib.reg_file:v
+		errors: 0, warnings: 0
+file: rtl/core/reset_ff.v
+	module worklib.reset_ff:v
+		errors: 0, warnings: 0
+file: rtl/core/writeback.v
+	module worklib.writeback:v
+		errors: 0, warnings: 0
+file: rtl/core/csr_unit.v
+	module worklib.csr_unit:v
+		errors: 0, warnings: 0
+file: rtl/core/t1c_riscv_cpu.v
+	module worklib.t1c_riscv_cpu:v
+		errors: 0, warnings: 0
+file: rtl/core/hazard_unit.v
+	module worklib.hazard_unit:v
+		errors: 0, warnings: 0
+	Elaborating the design hierarchy:
+		Caching library 'worklib' ....... Done
+  controller dut (
+               |
+xmelab: *W,CUVWSP (./tb/unit/tb_controller.sv,21|15): 2 output ports were not connected:
+xmelab: (./rtl/core/controller.v,16): IsCSR
+xmelab: (./rtl/core/controller.v,17): IsMret
+
+	Top level design units:
+		tb_controller
+xmelab: *W,DSEMEL: This SystemVerilog design will be simulated as per IEEE 1800-2009 SystemVerilog simulation semantics. Use -disable_sem2009 option for turning off SV 2009 simulation semantics.
+	Building instance overlay tables: .................... Done
+	Generating native compiled code:
+		worklib.alu_decoder:v <0x3141a722>
+			streams:   1, words:  3105
+		worklib.main_decoder:v <0x7d914580>
+			streams:   2, words:  3748
+		worklib.tb_controller:sv <0x0b1b87b9>
+			streams:  28, words: 94525
+		worklib.controller:v <0x44c2c71e>
+			streams:   3, words:   729
+	Building instance specific data structures.
+	Loading native compiled code:     .................... Done
+	Design hierarchy summary:
+		                 Instances  Unique
+		Modules:                 4       4
+		Registers:              45      45
+		Scalar wires:           20       -
+		Expanded wires:          2       1
+		Vectored wires:         12       -
+		Always blocks:           2       2
+		Initial blocks:          4       4
+		Cont. assignments:       4       4
+		Pseudo assignments:     18      18
+		Simulation timescale:  1ps
+	Writing initial simulation snapshot: worklib.tb_controller:sv
+Loading snapshot worklib.tb_controller:sv .................... Done
+xmsim: *W,DSEM2009: This SystemVerilog design is simulated as per IEEE 1800-2009 SystemVerilog simulation semantics. Use -disable_sem2009 option for turning off SV 2009 simulation semantics.
+xcelium> source /home/install8/install/XCELIUM2209/tools/inca/files/xmsimrc
+xcelium> run
+
+========================================
+Controller Unit Testbench - Coverage Closure
+RV32IM Decode / Control Verification
+========================================
+
+[PASS] Test 1: LW RegWrite
+[PASS] Test 2: LW ImmSrc
+[PASS] Test 3: LW ALUSrcA
+[PASS] Test 4: LW ALUSrcB
+[PASS] Test 5: LW MemWrite
+[PASS] Test 6: LW ResultSrc
+[PASS] Test 7: LW Branch
+[PASS] Test 8: LW Jump
+[PASS] Test 9: LW ALUControl
+[PASS] Test 10: LW is not M
+[PASS] Test 11: SW RegWrite
+[PASS] Test 12: SW ImmSrc
+[PASS] Test 13: SW ALUSrcA
+[PASS] Test 14: SW ALUSrcB
+[PASS] Test 15: SW MemWrite
+[PASS] Test 16: SW ResultSrc
+[PASS] Test 17: SW Branch
+[PASS] Test 18: SW Jump
+[PASS] Test 19: SW ALUControl
+[PASS] Test 20: SW is not M
+[PASS] Test 21: R-type RegWrite
+[PASS] Test 22: R-type ALUSrcB
+[PASS] Test 23: R-type ResultSrc
+[PASS] Test 24: ADD ALUControl
+[PASS] Test 25: ADDI RegWrite
+[PASS] Test 26: ADDI ImmSrc
+[PASS] Test 27: ADDI ALUSrcA
+[PASS] Test 28: ADDI ALUSrcB
+[PASS] Test 29: ADDI MemWrite
+[PASS] Test 30: ADDI ResultSrc
+[PASS] Test 31: ADDI Branch
+[PASS] Test 32: ADDI Jump
+[PASS] Test 33: ADDI ALUControl
+[PASS] Test 34: BEQ Branch
+[PASS] Test 35: BEQ RegWrite off
+[PASS] Test 36: BEQ ALUControl
+[PASS] Test 37: JAL RegWrite
+[PASS] Test 38: JAL ImmSrc
+[PASS] Test 39: JAL ALUSrcA
+[PASS] Test 40: JAL ALUSrcB
+[PASS] Test 41: JAL MemWrite
+[PASS] Test 42: JAL ResultSrc
+[PASS] Test 43: JAL Branch
+[PASS] Test 44: JAL Jump
+[PASS] Test 45: JAL ALUControl
+[PASS] Test 46: JALR RegWrite
+[PASS] Test 47: JALR ImmSrc
+[PASS] Test 48: JALR ALUSrcA
+[PASS] Test 49: JALR ALUSrcB
+[PASS] Test 50: JALR MemWrite
+[PASS] Test 51: JALR ResultSrc
+[PASS] Test 52: JALR Branch
+[PASS] Test 53: JALR Jump
+[PASS] Test 54: JALR ALUControl
+[PASS] Test 55: LUI RegWrite
+[PASS] Test 56: LUI ImmSrc
+[PASS] Test 57: LUI ALUSrcA
+[PASS] Test 58: LUI ALUSrcB
+[PASS] Test 59: LUI MemWrite
+[PASS] Test 60: LUI ResultSrc
+[PASS] Test 61: LUI Branch
+[PASS] Test 62: LUI Jump
+[PASS] Test 63: LUI ALUControl
+[PASS] Test 64: AUIPC RegWrite
+[PASS] Test 65: AUIPC ImmSrc
+[PASS] Test 66: AUIPC ALUSrcA
+[PASS] Test 67: AUIPC ALUSrcB
+[PASS] Test 68: AUIPC MemWrite
+[PASS] Test 69: AUIPC ResultSrc
+[PASS] Test 70: AUIPC Branch
+[PASS] Test 71: AUIPC Jump
+[PASS] Test 72: AUIPC ALUControl
+[PASS] Test 73: ADD ALUControl
+[PASS] Test 74: SUB ALUControl
+[PASS] Test 75: SLL ALUControl
+[PASS] Test 76: SLT ALUControl
+[PASS] Test 77: SLTU ALUControl
+[PASS] Test 78: XOR ALUControl
+[PASS] Test 79: SRL ALUControl
+[PASS] Test 80: SRA ALUControl
+[PASS] Test 81: OR ALUControl
+[PASS] Test 82: AND ALUControl
+[PASS] Test 83: ADDI ALUControl
+[PASS] Test 84: SLLI ALUControl
+[PASS] Test 85: SLTI ALUControl
+[PASS] Test 86: SLTIU ALUControl
+[PASS] Test 87: XORI ALUControl
+[PASS] Test 88: SRLI ALUControl
+[PASS] Test 89: SRAI ALUControl
+[PASS] Test 90: ORI ALUControl
+[PASS] Test 91: ANDI ALUControl
+[PASS] Test 92: BEQ ALUControl
+[PASS] Test 93: BNE ALUControl
+[PASS] Test 94: BLT ALUControl
+[PASS] Test 95: BGE ALUControl
+[PASS] Test 96: BLTU ALUControl
+[PASS] Test 97: BGEU ALUControl
+[PASS] Test 98: Branch illegal func3 010 ALUControl
+[PASS] Test 99: Branch illegal func3 011 ALUControl
+[PASS] Test 100: MUL detected
+[PASS] Test 101: MULH detected
+[PASS] Test 102: MULHSU detected
+[PASS] Test 103: MULHU detected
+[PASS] Test 104: DIV detected
+[PASS] Test 105: DIVU detected
+[PASS] Test 106: REM detected
+[PASS] Test 107: REMU detected
+[PASS] Test 108: M-extension ALUControl ALUControl
+[PASS] Test 109: I-type func7=1 is not M
+[PASS] Test 110: Condition flags do not affect Branch signal
+[PASS] Test 111: Invalid opcode produces safe control outputs
+[PASS] Test 112: Another invalid opcode produces safe control outputs
+
+--- Coverage Closure: Forcing internal ALUOp paths ---
+
+[PASS] Test 113: Forced ALUOp=01 subtraction path ALUControl
+[PASS] Test 114: Forced ALUOp=00 addition path ALUControl
+
+--- Coverage Closure: Exhaustive Decode Sweep ---
+
+[PASS] Test 115: Final ADD recheck ALUControl
+[PASS] Test 116: Final SRAI recheck ALUControl
+[PASS] Test 117: Final BGEU recheck ALUControl
+
+--- Extra Coverage Closure Tests ---
+
+
+========================================
+Test Summary
+========================================
+Total Tests:  117
+Passed:       117
+Failed:       0
+Pass Rate:    100.0%
+========================================
+
+All controller unit tests passed!
+Simulation complete via $finish(1) at time 28522 NS + 0
+./tb/unit/tb_controller.sv:411     $finish;
+xcelium> exit
+TOOL:	xrun(64)	22.09-s003: Exiting on Nov 16, 2026 at 12:21:56 IST  (total: 00:00:03)

@@ -1,0 +1,304 @@
+xrun(64): 22.09-s003: (c) Copyright 1995-2022 Cadence Design Systems, Inc.
+TOOL:	xrun(64)	22.09-s003: Started on Nov 16, 2026 at 12:22:58 IST
+xrun
+	-64bit
+	-xmlibdirpath signoff/build/sa_core_maxCov
+	-sv
+	-access +rwc
+	-nowarn NONPRT
+	-f rtl.f
+		rtl/core/adder.v
+		rtl/core/alu.v
+		rtl/core/alu_decoder.v
+		rtl/core/controller.v
+		rtl/core/data_parser.v
+		rtl/core/decode.v
+		rtl/core/execute.v
+		rtl/core/fetch.v
+		rtl/core/imm_extend.v
+		rtl/core/main_decoder.v
+		rtl/core/mdu_wrapper.v
+		rtl/core/memory.v
+		rtl/core/mux2.v
+		rtl/core/mux3.v
+		rtl/core/mux4.v
+		rtl/core/reg_file.v
+		rtl/core/reset_ff.v
+		rtl/core/writeback.v
+		rtl/core/csr_unit.v
+		rtl/core/t1c_riscv_cpu.v
+		rtl/core/hazard_unit.v
+	tb/core/tb_maxCov.v
+	-top tb
+	-l signoff/logs/standalone/core_maxCov.log
+file: rtl/core/adder.v
+	module worklib.adder:v
+		errors: 0, warnings: 0
+file: rtl/core/alu.v
+	module worklib.alu_unit:v
+		errors: 0, warnings: 0
+file: rtl/core/alu_decoder.v
+	module worklib.alu_decoder:v
+		errors: 0, warnings: 0
+file: rtl/core/controller.v
+	module worklib.controller:v
+		errors: 0, warnings: 0
+file: rtl/core/data_parser.v
+	module worklib.data_parser:v
+		errors: 0, warnings: 0
+file: rtl/core/decode.v
+	module worklib.decode:v
+		errors: 0, warnings: 0
+file: rtl/core/execute.v
+	module worklib.execute:v
+		errors: 0, warnings: 0
+file: rtl/core/fetch.v
+	module worklib.fetch:v
+		errors: 0, warnings: 0
+file: rtl/core/imm_extend.v
+	module worklib.ImmExt:v
+		errors: 0, warnings: 0
+file: rtl/core/main_decoder.v
+	module worklib.main_decoder:v
+		errors: 0, warnings: 0
+file: rtl/core/mdu_wrapper.v
+	module worklib.mdu_wrapper:v
+		errors: 0, warnings: 0
+file: rtl/core/memory.v
+	module worklib.memory:v
+		errors: 0, warnings: 0
+file: rtl/core/mux2.v
+	module worklib.mux2:v
+		errors: 0, warnings: 0
+file: rtl/core/mux3.v
+	module worklib.mux3:v
+		errors: 0, warnings: 0
+file: rtl/core/mux4.v
+	module worklib.mux4:v
+		errors: 0, warnings: 0
+file: rtl/core/reg_file.v
+	module worklib.reg_file:v
+		errors: 0, warnings: 0
+file: rtl/core/reset_ff.v
+	module worklib.reset_ff:v
+		errors: 0, warnings: 0
+file: rtl/core/writeback.v
+	module worklib.writeback:v
+		errors: 0, warnings: 0
+file: rtl/core/csr_unit.v
+	module worklib.csr_unit:v
+		errors: 0, warnings: 0
+file: rtl/core/t1c_riscv_cpu.v
+	module worklib.t1c_riscv_cpu:v
+		errors: 0, warnings: 0
+file: rtl/core/hazard_unit.v
+	module worklib.hazard_unit:v
+		errors: 0, warnings: 0
+file: tb/core/tb_maxCov.v
+	module worklib.tb:v
+		errors: 0, warnings: 0
+	Elaborating the design hierarchy:
+		Caching library 'worklib' ....... Done
+t1c_riscv_cpu dut(
+                |
+xmelab: *W,CUVWSP (./tb/core/tb_maxCov.v,33|16): 5 output ports were not connected:
+xmelab: (./rtl/core/t1c_riscv_cpu.v,9): InstrAddrNext
+xmelab: (./rtl/core/t1c_riscv_cpu.v,13): MemRead
+xmelab: (./rtl/core/t1c_riscv_cpu.v,16): DataAdrNext
+xmelab: (./rtl/core/t1c_riscv_cpu.v,28): MemSize
+xmelab: (./rtl/core/t1c_riscv_cpu.v,29): MemUnsigned
+
+	Top level design units:
+		tb
+xmelab: *W,DSEMEL: This SystemVerilog design will be simulated as per IEEE 1800-2009 SystemVerilog simulation semantics. Use -disable_sem2009 option for turning off SV 2009 simulation semantics.
+	Building instance overlay tables: .................... Done
+	Generating native compiled code:
+		worklib.mux4:v <0x41e96ef7>
+			streams:   2, words:  1359
+		worklib.mux2:v <0x17cb5b09>
+			streams:   1, words:   354
+		worklib.data_parser:v <0x1ccbee38>
+			streams:   3, words:  1970
+		worklib.csr_unit:v <0x2001ecfc>
+			streams:  20, words:  9080
+		worklib.adder:v <0x0a7337e8>
+			streams:   1, words:   378
+		worklib.mdu_wrapper:v <0x078ae4b9>
+			streams:  29, words: 12612
+		worklib.alu_unit:v <0x4fcf1de8>
+			streams:   1, words:  4922
+		worklib.mux3:v <0x3a9aba6b>
+			streams:   2, words:   861
+		worklib.mux2:v <0x7c0cde76>
+			streams:   1, words:   295
+		worklib.mux3:v <0x56b62adc>
+			streams:   2, words:  1052
+		worklib.ImmExt:v <0x1aaa2300>
+			streams:   1, words:  1274
+		worklib.reg_file:v <0x5ac2811e>
+			streams:   5, words:  3498
+		worklib.alu_decoder:v <0x5c3d7d2a>
+			streams:   1, words:  3207
+		worklib.main_decoder:v <0x7ab837ea>
+			streams:   2, words:  3716
+		worklib.controller:v <0x269575be>
+			streams:   3, words:  1061
+		worklib.adder:v <0x664419f9>
+			streams:   1, words:   176
+		worklib.reset_ff:v <0x250a1240>
+			streams:   3, words:   897
+		worklib.mux3:v <0x14aa390f>
+			streams:   2, words:  1034
+		worklib.tb:v <0x6f9bacb4>
+			streams: 273, words: 663671
+		worklib.t1c_riscv_cpu:v <0x2e9184dd>
+			streams:   6, words:  2343
+		worklib.fetch:v <0x5c746325>
+			streams:  11, words:  4501
+		worklib.decode:v <0x4a11692b>
+			streams:   4, words: 14627
+		worklib.execute:v <0x0fbac53d>
+			streams:  10, words: 11684
+		worklib.memory:v <0x3490dd5d>
+			streams:   5, words:  6695
+		worklib.writeback:v <0x474bb5da>
+			streams:   1, words:   256
+		worklib.hazard_unit:v <0x788a1576>
+			streams:   3, words:  3132
+	Building instance specific data structures.
+	Loading native compiled code:     .................... Done
+	Design hierarchy summary:
+		                 Instances  Unique
+		Modules:                27      22
+		Registers:             112     112
+		Scalar wires:           72       -
+		Expanded wires:        785      40
+		Vectored wires:         53       -
+		Always blocks:          21      21
+		Initial blocks:          2       2
+		Cont. assignments:      60      80
+		Pseudo assignments:     10      10
+		Simulation timescale:  1ps
+	Writing initial simulation snapshot: worklib.tb:v
+Loading snapshot worklib.tb:v .................... Done
+xmsim: *W,DSEM2009: This SystemVerilog design is simulated as per IEEE 1800-2009 SystemVerilog simulation semantics. Use -disable_sem2009 option for turning off SV 2009 simulation semantics.
+xcelium> source /home/install8/install/XCELIUM2209/tools/inca/files/xmsimrc
+xcelium> run
+
+====================================
+ STARTING TEST 1
+====================================
+TEST 1 PASS SIG 1 : Addr=10 Data=100
+TEST 1 PASS SIG 2 : Addr=14 Data=13107400
+TEST 1 PASS SIG 3 : Addr=18 Data=707406378
+TEST 1 PASS SIG 4 : Addr=20 Data=50
+TEST 1 PASS SIG 5 : Addr=24 Data=60
+
+====================================
+ TEST 1 PASSED
+ All 5 expected signatures matched
+====================================
+
+====================================
+ STARTING TEST 2
+====================================
+TEST 2 PASS SIG 1 : Addr=0 Data=99
+TEST 2 PASS SIG 2 : Addr=4 Data=8
+
+====================================
+ TEST 2 PASSED
+ All 2 expected signatures matched
+====================================
+
+====================================
+ STARTING TEST 3
+====================================
+
+====================================
+ TEST 3 COMPLETED (coverage run)
+====================================
+
+====================================
+ STARTING TEST 4
+====================================
+TEST 4 PASS SIG 1 : Addr=10 Data=100
+TEST 4 PASS SIG 2 : Addr=14 Data=13107400
+TEST 4 PASS SIG 3 : Addr=18 Data=707406378
+TEST 4 PASS SIG 4 : Addr=20 Data=50
+TEST 4 PASS SIG 5 : Addr=24 Data=60
+
+====================================
+ TEST 4 PASSED
+ All 5 expected signatures matched
+====================================
+
+====================================
+ STARTING TEST 5
+====================================
+TEST 5 PASS SIG 1 : Addr=10 Data=6
+
+====================================
+ TEST 5 PASSED
+ All 1 expected signatures matched
+====================================
+COVERING BRANCH TAKEN/NOT-TAKEN PATHS
+====================================
+ STARTING TEST 6 INLINE
+====================================
+TEST 6 PASS SIG 1 : Addr=0 Data=1
+TEST 6 PASS SIG 2 : Addr=4 Data=2
+TEST 6 PASS SIG 3 : Addr=8 Data=3
+TEST 6 PASS SIG 4 : Addr=12 Data=4
+TEST 6 PASS SIG 5 : Addr=16 Data=5
+TEST 6 PASS SIG 6 : Addr=20 Data=6
+TEST 6 PASSED
+COVERING FORWARDING HAZARD PATHS
+====================================
+ STARTING TEST 7 INLINE
+====================================
+TEST 7 PASS SIG 1 : Addr=0 Data=21
+TEST 7 PASS SIG 2 : Addr=4 Data=20
+TEST 7 PASSED
+COVERING LOAD-USE STALL
+====================================
+ STARTING TEST 8 INLINE
+====================================
+TEST 8 PASS SIG 1 : Addr=0 Data=84
+TEST 8 PASSED
+COVERING M-EXTENSION
+====================================
+ STARTING TEST 9 INLINE
+====================================
+TEST 9 PASS SIG 1 : Addr=0 Data=42
+TEST 9 PASS SIG 2 : Addr=4 Data=3
+TEST 9 PASS SIG 3 : Addr=8 Data=0
+TEST 9 PASSED
+COVERING AUIPC + JALR
+====================================
+ STARTING TEST 10 INLINE
+====================================
+TEST 10 PASS SIG 1 : Addr=0 Data=10
+TEST 10 PASS SIG 2 : Addr=4 Data=11
+TEST 10 PASSED
+COVERING FETCH STAGE
+FETCH STAGE COVERAGE DONE
+COVERING DECODE STAGE
+DECODE STAGE COVERAGE DONE
+COVERING EXECUTE STAGE
+EXECUTE STAGE COVERAGE DONE
+COVERING MEMORY STAGE
+MEMORY STAGE COVERAGE DONE
+COVERING WRITEBACK STAGE
+WRITEBACK STAGE COVERAGE DONE
+COVERING HAZARD UNIT
+HAZARD UNIT COVERAGE DONE
+
+====================================
+ ALL TESTS COMPLETED
+ ALL MEM TESTS PASSED
+ COVERAGE STIMULUS DONE
+====================================
+
+Simulation stopped via $stop(1) at time 22840 NS + 0
+./tb/core/tb_maxCov.v:923     $stop;
+xcelium> TOOL:	xrun(64)	22.09-s003: Exiting on Nov 16, 2026 at 12:23:05 IST  (total: 00:00:07)

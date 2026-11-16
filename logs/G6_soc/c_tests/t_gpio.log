@@ -1,0 +1,42 @@
+xrun(64): 22.09-s003: (c) Copyright 1995-2022 Cadence Design Systems, Inc.
+TOOL:	xrun(64)	22.09-s003: Started on Nov 16, 2026 at 12:08:14 IST
+xrun
+	-64bit
+	-xmlibdirpath sim/build/rtl
+	-R
+	-snapshot soc_rtl
+	+FLASH=/home/onetops/1tops/rv32im/sw/build/t_gpio/flash.hex
+	+UART_DIV=32
+	+UART_LOG=/home/onetops/1tops/rv32im/sw/build/t_gpio/uart_rtl.txt
+	-l /home/onetops/1tops/rv32im/sw/build/t_gpio/sim_rtl.log
+
+   User defined plus("+") options:
+	+FLASH=/home/onetops/1tops/rv32im/sw/build/t_gpio/flash.hex
+	+UART_DIV=32
+	+UART_LOG=/home/onetops/1tops/rv32im/sw/build/t_gpio/uart_rtl.txt
+
+Loading snapshot worklib.soc_rtl:v .................... Done
+xmsim: *W,DSEM2009: This SystemVerilog design is simulated as per IEEE 1800-2009 SystemVerilog simulation semantics. Use -disable_sem2009 option for turning off SV 2009 simulation semantics.
+xcelium> source /home/install8/install/XCELIUM2209/tools/inca/files/xmsimrc
+xcelium> run
+TB: flash image /home/onetops/1tops/rv32im/sw/build/t_gpio/flash.hex, UART 32 clocks/bit, timeout 20000000 cycles
+[uart] t_gpio: output/input loopback, edge + level interrupts
+[uart]   PASS  DOUTEN
+[uart]   PASS  16 patterns out[3:0] -> in[7:4]
+[uart]   PASS  set/toggle/clear
+[uart]   PASS  rising edge IRQ
+[uart]   PASS  edge status pin 4
+[uart]   PASS  no IRQ on falling (rise mode)
+[uart]   PASS  falling edge IRQ
+[uart]   PASS  edge status pin 5
+[uart]   PASS  level-high IRQ
+[uart]   PASS  level-low IRQ
+[uart]   PASS  level status pin 7
+[uart] RESULT: PASS (0 failures)
+TB: program exit after 525129 cycles (52514900000)
+EXIT code=0
+SIM RESULT: PASS
+Simulation complete via $finish(1) at time 5251490 NS + 0
+./sim/tb/tb_soc_app.v:173             $finish;
+xcelium> exit
+TOOL:	xrun(64)	22.09-s003: Exiting on Nov 16, 2026 at 12:08:23 IST  (total: 00:00:09)

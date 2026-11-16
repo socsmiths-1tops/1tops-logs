@@ -1,0 +1,160 @@
+xrun(64): 22.09-s003: (c) Copyright 1995-2022 Cadence Design Systems, Inc.
+TOOL:	xrun(64)	22.09-s003: Started on Nov 16, 2026 at 12:23:20 IST
+xrun
+	-64bit
+	-xmlibdirpath signoff/build/sa_apb_timer
+	-sv
+	-access +rwc
+	-nowarn NONPRT
+	rtl/peripherals/timer/apb_timer.v
+	tb/peripherals/tb_apb_timer.v
+	-top tb_apb_timer
+	-l signoff/logs/standalone/apb_timer.log
+file: rtl/peripherals/timer/apb_timer.v
+	module worklib.apb_timer:v
+		errors: 0, warnings: 0
+	Elaborating the design hierarchy:
+		Caching library 'worklib' ....... Done
+	Top level design units:
+		tb_apb_timer
+xmelab: *W,DSEMEL: This SystemVerilog design will be simulated as per IEEE 1800-2009 SystemVerilog simulation semantics. Use -disable_sem2009 option for turning off SV 2009 simulation semantics.
+	Building instance overlay tables: .................... Done
+	Generating native compiled code:
+		worklib.apb_timer:v <0x5d0937b0>
+			streams:  23, words:  7416
+	Building instance specific data structures.
+	Loading native compiled code:     .................... Done
+	Design hierarchy summary:
+		                 Instances  Unique
+		Modules:                 2       2
+		Registers:              28      28
+		Scalar wires:           20       -
+		Vectored wires:          3       -
+		Always blocks:           9       9
+		Initial blocks:          1       1
+		Cont. assignments:       8      15
+		Pseudo assignments:      8       8
+		Simulation timescale:  1ps
+	Writing initial simulation snapshot: worklib.tb_apb_timer:v
+Loading snapshot worklib.tb_apb_timer:v .................... Done
+xmsim: *W,DSEM2009: This SystemVerilog design is simulated as per IEEE 1800-2009 SystemVerilog simulation semantics. Use -disable_sem2009 option for turning off SV 2009 simulation semantics.
+xcelium> source /home/install8/install/XCELIUM2209/tools/inca/files/xmsimrc
+xcelium> run
+Starting APB Timer RTL/GLS compatible high-coverage testbench...
+READ PASS : addr=00 data=00000000 time=127000
+READ PASS : addr=04 data=00000000 time=157000
+READ PASS : addr=08 data=00000000 time=187000
+READ PASS : addr=0c data=00000000 time=217000
+READ PASS : addr=10 data=00000000 time=247000
+READ PASS : addr=1c data=00000000 time=277000
+READ PASS : addr=fc data=00000000 time=307000
+READ PASS : addr=00 data=0000000f time=567000
+READ PASS : addr=00 data=00000000 time=627000
+READ PASS : addr=00 data=00000005 time=687000
+READ PASS : addr=00 data=0000000a time=747000
+READ PASS : addr=04 data=ffffffff time=837000
+READ PASS : addr=04 data=00000000 time=897000
+READ PASS : addr=04 data=aaaaaaaa time=957000
+READ PASS : addr=04 data=55555555 time=1017000
+READ PASS : addr=08 data=ffffffff time=1077000
+READ PASS : addr=08 data=00000000 time=1137000
+READ PASS : addr=08 data=aaaaaaaa time=1197000
+READ PASS : addr=08 data=55555555 time=1257000
+READ PASS : addr=04 data=00000005 time=1397000
+READ INFO : addr=04 data=00000002 time=1557000
+READ INFO : addr=04 data=00000009 time=1627000
+READ INFO : addr=04 data=00000007 time=1797000
+READ INFO : addr=0c data=00000001 time=2027000
+READ PASS : addr=0c data=00000000 time=2137000
+READ PASS : addr=0c data=00000000 time=2437000
+READ INFO : addr=04 data=00000005 time=2647000
+READ INFO : addr=04 data=0000000b time=2757000
+READ INFO : addr=04 data=00000003 time=3057000
+READ INFO : addr=04 data=00000002 time=3197000
+READ INFO : addr=04 data=00000002 time=3457000
+READ INFO : addr=04 data=00000001 time=3597000
+READ INFO : addr=04 data=00000001 time=3887000
+READ INFO : addr=0c data=00000001 time=4067000
+READ PASS : addr=0c data=00000000 time=4177000
+READ PASS : addr=04 data=12345678 time=4747000
+READ PASS : addr=04 data=87654321 time=4807000
+READ PASS : addr=08 data=0f0f0f0f time=4867000
+READ PASS : addr=08 data=f0f0f0f0 time=4927000
+READ PASS : addr=04 data=00000001 time=5017000
+READ PASS : addr=04 data=00000002 time=5107000
+READ PASS : addr=04 data=00000004 time=5197000
+READ PASS : addr=04 data=00000008 time=5287000
+READ PASS : addr=04 data=00000010 time=5377000
+READ PASS : addr=04 data=00000020 time=5467000
+READ PASS : addr=04 data=00000040 time=5557000
+READ PASS : addr=04 data=00000080 time=5647000
+READ PASS : addr=04 data=00000100 time=5737000
+READ PASS : addr=04 data=00000200 time=5827000
+READ PASS : addr=04 data=00000400 time=5917000
+READ PASS : addr=04 data=00000800 time=6007000
+READ PASS : addr=04 data=00001000 time=6097000
+READ PASS : addr=04 data=00002000 time=6187000
+READ PASS : addr=04 data=00004000 time=6277000
+READ PASS : addr=04 data=00008000 time=6367000
+READ PASS : addr=04 data=00010000 time=6457000
+READ PASS : addr=04 data=00020000 time=6547000
+READ PASS : addr=04 data=00040000 time=6637000
+READ PASS : addr=04 data=00080000 time=6727000
+READ PASS : addr=04 data=00100000 time=6817000
+READ PASS : addr=04 data=00200000 time=6907000
+READ PASS : addr=04 data=00400000 time=6997000
+READ PASS : addr=04 data=00800000 time=7087000
+READ PASS : addr=04 data=01000000 time=7177000
+READ PASS : addr=04 data=02000000 time=7267000
+READ PASS : addr=04 data=04000000 time=7357000
+READ PASS : addr=04 data=08000000 time=7447000
+READ PASS : addr=04 data=10000000 time=7537000
+READ PASS : addr=04 data=20000000 time=7627000
+READ PASS : addr=04 data=40000000 time=7717000
+READ PASS : addr=04 data=80000000 time=7807000
+READ PASS : addr=08 data=00000001 time=7897000
+READ PASS : addr=08 data=00000002 time=7987000
+READ PASS : addr=08 data=00000004 time=8077000
+READ PASS : addr=08 data=00000008 time=8167000
+READ PASS : addr=08 data=00000010 time=8257000
+READ PASS : addr=08 data=00000020 time=8347000
+READ PASS : addr=08 data=00000040 time=8437000
+READ PASS : addr=08 data=00000080 time=8527000
+READ PASS : addr=08 data=00000100 time=8617000
+READ PASS : addr=08 data=00000200 time=8707000
+READ PASS : addr=08 data=00000400 time=8797000
+READ PASS : addr=08 data=00000800 time=8887000
+READ PASS : addr=08 data=00001000 time=8977000
+READ PASS : addr=08 data=00002000 time=9067000
+READ PASS : addr=08 data=00004000 time=9157000
+READ PASS : addr=08 data=00008000 time=9247000
+READ PASS : addr=08 data=00010000 time=9337000
+READ PASS : addr=08 data=00020000 time=9427000
+READ PASS : addr=08 data=00040000 time=9517000
+READ PASS : addr=08 data=00080000 time=9607000
+READ PASS : addr=08 data=00100000 time=9697000
+READ PASS : addr=08 data=00200000 time=9787000
+READ PASS : addr=08 data=00400000 time=9877000
+READ PASS : addr=08 data=00800000 time=9967000
+READ PASS : addr=08 data=01000000 time=10057000
+READ PASS : addr=08 data=02000000 time=10147000
+READ PASS : addr=08 data=04000000 time=10237000
+READ PASS : addr=08 data=08000000 time=10327000
+READ PASS : addr=08 data=10000000 time=10417000
+READ PASS : addr=08 data=20000000 time=10507000
+READ PASS : addr=08 data=40000000 time=10597000
+READ PASS : addr=08 data=80000000 time=10687000
+READ PASS : addr=10 data=00000000 time=10867000
+READ PASS : addr=14 data=00000000 time=10897000
+READ PASS : addr=18 data=00000000 time=10927000
+READ PASS : addr=1c data=00000000 time=10957000
+READ PASS : addr=fc data=00000000 time=10987000
+READ PASS : addr=00 data=00000000 time=11487000
+READ PASS : addr=04 data=00000000 time=11517000
+READ PASS : addr=08 data=00000000 time=11547000
+READ PASS : addr=0c data=00000000 time=11577000
+TEST PASSED: APB Timer RTL/GLS compatible high-coverage test completed successfully.
+Simulation complete via $finish(1) at time 11611 NS + 0
+./tb/peripherals/tb_apb_timer.v:520         $finish;
+xcelium> exit
+TOOL:	xrun(64)	22.09-s003: Exiting on Nov 16, 2026 at 12:23:26 IST  (total: 00:00:06)

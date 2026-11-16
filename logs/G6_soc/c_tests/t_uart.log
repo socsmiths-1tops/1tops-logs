@@ -1,0 +1,37 @@
+xrun(64): 22.09-s003: (c) Copyright 1995-2022 Cadence Design Systems, Inc.
+TOOL:	xrun(64)	22.09-s003: Started on Nov 16, 2026 at 12:09:15 IST
+xrun
+	-64bit
+	-xmlibdirpath sim/build/rtl
+	-R
+	-snapshot soc_rtl
+	+FLASH=/home/onetops/1tops/rv32im/sw/build/t_uart/flash.hex
+	+UART_DIV=32
+	+UART_LOG=/home/onetops/1tops/rv32im/sw/build/t_uart/uart_rtl.txt
+	-l /home/onetops/1tops/rv32im/sw/build/t_uart/sim_rtl.log
+
+   User defined plus("+") options:
+	+FLASH=/home/onetops/1tops/rv32im/sw/build/t_uart/flash.hex
+	+UART_DIV=32
+	+UART_LOG=/home/onetops/1tops/rv32im/sw/build/t_uart/uart_rtl.txt
+
+Loading snapshot worklib.soc_rtl:v .................... Done
+xmsim: *W,DSEM2009: This SystemVerilog design is simulated as per IEEE 1800-2009 SystemVerilog simulation semantics. Use -disable_sem2009 option for turning off SV 2009 simulation semantics.
+xcelium> source /home/install8/install/XCELIUM2209/tools/inca/files/xmsimrc
+xcelium> run
+TB: flash image /home/onetops/1tops/rv32im/sw/build/t_uart/flash.hex, UART 32 clocks/bit, timeout 20000000 cycles
+[uart] t_uart: registers, loopback RX, RX interrupt, overrun
+[uart]   PASS  BAUDDIV programmed
+[uart]   PASS  TX+RX enabled
+[uart] Loop!  PASS  polled TX->RX loopback 5 bytes"  PASS  RX overrun flagged
+[uart] ¥Zÿ  PASS  4 RX interrupts
+[uart]     rx: a5 5a 00 ff
+[uart]   PASS  RX interrupt data
+[uart] RESULT: PASS (0 failures)
+TB: program exit after 463768 cycles (46378800000)
+EXIT code=0
+SIM RESULT: PASS
+Simulation complete via $finish(1) at time 4637880 NS + 0
+./sim/tb/tb_soc_app.v:173             $finish;
+xcelium> exit
+TOOL:	xrun(64)	22.09-s003: Exiting on Nov 16, 2026 at 12:09:20 IST  (total: 00:00:05)

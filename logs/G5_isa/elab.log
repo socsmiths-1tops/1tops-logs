@@ -1,0 +1,187 @@
+xrun(64): 22.09-s003: (c) Copyright 1995-2022 Cadence Design Systems, Inc.
+TOOL:	xrun(64)	22.09-s003: Started on Nov 16, 2026 at 12:12:39 IST
+xrun
+	-64bit
+	-xmlibdirpath signoff/build/isa
+	-sv
+	-access +rwc
+	-f signoff/build/isa/rtl_core.f
+		rtl/core/adder.v
+		rtl/core/alu_decoder.v
+		rtl/core/alu.v
+		rtl/core/controller.v
+		rtl/core/csr_unit.v
+		rtl/core/data_parser.v
+		rtl/core/decode.v
+		rtl/core/execute.v
+		rtl/core/fetch.v
+		rtl/core/hazard_unit.v
+		rtl/core/imm_extend.v
+		rtl/core/main_decoder.v
+		rtl/core/mdu_wrapper.v
+		rtl/core/memory.v
+		rtl/core/mux2.v
+		rtl/core/mux3.v
+		rtl/core/mux4.v
+		rtl/core/reg_file.v
+		rtl/core/reset_ff.v
+		rtl/core/t1c_riscv_cpu.v
+		rtl/core/writeback.v
+	tb/core/tb_sig.v
+	-top tb_sig
+	-elaborate
+	-l signoff/logs/isa/elab.log
+Recompiling... reason: dependent module worklib.mux3:v (VST) is newer than expected.
+	expected: Fri Oct  2 11:20:10 2026
+	actual:   Mon Nov 16 12:12:09 2026
+file: rtl/core/adder.v
+	module worklib.adder:v
+		errors: 0, warnings: 0
+file: rtl/core/alu_decoder.v
+	module worklib.alu_decoder:v
+		errors: 0, warnings: 0
+file: rtl/core/alu.v
+	module worklib.alu_unit:v
+		errors: 0, warnings: 0
+file: rtl/core/controller.v
+	module worklib.controller:v
+		errors: 0, warnings: 0
+file: rtl/core/csr_unit.v
+	module worklib.csr_unit:v
+		errors: 0, warnings: 0
+file: rtl/core/data_parser.v
+	module worklib.data_parser:v
+		errors: 0, warnings: 0
+file: rtl/core/decode.v
+	module worklib.decode:v
+		errors: 0, warnings: 0
+file: rtl/core/execute.v
+	module worklib.execute:v
+		errors: 0, warnings: 0
+file: rtl/core/fetch.v
+	module worklib.fetch:v
+		errors: 0, warnings: 0
+file: rtl/core/hazard_unit.v
+	module worklib.hazard_unit:v
+		errors: 0, warnings: 0
+file: rtl/core/imm_extend.v
+	module worklib.ImmExt:v
+		errors: 0, warnings: 0
+file: rtl/core/main_decoder.v
+	module worklib.main_decoder:v
+		errors: 0, warnings: 0
+file: rtl/core/mdu_wrapper.v
+	module worklib.mdu_wrapper:v
+		errors: 0, warnings: 0
+file: rtl/core/memory.v
+	module worklib.memory:v
+		errors: 0, warnings: 0
+file: rtl/core/mux2.v
+	module worklib.mux2:v
+		errors: 0, warnings: 0
+file: rtl/core/mux3.v
+	module worklib.mux3:v
+		errors: 0, warnings: 0
+file: rtl/core/mux4.v
+	module worklib.mux4:v
+		errors: 0, warnings: 0
+file: rtl/core/reg_file.v
+	module worklib.reg_file:v
+		errors: 0, warnings: 0
+file: rtl/core/reset_ff.v
+	module worklib.reset_ff:v
+		errors: 0, warnings: 0
+file: rtl/core/t1c_riscv_cpu.v
+	module worklib.t1c_riscv_cpu:v
+		errors: 0, warnings: 0
+file: rtl/core/writeback.v
+	module worklib.writeback:v
+		errors: 0, warnings: 0
+	Elaborating the design hierarchy:
+		Caching library 'worklib' ....... Done
+ t1c_riscv_cpu dut (
+                 |
+xmelab: *W,CUVWSP (./tb/core/tb_sig.v,27|17): 3 output ports were not connected:
+xmelab: (./rtl/core/t1c_riscv_cpu.v,9): InstrAddrNext
+xmelab: (./rtl/core/t1c_riscv_cpu.v,13): MemRead
+xmelab: (./rtl/core/t1c_riscv_cpu.v,16): DataAdrNext
+
+	Top level design units:
+		tb_sig
+xmelab: *W,DSEMEL: This SystemVerilog design will be simulated as per IEEE 1800-2009 SystemVerilog simulation semantics. Use -disable_sem2009 option for turning off SV 2009 simulation semantics.
+    .MemSize      (MemSize),
+                         |
+xmelab: *W,CUVMPW (./tb/core/tb_sig.v,40|25): port sizes differ in port connection(1/2) for the instance(tb_sig) .
+	Building instance overlay tables: .................... Done
+	Generating native compiled code:
+		worklib.mux4:v <0x6fef6af2>
+			streams:   2, words:   862
+		worklib.writeback:v <0x06e5fdd7>
+			streams:   1, words:   194
+		worklib.data_parser:v <0x101c4781>
+			streams:   3, words:  1454
+		worklib.csr_unit:v <0x08476f27>
+			streams:  20, words:  9025
+		worklib.mdu_wrapper:v <0x58961b61>
+			streams:  29, words: 12612
+		worklib.alu_unit:v <0x7891c3b4>
+			streams:   1, words:  4594
+		worklib.mux2:v <0x1c0d254f>
+			streams:   1, words:   234
+		worklib.mux3:v <0x09c7c4fc>
+			streams:   2, words:   698
+		worklib.execute:v <0x69c98821>
+			streams:  10, words:  8352
+		worklib.ImmExt:v <0x7252124a>
+			streams:   1, words:  1274
+		worklib.reg_file:v <0x3f4d959a>
+			streams:   5, words:  2987
+		worklib.alu_decoder:v <0x3a213f94>
+			streams:   1, words:  3207
+		worklib.main_decoder:v <0x17a4d89e>
+			streams:   2, words:  3716
+		worklib.controller:v <0x14712ef1>
+			streams:   3, words:  1061
+		worklib.adder:v <0x664419f9>
+			streams:   1, words:   176
+		worklib.reset_ff:v <0x5fb3ca85>
+			streams:   3, words:   897
+		worklib.mux3:v <0x77bf8c5a>
+			streams:   2, words:   656
+		worklib.fetch:v <0x0e86621c>
+			streams:  11, words:  4423
+		worklib.tb_sig:v <0x0f297d45>
+			streams:  44, words: 43250
+		worklib.memory:v <0x714cb9d4>
+			streams:   6, words:  4506
+		worklib.t1c_riscv_cpu:v <0x3be83255>
+			streams:   6, words:  2251
+		worklib.hazard_unit:v <0x6d8b9206>
+			streams:   3, words:  1795
+		worklib.decode:v <0x3b311af2>
+			streams:   4, words: 10586
+	Building instance specific data structures.
+    .irq_software (irq_software),
+                              |
+xmelab: *W,CSINFI (./tb/core/tb_sig.v,38|30): implicit wire has no fanin (tb_sig.irq_software).
+    .irq_timer    (irq_timer),
+                           |
+xmelab: *W,CSINFI (./tb/core/tb_sig.v,37|27): implicit wire has no fanin (tb_sig.irq_timer).
+    .irq_extern   (irq_extern),
+                            |
+xmelab: *W,CSINFI (./tb/core/tb_sig.v,36|28): implicit wire has no fanin (tb_sig.irq_extern).
+	Loading native compiled code:     .................... Done
+	Design hierarchy summary:
+		                 Instances  Unique
+		Modules:                27      22
+		Registers:             121     121
+		Scalar wires:           72       -
+		Expanded wires:        129       9
+		Vectored wires:         85       -
+		Always blocks:          22      22
+		Initial blocks:          2       2
+		Cont. assignments:      60      80
+		Pseudo assignments:     11      11
+		Simulation timescale:  1ps
+	Writing initial simulation snapshot: worklib.tb_sig:v
+TOOL:	xrun(64)	22.09-s003: Exiting on Nov 16, 2026 at 12:12:40 IST  (total: 00:00:01)

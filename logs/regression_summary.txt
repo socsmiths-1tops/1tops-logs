@@ -1,0 +1,75 @@
+RTL signoff regression  2026-11-16 12:12:39  git 418493b-dirty
+
+== ISA compliance (rv32ui + rv32um, core) ==
+SUMMARY: pass=46 fail=0
+
+== SoC bare-metal via real boot flow (+ negative boot tests) ==
+PASS  bm01_gpio
+PASS  bm02_timer
+PASS  bm03_uart
+PASS  bm04_uart_lb
+PASS  bm05_timer_irq
+PASS  bm06_gpio_irq
+PASS  bm07_spi
+PASS  bm08_i2c
+PASS  bm09_multi
+PASS  bm10_vg01_regcov
+PASS  bm11_vg03_nested
+PASS  bm12_vg04_dense
+PASS  bm13_vg05_random
+PASS  bm14_vg06_spi_depth
+PASS  bm15_vg07_i2c_depth
+PASS  bm16_irq_apb_stall
+PASS  bm21_mem_subsystem
+PASS  bootneg_magic
+PASS  bootneg_len
+PASS  bootneg_crc
+PASS  bootneg_entry
+SUMMARY: pass=21 fail=0
+
+== Bus-functional-model suite ==
+PASS: 34  FAIL: 0  TOTAL: 34
+STATUS: ALL TESTS PASSED
+
+== Cross-peripheral + ASCON integration ==
+PASS  tb_i2c_spi (i2c_to_spi_loop_test)
+PASS  tb_i2c_uart (i2c_uart_loop_test)
+PASS  tb_spi_i2c (spi_to_i2c_loop_test)
+PASS  tb_spi_uart_cross (bm18_spi_uart_bridge)
+PASS  tb_uart_i2c_cross (bm20_uart_i2c_bridge_v2)
+PASS  tb_uart_spi_cross (bm17_uart_spi_bridge_16bit)
+PASS  tb_uart_i2c (uart_to_i2c_loop_test)
+PASS  tb_soc_gpio_ascon (gpio_ascon_loop)
+PASS  tb_soc_i2c_ascon (i2c_ascon_loop)
+PASS  tb_soc_spi_ascon (spi_ascon_loop)
+PASS  tb_soc_uart_ascon (uart_ascon_loop)
+SUMMARY: pass=11 fail=0
+
+== Standalone unit / core / peripheral / legacy-boot TBs ==
+PASS  tb_alu_unit                  (17570 pass-lines)
+PASS  tb_controller                (117 pass-lines)
+PASS  tb_decode                    (53988 pass-lines)
+PASS  tb_execute                   (18569 pass-lines)
+PASS  tb_fetch                     (55 pass-lines)
+PASS  tb_hazard_unit               (36960 pass-lines)
+PASS  tb_ImmExt                    (3268 pass-lines)
+PASS  tb_mdu_wrapper               (10910 pass-lines)
+PASS  tb_memory                    (38241 pass-lines)
+PASS  tb_reg_file                  (2268 pass-lines)
+PASS  tb_t1c_riscv_cpu             (41 pass-lines)
+PASS  tb_writeback                 (5100 pass-lines)
+PASS  tb_csr_unit                  (1210 pass-lines)
+PASS  core_tb                      (18 pass-lines)
+PASS  core_maxCov                  (10 pass-lines)
+PASS  core_sig                     (0 pass-lines)
+PASS  apb_gpio                     (1 pass-lines)
+PASS  apb_timer                    (1 pass-lines)
+PASS  apb_uart                     (38 pass-lines)
+PASS  apb_i2c                      (29 pass-lines)
+PASS  apb_spi                      (52 pass-lines)
+PASS  boot_flash_ctrl              (22 pass-lines)
+PASS  ascon_updated                (1529 pass-lines)
+PASS  periph_i2c_uart              (0 pass-lines)
+PASS  boot_flow_min                (0 pass-lines)
+PASS  boot_app                     (0 pass-lines)
+SUMMARY: pass=26 fail=0

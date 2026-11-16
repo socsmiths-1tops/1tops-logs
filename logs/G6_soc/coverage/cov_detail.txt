@@ -1,0 +1,264 @@
+<><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>
+<> User: onetops
+
+Host: ChipINEDA01.sastra.edu
+
+Report date: Mon 16 Nov 2026 13:22:58 IST
+
+Report options: -detail -metrics block:expression:fsm:toggle -out signoff/reports/coverage/cov_detail.txt -inst *
+
+Coverage database path: /home/onetops/1tops/rv32im/signoff/build/cov/cov_merged
+
+Coverage model files: /home/onetops/1tops/rv32im/signoff/build/cov/cov_merged/icc_77a24e19_00000000.ucm
+
+Coverage data files: /home/onetops/1tops/rv32im/signoff/build/cov/cov_merged/icc_77a24e19_00000000.ucd
+
+CCF files:  None
+
+
+Coverage database date: Mon 16 Nov 2026 13:16:06 IST
+
+*** There were no refinement files applied ***
+
+  <>
+<><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>
+
+Coverage Table Legend
+---------------------
+  EXCL   excluded using refinement rule
+  P-EXCL excluded from parent
+  U-EXCL excluded and unreachable by IEV
+  T-EXCL excluded from type
+  S-EXCL smart excluded using refinement rule
+  EXCL(S) smart indirect excluded
+  EMPTY  all children are excluded
+  CONST  marked constant during simulation
+  IGN    marked ignored during simulation
+  UNG    marked ungradeable during simulation
+  DES    marked deselected during simulation
+  UNR    marked unreachable by IEV
+
+
+Uncovered Block Detail Report, Instance Based
+=============================================
+
+Uncovered Expression Detail Report, Instance Based
+==================================================
+
+Expression coverage Table Legend
+---------------------
+  -      don't care
+  e      event for event-or expressions
+  O (odd), E (even), B (both), X (not scored),
+         I (marked ignore) for parity trees
+  Y (covered), N (not covered), C (constant), 
+  P (one or more inputs for this bit have been padded) for vector scoring, 
+  d=== , b=== shows which bit differs in vector scoring 
+  rval   Resulting value of the expression for coverage purposes given
+         the input values
+  <-n->  Shows the n-th term composition
+
+
+Uncovered Toggle Detail Report, Instance Based
+==============================================
+
+Instance name: t1c_riscv_soc
+Type name: t1c_riscv_soc
+File name: /home/onetops/1tops/rv32im/rtl/soc/t1c_riscv_soc.v
+Number of uncovered signal bits: 186 of 1158
+Number of unreachable signal bits: 0
+Number of signal bits partially toggled(rise): 43 of 1158
+Number of signal bits partially toggled(fall): 2 of 1158
+
+Hit(Full)  Hit(Rise)  Hit(Fall)  Signal                    
+-----------------------------------------------------------
+0          0          1          rst                       
+0          0          0          i2c_scl_o                 
+0          0          0          i2c_sda_o                 
+0          0          1          rst_int                   
+0          0          0          InstrAddr[31]             
+0          0          0          InstrAddr[30]             
+0          0          0          InstrAddr[29]             
+0          1          0          InstrAddr[27]             
+0          1          0          InstrAddr[26]             
+0          1          0          InstrAddr[25]             
+0          1          0          InstrAddr[24]             
+0          1          0          InstrAddr[23]             
+0          1          0          InstrAddr[22]             
+0          1          0          InstrAddr[21]             
+0          1          0          InstrAddr[20]             
+0          1          0          InstrAddr[19]             
+0          1          0          InstrAddr[18]             
+0          0          0          InstrAddr[17]             
+0          1          0          InstrAddr[16]             
+0          1          0          InstrAddr[15]             
+0          0          0          InstrAddr[14]             
+0          1          0          InstrAddr[13]             
+0          1          0          InstrAddr[1]              
+0          0          0          InstrAddr[0]              
+0          0          0          irq_timer_cpu             
+0          0          0          irq_software              
+0          0          0          PCD[31]                   
+0          0          0          PCD[30]                   
+0          0          0          PCD[29]                   
+0          1          0          PCD[27]                   
+0          1          0          PCD[26]                   
+0          1          0          PCD[25]                   
+0          1          0          PCD[24]                   
+0          1          0          PCD[23]                   
+0          1          0          PCD[22]                   
+0          1          0          PCD[21]                   
+0          1          0          PCD[20]                   
+0          1          0          PCD[19]                   
+0          1          0          PCD[18]                   
+0          0          0          PCD[17]                   
+0          1          0          PCD[16]                   
+0          1          0          PCD[15]                   
+0          0          0          PCD[14]                   
+0          1          0          PCD[13]                   
+0          1          0          PCD[1]                    
+0          0          0          PCD[0]                    
+0          0          0          rom_iaddr[31]             
+0          0          0          rom_iaddr[30]             
+0          0          0          rom_iaddr[29]             
+0          1          0          rom_iaddr[27]             
+0          1          0          rom_iaddr[26]             
+0          1          0          rom_iaddr[25]             
+0          1          0          rom_iaddr[24]             
+0          1          0          rom_iaddr[23]             
+0          1          0          rom_iaddr[22]             
+0          1          0          rom_iaddr[21]             
+0          1          0          rom_iaddr[20]             
+0          1          0          rom_iaddr[19]             
+0          1          0          rom_iaddr[18]             
+0          0          0          rom_iaddr[17]             
+0          1          0          rom_iaddr[16]             
+0          1          0          rom_iaddr[15]             
+0          0          0          rom_iaddr[14]             
+0          1          0          rom_iaddr[13]             
+0          1          0          rom_iaddr[1]              
+0          0          0          rom_iaddr[0]              
+0          0          0          rom_idata[1]              
+0          0          0          rom_idata[0]              
+0          0          0          ahb_hsize[2]              
+0          0          0          ahb_hrdata_plic[31]       
+0          0          0          ahb_hrdata_plic[30]       
+0          0          0          ahb_hrdata_plic[29]       
+0          0          0          ahb_hrdata_plic[28]       
+0          0          0          ahb_hrdata_plic[27]       
+0          0          0          ahb_hrdata_plic[26]       
+0          0          0          ahb_hrdata_plic[25]       
+0          0          0          ahb_hrdata_plic[24]       
+0          0          0          ahb_hrdata_plic[23]       
+0          0          0          ahb_hrdata_plic[22]       
+0          0          0          ahb_hrdata_plic[21]       
+0          0          0          ahb_hrdata_plic[20]       
+0          0          0          ahb_hrdata_plic[19]       
+0          0          0          ahb_hrdata_plic[18]       
+0          0          0          ahb_hrdata_plic[17]       
+0          0          0          ahb_hrdata_plic[16]       
+0          0          0          ahb_hrdata_plic[15]       
+0          0          0          ahb_hrdata_plic[14]       
+0          0          0          ahb_hrdata_plic[13]       
+0          0          0          ahb_hrdata_plic[12]       
+0          0          0          ahb_hrdata_plic[11]       
+0          0          0          ahb_hrdata_plic[10]       
+0          0          0          ahb_hrdata_plic[9]        
+0          0          0          ahb_hrdata_plic[8]        
+0          0          0          ahb_hrdata_plic[7]        
+0          0          0          ahb_hrdata_plic[6]        
+0          0          0          ahb_hrdata_plic[5]        
+0          0          0          PADDR[31]                 
+0          1          0          PADDR[30]                 
+0          0          0          PADDR[29]                 
+0          0          0          PADDR[28]                 
+0          0          0          PADDR[27]                 
+0          0          0          PADDR[26]                 
+0          0          0          PADDR[25]                 
+0          0          0          PADDR[24]                 
+0          0          0          PADDR[23]                 
+0          0          0          PADDR[22]                 
+0          0          0          PADDR[21]                 
+0          0          0          PADDR[20]                 
+0          0          0          PADDR[19]                 
+0          0          0          PADDR[18]                 
+0          0          0          PADDR[17]                 
+0          0          0          PADDR[16]                 
+0          0          0          PADDR[15]                 
+0          0          0          PADDR[11]                 
+0          0          0          PADDR[10]                 
+0          0          0          PADDR[9]                  
+0          0          0          PADDR[8]                  
+0          0          0          PADDR[7]                  
+0          0          0          PADDR[6]                  
+0          0          0          PADDR[5]                  
+0          0          0          PADDR[1]                  
+0          0          0          PADDR[0]                  
+0          0          0          PREADY_BUS                
+0          0          0          PRDATA_GPIO[31]           
+0          0          0          PRDATA_GPIO[30]           
+0          0          0          PRDATA_GPIO[29]           
+0          0          0          PRDATA_GPIO[28]           
+0          0          0          PRDATA_GPIO[27]           
+0          0          0          PRDATA_GPIO[26]           
+0          0          0          PRDATA_GPIO[25]           
+0          0          0          PRDATA_GPIO[24]           
+0          0          0          PRDATA_GPIO[23]           
+0          0          0          PRDATA_GPIO[22]           
+0          0          0          PRDATA_GPIO[21]           
+0          0          0          PRDATA_GPIO[20]           
+0          0          0          PRDATA_GPIO[19]           
+0          0          0          PRDATA_GPIO[18]           
+0          0          0          PRDATA_GPIO[17]           
+0          0          0          PRDATA_GPIO[16]           
+0          0          0          PRDATA_GPIO[15]           
+0          0          0          PRDATA_GPIO[14]           
+0          0          0          PRDATA_GPIO[13]           
+0          0          0          PRDATA_GPIO[12]           
+0          0          0          PRDATA_GPIO[11]           
+0          0          0          PRDATA_GPIO[10]           
+0          0          0          PRDATA_GPIO[9]            
+0          0          0          PRDATA_GPIO[8]            
+0          0          0          PRDATA_UART[31]           
+0          0          0          PRDATA_UART[30]           
+0          0          0          PRDATA_UART[29]           
+0          0          0          PRDATA_UART[28]           
+0          0          0          PRDATA_UART[27]           
+0          0          0          PRDATA_UART[26]           
+0          0          0          PRDATA_UART[25]           
+0          0          0          PRDATA_UART[24]           
+0          0          0          PRDATA_UART[23]           
+0          0          0          PRDATA_UART[22]           
+0          0          0          PRDATA_UART[21]           
+0          0          0          PRDATA_UART[20]           
+0          0          0          PRDATA_SPI[30]            
+0          0          0          PRDATA_SPI[29]            
+0          0          0          PRDATA_SPI[28]            
+0          0          0          PRDATA_SPI[26]            
+0          0          0          PRDATA_SPI[25]            
+0          0          0          PRDATA_I2C[31]            
+0          0          0          PRDATA_I2C[30]            
+0          0          0          PRDATA_I2C[29]            
+0          0          0          PRDATA_I2C[28]            
+0          0          0          PRDATA_I2C[27]            
+0          0          0          PRDATA_I2C[26]            
+0          0          0          PRDATA_I2C[25]            
+0          0          0          PRDATA_I2C[24]            
+0          0          0          PRDATA_I2C[23]            
+0          0          0          PRDATA_I2C[22]            
+0          0          0          PRDATA_I2C[21]            
+0          0          0          PRDATA_I2C[20]            
+0          0          0          PRDATA_I2C[19]            
+0          0          0          PRDATA_I2C[18]            
+0          0          0          PRDATA_I2C[17]            
+0          0          0          PRDATA_I2C[16]            
+0          0          0          PREADY_BOOTFLASH          
+0          0          0          PREADY_TIMER              
+0          0          0          PREADY_GPIO               
+0          0          0          PREADY_UART               
+0          0          0          PREADY_SPI                
+0          0          0          PREADY_I2C                
+
+Uncovered Fsm Detail Report, Instance Based
+===========================================
+

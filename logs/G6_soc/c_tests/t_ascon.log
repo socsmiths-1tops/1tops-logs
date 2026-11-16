@@ -1,0 +1,56 @@
+xrun(64): 22.09-s003: (c) Copyright 1995-2022 Cadence Design Systems, Inc.
+TOOL:	xrun(64)	22.09-s003: Started on Nov 16, 2026 at 12:07:32 IST
+xrun
+	-64bit
+	-xmlibdirpath sim/build/rtl
+	-R
+	-snapshot soc_rtl
+	+FLASH=/home/onetops/1tops/rv32im/sw/build/t_ascon/flash.hex
+	+UART_DIV=32
+	+UART_LOG=/home/onetops/1tops/rv32im/sw/build/t_ascon/uart_rtl.txt
+	-l /home/onetops/1tops/rv32im/sw/build/t_ascon/sim_rtl.log
+
+   User defined plus("+") options:
+	+FLASH=/home/onetops/1tops/rv32im/sw/build/t_ascon/flash.hex
+	+UART_DIV=32
+	+UART_LOG=/home/onetops/1tops/rv32im/sw/build/t_ascon/uart_rtl.txt
+
+Loading snapshot worklib.soc_rtl:v .................... Done
+xmsim: *W,DSEM2009: This SystemVerilog design is simulated as per IEEE 1800-2009 SystemVerilog simulation semantics. Use -disable_sem2009 option for turning off SV 2009 simulation semantics.
+xcelium> source /home/install8/install/XCELIUM2209/tools/inca/files/xmsimrc
+xcelium> run
+TB: flash image /home/onetops/1tops/rv32im/sw/build/t_ascon/flash.hex, UART 32 clocks/bit, timeout 20000000 cycles
+[uart] t_ascon: round trips, fresh keys, tamper, external CT, TAGIN RO
+[uart]     msg  0 B, ad  0 B: tag 9a77dda4.. ok
+[uart]     msg  1 B, ad  5 B: tag a59945c6.. ok
+[uart]     msg  7 B, ad 10 B: tag 8473243f.. ok
+[uart]     msg  8 B, ad 15 B: tag 24df2d82.. ok
+[uart]     msg  9 B, ad  3 B: tag a77960aa.. ok
+[uart]     msg 15 B, ad  8 B: tag 57409c3f.. ok
+[uart]     msg 16 B, ad 13 B: tag ffd73a13.. ok
+[uart]     msg 24 B, ad  1 B: tag c63e275d.. ok
+[uart]     msg 31 B, ad  6 B: tag c0317fab.. ok
+[uart]     msg 32 B, ad 11 B: tag 6c7d5a52.. ok
+[uart]   PASS  encrypt -> decrypt round trip, 10 message/AD lengths
+[uart]   PASS  STATUS.tag_ok after good decrypt
+[uart]   PASS  fresh key per encryption
+[uart]   PASS  TAGIN = last tag, software write ignored
+[uart]   PASS  external ciphertext verifies
+[uart]   PASS  external ciphertext -> plaintext
+[uart]   PASS  flipped CT bit rejected
+[uart]   PASS  DOUT reads zero after failed tag
+[uart]   PASS  modified AD rejected
+[uart]   PASS  AD length change rejected
+[uart]   PASS  truncated CT rejected
+[uart]   PASS  CT of an older key rejected
+[uart]   PASS  original CT still verifies
+[uart]   PASS  unmapped ASCON offsets read 0xDEADBEEF
+[uart]   PASS  33-byte message refused by driver
+[uart] RESULT: PASS (0 failures)
+TB: program exit after 949949 cycles (94996900000)
+EXIT code=0
+SIM RESULT: PASS
+Simulation complete via $finish(1) at time 9499690 NS + 0
+./sim/tb/tb_soc_app.v:173             $finish;
+xcelium> exit
+TOOL:	xrun(64)	22.09-s003: Exiting on Nov 16, 2026 at 12:07:43 IST  (total: 00:00:11)

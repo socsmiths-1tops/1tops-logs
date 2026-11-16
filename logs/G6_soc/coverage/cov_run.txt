@@ -1,0 +1,44 @@
+ran bm01_gpio
+ran bm02_timer
+ran bm03_uart
+ran bm04_uart_lb
+ran bm05_timer_irq
+ran bm06_gpio_irq
+ran bm07_spi
+ran bm08_i2c
+ran bm09_multi
+ran bm10_vg01_regcov
+ran bm11_vg03_nested
+ran bm12_vg04_dense
+ran bm13_vg05_random
+ran bm14_vg06_spi_depth
+ran bm15_vg07_i2c_depth
+ran bm16_irq_apb_stall
+ran bm21_mem_subsystem
+ran tb_i2c_spi
+ran tb_i2c_uart
+ran tb_spi_i2c
+ran tb_spi_uart_cross
+ran tb_uart_i2c_cross
+ran tb_uart_spi_cross
+ran tb_uart_i2c
+ran tb_soc_gpio_ascon
+ran tb_soc_i2c_ascon
+ran tb_soc_spi_ascon
+ran tb_soc_uart_ascon
+ran tb_soc_bfm
+ran c_t_ascon
+ran c_t_bootflash
+ran c_t_cov_misc
+ran c_t_cpu
+ran c_t_gpio
+ran c_t_i2c
+ran c_t_irq
+ran c_t_mem
+ran c_t_plic
+ran c_t_regs
+ran c_t_spi
+ran c_t_uart
+name                                     Overall Average      Overall Covered      Code Average         Code Covered         Fsm Average          Fsm Covered          Functional Average   Functional Covered   
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+t1c_riscv_soc                            83.94%               83.94% (972/1158)    83.94%               83.94% (972/1158)    n/a                  n/a                  n/a                  n/a                  

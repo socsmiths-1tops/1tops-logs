@@ -1,0 +1,10 @@
+In file included from /home/onetops/1tops/tool_chain/riscv-tests/isa/rv32ui/../rv64ui/lw.S:11,
+                 from /home/onetops/1tops/tool_chain/riscv-tests/isa/rv32ui/lw.S:7:
+/home/onetops/1tops/tool_chain/riscv-tests/isa/macros/scalar/test_macros.h:876:9: warning: 'TEST_PASSFAIL' redefined
+  876 | #define TEST_PASSFAIL \
+      |         ^~~~~~~~~~~~~
+In file included from /home/onetops/1tops/tool_chain/riscv-tests/isa/rv32ui/lw.S:3:
+/home/onetops/1tops/tool_chain/riscv-tests/env/simple/riscv_test.h:49:9: note: this is the location of the previous definition
+   49 | #define TEST_PASSFAIL                        \
+      |         ^~~~~~~~~~~~~
+/home/onetops/1tops/tool_chain/riscv32-install/riscv32-unknown-elf/bin/ld: warning: signoff/build/isa/lw.elf has a LOAD segment with RWX permissions

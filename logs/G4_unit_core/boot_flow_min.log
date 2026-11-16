@@ -1,0 +1,372 @@
+xrun(64): 22.09-s003: (c) Copyright 1995-2022 Cadence Design Systems, Inc.
+TOOL:	xrun(64)	22.09-s003: Started on Nov 16, 2026 at 12:24:17 IST
+xrun
+	-64bit
+	-xmlibdirpath signoff/build/sa_boot_flow_min
+	-sv
+	-access +rwc
+	-nowarn NONPRT
+	-f rtl_soc.f
+		rtl/core/adder.v
+		rtl/core/alu.v
+		rtl/core/alu_decoder.v
+		rtl/core/controller.v
+		rtl/core/data_parser.v
+		rtl/core/decode.v
+		rtl/core/execute.v
+		rtl/core/fetch.v
+		rtl/core/hazard_unit.v
+		rtl/core/imm_extend.v
+		rtl/core/main_decoder.v
+		rtl/core/mdu_wrapper.v
+		rtl/core/memory.v
+		rtl/core/mux2.v
+		rtl/core/mux3.v
+		rtl/core/mux4.v
+		rtl/core/reg_file.v
+		rtl/core/reset_ff.v
+		rtl/core/t1c_riscv_cpu.v
+		rtl/core/writeback.v
+		rtl/core/csr_unit.v
+		rtl/soc/soc_sram.v
+		rtl/soc/boot_rom.v
+		rtl/peripherals/boot_flash/boot_flash_ctrl.v
+		rtl/soc/soc_interconnect.v
+		rtl/soc/ahb_apb_bridge.v
+		rtl/soc/apb_decoder.v
+		rtl/soc/clint.v
+		rtl/soc/plic_new.v
+		rtl/soc/reset_sync.v
+		rtl/soc/t1c_riscv_soc.v
+		rtl/peripherals/ascon_updated/config.sv
+		rtl/peripherals/ascon_updated/functions.sv
+		rtl/peripherals/ascon_updated/ascon_regs_pkg.sv
+		rtl/peripherals/ascon_updated/chaos_core.sv
+		rtl/peripherals/ascon_updated/ascon_core.sv
+		rtl/peripherals/ascon_updated/ascon_peripheral.sv
+		rtl/peripherals/ascon_updated/ascon_ahb_wrapper.sv
+		rtl/peripherals/gpio/apb_gpio.v
+		rtl/peripherals/i2c/apb_i2c.v
+		rtl/peripherals/i2c/i2c_master_bit_ctrl.v
+		rtl/peripherals/i2c/i2c_master_byte_ctrl.v
+		rtl/peripherals/i2c/i2c_master_defines.v
+		rtl/peripherals/spi/apb_spi.v
+		rtl/peripherals/spi/spi_fifo.v
+		rtl/peripherals/spi/spi_protocol_engine.v
+		rtl/peripherals/timer/apb_timer.v
+		rtl/peripherals/uart/apb_uart.v
+	-f signoff/tb_models.f
+		-notimingchecks
+		+define+nobanner
+		rtl/peripherals/spi/spi_flash_model.v
+		/home/install/scl180/memory/dpram/4M1L/DP_SRAM_rd3_4096x32/rd3_4096x32.v
+	-incdir rtl/soc
+	-incdir rtl/peripherals/i2c
+	-incdir rtl/peripherals/ascon_updated
+	tb/soc/tb_boot_flow_min.v
+	-top tb_boot_flow_min
+	+define+BOOTROM_LEGACY_PRELOAD
+	-l signoff/logs/standalone/boot_flow_min.log
+file: rtl/core/adder.v
+	module worklib.adder:v
+		errors: 0, warnings: 0
+file: rtl/core/alu.v
+	module worklib.alu_unit:v
+		errors: 0, warnings: 0
+file: rtl/core/alu_decoder.v
+	module worklib.alu_decoder:v
+		errors: 0, warnings: 0
+file: rtl/core/controller.v
+	module worklib.controller:v
+		errors: 0, warnings: 0
+file: rtl/core/data_parser.v
+	module worklib.data_parser:v
+		errors: 0, warnings: 0
+file: rtl/core/decode.v
+	module worklib.decode:v
+		errors: 0, warnings: 0
+file: rtl/core/execute.v
+	module worklib.execute:v
+		errors: 0, warnings: 0
+file: rtl/core/fetch.v
+	module worklib.fetch:v
+		errors: 0, warnings: 0
+file: rtl/core/hazard_unit.v
+	module worklib.hazard_unit:v
+		errors: 0, warnings: 0
+file: rtl/core/imm_extend.v
+	module worklib.ImmExt:v
+		errors: 0, warnings: 0
+file: rtl/core/main_decoder.v
+	module worklib.main_decoder:v
+		errors: 0, warnings: 0
+file: rtl/core/mdu_wrapper.v
+	module worklib.mdu_wrapper:v
+		errors: 0, warnings: 0
+file: rtl/core/memory.v
+	module worklib.memory:v
+		errors: 0, warnings: 0
+file: rtl/core/mux2.v
+	module worklib.mux2:v
+		errors: 0, warnings: 0
+file: rtl/core/mux3.v
+	module worklib.mux3:v
+		errors: 0, warnings: 0
+file: rtl/core/mux4.v
+	module worklib.mux4:v
+		errors: 0, warnings: 0
+file: rtl/core/reg_file.v
+	module worklib.reg_file:v
+		errors: 0, warnings: 0
+file: rtl/core/reset_ff.v
+	module worklib.reset_ff:v
+		errors: 0, warnings: 0
+file: rtl/core/t1c_riscv_cpu.v
+	module worklib.t1c_riscv_cpu:v
+		errors: 0, warnings: 0
+file: rtl/core/writeback.v
+	module worklib.writeback:v
+		errors: 0, warnings: 0
+file: rtl/core/csr_unit.v
+	module worklib.csr_unit:v
+		errors: 0, warnings: 0
+file: rtl/soc/soc_sram.v
+	module worklib.soc_sram:v
+		errors: 0, warnings: 0
+file: rtl/soc/boot_rom.v
+	module worklib.boot_rom:v
+		errors: 0, warnings: 0
+file: rtl/peripherals/boot_flash/boot_flash_ctrl.v
+	module worklib.boot_flash_ctrl:v
+		errors: 0, warnings: 0
+file: rtl/soc/soc_interconnect.v
+	module worklib.soc_interconnect:v
+		errors: 0, warnings: 0
+file: rtl/soc/ahb_apb_bridge.v
+	module worklib.ahb_apb_bridge:v
+		errors: 0, warnings: 0
+file: rtl/soc/apb_decoder.v
+	module worklib.apb_decoder:v
+		errors: 0, warnings: 0
+file: rtl/soc/clint.v
+	module worklib.clint:v
+		errors: 0, warnings: 0
+file: rtl/soc/plic_new.v
+	module worklib.plic_new:v
+		errors: 0, warnings: 0
+file: rtl/soc/reset_sync.v
+	module worklib.reset_sync:v
+		errors: 0, warnings: 0
+file: rtl/soc/t1c_riscv_soc.v
+	module worklib.t1c_riscv_soc:v
+		errors: 0, warnings: 0
+file: rtl/peripherals/ascon_updated/chaos_core.sv
+	module worklib.chaos_core:sv
+		errors: 0, warnings: 0
+file: rtl/peripherals/ascon_updated/ascon_core.sv
+	module worklib.ascon_core:sv
+		errors: 0, warnings: 0
+file: rtl/peripherals/ascon_updated/ascon_peripheral.sv
+	module worklib.ascon_peripheral:sv
+		errors: 0, warnings: 0
+file: rtl/peripherals/ascon_updated/ascon_ahb_wrapper.sv
+	module worklib.ascon_ahb_wrapper:sv
+		errors: 0, warnings: 0
+file: rtl/peripherals/gpio/apb_gpio.v
+	module worklib.apb_gpio:v
+		errors: 0, warnings: 0
+file: rtl/peripherals/i2c/apb_i2c.v
+	module worklib.apb_i2c:v
+		errors: 0, warnings: 0
+file: rtl/peripherals/i2c/i2c_master_bit_ctrl.v
+	module worklib.i2c_master_bit_ctrl:v
+		errors: 0, warnings: 0
+file: rtl/peripherals/i2c/i2c_master_byte_ctrl.v
+	module worklib.i2c_master_byte_ctrl:v
+		errors: 0, warnings: 0
+file: rtl/peripherals/i2c/i2c_master_defines.v
+file: rtl/peripherals/spi/apb_spi.v
+	module worklib.apb_spi:v
+		errors: 0, warnings: 0
+file: rtl/peripherals/spi/spi_fifo.v
+	module worklib.spi_fifo:v
+		errors: 0, warnings: 0
+file: rtl/peripherals/spi/spi_protocol_engine.v
+	module worklib.spi_protocol_engine:v
+		errors: 0, warnings: 0
+file: rtl/peripherals/timer/apb_timer.v
+	module worklib.apb_timer:v
+		errors: 0, warnings: 0
+file: rtl/peripherals/uart/apb_uart.v
+	module worklib.apb_uart:v
+		errors: 0, warnings: 0
+file: rtl/peripherals/spi/spi_flash_model.v
+	module worklib.spi_flash_model:v
+		errors: 0, warnings: 0
+file: /home/install/scl180/memory/dpram/4M1L/DP_SRAM_rd3_4096x32/rd3_4096x32.v
+	module worklib.rd3_4096x32:v
+		errors: 0, warnings: 0
+	module worklib.rd3_4096x32_behave:v
+		errors: 0, warnings: 0
+	module worklib.rd3_4096x32_Port:v
+		errors: 0, warnings: 0
+file: tb/soc/tb_boot_flow_min.v
+	module worklib.tb_boot_flow_min:v
+		errors: 0, warnings: 0
+xmvlog: *W,SPDUSD: Include directory rtl/soc given but not used.
+	Total errors/warnings found outside modules and primitives:
+		errors: 0, warnings: 1
+	Elaborating the design hierarchy:
+		Caching library 'worklib' ....... Done
+	Top level design units:
+		ascon_regs_pkg
+		ascon_config
+		ascon_functions
+		tb_boot_flow_min
+xmelab: *W,DSEMEL: This SystemVerilog design will be simulated as per IEEE 1800-2009 SystemVerilog simulation semantics. Use -disable_sem2009 option for turning off SV 2009 simulation semantics.
+	Building instance overlay tables: .................... Done
+	Generating native compiled code:
+		worklib.chaos_core:sv <0x7d99f93e>
+			streams:  26, words: 15445
+		worklib.ascon_core:sv <0x48ac28ad>
+			streams:  63, words: 50595
+		worklib.ascon_peripheral:sv <0x011d4e2a>
+			streams:  49, words: 25914
+		worklib.ascon_ahb_wrapper:sv <0x1a67202f>
+			streams:  20, words:  6460
+		worklib.boot_flash_ctrl:v <0x0c78f4a1>
+			streams:  36, words: 17115
+		worklib.i2c_master_bit_ctrl:v <0x0089b216>
+			streams:  36, words: 22904
+		worklib.i2c_master_byte_ctrl:v <0x63536dee>
+			streams:  18, words: 11239
+		worklib.apb_i2c:v <0x37d42d75>
+			streams:  27, words: 10813
+		worklib.spi_protocol_engine:v <0x481690e7>
+			streams:  28, words: 17390
+		worklib.spi_fifo:v <0x1c2c6b4d>
+			streams:   8, words:  3770
+		worklib.apb_spi:v <0x3224f4d7>
+			streams:  27, words: 12145
+		worklib.apb_uart:v <0x000a1b4c>
+			streams:  65, words: 26437
+		worklib.apb_gpio:v <0x03554156>
+			streams:  27, words:  8977
+		worklib.apb_timer:v <0x26ceb0f0>
+			streams:  23, words:  7416
+		worklib.apb_decoder:v <0x462884ff>
+			streams:   7, words:  4363
+		worklib.ahb_apb_bridge:v <0x00114ef3>
+			streams:   9, words:  4205
+		worklib.plic_new:v <0x7bed9eeb>
+			streams:  15, words:  8840
+		worklib.clint:v <0x185dfd28>
+			streams:  11, words:  4353
+		worklib.rd3_4096x32:v <0x2aa6d24c>
+			streams:  40, words: 18967
+		worklib.rd3_4096x32_Port:v <0x21f3f316>
+			streams:  15, words: 18870
+		worklib.rd3_4096x32:v <0x60bee88b>
+			streams:  40, words: 18967
+		worklib.hazard_unit:v <0x558941bf>
+			streams:   3, words:  1795
+		worklib.mux4:v <0x6fef6af2>
+			streams:   2, words:   862
+		worklib.writeback:v <0x06e5fdd7>
+			streams:   1, words:   194
+		worklib.data_parser:v <0x101c4781>
+			streams:   3, words:  1454
+		worklib.memory:v <0x172b11ac>
+			streams:   6, words:  4596
+		worklib.csr_unit:v <0x0923ac68>
+			streams:  20, words:  9025
+		worklib.mdu_wrapper:v <0x3031b4e0>
+			streams:  29, words: 12612
+		worklib.alu_unit:v <0x7891c3b4>
+			streams:   1, words:  4594
+		worklib.mux2:v <0x1c0d254f>
+			streams:   1, words:   234
+		worklib.mux3:v <0x09c7c4fc>
+			streams:   2, words:   698
+		worklib.execute:v <0x0f8f4794>
+			streams:  10, words:  8352
+		worklib.ImmExt:v <0x7252124a>
+			streams:   1, words:  1274
+		worklib.reg_file:v <0x2685b595>
+			streams:   5, words:  2987
+		worklib.alu_decoder:v <0x3a213f94>
+			streams:   1, words:  3207
+		worklib.main_decoder:v <0x17a4d89e>
+			streams:   2, words:  3716
+		worklib.controller:v <0x14712ef1>
+			streams:   3, words:  1061
+		worklib.decode:v <0x5c64187d>
+			streams:   4, words: 10586
+		worklib.adder:v <0x664419f9>
+			streams:   1, words:   176
+		worklib.reset_ff:v <0x1ca424c4>
+			streams:   3, words:   897
+		worklib.mux3:v <0x77bf8c5a>
+			streams:   2, words:   656
+		worklib.fetch:v <0x11f23bfb>
+			streams:  11, words:  4513
+		worklib.t1c_riscv_cpu:v <0x0eeab408>
+			streams:   6, words:  2232
+		worklib.reset_sync:v <0x623a33b8>
+			streams:   3, words:   645
+		worklib.t1c_riscv_soc:v <0x794b38cb>
+			streams:   4, words:  1626
+		worklib.tb_boot_flow_min:v <0x003a05c1>
+			streams:  12, words: 12786
+		worklib.soc_sram:v <0x29f8e6e3>
+			streams:  37, words: 17158
+		worklib.boot_rom:v <0x232405a7>
+			streams:   3, words:  1438
+		worklib.soc_interconnect:v <0x378d8fb9>
+			streams:  26, words: 11046
+		worklib.rd3_4096x32_behave:v <0x60ae7528>
+			streams:   7, words:  7974
+	Building instance specific data structures.
+	Loading native compiled code:     .................... Done
+	Design hierarchy summary:
+		                   Instances  Unique
+		Modules:                  83      48
+		Verilog packages:          3       3
+		Primitives:             1304       4
+		Timing outputs:          512       1
+		Registers:               907     537
+		Scalar wires:           1670       -
+		Expanded wires:         1122      42
+		Vectored wires:          249       -
+		Named events:             16       1
+		Always blocks:           466     138
+		Initial blocks:           31       9
+		Cont. assignments:       255     371
+		Pseudo assignments:      145      82
+		Timing checks:           380       -
+		Simulation timescale:  100fs
+	Writing initial simulation snapshot: worklib.tb_boot_flow_min:v
+Loading snapshot worklib.tb_boot_flow_min:v .................... Done
+xmsim: *W,DSEM2009: This SystemVerilog design is simulated as per IEEE 1800-2009 SystemVerilog simulation semantics. Use -disable_sem2009 option for turning off SV 2009 simulation semantics.
+xcelium> source /home/install8/install/XCELIUM2209/tools/inca/files/xmsimrc
+xcelium> run
+=== tb_boot_flow_min: SRAM preloaded directly from /tmp/app_min.mem ===
+=== tb_boot_flow_min: Boot ROM preloaded with jump-to-SRAM stub ===
+=== tb_boot_flow_min: minimal ROM-jump-to-SRAM testbench ===
+Cyc1 PC=00000000 InstrF=10000eb7 daddr=00000000 dwe=0000 dwdata=00000000
+Cyc2 PC=00000000 InstrF=10000eb7 daddr=00000000 dwe=0000 dwdata=00000000
+Cyc3 PC=00000000 InstrF=10000eb7 daddr=00000000 dwe=0000 dwdata=00000000
+Cyc4 PC=00000004 InstrF=000e8067 daddr=00000000 dwe=0000 dwdata=00000000
+Cyc5 PC=00000008 InstrF=00000013 daddr=10000000 dwe=0000 dwdata=00000000
+Cyc6 PC=00000008 InstrF=00000013 daddr=10000000 dwe=0000 dwdata=00000000
+Cyc7 PC=0000000c InstrF=00000013 daddr=00000000 dwe=0000 dwdata=00000000
+Cyc8 PC=10000000 InstrF=50000293 daddr=10000000 dwe=0000 dwdata=00000000
+Cyc9 PC=10000004 InstrF=00100313 daddr=00000000 dwe=0000 dwdata=00000000
+Cyc10 PC=10000008 InstrF=0062a023 daddr=00000000 dwe=0000 dwdata=00000000
+Cyc11 PC=1000000c InstrF=0000006f daddr=00000500 dwe=0000 dwdata=00000000
+Cyc12 PC=10000010 InstrF=xxxxxxxx daddr=00000001 dwe=0000 dwdata=00000000
+BOOT FLOW MIN: SUCCESS at cycle 13
+Simulation complete via $finish(1) at time 350 NS + 0
+./tb/soc/tb_boot_flow_min.v:127                 $finish;
+xcelium> exit
+TOOL:	xrun(64)	22.09-s003: Exiting on Nov 16, 2026 at 12:24:23 IST  (total: 00:00:06)

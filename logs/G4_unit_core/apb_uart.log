@@ -1,0 +1,117 @@
+xrun(64): 22.09-s003: (c) Copyright 1995-2022 Cadence Design Systems, Inc.
+TOOL:	xrun(64)	22.09-s003: Started on Nov 16, 2026 at 12:23:26 IST
+xrun
+	-64bit
+	-xmlibdirpath signoff/build/sa_apb_uart
+	-sv
+	-access +rwc
+	-nowarn NONPRT
+	rtl/peripherals/uart/apb_uart.v
+	tb/peripherals/tb_apb_uart.v
+	-top tb_apb_uart
+	-l signoff/logs/standalone/apb_uart.log
+file: rtl/peripherals/uart/apb_uart.v
+	module worklib.apb_uart:v
+		errors: 0, warnings: 0
+	Elaborating the design hierarchy:
+		Caching library 'worklib' ....... Done
+	Top level design units:
+		tb_apb_uart
+xmelab: *W,DSEMEL: This SystemVerilog design will be simulated as per IEEE 1800-2009 SystemVerilog simulation semantics. Use -disable_sem2009 option for turning off SV 2009 simulation semantics.
+	Building instance overlay tables: .................... Done
+	Generating native compiled code:
+		worklib.apb_uart:v <0x01c9a738>
+			streams:  65, words: 26437
+	Building instance specific data structures.
+	Loading native compiled code:     .................... Done
+	Design hierarchy summary:
+		                 Instances  Unique
+		Modules:                 2       2
+		Registers:              53      53
+		Scalar wires:           39       -
+		Expanded wires:         32       3
+		Vectored wires:         11       -
+		Always blocks:          15      15
+		Initial blocks:          2       2
+		Cont. assignments:      28      45
+		Pseudo assignments:      8       8
+		Simulation timescale:  1ps
+	Writing initial simulation snapshot: worklib.tb_apb_uart:v
+Loading snapshot worklib.tb_apb_uart:v .................... Done
+xmsim: *W,DSEM2009: This SystemVerilog design is simulated as per IEEE 1800-2009 SystemVerilog simulation semantics. Use -disable_sem2009 option for turning off SV 2009 simulation semantics.
+xcelium> source /home/install8/install/XCELIUM2209/tools/inca/files/xmsimrc
+xcelium> run
+
+TEST 1: Reset and APB register access
+PASS : CTRL reset Value=00000000 Time=220000
+PASS : STATUS reset Value=00000000 Time=250000
+PASS : TX status reset Value=00000000 Time=280000
+PASS : RX buffer reset Value=00000000 Time=310000
+PASS : BAUD reset Value=00000000 Time=340000
+PASS : Interrupt register reset Value=00000000 Time=370000
+PASS : Invalid address read as zero Value=00000000 Time=400000
+PASS : PREADY/PSLVERR static values correct
+
+TEST 2: Register toggle coverage
+
+TEST 3: Baud generator
+PASS : BAUDTICK inactive when UART disabled
+PASS : BAUDTICK generated after enable
+
+TEST 4: TX basic functionality
+PASS : TX buffer full after write
+PASS : TXINT received Time=1820000
+INFO : STATUS after TXINT = 00000005
+PASS : TX completed and TXINT generated
+PASS : TXINT visible in interrupt register
+PASS : TXINT cleared
+
+TEST 5: TX multiple data patterns
+PASS : TXINT received Time=2925000
+PASS : TXINT received Time=4525000
+PASS : TXINT received Time=6125000
+PASS : TXINT received Time=7725000
+
+TEST 6: TX overrun
+PASS : TX overrun detected
+PASS : TX overrun cleared
+PASS : TXINT received Time=9325000
+
+TEST 7: RX basic functionality
+PASS : RXINT received Time=11645000
+PASS : RX buffer full set
+INFO : RX DATA = c9
+PASS : RXINT cleared
+
+TEST 8: RX multiple patterns
+PASS : RXINT received Time=14035000
+PASS : RXINT received Time=16325000
+PASS : RXINT received Time=18615000
+PASS : RXINT received Time=20905000
+
+TEST 9: RX overrun
+PASS : RXINT received Time=23225000
+PASS : RXINT received Time=25485000
+PASS : RX overrun detected
+PASS : RX overrun cleared
+
+TEST 10: Disable TX/RX paths
+PASS : TXEN low when TX disabled
+PASS : RXINT low when RX disabled
+
+TEST 11: Mid-operation reset
+PASS : CTRL after mid reset Value=00000000 Time=28200000
+PASS : STATUS after mid reset Value=00000000 Time=28230000
+
+TEST 12: Extra APB activity for decode/toggle coverage
+
+======================================
+APB UART TEST COMPLETED
+PASS COUNT = 41
+FAIL COUNT = 0
+======================================
+FINAL RESULT: PASS
+Simulation complete via $finish(1) at time 35210 NS + 0
+./tb/peripherals/tb_apb_uart.v:639         $finish;
+xcelium> exit
+TOOL:	xrun(64)	22.09-s003: Exiting on Nov 16, 2026 at 12:23:30 IST  (total: 00:00:04)

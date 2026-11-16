@@ -1,0 +1,245 @@
+xrun(64): 22.09-s003: (c) Copyright 1995-2022 Cadence Design Systems, Inc.
+TOOL:	xrun(64)	22.09-s003: Started on Nov 16, 2026 at 12:22:37 IST
+xrun
+	-64bit
+	-xmlibdirpath signoff/build/sa_tb_t1c_riscv_cpu
+	-sv
+	-access +rwc
+	-nowarn NONPRT
+	-f rtl.f
+		rtl/core/adder.v
+		rtl/core/alu.v
+		rtl/core/alu_decoder.v
+		rtl/core/controller.v
+		rtl/core/data_parser.v
+		rtl/core/decode.v
+		rtl/core/execute.v
+		rtl/core/fetch.v
+		rtl/core/imm_extend.v
+		rtl/core/main_decoder.v
+		rtl/core/mdu_wrapper.v
+		rtl/core/memory.v
+		rtl/core/mux2.v
+		rtl/core/mux3.v
+		rtl/core/mux4.v
+		rtl/core/reg_file.v
+		rtl/core/reset_ff.v
+		rtl/core/writeback.v
+		rtl/core/csr_unit.v
+		rtl/core/t1c_riscv_cpu.v
+		rtl/core/hazard_unit.v
+	tb/unit/tb_t1c_riscv_cpu.sv
+	-top tb_t1c_riscv_cpu
+	-l signoff/logs/standalone/tb_t1c_riscv_cpu.log
+file: rtl/core/adder.v
+	module worklib.adder:v
+		errors: 0, warnings: 0
+file: rtl/core/alu.v
+	module worklib.alu_unit:v
+		errors: 0, warnings: 0
+file: rtl/core/alu_decoder.v
+	module worklib.alu_decoder:v
+		errors: 0, warnings: 0
+file: rtl/core/controller.v
+	module worklib.controller:v
+		errors: 0, warnings: 0
+file: rtl/core/data_parser.v
+	module worklib.data_parser:v
+		errors: 0, warnings: 0
+file: rtl/core/decode.v
+	module worklib.decode:v
+		errors: 0, warnings: 0
+file: rtl/core/execute.v
+	module worklib.execute:v
+		errors: 0, warnings: 0
+file: rtl/core/fetch.v
+	module worklib.fetch:v
+		errors: 0, warnings: 0
+file: rtl/core/imm_extend.v
+	module worklib.ImmExt:v
+		errors: 0, warnings: 0
+file: rtl/core/main_decoder.v
+	module worklib.main_decoder:v
+		errors: 0, warnings: 0
+file: rtl/core/mdu_wrapper.v
+	module worklib.mdu_wrapper:v
+		errors: 0, warnings: 0
+file: rtl/core/memory.v
+	module worklib.memory:v
+		errors: 0, warnings: 0
+file: rtl/core/mux2.v
+	module worklib.mux2:v
+		errors: 0, warnings: 0
+file: rtl/core/mux3.v
+	module worklib.mux3:v
+		errors: 0, warnings: 0
+file: rtl/core/mux4.v
+	module worklib.mux4:v
+		errors: 0, warnings: 0
+file: rtl/core/reg_file.v
+	module worklib.reg_file:v
+		errors: 0, warnings: 0
+file: rtl/core/reset_ff.v
+	module worklib.reset_ff:v
+		errors: 0, warnings: 0
+file: rtl/core/writeback.v
+	module worklib.writeback:v
+		errors: 0, warnings: 0
+file: rtl/core/csr_unit.v
+	module worklib.csr_unit:v
+		errors: 0, warnings: 0
+file: rtl/core/t1c_riscv_cpu.v
+	module worklib.t1c_riscv_cpu:v
+		errors: 0, warnings: 0
+file: rtl/core/hazard_unit.v
+	module worklib.hazard_unit:v
+		errors: 0, warnings: 0
+	Elaborating the design hierarchy:
+		Caching library 'worklib' ....... Done
+  t1c_riscv_cpu dut (
+                  |
+xmelab: *W,CUVWSP (./tb/unit/tb_t1c_riscv_cpu.sv,33|18): 5 output ports were not connected:
+xmelab: (./rtl/core/t1c_riscv_cpu.v,9): InstrAddrNext
+xmelab: (./rtl/core/t1c_riscv_cpu.v,13): MemRead
+xmelab: (./rtl/core/t1c_riscv_cpu.v,16): DataAdrNext
+xmelab: (./rtl/core/t1c_riscv_cpu.v,28): MemSize
+xmelab: (./rtl/core/t1c_riscv_cpu.v,29): MemUnsigned
+
+	Top level design units:
+		tb_t1c_riscv_cpu
+xmelab: *W,DSEMEL: This SystemVerilog design will be simulated as per IEEE 1800-2009 SystemVerilog simulation semantics. Use -disable_sem2009 option for turning off SV 2009 simulation semantics.
+	Building instance overlay tables: .................... Done
+	Generating native compiled code:
+		worklib.hazard_unit:v <0x558941bf>
+			streams:   3, words:  1795
+		worklib.mux4:v <0x6fef6af2>
+			streams:   2, words:   862
+		worklib.writeback:v <0x06e5fdd7>
+			streams:   1, words:   194
+		worklib.data_parser:v <0x101c4781>
+			streams:   3, words:  1454
+		worklib.memory:v <0x7ab25e21>
+			streams:   6, words:  4506
+		worklib.csr_unit:v <0x08476f27>
+			streams:  20, words:  9025
+		worklib.mdu_wrapper:v <0x58961b61>
+			streams:  29, words: 12612
+		worklib.alu_unit:v <0x7891c3b4>
+			streams:   1, words:  4594
+		worklib.mux2:v <0x1c0d254f>
+			streams:   1, words:   234
+		worklib.mux3:v <0x09c7c4fc>
+			streams:   2, words:   698
+		worklib.execute:v <0x69c98821>
+			streams:  10, words:  8352
+		worklib.ImmExt:v <0x7252124a>
+			streams:   1, words:  1274
+		worklib.reg_file:v <0x3f4d959a>
+			streams:   5, words:  2987
+		worklib.alu_decoder:v <0x3a213f94>
+			streams:   1, words:  3207
+		worklib.main_decoder:v <0x17a4d89e>
+			streams:   2, words:  3716
+		worklib.controller:v <0x14712ef1>
+			streams:   3, words:  1061
+		worklib.decode:v <0x34c3b7fc>
+			streams:   4, words: 10586
+		worklib.adder:v <0x664419f9>
+			streams:   1, words:   176
+		worklib.reset_ff:v <0x5fb3ca85>
+			streams:   3, words:   897
+		worklib.mux3:v <0x77bf8c5a>
+			streams:   2, words:   656
+		worklib.fetch:v <0x0e86621c>
+			streams:  11, words:  4423
+		worklib.t1c_riscv_cpu:v <0x0b10cf8b>
+			streams:   6, words:  2140
+	Building instance specific data structures.
+	Loading native compiled code:     .................... Done
+	Design hierarchy summary:
+		                 Instances  Unique
+		Modules:                27      22
+		Registers:             278     278
+		Scalar wires:           73       -
+		Expanded wires:        159       9
+		Vectored wires:         93       -
+		Always blocks:          16      16
+		Initial blocks:          5       5
+		Cont. assignments:      62      82
+		Pseudo assignments:     18      18
+		Simulation timescale:  1ps
+	Writing initial simulation snapshot: worklib.tb_t1c_riscv_cpu:sv
+Loading snapshot worklib.tb_t1c_riscv_cpu:sv .................... Done
+xmsim: *W,DSEM2009: This SystemVerilog design is simulated as per IEEE 1800-2009 SystemVerilog simulation semantics. Use -disable_sem2009 option for turning off SV 2009 simulation semantics.
+xcelium> source /home/install8/install/XCELIUM2209/tools/inca/files/xmsimrc
+xcelium> run
+
+========================================
+Full Core Golden Directed Sanity TB
+RV32I Opcode + RV32M + Load/Store + Hazard + Flush Verification
+========================================
+
+[PASS] Test 1: Reset fetches from PC 0
+
+--- Signature Checks ---
+
+[PASS] Test 2: ADD = 0000001a
+[PASS] Test 3: SUB = 0000000e
+[PASS] Test 4: AND = 00000004
+[PASS] Test 5: OR = 00000016
+[PASS] Test 6: XOR = 00000012
+[PASS] Test 7: SLT = 00000001
+[PASS] Test 8: SLTU = 00000001
+[PASS] Test 9: SLL = 00000180
+[PASS] Test 10: SRL = 00000000
+[PASS] Test 11: SRAI = fffffffc
+[PASS] Test 12: I-type logical chain = 0000000e
+[PASS] Test 13: SLTI = 00000001
+[PASS] Test 14: SLTIU = 00000000
+[PASS] Test 15: SLLI = 00000018
+[PASS] Test 16: SRLI = 00000005
+[PASS] Test 17: LUI = 12345000
+[PASS] Test 18: AUIPC = 000010a0
+[PASS] Test 19: LB = ffffff80
+[PASS] Test 20: LH = ffff8080
+[PASS] Test 21: LW = abcd8080
+[PASS] Test 22: LBU = 00000080
+[PASS] Test 23: LHU = 00008080
+[PASS] Test 24: ALU RAW forwarding = 00000020
+[PASS] Test 25: Load-use stall = 0000000d
+[PASS] Test 26: WAW final writer wins = 00000002
+[PASS] Test 27: BEQ wrong-path killed = 00000000
+[PASS] Test 28: BEQ target executed = 000000de
+[PASS] Test 29: JAL wrong-path killed = 00000000
+[PASS] Test 30: JAL link PC+4 = 00000110
+[PASS] Test 31: JALR link PC+4 = 00000124
+[PASS] Test 32: MUL = 00000078
+[PASS] Test 33: MULH = 00000000
+[PASS] Test 34: MULHSU = 00000000
+[PASS] Test 35: MULHU = 00000000
+[PASS] Test 36: DIV = 00000003
+[PASS] Test 37: DIVU = 00000003
+[PASS] Test 38: REM = 00000002
+[PASS] Test 39: REMU = 00000002
+[PASS] Test 40: BNE wrong-path killed = 00000000
+[PASS] Test 41: BNE target executed = 00000309
+
+--- Notes / Waivers for Current RTL Scope ---
+Interrupt flow not checked: no irq/CSR/mtvec/mepc interface in current core.
+Structural OBI/MDU-busy stalls not checked: no gnt/rvalid/busy interface in current core.
+SB/SH opcodes are executed, but true byte/half-store correctness cannot be proven without byte-enable outputs.
+
+========================================
+Test Summary
+========================================
+Total Tests: 41
+Passed:      41
+Failed:      0
+Pass Rate:   100.0%
+========================================
+
+All full-core sanity tests passed!
+Simulation complete via $finish(1) at time 5075 NS + 0
+./tb/unit/tb_t1c_riscv_cpu.sv:531     $finish;
+xcelium> exit
+TOOL:	xrun(64)	22.09-s003: Exiting on Nov 16, 2026 at 12:22:41 IST  (total: 00:00:04)

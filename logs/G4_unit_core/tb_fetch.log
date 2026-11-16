@@ -1,0 +1,269 @@
+xrun(64): 22.09-s003: (c) Copyright 1995-2022 Cadence Design Systems, Inc.
+TOOL:	xrun(64)	22.09-s003: Started on Nov 16, 2026 at 12:22:05 IST
+xrun
+	-64bit
+	-xmlibdirpath signoff/build/sa_tb_fetch
+	-sv
+	-access +rwc
+	-nowarn NONPRT
+	-f rtl.f
+		rtl/core/adder.v
+		rtl/core/alu.v
+		rtl/core/alu_decoder.v
+		rtl/core/controller.v
+		rtl/core/data_parser.v
+		rtl/core/decode.v
+		rtl/core/execute.v
+		rtl/core/fetch.v
+		rtl/core/imm_extend.v
+		rtl/core/main_decoder.v
+		rtl/core/mdu_wrapper.v
+		rtl/core/memory.v
+		rtl/core/mux2.v
+		rtl/core/mux3.v
+		rtl/core/mux4.v
+		rtl/core/reg_file.v
+		rtl/core/reset_ff.v
+		rtl/core/writeback.v
+		rtl/core/csr_unit.v
+		rtl/core/t1c_riscv_cpu.v
+		rtl/core/hazard_unit.v
+	tb/unit/tb_fetch.sv
+	-top tb_fetch
+	-l signoff/logs/standalone/tb_fetch.log
+file: rtl/core/adder.v
+	module worklib.adder:v
+		errors: 0, warnings: 0
+file: rtl/core/alu.v
+	module worklib.alu_unit:v
+		errors: 0, warnings: 0
+file: rtl/core/alu_decoder.v
+	module worklib.alu_decoder:v
+		errors: 0, warnings: 0
+file: rtl/core/controller.v
+	module worklib.controller:v
+		errors: 0, warnings: 0
+file: rtl/core/data_parser.v
+	module worklib.data_parser:v
+		errors: 0, warnings: 0
+file: rtl/core/decode.v
+	module worklib.decode:v
+		errors: 0, warnings: 0
+file: rtl/core/execute.v
+	module worklib.execute:v
+		errors: 0, warnings: 0
+file: rtl/core/fetch.v
+	module worklib.fetch:v
+		errors: 0, warnings: 0
+file: rtl/core/imm_extend.v
+	module worklib.ImmExt:v
+		errors: 0, warnings: 0
+file: rtl/core/main_decoder.v
+	module worklib.main_decoder:v
+		errors: 0, warnings: 0
+file: rtl/core/mdu_wrapper.v
+	module worklib.mdu_wrapper:v
+		errors: 0, warnings: 0
+file: rtl/core/memory.v
+	module worklib.memory:v
+		errors: 0, warnings: 0
+file: rtl/core/mux2.v
+	module worklib.mux2:v
+		errors: 0, warnings: 0
+file: rtl/core/mux3.v
+	module worklib.mux3:v
+		errors: 0, warnings: 0
+file: rtl/core/mux4.v
+	module worklib.mux4:v
+		errors: 0, warnings: 0
+file: rtl/core/reg_file.v
+	module worklib.reg_file:v
+		errors: 0, warnings: 0
+file: rtl/core/reset_ff.v
+	module worklib.reset_ff:v
+		errors: 0, warnings: 0
+file: rtl/core/writeback.v
+	module worklib.writeback:v
+		errors: 0, warnings: 0
+file: rtl/core/csr_unit.v
+	module worklib.csr_unit:v
+		errors: 0, warnings: 0
+file: rtl/core/t1c_riscv_cpu.v
+	module worklib.t1c_riscv_cpu:v
+		errors: 0, warnings: 0
+file: rtl/core/hazard_unit.v
+	module worklib.hazard_unit:v
+		errors: 0, warnings: 0
+	Elaborating the design hierarchy:
+		Caching library 'worklib' ....... Done
+  fetch dut (
+          |
+xmelab: *W,CUVWSP (./tb/unit/tb_fetch.sv,16|10): 1 output port was not connected:
+xmelab: (./rtl/core/fetch.v,25): PCFetchNext
+
+	Top level design units:
+		tb_fetch
+xmelab: *W,DSEMEL: This SystemVerilog design will be simulated as per IEEE 1800-2009 SystemVerilog simulation semantics. Use -disable_sem2009 option for turning off SV 2009 simulation semantics.
+	Building instance overlay tables: .................... Done
+	Generating native compiled code:
+		worklib.reset_ff:v <0x42669b55>
+			streams:   3, words:  1016
+		worklib.mux3:v <0x47b39665>
+			streams:   2, words:   698
+		worklib.fetch:v <0x4df779e3>
+			streams:  11, words:  4437
+		worklib.tb_fetch:sv <0x7a2c5457>
+			streams:  40, words: 155874
+		worklib.adder:v <0x77184606>
+			streams:   1, words:   290
+	Building instance specific data structures.
+	Loading native compiled code:     .................... Done
+	Design hierarchy summary:
+		                 Instances  Unique
+		Modules:                 5       5
+		Registers:              31      31
+		Scalar wires:            8       -
+		Expanded wires:         64       2
+		Vectored wires:         18       -
+		Always blocks:           3       3
+		Initial blocks:          5       5
+		Cont. assignments:       5       6
+		Pseudo assignments:     15      15
+		Simulation timescale:  1ps
+	Writing initial simulation snapshot: worklib.tb_fetch:sv
+Loading snapshot worklib.tb_fetch:sv .................... Done
+xmsim: *W,DSEM2009: This SystemVerilog design is simulated as per IEEE 1800-2009 SystemVerilog simulation semantics. Use -disable_sem2009 option for turning off SV 2009 simulation semantics.
+xcelium> source /home/install8/install/XCELIUM2209/tools/inca/files/xmsimrc
+xcelium> run
+
+========================================
+Fetch Unit Testbench - Full Coverage Closure
+========================================
+
+
+--- Test Group 1: Reset ---
+
+[PASS] Test 1: Reset PCF = 0
+[PASS] Test 2: Reset InstrD = NOP
+[PASS] Test 3: Reset PCD = 0
+[PASS] Test 4: Reset PCPlus4D = 0
+
+--- Test Group 2: Sequential PC Increment ---
+
+[PASS] Test 5: PCD captures PC 0
+[PASS] Test 6: PCPlus4D = 4
+[PASS] Test 7: InstrD captures InstrF 1
+[PASS] Test 8: PCF increments to 8
+[PASS] Test 9: PCD captures PC 4
+[PASS] Test 10: PCPlus4D = 8
+[PASS] Test 11: InstrD captures InstrF 2
+[PASS] Test 12: PCF increments to 12
+[PASS] Test 13: PCD captures PC 8
+[PASS] Test 14: PCPlus4D = 12
+[PASS] Test 15: InstrD captures InstrF 3
+
+--- Test Group 3: StallF ---
+
+[PASS] Test 16: StallF holds PCF
+[PASS] Test 17: StallF release advances PCF
+
+--- Test Group 4: StallD ---
+
+[PASS] Test 18: StallD holds InstrD
+[PASS] Test 19: StallD holds PCD
+[PASS] Test 20: StallD holds PCPlus4D
+[PASS] Test 21: StallD release updates InstrD
+
+--- Test Group 5: FlushD ---
+
+[PASS] Test 22: FlushD makes InstrD NOP
+[PASS] Test 23: FlushD clears PCD
+[PASS] Test 24: FlushD clears PCPlus4D
+[PASS] Test 25: FlushD release updates InstrD
+
+--- Test Group 6: FlushD Priority Over StallD ---
+
+[PASS] Test 26: FlushD priority InstrD NOP
+[PASS] Test 27: FlushD priority PCD 0
+[PASS] Test 28: FlushD priority PCPlus4D 0
+
+--- Test Group 7: Redirect PCTargetE ---
+
+[PASS] Test 29: PCSrcE=01 redirects PC
+[PASS] Test 30: PC increments after PCTargetE redirect
+
+--- Test Group 8: Redirect ALUResultM ---
+
+[PASS] Test 31: PCSrcE=10 redirects PC
+[PASS] Test 32: PC increments after ALUResultM redirect
+
+--- Test Group 9: PCSrcE=11 ---
+
+[PASS] Test 33: PCSrcE=11 gives known PCF
+
+--- Test Group 10: Reset Priority ---
+
+[PASS] Test 34: Reset priority PCF
+[PASS] Test 35: Reset priority InstrD
+[PASS] Test 36: Reset priority PCD
+[PASS] Test 37: Reset priority PCPlus4D
+
+--- Test Group 11: Back-to-Back Redirects ---
+
+[PASS] Test 38: Redirect 1 PCF 0x1000
+[PASS] Test 39: Redirect 2 PCF 0x2000
+[PASS] Test 40: PC after redirects 0x2004
+
+--- Test Group 12: StallF During Redirect ---
+
+[PASS] Test 41: StallF blocks redirect
+[PASS] Test 42: Redirect after StallF release
+
+--- Test Group 13: StallD While PC Continues ---
+
+[PASS] Test 43: StallD only PCF advances
+[PASS] Test 44: StallD only InstrD holds
+[PASS] Test 45: StallD only PCD holds
+[PASS] Test 46: StallD only PCPlus4D holds
+
+--- Test Group 14: Instruction Pattern Coverage ---
+
+[PASS] Test 47: Instr NOP
+[PASS] Test 48: Instr all ones
+[PASS] Test 49: Instr all zeros
+[PASS] Test 50: Instr A
+[PASS] Test 51: Instr 5
+[PASS] Test 52: Instr MSB
+[PASS] Test 53: Instr LSB
+
+--- Test Group 15: Random Functional Coverage Sweep ---
+
+
+--- Test Group 16: Directed PC Carry Coverage ---
+
+
+--- Test Group 17: Coverage-Only Force for add1 ---
+
+
+--- Extra pcreg Coverage Closure ---
+
+
+--- Final Known-State Recheck ---
+
+[PASS] Test 54: Final redirect known PCF
+[PASS] Test 55: Final sequential known PCF
+
+========================================
+Test Summary
+========================================
+Total Tests:  55
+Passed:       55
+Failed:       0
+Pass Rate:    100.0%
+========================================
+
+All fetch unit tests passed!
+Simulation complete via $finish(1) at time 16466 NS + 0
+./tb/unit/tb_fetch.sv:552     $finish;
+xcelium> exit
+TOOL:	xrun(64)	22.09-s003: Exiting on Nov 16, 2026 at 12:22:12 IST  (total: 00:00:07)

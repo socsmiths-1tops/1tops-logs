@@ -1,0 +1,15 @@
+In file included from /home/onetops/1tops/tool_chain/riscv-tests/isa/rv32mi/../rv64si/csr.S:11,
+                 from /home/onetops/1tops/tool_chain/riscv-tests/isa/rv32mi/csr.S:8:
+/home/onetops/1tops/tool_chain/riscv-tests/isa/macros/scalar/test_macros.h:876:9: warning: 'TEST_PASSFAIL' redefined
+  876 | #define TEST_PASSFAIL \
+      |         ^~~~~~~~~~~~~
+In file included from /home/onetops/1tops/tool_chain/riscv-tests/isa/rv32mi/csr.S:3:
+/home/onetops/1tops/tool_chain/riscv-tests/env/simple/riscv_test.h:49:9: note: this is the location of the previous definition
+   49 | #define TEST_PASSFAIL                        \
+      |         ^~~~~~~~~~~~~
+/tmp/ccYunaVS.s: Assembler messages:
+/home/onetops/1tops/tool_chain/riscv-tests/isa/rv32mi/../rv64si/csr.S:13: Error: unrecognized opcode `rvtest_rv32m'
+/home/onetops/1tops/tool_chain/riscv-tests/isa/rv32mi/../rv64si/csr.S:72: Error: illegal operands `li a1,MSTATUS_FS'
+/home/onetops/1tops/tool_chain/riscv-tests/isa/rv32mi/../rv64si/csr.S:106: Error: illegal operands `li t0,MSTATUS_MPP'
+/home/onetops/1tops/tool_chain/riscv-tests/isa/rv32mi/../rv64si/csr.S:145: Error: illegal operands `li t1,CAUSE_USER_ECALL'
+/home/onetops/1tops/tool_chain/riscv-tests/isa/rv32mi/../rv64si/csr.S:152: Error: illegal operands `li t1,CAUSE_ILLEGAL_INSTRUCTION'
